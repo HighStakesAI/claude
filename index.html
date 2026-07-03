@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Engineering, Inc. | Commercial Security Systems — Pensacola, FL — Since 1975</title>
+<meta name="description" content="Security Engineering, Inc. — the oldest security company in the Florida Panhandle. Designing, installing, and maintaining commercial security systems since 1975. Access control, verified intrusion, video surveillance, IP intercom, and infant protection across nine states. Call 850-484-9300 for a free security assessment.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Security Engineering, Inc. | Commercial Security Systems — Since 1975">
+<meta property="og:description" content="Protecting People. Powering Confidence. The oldest security company in the Florida Panhandle — trusted by hundreds of facilities across the Southeast. Free security assessments: 850-484-9300.">
+<meta property="og:url" content="https://www.seceng.com/">
+<meta property="og:image" content="https://placehold.co/1200x630/0B0F14/2F9DFF?text=Security+Engineering%2C+Inc.+%E2%80%94+REPLACE+OG+IMAGE">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#0B0F14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Security Engineering, Inc.",
+  "url": "https://www.seceng.com/",
+  "slogan": "Protecting People. Powering Confidence.",
+  "description": "Commercial security systems integrator — design, installation, and maintenance of access control, verified intrusion, video surveillance, IP intercom, and infant protection systems. The oldest security company in the Florida Panhandle, founded 1975.",
+  "foundingDate": "1975",
+  "telephone": "+1-850-484-9300",
+  "email": "security@seceng.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6001 Enterprise Dr.",
+    "addressLocality": "Pensacola",
+    "addressRegion": "FL",
+    "postalCode": "32505",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 30.4746, "longitude": -87.2497 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  }],
+  "areaServed": [
+    {"@type":"State","name":"Florida"},
+    {"@type":"State","name":"Alabama"},
+    {"@type":"State","name":"Georgia"},
+    {"@type":"State","name":"Louisiana"},
+    {"@type":"State","name":"Mississippi"},
+    {"@type":"State","name":"Arkansas"},
+    {"@type":"State","name":"Kansas"},
+    {"@type":"State","name":"Missouri"},
+    {"@type":"State","name":"Oklahoma"}
+  ]
+}
+</script>
+<style>
+/* ============================================================
+   SECURITY ENGINEERING, INC. — DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --bg:#0B0F14;
+  --bg-2:#0D131B;
+  --panel:#111926;
+  --panel-2:#152030;
+  --panel-3:#1A2738;
+  --line:rgba(164,192,220,.10);
+  --line-2:rgba(164,192,220,.20);
+  --white:#F2F6FB;
+  --muted:#A9B9C9;
+  --dim:#7B8DA0;
+  --accent:#2F9DFF;
+  --accent-2:#6CBBFF;
+  --accent-deep:#0A5FB0;
+  --accent-ink:#04182B;
+  --soft:#8AD8C0;          /* infant protection — softer accent */
+  --soft-dim:rgba(138,216,192,.14);
+  --font-d:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+  --font-b:'Inter',ui-sans-serif,system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --nav-h:76px;
+  --pad:clamp(20px,5vw,72px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html:focus-within{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:var(--font-b);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.menu-open,body.modal-open{overflow:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{list-style:none}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip-link{
+  position:fixed;top:-60px;left:16px;z-index:2000;
+  background:var(--accent);color:var(--accent-ink);font-weight:600;
+  padding:10px 18px;border-radius:4px;transition:top .25s var(--ease);
+}
+.skip-link:focus{top:14px}
+
+/* ---------- shared primitives ---------- */
+.wrap{max-width:1360px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{position:relative;scroll-margin-top:calc(var(--nav-h) + 8px)}
+.kicker{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--font-d);font-size:12px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);
+}
+.kicker::before{content:"";width:36px;height:1px;background:var(--accent);flex:none}
+.kicker.soft{color:var(--soft)}
+.kicker.soft::before{background:var(--soft)}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:600;line-height:1.06;letter-spacing:-.015em}
+.h2{font-size:clamp(2rem,4.6vw,3.5rem);margin:18px 0 0}
+.sec-head{margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .lead{max-width:640px;color:var(--muted);margin-top:18px;font-size:clamp(1rem,1.4vw,1.125rem)}
+.hairline{height:1px;background:var(--line);border:0}
+
+/* buttons */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-d);font-weight:600;font-size:15px;letter-spacing:.02em;
+  padding:16px 30px;border-radius:4px;white-space:nowrap;
+  transition:transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 12px 34px -12px rgba(47,157,255,.55)}
+.btn-outline{border:1px solid var(--line-2);color:var(--white)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-2px)}
+.btn-ghost{color:var(--muted);font-size:14px;padding:10px 6px}
+.btn-ghost:hover{color:var(--white)}
+.btn .arr{transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.text-link{
+  display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);
+  font-family:var(--font-d);font-weight:600;font-size:14px;letter-spacing:.04em;
+}
+.text-link:hover{color:var(--white)}
+.text-link.soft-link{color:var(--soft)}
+.text-link.soft-link:hover{color:var(--white)}
+
+/* reveal primitives (JS-driven; visible by default for no-JS / reduced motion) */
+.reveal,.rv-stagger>*{opacity:1}
+.js .reveal,.js .rv-stagger>*{opacity:0;transform:translateY(28px)}
+.js.reduced .reveal,.js.reduced .rv-stagger>*{opacity:1;transform:none}
+
+/* ============================================================
+   PRELOADER
+   ============================================================ */
+.preloader{
+  position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.preloader .pl-curtain{position:absolute;inset:0;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.pl-core{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
+.pl-shield path{stroke:var(--accent);stroke-width:1.6;fill:none;stroke-linejoin:round;stroke-linecap:round}
+.pl-shield .pl-mark{stroke:var(--white)}
+.pl-count{
+  font-family:var(--font-d);font-weight:600;font-size:15px;letter-spacing:.32em;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+}
+.pl-count b{color:var(--white);font-weight:600}
+.reduced .preloader,.no-js .preloader{display:none}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);
+  display:flex;align-items:center;
+  border-bottom:1px solid transparent;
+  transition:background .35s var(--ease),border-color .35s var(--ease);
+  background:transparent;
+}
+.nav.scrolled{background:rgba(11,15,20,.94);border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand svg{width:34px;height:38px;flex:none}
+.brand-text{font-family:var(--font-d);font-weight:600;line-height:1.15;font-size:15px;letter-spacing:.02em}
+.brand-text small{display:block;font-size:9.5px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;font-weight:500}
+.nav-links{display:flex;gap:clamp(14px,2vw,30px)}
+.nav-links a{
+  position:relative;font-family:var(--font-d);font-size:13.5px;font-weight:500;white-space:nowrap;
+  letter-spacing:.06em;color:var(--muted);padding:8px 2px;transition:color .25s var(--ease);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:2px;width:100%;height:1px;
+  background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease);
+}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:18px;flex:none}
+.nav-phone{font-family:var(--font-d);font-weight:600;font-size:14.5px;color:var(--white);letter-spacing:.04em}
+.nav-phone:hover{color:var(--accent-2)}
+.nav-cta .btn{padding:11px 20px;font-size:13.5px}
+.nav-service{font-size:13px;color:var(--dim);letter-spacing:.04em}
+.nav-service:hover{color:var(--white)}
+.nav-burger{
+  display:none;width:44px;height:44px;position:relative;flex:none;z-index:1001;border-radius:4px;
+}
+.nav-burger span{
+  position:absolute;left:11px;width:22px;height:2px;background:var(--white);
+  transition:transform .35s var(--ease),opacity .25s var(--ease);
+}
+.nav-burger span:nth-child(1){top:16px}
+.nav-burger span:nth-child(2){top:22px}
+.nav-burger span:nth-child(3){top:28px}
+.menu-open .nav-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .nav-burger span:nth-child(2){opacity:0}
+.menu-open .nav-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:950;background:rgba(11,15,20,.985);
+  display:flex;flex-direction:column;justify-content:center;padding:100px var(--pad) 48px;
+  opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility 0s linear .4s;
+}
+.menu-open .mobile-menu{opacity:1;visibility:visible;transition:opacity .4s var(--ease)}
+.mobile-menu a.mm-link{
+  font-family:var(--font-d);font-size:clamp(1.9rem,8vw,2.6rem);font-weight:600;
+  padding:10px 0;color:var(--white);border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  opacity:0;transform:translateY(24px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.mobile-menu a.mm-link small{font-size:12px;color:var(--dim);letter-spacing:.2em}
+.menu-open .mobile-menu a.mm-link{opacity:1;transform:none}
+.menu-open .mobile-menu a.mm-link:nth-child(1){transition-delay:.05s}
+.menu-open .mobile-menu a.mm-link:nth-child(2){transition-delay:.1s}
+.menu-open .mobile-menu a.mm-link:nth-child(3){transition-delay:.15s}
+.menu-open .mobile-menu a.mm-link:nth-child(4){transition-delay:.2s}
+.menu-open .mobile-menu a.mm-link:nth-child(5){transition-delay:.25s}
+.menu-open .mobile-menu a.mm-link:nth-child(6){transition-delay:.3s}
+.mm-actions{margin-top:34px;display:flex;flex-direction:column;gap:14px;opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease) .35s,transform .5s var(--ease) .35s}
+.menu-open .mm-actions{opacity:1;transform:none}
+.mm-phone{font-family:var(--font-d);font-size:1.4rem;font-weight:600;color:var(--accent-2)}
+@media (max-width:1080px){
+  .nav-links,.nav-service{display:none}
+  .nav-burger{display:block}
+}
+@media (max-width:560px){
+  .nav-phone{display:none}
+  .nav-cta .btn{padding:10px 16px;font-size:12.5px}
+  .nav .brand-text{display:none}
+  .nav-cta{gap:10px}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding-top:calc(var(--nav-h) + 40px);padding-bottom:90px;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-grid{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(164,192,220,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(164,192,220,.05) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 40%,#000 30%,transparent 100%);
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 40%,#000 30%,transparent 100%);
+}
+.hero-radar{
+  position:absolute;top:50%;right:-14vw;width:min(58vw,880px);aspect-ratio:1;
+  transform:translateY(-50%);opacity:.75;
+}
+.hero-radar .rings{position:absolute;inset:0}
+.hero-radar .rings circle{fill:none;stroke:rgba(108,187,255,.10);stroke-width:1}
+.hero-radar .rings .cross{stroke:rgba(108,187,255,.08)}
+.radar-sweep{
+  position:absolute;inset:0;border-radius:50%;overflow:hidden;
+  background:conic-gradient(from 0deg,rgba(47,157,255,.16),rgba(47,157,255,.045) 52deg,transparent 88deg,transparent 360deg);
+  animation:sweep 9s linear infinite;
+}
+.radar-blip{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:0;animation:blip 9s linear infinite}
+.radar-blip.b2{animation-delay:3s}
+.radar-blip.b3{animation-delay:6.2s}
+@keyframes sweep{to{transform:rotate(360deg)}}
+@keyframes blip{0%,4%{opacity:0}6%{opacity:.9}18%{opacity:0}100%{opacity:0}}
+.reduced .radar-sweep,.reduced .radar-blip{animation:none}
+.reduced .radar-sweep{transform:rotate(45deg)}
+.hero-fade{position:absolute;inset:auto 0 0 0;height:220px;background:linear-gradient(transparent,var(--bg))}
+.hero-inner{position:relative}
+.hero h1{
+  font-size:clamp(2.75rem,7.6vw,6.4rem);font-weight:700;letter-spacing:-.025em;
+  margin:26px 0 0;max-width:14ch;
+}
+.h-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.h-line-in{display:inline-block;will-change:transform}
+.js:not(.reduced) .h-line-in{transform:translateY(112%)}
+.hero h1 .tint{color:var(--accent-2)}
+.hero-sub{max-width:560px;color:var(--muted);font-size:clamp(1.02rem,1.5vw,1.2rem);margin-top:28px}
+.hero-sub strong{color:var(--white);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+.scroll-cue{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--font-d);font-size:10px;letter-spacing:.34em;color:var(--dim);text-transform:uppercase;
+}
+.scroll-cue i{width:1px;height:44px;background:var(--line-2);position:relative;overflow:hidden;display:block}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-50%;width:100%;height:50%;background:var(--accent);animation:cue 2.1s var(--ease) infinite}
+@keyframes cue{0%{top:-50%}70%,100%{top:110%}}
+.reduced .scroll-cue i::after{animation:none;top:25%}
+
+/* ============================================================
+   TRUST BAR
+   ============================================================ */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.trust-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat{
+  padding:clamp(30px,4vw,52px) clamp(16px,2.5vw,40px);
+  border-left:1px solid var(--line);
+}
+.stat:first-child{border-left:0}
+.stat-num{
+  font-family:var(--font-d);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(2.1rem,4.6vw,3.6rem);color:var(--white);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat-num sup{font-size:.45em;color:var(--accent);font-weight:600;top:-0.85em;position:relative}
+.stat-label{margin-top:10px;color:var(--dim);font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-d);font-weight:500}
+@media (max-width:768px){
+  .trust-inner{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0;border-top:1px solid var(--line)}
+  .stat:nth-child(4){border-top:1px solid var(--line)}
+}
+
+/* ============================================================
+   SOLUTIONS
+   ============================================================ */
+.solutions{padding:clamp(80px,10vw,150px) 0 clamp(60px,7vw,110px)}
+.sol-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.card{
+  position:relative;grid-column:span 4;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:clamp(26px,2.6vw,38px);
+  display:flex;flex-direction:column;align-items:flex-start;
+  transition:border-color .4s var(--ease),transform .4s var(--ease),background .4s var(--ease);
+  overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0 auto auto 0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent 70%);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
+}
+.card:hover{border-color:rgba(47,157,255,.45);transform:translateY(-4px);background:var(--panel-2)}
+.card:hover::before{transform:scaleX(1)}
+.card.featured{grid-column:span 8;grid-row:span 1;background:linear-gradient(135deg,var(--panel-2),var(--panel) 60%)}
+.card-ico{
+  width:52px;height:52px;border:1px solid var(--line-2);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;flex:none;
+  color:var(--accent-2);transition:border-color .4s var(--ease),color .4s var(--ease);
+}
+.card:hover .card-ico{border-color:var(--accent);color:var(--accent)}
+.card-ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card-flag{
+  position:absolute;top:24px;right:24px;font-family:var(--font-d);font-size:10px;
+  letter-spacing:.24em;color:var(--accent);border:1px solid rgba(47,157,255,.4);
+  padding:5px 10px;border-radius:3px;text-transform:uppercase;
+}
+.card h3{font-size:clamp(1.25rem,1.8vw,1.6rem);margin-bottom:6px}
+.card-tag{font-family:var(--font-d);font-size:13px;font-weight:500;color:var(--accent-2);letter-spacing:.05em;margin-bottom:16px}
+.card.featured .card-tag{color:var(--accent-2)}
+.card-copy{color:var(--muted);font-size:15px}
+.card-copy .hook{color:var(--white);font-weight:600;display:block;margin-bottom:8px}
+.card-feats{margin-top:16px;display:grid;gap:8px}
+.card.featured .card-feats{grid-template-columns:1fr 1fr;column-gap:22px}
+.card-feats li{
+  position:relative;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.5;
+}
+.card-feats li::before{
+  content:"";position:absolute;left:0;top:9px;width:9px;height:1.5px;background:var(--accent);
+}
+.card-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease);width:100%}
+.card-more>div{overflow:hidden}
+.card-more-pad{padding-top:18px;border-top:1px solid var(--line);margin-top:20px}
+.card.open .card-more{grid-template-rows:1fr}
+.card-more h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.card-more p{color:var(--muted);font-size:14.5px;margin-bottom:12px}
+.card-actions{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;width:100%}
+.card-toggle{
+  display:inline-flex;align-items:center;gap:8px;color:var(--dim);
+  font-family:var(--font-d);font-size:13px;font-weight:600;letter-spacing:.06em;padding:6px 0;
+  transition:color .3s var(--ease);
+}
+.card-toggle:hover{color:var(--white)}
+.card-toggle .chev{transition:transform .4s var(--ease);width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.card.open .card-toggle .chev{transform:rotate(180deg)}
+.card.ceres{border-style:dashed;border-color:var(--line-2)}
+.card.ceres:hover{border-color:rgba(47,157,255,.45);border-style:solid}
+.card.infant-card .card-ico{color:var(--soft)}
+.card.infant-card:hover{border-color:rgba(138,216,192,.5)}
+.card.infant-card::before{background:linear-gradient(90deg,var(--soft),transparent 70%)}
+.card.infant-card:hover .card-ico{border-color:var(--soft);color:var(--soft)}
+.card.infant-card .card-tag{color:var(--soft)}
+.card.infant-card .card-feats li::before{background:var(--soft)}
+@media (max-width:1024px){.card,.card.featured{grid-column:span 6}}
+@media (max-width:700px){.card,.card.featured{grid-column:span 12}.card.featured .card-feats{grid-template-columns:1fr}}
+
+/* ============================================================
+   PROCESS — pinned scroll section
+   ============================================================ */
+.process{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.process-stage{padding:clamp(70px,8vw,110px) 0}
+.process-body{display:grid;grid-template-columns:1fr;gap:44px;margin-top:12px}
+.p-copy-wrap{position:relative}
+.p-step{padding:26px 0;border-top:1px solid var(--line)}
+.p-step-tag{display:flex;align-items:baseline;gap:16px}
+.p-num{font-family:var(--font-d);font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.18em}
+.p-step h3{font-size:clamp(1.4rem,2.4vw,2rem)}
+.p-step p{color:var(--muted);margin-top:12px;max-width:52ch;font-size:15.5px}
+.p-step .p-mini{width:40px;height:40px;margin-bottom:14px;color:var(--accent-2)}
+.p-step .p-mini svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.p-step .text-link{margin-top:14px}
+.p-diagram-wrap,.p-progress{display:none}
+/* desktop pinned mode (class added by JS only when animating) */
+.process.is-pinned .process-stage{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.process.is-pinned .process-body{grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,6vw,100px)}
+.process.is-pinned .p-copy-wrap{min-height:340px}
+.process.is-pinned .p-step{position:absolute;inset:0 0 auto 0;opacity:0;visibility:hidden;border-top:0;padding:0}
+.process.is-pinned .p-step .p-mini{display:none}
+.process.is-pinned .p-step h3{font-size:clamp(1.8rem,2.8vw,2.6rem)}
+.process.is-pinned .p-diagram-wrap{display:flex;align-items:center;justify-content:center}
+.process.is-pinned .p-progress{display:flex;align-items:center;gap:18px;margin-top:44px}
+.p-progress-track{flex:1;height:1px;background:var(--line-2);position:relative}
+.p-progress-fill{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+.p-progress-label{font-family:var(--font-d);font-size:12px;letter-spacing:.2em;color:var(--dim);font-variant-numeric:tabular-nums}
+.p-diagram{width:min(440px,80%);aspect-ratio:1}
+.p-diagram .dial{fill:none;stroke:var(--line-2);stroke-width:1}
+.p-diagram .dial-accent{stroke:rgba(47,157,255,.5);stroke-dasharray:4 7}
+.p-ico{opacity:0;visibility:hidden}
+.p-ico path,.p-ico circle,.p-ico rect,.p-ico line,.p-ico polyline{
+  stroke:var(--accent-2);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ============================================================
+   INDUSTRIES — horizontal strip
+   ============================================================ */
+.industries{padding:clamp(80px,10vw,150px) 0 0;overflow:hidden}
+.ind-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+.ind-hint{color:var(--dim);font-family:var(--font-d);font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.ind-hint svg{width:26px;height:10px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.ind-viewport{margin-top:clamp(34px,4vw,56px);padding-bottom:clamp(70px,8vw,120px)}
+.ind-track{display:flex;gap:20px;padding:0 var(--pad);width:max-content}
+.ind-panel{
+  width:min(430px,82vw);flex:none;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;padding:clamp(26px,2.4vw,36px);display:flex;flex-direction:column;min-height:430px;
+  transition:border-color .4s var(--ease),background .4s var(--ease);
+}
+.ind-panel:hover{border-color:rgba(47,157,255,.4);background:var(--panel-2)}
+.ind-num{font-family:var(--font-d);font-size:12px;color:var(--dim);letter-spacing:.24em;margin-bottom:auto}
+.ind-panel h3{font-size:clamp(1.35rem,1.9vw,1.7rem);margin-top:44px}
+.ind-pos{color:var(--accent-2);font-family:var(--font-d);font-weight:500;font-size:14.5px;margin-top:8px;letter-spacing:.02em}
+.ind-panel p{color:var(--muted);font-size:14.5px;margin-top:14px}
+.ind-panel .text-link{margin-top:auto;padding-top:24px}
+.ind-ico{width:44px;height:44px;color:var(--accent-2);margin-bottom:20px}
+.ind-ico svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:768px){
+  .ind-viewport{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .ind-viewport::-webkit-scrollbar{display:none}
+  .ind-panel{scroll-snap-align:center;min-height:400px}
+}
+
+/* ============================================================
+   INFANT PROTECTION SPOTLIGHT
+   ============================================================ */
+.infant{
+  background:
+    radial-gradient(ellipse 70% 90% at 80% 10%,rgba(138,216,192,.07),transparent 60%),
+    var(--bg-2);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(80px,10vw,150px) 0;overflow:hidden;
+}
+.infant-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,90px);align-items:center}
+.infant h2{font-size:clamp(1.9rem,4vw,3.1rem);margin-top:18px}
+.infant .lead{color:var(--muted);margin-top:18px;max-width:56ch}
+.infant .lead strong{color:var(--white)}
+.infant-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0 8px}
+.i-stat{border:1px solid var(--soft-dim);border-radius:8px;padding:22px 18px;background:rgba(138,216,192,.03)}
+.i-num{font-family:var(--font-d);font-weight:700;font-size:clamp(1.9rem,3.4vw,2.9rem);color:var(--soft);line-height:1;font-variant-numeric:tabular-nums}
+.i-num small{font-size:.42em;letter-spacing:.1em;color:var(--soft);opacity:.85;font-weight:600}
+.i-label{color:var(--muted);font-size:12.5px;margin-top:10px;line-height:1.45}
+.infant-note{color:var(--dim);font-size:13.5px;margin-top:18px;max-width:52ch}
+.infant-feats{display:grid;gap:14px}
+.infant-feats li{
+  display:flex;gap:14px;align-items:flex-start;padding:16px 18px;
+  border:1px solid var(--line);border-radius:6px;background:var(--panel);
+  color:var(--muted);font-size:14.5px;line-height:1.5;
+}
+.infant-feats li b{color:var(--white);font-weight:600}
+.infant-feats .dot{width:7px;height:7px;border-radius:50%;background:var(--soft);flex:none;margin-top:7px}
+.infant-cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:34px}
+.btn-soft{background:var(--soft);color:#062018}
+.btn-soft:hover{background:#A6E6D2;transform:translateY(-2px);box-shadow:0 12px 34px -12px rgba(138,216,192,.45)}
+@media (max-width:900px){.infant-grid{grid-template-columns:1fr}.infant-stats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.infant-stats{grid-template-columns:1fr 1fr}.infant-stats .i-stat:first-child{grid-column:span 2}}
+
+/* ============================================================
+   WHY US / LEGACY
+   ============================================================ */
+.why{padding:clamp(80px,10vw,150px) 0}
+.why-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,6vw,110px)}
+.why-sticky{position:sticky;top:calc(var(--nav-h) + 40px);align-self:start}
+.year-giant{
+  font-family:var(--font-d);font-weight:700;line-height:.86;letter-spacing:-.04em;
+  font-size:clamp(6rem,17vw,15rem);color:transparent;
+  -webkit-text-stroke:1.5px rgba(108,187,255,.32);
+  user-select:none;
+}
+.why-sticky .kicker{margin-bottom:16px}
+.why-claims{margin-top:26px;color:var(--muted);max-width:40ch;font-size:15.5px}
+.why-claims strong{color:var(--white)}
+.why-quote{
+  margin-top:26px;padding:20px 22px;border-left:2px solid var(--accent);
+  background:var(--panel);border-radius:0 6px 6px 0;
+  font-family:var(--font-d);font-size:clamp(1.05rem,1.5vw,1.25rem);font-weight:500;color:var(--white);
+}
+.pillars{position:relative;padding-left:34px}
+.pillar-rail{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line-2)}
+.pillar-fill{position:absolute;left:0;top:0;width:1px;height:100%;background:var(--accent);transform-origin:top;transform:scaleY(0)}
+.pillar{padding:26px 0;border-bottom:1px solid var(--line)}
+.pillar:first-child{padding-top:6px}
+.pillar h3{display:flex;align-items:baseline;gap:14px;font-size:clamp(1.2rem,1.8vw,1.5rem)}
+.pillar h3 .p-idx{font-size:12px;color:var(--accent);letter-spacing:.16em;font-weight:600}
+.pillar p{color:var(--muted);margin-top:10px;font-size:15px;max-width:58ch}
+.why-ceres{
+  margin-top:38px;border:1px dashed var(--line-2);border-radius:8px;padding:26px 28px;background:var(--bg-2);
+}
+.why-ceres h4{font-size:15px;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.why-ceres h4 svg{width:18px;height:18px;stroke:var(--accent-2);fill:none;stroke-width:1.5}
+.why-ceres p{color:var(--muted);font-size:14.5px;margin-top:10px}
+@media (max-width:900px){
+  .why-grid{grid-template-columns:1fr}
+  .why-sticky{position:static}
+  .year-giant{font-size:clamp(5rem,22vw,9rem)}
+}
+
+/* ============================================================
+   COVERAGE MAP
+   ============================================================ */
+.coverage{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(80px,10vw,150px) 0}
+.cov-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,80px);align-items:center}
+.cov-states{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.cov-chip{
+  font-family:var(--font-d);font-size:12.5px;font-weight:500;letter-spacing:.08em;
+  border:1px solid var(--line-2);border-radius:99px;padding:7px 15px;color:var(--muted);
+  transition:border-color .3s var(--ease),color .3s var(--ease);
+}
+.cov-chip:hover{border-color:var(--accent);color:var(--white)}
+.cov-chip.hq{border-color:var(--accent);color:var(--accent-2)}
+.cov-caption{margin-top:26px;color:var(--dim);font-size:14px;display:flex;align-items:center;gap:10px}
+.cov-caption .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;animation:pdot 2.4s var(--ease) infinite}
+@keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(47,157,255,.5)}55%{box-shadow:0 0 0 9px rgba(47,157,255,0)}}
+.reduced .cov-caption .pulse-dot{animation:none}
+.map-frame{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:clamp(14px,2vw,26px);position:relative}
+.map-frame .corner{position:absolute;width:14px;height:14px;border:1.5px solid var(--accent);opacity:.65}
+.map-frame .c-tl{top:-1px;left:-1px;border-right:0;border-bottom:0;border-radius:6px 0 0 0}
+.map-frame .c-tr{top:-1px;right:-1px;border-left:0;border-bottom:0;border-radius:0 6px 0 0}
+.map-frame .c-bl{bottom:-1px;left:-1px;border-right:0;border-top:0;border-radius:0 0 0 6px}
+.map-frame .c-br{bottom:-1px;right:-1px;border-left:0;border-top:0;border-radius:0 0 6px 0}
+.cov-map{width:100%;height:auto}
+.cov-map .m-grid line{stroke:rgba(164,192,220,.06);stroke-width:1}
+.cov-map .m-link{stroke:rgba(47,157,255,.55);stroke-width:1.1;fill:none;stroke-dasharray:1000;stroke-dashoffset:1000}
+.cov-map .m-node circle.core{fill:var(--panel-3);stroke:var(--accent-2);stroke-width:1.2}
+.cov-map .m-node text{fill:var(--white);font-family:var(--font-d);font-weight:600;font-size:13px;letter-spacing:.08em}
+.cov-map .m-node text.sub{fill:var(--dim);font-size:8.5px;font-weight:500;letter-spacing:.14em}
+.cov-map .hq-node .hq-core{fill:var(--accent)}
+.cov-map .hq-node .hq-ring{fill:none;stroke:var(--accent);stroke-width:1;opacity:.8;transform-origin:600px 372px;animation:hqping 2.6s var(--ease) infinite}
+.cov-map .hq-node .hq-ring.r2{animation-delay:1.3s}
+@keyframes hqping{0%{transform:scale(.4);opacity:.85}80%,100%{transform:scale(2.6);opacity:0}}
+.reduced .cov-map .hq-ring{animation:none;opacity:.35;transform:scale(1.6)}
+.cov-map .hq-label{fill:var(--accent-2) !important}
+@media (max-width:900px){.cov-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   LEADERSHIP
+   ============================================================ */
+.leadership{padding:clamp(80px,10vw,150px) 0}
+.lead-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.person{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:28px 20px 24px;text-align:center;
+  transition:border-color .4s var(--ease),transform .4s var(--ease);
+}
+.person:hover{border-color:rgba(47,157,255,.4);transform:translateY(-4px)}
+.avatar{
+  width:82px;height:82px;border-radius:50%;margin:0 auto 18px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,var(--panel-3),var(--panel-2));
+  border:1px solid var(--line-2);position:relative;
+  font-family:var(--font-d);font-weight:600;font-size:1.35rem;color:var(--accent-2);letter-spacing:.04em;
+}
+.avatar::after{
+  content:"";position:absolute;inset:-5px;border-radius:50%;
+  border:1px dashed rgba(47,157,255,.28);
+}
+.person h3{font-size:1.02rem;letter-spacing:0}
+.person p{color:var(--dim);font-size:12.5px;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;font-family:var(--font-d);font-weight:500}
+.lead-note{margin-top:22px;color:var(--dim);font-size:12.5px;text-align:center}
+@media (max-width:1100px){.lead-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:860px){.lead-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.lead-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ============================================================
+   PARTNERS MARQUEE
+   ============================================================ */
+.partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);padding:clamp(54px,6vw,84px) 0;overflow:hidden}
+.partners .sec-head{margin-bottom:34px}
+.marquee{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:marq 36s linear infinite;padding:8px 0}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.reduced .marquee-track{animation:none;flex-wrap:wrap;width:100%;justify-content:center}
+@keyframes marq{to{transform:translateX(-50%)}}
+.p-logo{
+  flex:none;display:flex;align-items:center;justify-content:center;height:56px;min-width:150px;
+  font-family:var(--font-d);font-weight:600;font-size:1.15rem;letter-spacing:.06em;color:var(--muted);
+  opacity:.75;transition:opacity .3s var(--ease),color .3s var(--ease);
+}
+.p-logo:hover{opacity:1;color:var(--white)}
+.p-logo img{height:44px;width:auto;opacity:.8;border-radius:4px}
+.p-logo small{font-size:.55em;letter-spacing:.2em;color:var(--dim);display:block}
+
+/* ============================================================
+   COMMUNITY
+   ============================================================ */
+.community{padding:clamp(60px,7vw,100px) 0}
+.community-band{
+  border:1px solid var(--line);border-radius:10px;background:var(--panel);
+  padding:clamp(30px,4vw,52px);display:flex;align-items:center;gap:clamp(24px,4vw,56px);flex-wrap:wrap;
+  position:relative;overflow:hidden;
+}
+.community-band::before{
+  content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;
+  border:1px solid rgba(47,157,255,.14);
+}
+.community-band::after{
+  content:"";position:absolute;right:-30px;top:-30px;width:180px;height:180px;border-radius:50%;
+  border:1px dashed rgba(47,157,255,.18);
+}
+.comm-badge{
+  width:86px;height:86px;border-radius:50%;flex:none;border:1.5px solid var(--accent);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-2);
+}
+.comm-badge svg{width:42px;height:42px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.comm-copy h2{font-size:clamp(1.4rem,2.6vw,2rem)}
+.comm-copy p{color:var(--muted);margin-top:10px;max-width:64ch}
+.comm-copy .comm-line{color:var(--accent-2);font-family:var(--font-d);font-weight:500;letter-spacing:.04em}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band{
+  position:relative;overflow:hidden;text-align:center;
+  background:linear-gradient(170deg,#0E2138,#0A1522 65%);
+  border-top:1px solid rgba(47,157,255,.25);border-bottom:1px solid rgba(47,157,255,.25);
+  padding:clamp(90px,11vw,160px) 0;
+}
+.cta-pulse{position:absolute;left:50%;top:50%;width:1100px;height:1100px;transform:translate(-50%,-50%);pointer-events:none}
+.cta-pulse span{
+  position:absolute;inset:0;border-radius:50%;border:1px solid rgba(47,157,255,.22);
+  animation:ctaping 5.5s var(--ease) infinite;opacity:0;
+}
+.cta-pulse span:nth-child(2){animation-delay:1.8s}
+.cta-pulse span:nth-child(3){animation-delay:3.6s}
+@keyframes ctaping{0%{transform:scale(.12);opacity:.9}85%,100%{transform:scale(1);opacity:0}}
+.reduced .cta-pulse span{animation:none;opacity:.15;transform:scale(.5)}
+.cta-band h2{font-size:clamp(2rem,5vw,3.8rem);max-width:18ch;margin:18px auto 0}
+.cta-tel{
+  display:inline-block;font-family:var(--font-d);font-weight:700;letter-spacing:.01em;
+  font-size:clamp(2rem,6vw,4.4rem);color:var(--accent-2);margin-top:30px;line-height:1;
+  transition:color .3s var(--ease),transform .3s var(--ease);font-variant-numeric:tabular-nums;
+}
+.cta-tel:hover{color:var(--white);transform:translateY(-2px)}
+.cta-band .cta-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:36px}
+.cta-existing{display:block;margin-top:26px;color:var(--dim);font-size:14px}
+.cta-existing a{color:var(--muted);text-decoration:underline;text-underline-offset:4px}
+.cta-existing a:hover{color:var(--white)}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{padding:clamp(80px,10vw,150px) 0}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,5vw,80px);margin-top:10px}
+.c-info{display:flex;flex-direction:column;gap:0}
+.c-block{padding:22px 0;border-bottom:1px solid var(--line)}
+.c-block:first-child{padding-top:0}
+.c-block h4{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;font-weight:600}
+.c-block p,.c-block a{color:var(--white);font-size:16px;line-height:1.6}
+.c-block a:hover{color:var(--accent-2)}
+.c-block .sub{color:var(--muted);font-size:14px}
+.badge-247{
+  display:inline-flex;align-items:center;gap:10px;margin-top:14px;
+  border:1px solid rgba(47,157,255,.45);border-radius:99px;padding:9px 18px;
+  font-family:var(--font-d);font-size:12.5px;font-weight:600;letter-spacing:.12em;color:var(--accent-2);text-transform:uppercase;
+}
+.badge-247 .live{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pdot 2.2s var(--ease) infinite}
+.reduced .badge-247 .live{animation:none}
+.c-careers{color:var(--dim);font-size:13.5px}
+.c-careers a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.c-careers a:hover{color:var(--white)}
+.c-form-shell{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.c-tabs{display:flex;border-bottom:1px solid var(--line)}
+.c-tab{
+  flex:1;padding:20px 14px;text-align:center;font-family:var(--font-d);font-weight:600;
+  font-size:14px;letter-spacing:.05em;color:var(--dim);position:relative;
+  transition:color .3s var(--ease),background .3s var(--ease);
+}
+.c-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .4s var(--ease)}
+.c-tab[aria-selected="true"]{color:var(--white);background:var(--panel-2)}
+.c-tab[aria-selected="true"]::after{transform:scaleX(1)}
+.c-tab small{display:block;font-family:var(--font-b);font-weight:400;font-size:11.5px;color:var(--dim);letter-spacing:.02em;margin-top:3px}
+.c-panel{padding:clamp(24px,3vw,40px)}
+.c-panel[hidden]{display:none}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f-grid .full{grid-column:1/-1}
+.field{position:relative}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;
+  color:var(--white);font:inherit;font-size:15px;padding:24px 16px 10px;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.field textarea{min-height:120px;resize:vertical}
+.field select{appearance:none;cursor:pointer;padding-top:24px}
+.field .sel-chev{position:absolute;right:16px;top:26px;width:12px;height:12px;pointer-events:none;stroke:var(--dim);fill:none;stroke-width:2}
+.field label{
+  position:absolute;left:16px;top:17px;color:var(--dim);font-size:15px;pointer-events:none;
+  transition:transform .25s var(--ease),font-size .25s var(--ease),color .25s var(--ease),top .25s var(--ease);
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(47,157,255,.16);
+}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,
+.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label,
+.field select:focus+label,.field select.filled+label{
+  top:8px;font-size:11px;letter-spacing:.08em;color:var(--accent-2);text-transform:uppercase;font-weight:600;
+}
+.field input::placeholder,.field textarea::placeholder{color:transparent}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:24px}
+.form-foot .note{color:var(--dim);font-size:12.5px;max-width:34ch}
+.form-success{text-align:center;padding:40px 20px}
+.form-success[hidden]{display:none}
+.fs-ico{width:74px;height:74px;margin:0 auto 22px;border-radius:50%;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center}
+.fs-ico svg{width:32px;height:32px;stroke:var(--accent-2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.form-success h3{font-size:1.5rem}
+.form-success p{color:var(--muted);margin-top:12px;max-width:44ch;margin-left:auto;margin-right:auto}
+.form-success .btn{margin-top:24px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:600px){.f-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{border-top:1px solid var(--line);background:var(--bg-2);padding:clamp(60px,7vw,96px) 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:clamp(28px,4vw,48px)}
+.foot-brand p{color:var(--dim);font-size:13.5px;margin-top:16px;max-width:30ch}
+.foot-brand .tag{color:var(--muted);font-family:var(--font-d);font-weight:500;font-size:14px;margin-top:14px}
+.foot-col h4{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:16px;font-weight:600}
+.foot-col li{margin-bottom:9px}
+.foot-col a{color:var(--muted);font-size:14px;transition:color .25s var(--ease)}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{
+  margin-top:clamp(40px,5vw,64px);padding-top:26px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:14px 30px;align-items:center;justify-content:space-between;
+  color:var(--dim);font-size:12.5px;
+}
+.foot-bottom .legal{display:flex;gap:22px}
+.foot-bottom a:hover{color:var(--white)}
+.back-top{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-family:var(--font-d);font-weight:600;font-size:12.5px;letter-spacing:.1em}
+.back-top svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .3s var(--ease)}
+.back-top:hover{color:var(--white)}
+.back-top:hover svg{transform:translateY(-3px)}
+@media (max-width:1000px){.foot-grid{grid-template-columns:1fr 1fr 1fr}.foot-brand{grid-column:1/-1}}
+@media (max-width:600px){.foot-grid{grid-template-columns:1fr 1fr}}
+
+/* ============================================================
+   ENTRY POPUP
+   ============================================================ */
+.popup-overlay{
+  position:fixed;inset:0;z-index:1100;background:rgba(4,8,12,.78);
+  opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility 0s linear .4s;
+}
+.popup-overlay.on{opacity:1;visibility:visible;transition:opacity .4s var(--ease)}
+.popup{
+  position:fixed;left:50%;top:50%;z-index:1110;width:min(480px,calc(100vw - 40px));
+  transform:translate(-50%,-50%);
+  background:var(--panel);border:1px solid rgba(47,157,255,.4);border-radius:10px;
+  padding:clamp(28px,4vw,42px);
+  opacity:0;visibility:hidden;
+}
+.popup .kicker{margin-bottom:14px}
+.popup h2{font-size:clamp(1.4rem,3vw,1.85rem)}
+.popup .pop-sub{color:var(--muted);font-size:14.5px;margin-top:12px}
+.popup form{display:grid;gap:14px;margin-top:24px}
+.popup .form-foot{margin-top:6px;justify-content:space-between}
+.popup-x{
+  position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--dim);
+  transition:color .3s var(--ease),border-color .3s var(--ease);border:1px solid transparent;
+}
+.popup-x:hover{color:var(--white);border-color:var(--line-2)}
+.popup-x svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.popup .form-success{padding:24px 6px 6px}
+
+/* utility */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.15s !important}
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');document.body.classList.add('js');</script>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================ PRELOADER -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-curtain"></div>
+  <div class="pl-core">
+    <svg class="pl-shield" width="64" height="74" viewBox="0 0 64 74" aria-hidden="true">
+      <path class="pl-outline" d="M32 3 L59 12 V36 C59 54 47 66 32 71 C17 66 5 54 5 36 V12 Z"/>
+      <path class="pl-mark" d="M22 37 L29 45 L43 27"/>
+    </svg>
+    <div class="pl-count"><b id="plYear">1975</b><span> — PENSACOLA, FL</span></div>
+  </div>
+</div>
+
+<!-- ============================================================ NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Security Engineering, Inc. — home">
+      <svg viewBox="0 0 64 74" aria-hidden="true">
+        <path d="M32 3 L59 12 V36 C59 54 47 66 32 71 C17 66 5 54 5 36 V12 Z" fill="none" stroke="#2F9DFF" stroke-width="3"/>
+        <path d="M22 37 L29 45 L43 27" fill="none" stroke="#F2F6FB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">Security Engineering, Inc.<small>Since 1975 &middot; Pensacola, FL</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#industries">Industries</a>
+      <a href="#why">Why Us</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+18504849300">850-484-9300</a>
+      <a class="btn btn-accent" href="#contact" data-open-tab="assessment">Free Assessment</a>
+      <a class="nav-service" href="#contact" data-open-tab="service">Request Service</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a class="mm-link" href="#solutions"><span>Solutions</span><small>01</small></a>
+  <a class="mm-link" href="#industries"><span>Industries</span><small>02</small></a>
+  <a class="mm-link" href="#why"><span>Why Us</span><small>03</small></a>
+  <a class="mm-link" href="#coverage"><span>Coverage</span><small>04</small></a>
+  <a class="mm-link" href="#leadership"><span>Leadership</span><small>05</small></a>
+  <a class="mm-link" href="#contact"><span>Contact</span><small>06</small></a>
+  <div class="mm-actions">
+    <a class="mm-phone" href="tel:+18504849300">850-484-9300</a>
+    <a class="btn btn-accent" href="#contact" data-open-tab="assessment">Get a Free Security Assessment</a>
+    <a class="btn btn-outline" href="#contact" data-open-tab="service">Request Service</a>
+  </div>
+</nav>
+
+<main id="main">
+<!-- ============================================================ HERO -->
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-radar">
+      <svg class="rings" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <circle cx="50" cy="50" r="49.4"/><circle cx="50" cy="50" r="38"/>
+        <circle cx="50" cy="50" r="26"/><circle cx="50" cy="50" r="14"/>
+        <line class="cross" x1="50" y1="0" x2="50" y2="100" stroke-width=".35"/>
+        <line class="cross" x1="0" y1="50" x2="100" y2="50" stroke-width=".35"/>
+      </svg>
+      <div class="radar-sweep"></div>
+      <span class="radar-blip" style="left:30%;top:34%"></span>
+      <span class="radar-blip b2" style="left:64%;top:58%"></span>
+      <span class="radar-blip b3" style="left:44%;top:72%"></span>
+    </div>
+    <div class="hero-fade"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="kicker reveal" data-rv="hero">Trusted. Proven. Secure. — Since 1975</p>
+    <h1 id="heroTitle">
+      <span class="h-line"><span class="h-line-in">Protecting People.</span></span>
+      <span class="h-line"><span class="h-line-in"><span class="tint">Powering Confidence.</span></span></span>
+    </h1>
+    <p class="hero-sub reveal" data-rv="hero">
+      <strong>The oldest security company in the Florida Panhandle.</strong>
+      Designing, installing, and maintaining commercial security systems since 1975.
+    </p>
+    <div class="hero-ctas reveal" data-rv="hero">
+      <a class="btn btn-accent magnetic" href="#contact" data-open-tab="assessment">Get a Free Security Assessment <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline" href="#solutions">Explore Solutions</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<!-- ============================================================ TRUST BAR -->
+<section class="trust" aria-label="Company statistics">
+  <div class="wrap trust-inner">
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="50" data-dur="1.6">0</span></div>
+      <div class="stat-label">Years of Protection</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="9" data-dur="1.2">0</span></div>
+      <div class="stat-label">States Covered</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">Hundreds</div>
+      <div class="stat-label">of Facilities Protected</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="24" data-dur="1.4">0</span><sup>/7</sup></div>
+      <div class="stat-label">Emergency Response</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SOLUTIONS -->
+<section class="solutions" id="solutions">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker reveal">What We Do</p>
+      <h2 class="h2 reveal">Six Systems.<br>One Integrated Defense.</h2>
+      <p class="lead reveal">Cost-effective, turnkey commercial security — designed, installed, and maintained by factory-trained, certified technicians to UL standards and NFPA code compliance. We deliver more than systems &mdash; we deliver confidence.</p>
+    </header>
+    <div class="sol-grid">
+
+      <!-- 1. VIDEO SURVEILLANCE — flagship, featured -->
+      <article class="card featured sol-card" id="video-surveillance">
+        <span class="card-flag">Flagship Service</span>
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M2 8.5 L15 5 L16.2 9.5 L3.2 13 Z"/><path d="M16.2 9.5 L20.5 8.3 L21.5 12 L17.2 13.2"/><path d="M8 12.2 L8 17 H13"/><circle cx="6" cy="8.9" r="1.1"/></svg>
+        </div>
+        <h3>Video Surveillance</h3>
+        <p class="card-tag">Smarter Visibility. Stronger Security.</p>
+        <p class="card-copy">
+          <span class="hook">Don't have video surveillance? What are you missing?</span>
+          High-definition, IP-based systems built on advanced cameras, secure servers, and intelligent network design &mdash; deterring threats, documenting incidents, and covering high-traffic zones, restricted areas, and remote sites.
+        </p>
+        <ul class="card-feats">
+          <li>Remote access from mobile or desktop</li>
+          <li>Real-time monitoring with two-way &ldquo;talk-down&rdquo; communication</li>
+          <li>IPTV with multicasting for authorized viewers</li>
+          <li>Free site assessment with customized camera layouts</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p>Every deployment starts with intelligent network design: high-definition IP cameras matched to your facility, secure servers to protect footage, and a layout engineered around how people and assets actually move through your site.</p>
+              <p>Operators monitor in real time and intervene through two-way talk-down communication before an incident escalates. IPTV with multicasting distributes live video to authorized viewers across your organization, while remote access keeps eyes on every high-traffic zone, restricted area, and remote site from any mobile device or desktop.</p>
+              <p>When something does happen, your system becomes your record &mdash; documenting incidents with the clarity investigations and insurers demand.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Video Surveillance">Schedule a Video Surveillance Consultation <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 2. ACCESS CONTROL -->
+      <article class="card sol-card" id="access-control">
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10 V7 a4 4 0 0 1 8 0 v3"/><circle cx="12" cy="14.5" r="1.4"/><path d="M12 15.9 V17.5"/></svg>
+        </div>
+        <h3>Access Control</h3>
+        <p class="card-tag">Smarter Access. Stronger Security.</p>
+        <p class="card-copy">Cost-effective, turnkey systems &mdash; from standalone door control to enterprise-level integration &mdash; that eliminate key and lock management for good.</p>
+        <ul class="card-feats">
+          <li>Personnel tracking &amp; image verification</li>
+          <li>Credential &amp; visitor management</li>
+          <li>Real-time monitoring with instant alerts</li>
+          <li>Audit trails &amp; entry-pattern reporting</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p>Track personnel with image verification, manage credentials and visitors, and follow assets as they move through your facility. Real-time monitoring raises instant alerts, while detailed entry-pattern reporting and audit trails give you a defensible record of every door event.</p>
+              <p>Systems integrate with alarm monitoring, video surveillance, and HR systems &mdash; and the modular, future-ready architecture scales as your facility grows, so today's installation never becomes tomorrow's constraint.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Access Control">Let's Inspect Your Access Control System <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 3. BURGLARY ALARM & VERIFIED INTRUSION -->
+      <article class="card sol-card" id="verified-intrusion">
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2.5 L21 6 V11.5 C21 17 17.2 20.7 12 22 C6.8 20.7 3 17 3 11.5 V6 Z"/><path d="M8.5 12.2 L11 14.8 L15.8 9.5"/></svg>
+        </div>
+        <h3>Burglary Alarm &amp; Verified Intrusion</h3>
+        <p class="card-tag">Smarter Verification. Faster Response. Greater Confidence.</p>
+        <p class="card-copy">Advanced sensors, video analytics, and real-time monitoring in one platform &mdash; confirming real threats <em>before</em> dispatch for faster emergency response and dramatically fewer false alarms.</p>
+        <ul class="card-feats">
+          <li>Motion, audio &amp; camera verification</li>
+          <li>Custom-designed per facility layout &amp; risk profile</li>
+          <li>24/7 monitoring &mdash; cloud, mobile app, or on-site dashboards</li>
+          <li>UL standards &amp; building-code compliant</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p>Verified intrusion changes the economics of alarm response. Motion, audio, and camera verification work together to confirm that a threat is real before anyone is dispatched &mdash; so responders arrive faster, with better information, and false alarms drop dramatically.</p>
+              <p>Every system is custom-designed around your facility's layout and risk profile, monitored 24/7 through a secure cloud platform, mobile app, or on-site dashboards &mdash; and engineered to UL standards and building-code compliance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Burglary Alarm &amp; Verified Intrusion">Schedule a Verified Intrusion Consultation <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 4. IP INTERCOM -->
+      <article class="card sol-card" id="ip-intercom">
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><circle cx="12" cy="9" r="2.2"/><path d="M9.5 15 H14.5"/><path d="M9.5 17.5 H14.5"/><path d="M20 8 a6.5 6.5 0 0 1 0 8" /><path d="M4 8 a6.5 6.5 0 0 0 0 8" /></svg>
+        </div>
+        <h3>IP Intercom &amp; Critical Communication</h3>
+        <p class="card-tag">Where Communication and Security Connect.</p>
+        <p class="card-copy">IP-based intercom and public address with crystal-clear, full-duplex audio &mdash; engineered for high-noise environments and installed over Power-over-Ethernet.</p>
+        <ul class="card-feats">
+          <li>Scales from two-station setups to enterprise systems</li>
+          <li>Vingtor-Stentofon PULSE platform</li>
+          <li>Aiphone door stations &amp; IP video intercoms</li>
+          <li>Power-over-Ethernet installation</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p>When communication is part of your security posture, audio quality is a life-safety feature. Our IP intercom and public address systems deliver crystal-clear, full-duplex audio engineered for high-noise environments &mdash; production floors, terminals, gaming floors &mdash; and install cleanly over Power-over-Ethernet.</p>
+              <p>Built on Vingtor-Stentofon PULSE and Aiphone door stations and IP video intercoms, these systems serve schools, hospitals, warehouses, casinos, corporate campuses, and transit hubs &mdash; scaling from a two-station setup to a full enterprise deployment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="IP Intercom &amp; Critical Communication">Request an IP Intercom Consultation <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 5. INFANT PROTECTION -->
+      <article class="card infant-card sol-card" id="infant-protection-card">
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21 C7 17.5 3.5 14.5 3.5 10.5 A4.6 4.6 0 0 1 12 7.6 A4.6 4.6 0 0 1 20.5 10.5 C20.5 14.5 17 17.5 12 21 Z"/><circle cx="12" cy="12" r="8.8" stroke-dasharray="2.5 3.5"/></svg>
+        </div>
+        <h3>Infant Protection Systems</h3>
+        <p class="card-tag">Keeping Newborns Safe From the Moment of Birth.</p>
+        <p class="card-copy">Soft, tamper-resistant tags with room-level tracking for hospitals, maternity wards, and birthing centers &mdash; built on the Accutech &ldquo;Cuddles&rdquo; platform.</p>
+        <ul class="card-feats">
+          <li>Tags check in every 1.5 seconds</li>
+          <li>Staff alerts &amp; lockdown typically within 15 seconds of signal loss</li>
+          <li>Operates independently of hospital networks, with battery backup</li>
+          <li>License-free software with no recurring costs</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p>An infant can be removed from a room in roughly four seconds &mdash; and most abductions occur inside healthcare facilities. That is why automatic tag check-in matters: up to 90 seconds faster than competing systems.</p>
+              <p>Automated tag transfers follow mother and child through the facility, door-control integration locks down exits the moment a signal is lost, and the platform pairs with your existing CCTV. See the full spotlight below for how it works.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link soft-link" href="#contact" data-open-tab="assessment" data-interest="Infant Protection Systems">Request an Infant Protection Consultation <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+      <!-- 6. CERES -->
+      <article class="card ceres sol-card" id="ceres">
+        <div class="card-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7 H10 M14 7 H16 M8 11 H10 M14 11 H16 M8 15 H10 M14 15 H16"/><path d="M10.5 21 V18.5 H13.5 V21"/></svg>
+        </div>
+        <h3>Other Services via Ceres Building Technologies</h3>
+        <p class="card-tag">Making Buildings Smarter with Ceres.</p>
+        <p class="card-copy">One team for security <em>and</em> the infrastructure that powers it &mdash; delivered through our sister company, Ceres Building Technologies.</p>
+        <ul class="card-feats">
+          <li>Network Infrastructure &mdash; structured cabling, data centers, wireless, PoE</li>
+          <li>Commercial Fire Alarm Systems &mdash; intelligent detection, code compliance</li>
+          <li>ERCES &mdash; first-responder radio coverage</li>
+          <li>Nurse Call Systems &mdash; small clinics to major hospitals</li>
+        </ul>
+        <div class="card-more">
+          <div>
+            <div class="card-more-pad">
+              <h4>Full Capability</h4>
+              <p><b>Network Infrastructure:</b> structured cabling, data centers, wireless networks, and Power-over-Ethernet &mdash; the backbone every modern security system runs on.</p>
+              <p><b>Commercial Fire Alarm Systems:</b> intelligent detection engineered to full code compliance.</p>
+              <p><b>ERCES</b> (Emergency Responder Communication Enhancement Systems): first-responder radio coverage in stairwells, basements, and concrete structures &mdash; meeting local code requirements.</p>
+              <p><b>Nurse Call Systems:</b> scaled solutions from small clinics to major hospitals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Ceres Building Technologies">Talk to Us About Building Technology <span class="arr">&rarr;</span></a>
+          <button class="card-toggle" aria-expanded="false">Full details <svg class="chev" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6"/></svg></button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROCESS — pinned -->
+<section class="process" id="process" aria-label="How we protect">
+  <div class="process-stage">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker reveal">How We Protect</p>
+        <h2 class="h2 reveal">From First Walk-Through<br>to Round-the-Clock Watch.</h2>
+      </header>
+      <div class="process-body">
+        <div class="p-copy-wrap" id="pCopyWrap">
+          <div class="p-step" data-step="1">
+            <div class="p-mini" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="18" cy="18" r="9"/><path d="M25 25 L33 33"/><path d="M18 13 V15 M18 21 V23 M13 18 H15 M21 18 H23"/></svg></div>
+            <div class="p-step-tag"><span class="p-num">01 / ASSESS</span></div>
+            <h3>Assess</h3>
+            <p>Every engagement begins on-site, free of charge. Our engineers walk your facility, map traffic patterns and vulnerabilities, and profile the risks specific to your industry &mdash; before a single product is proposed.</p>
+          </div>
+          <div class="p-step" data-step="2">
+            <div class="p-mini" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="2"/><path d="M6 15 H34 M15 15 V34"/><circle cx="24.5" cy="24.5" r="4.5"/><path d="M24.5 20 V17.5 M24.5 29 V31.5"/></svg></div>
+            <div class="p-step-tag"><span class="p-num">02 / DESIGN</span></div>
+            <h3>Design</h3>
+            <p>We engineer a custom system around your layout, risk profile, and budget &mdash; modular, future-ready architecture built to UL standards and NFPA code compliance, with customized camera layouts and integration paths for the systems you already own.</p>
+          </div>
+          <div class="p-step" data-step="3">
+            <div class="p-mini" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M27 7 a7.5 7.5 0 0 0-9.6 9.6 L7 27 a3 3 0 0 0 4.2 4.2 L21.6 20.8 A7.5 7.5 0 0 0 31.2 11.2 L26 16.4 L21.8 12.2 Z"/></svg></div>
+            <div class="p-step-tag"><span class="p-num">03 / INSTALL</span></div>
+            <h3>Install</h3>
+            <p>Factory-trained, certified technicians install and commission every component &mdash; cleanly, on schedule, and with minimal disruption to your operations. We test against the design, not just the checklist.</p>
+          </div>
+          <div class="p-step" data-step="4">
+            <div class="p-mini" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="8"/><path d="M20 20 L30 12"/><circle cx="25" cy="25" r="1.6"/></svg></div>
+            <div class="p-step-tag"><span class="p-num">04 / MONITOR 24/7</span></div>
+            <h3>Monitor 24/7</h3>
+            <p>Verified intrusion monitoring runs around the clock &mdash; secure cloud, mobile app, or on-site dashboards. Motion, audio, and camera verification confirm real threats before dispatch, so response is faster and false alarms fade away.</p>
+          </div>
+          <div class="p-step" data-step="5">
+            <div class="p-mini" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 5 L33 10 V19 C33 27 27.5 32.5 20 35 C12.5 32.5 7 27 7 19 V10 Z"/><path d="M14.5 20 L18.5 24 L26 15.5"/></svg></div>
+            <div class="p-step-tag"><span class="p-num">05 / MAINTAIN</span></div>
+            <h3>Maintain</h3>
+            <p>Systems age; our commitment doesn't. Preventive maintenance, rapid technical service, and 24/7 emergency response keep your protection at day-one performance for decades &mdash; ask the clients we've served since the 1970s.</p>
+            <a class="text-link" href="#contact" data-open-tab="service">Existing client? Request Service <span class="arr">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="p-diagram-wrap" aria-hidden="true">
+          <svg class="p-diagram" viewBox="0 0 300 300">
+            <circle class="dial" cx="150" cy="150" r="132"/>
+            <circle class="dial dial-accent" cx="150" cy="150" r="116" id="pDial"/>
+            <circle class="dial" cx="150" cy="150" r="70"/>
+            <line class="dial" x1="150" y1="10" x2="150" y2="26"/>
+            <line class="dial" x1="150" y1="274" x2="150" y2="290"/>
+            <line class="dial" x1="10" y1="150" x2="26" y2="150"/>
+            <line class="dial" x1="274" y1="150" x2="290" y2="150"/>
+            <g class="p-ico" data-ico="1">
+              <circle cx="140" cy="140" r="34"/>
+              <path d="M165 165 L196 196"/>
+              <path d="M140 120 V128 M140 152 V160 M120 140 H128 M152 140 H160"/>
+            </g>
+            <g class="p-ico" data-ico="2">
+              <rect x="100" y="100" width="100" height="100" rx="4"/>
+              <path d="M100 132 H200 M132 132 V200"/>
+              <circle cx="168" cy="168" r="16"/>
+              <path d="M168 145 V152 M168 184 V191"/>
+            </g>
+            <g class="p-ico" data-ico="3">
+              <path d="M178 96 a26 26 0 0 0-33 33 L104 170 a10.5 10.5 0 0 0 15 15 L160 144 A26 26 0 0 0 193 111 L175 129 L160 114 Z"/>
+            </g>
+            <g class="p-ico" data-ico="4">
+              <circle cx="150" cy="150" r="52"/>
+              <circle cx="150" cy="150" r="28"/>
+              <path d="M150 150 L188 120"/>
+              <circle cx="168" cy="168" r="5"/>
+            </g>
+            <g class="p-ico" data-ico="5">
+              <path d="M150 92 L200 111 V146 C200 176 179 197 150 207 C121 197 100 176 100 146 V111 Z"/>
+              <path d="M129 150 L144 165 L173 132"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="p-progress" aria-hidden="true">
+        <span class="p-progress-label" id="pLabel">01 / 05</span>
+        <div class="p-progress-track"><div class="p-progress-fill" id="pFill"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ INDUSTRIES -->
+<section class="industries" id="industries">
+  <div class="wrap ind-head sec-head" style="margin-bottom:0">
+    <div>
+      <p class="kicker reveal">Industries We Serve</p>
+      <h2 class="h2 reveal">Seven Verticals.<br>One Standard of Protection.</h2>
+    </div>
+    <p class="ind-hint reveal" aria-hidden="true">Scroll to explore <svg viewBox="0 0 26 10"><path d="M0 5 H23 M19 1 L24 5 L19 9"/></svg></p>
+  </div>
+  <div class="ind-viewport" id="indViewport">
+    <div class="ind-track" id="indTrack">
+
+      <article class="ind-panel">
+        <span class="ind-num">01 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 34 H34 M8 34 V16 H32 V34 M20 6 L34 16 H6 Z"/><path d="M13 22 V29 M20 22 V29 M27 22 V29"/></svg></div>
+        <h3>Government</h3>
+        <p class="ind-pos">Engineered Protection for Public Service.</p>
+        <p>City and county buildings, courthouses, law enforcement, correctional facilities, federal offices, and public works &mdash; secured to NFPA, UL, and federal compliance standards, with legacy-system integration and mission-critical readiness.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Government">Talk to a Government Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">02 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 8 L36 15 L20 22 L4 15 Z"/><path d="M10 18 V26 C10 29 14.5 31.5 20 31.5 C25.5 31.5 30 29 30 26 V18"/><path d="M36 15 V24"/></svg></div>
+        <h3>Education</h3>
+        <p class="ind-pos">Building Safer Campuses for a Brighter Future.</p>
+        <p>From K-12 schools to universities: protecting students, staff, and property while supporting uninterrupted learning &mdash; with rapid emergency response and full code compliance built in.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Education">Talk to an Education Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">03 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="7" y="7" width="26" height="26" rx="3"/><path d="M20 14 V26 M14 20 H26"/></svg></div>
+        <h3>Healthcare</h3>
+        <p class="ind-pos">Patient Safety Through Smarter Systems.</p>
+        <p>From clinics to multi-site medical networks: RFID infant protection, access control integrated with HR credentialing, nurse call systems, and the compliance and privacy safeguards patient care demands.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Healthcare">Talk to a Healthcare Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">04 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M5 26 L35 26"/><path d="M8 26 L12 14 H30 L34 26"/><circle cx="13" cy="30" r="3"/><circle cx="27" cy="30" r="3"/><path d="M17 14 V26 M25 14 V26"/></svg></div>
+        <h3>Transportation</h3>
+        <p class="ind-pos">Keeping People, Assets, and Infrastructure Moving Safely.</p>
+        <p>Airports, seaports, bus and rail terminals, and transit hubs &mdash; with distributed antenna systems, mass notification, NFPA/IFC compliance, and coverage-gap elimination across the whole footprint.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Transportation">Talk to a Transportation Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">05 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M5 33 V17 L14 22 V17 L23 22 V12 H35 V33 Z"/><path d="M27 17 H31 M27 22 H31 M27 27 H31"/></svg></div>
+        <h3>Industrial &amp; Manufacturing</h3>
+        <p class="ind-pos">Integrated Protection. Industrial Performance.</p>
+        <p>Production floors, processing plants, distribution centers, and warehouses. Systems built for heat, dust, vibration, and noise &mdash; minimizing downtime and protecting a 24/7 workforce.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Industrial &amp; Manufacturing">Talk to an Industrial Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">06 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 34 H34"/><path d="M9 34 V12 H31 V34"/><path d="M14 17 H18 M22 17 H26 M14 23 H18 M22 23 H26"/><path d="M17.5 34 V28.5 H22.5 V34"/><path d="M20 12 V7 M16 9.5 L20 7 L24 9.5"/></svg></div>
+        <h3>Hospitality &amp; Public Assembly</h3>
+        <p class="ind-pos">Engineered Systems for Safer Guest Experiences.</p>
+        <p>Hotels, arenas, theaters, convention centers, and sports complexes &mdash; unobtrusive security that lets safety and guest satisfaction go hand in hand.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Hospitality &amp; Public Assembly">Talk to a Hospitality Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="ind-panel">
+        <span class="ind-num">07 / 07</span>
+        <div class="ind-ico" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 16 L20 6 L33 16"/><path d="M10 14 V33 H30 V14"/><path d="M16 33 V24 H24 V33"/></svg></div>
+        <h3>Small Business</h3>
+        <p class="ind-pos">Big-Company Expertise with Small-Business Care.</p>
+        <p>Affordable, scalable systems with phased implementation &mdash; easy to manage day-to-day, and designed to integrate with the setup you already have instead of replacing it.</p>
+        <a class="text-link" href="#contact" data-open-tab="assessment" data-interest="Small Business">Talk to a Small Business Expert Today <span class="arr">&rarr;</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ INFANT PROTECTION SPOTLIGHT -->
+<section class="infant" id="infant" aria-labelledby="infantTitle">
+  <div class="wrap infant-grid">
+    <div>
+      <p class="kicker soft reveal">Infant Protection &middot; Accutech &ldquo;Cuddles&rdquo; Platform</p>
+      <h2 id="infantTitle" class="reveal">Keeping Newborns Safe<br>From the Moment of Birth.</h2>
+      <p class="lead reveal">An infant can be removed from a room in about <strong>4 seconds</strong> &mdash; and most abductions occur inside healthcare facilities. Our soft, tamper-resistant tags with room-level tracking protect hospitals, maternity wards, and birthing centers where every second counts.</p>
+      <div class="infant-stats rv-stagger">
+        <div class="i-stat">
+          <div class="i-num"><span data-count="1.5" data-dec="1" data-dur="1.4">0.0</span><small> SEC</small></div>
+          <div class="i-label">Every tag checks in &mdash; automatically, around the clock</div>
+        </div>
+        <div class="i-stat">
+          <div class="i-num"><span data-count="15" data-dur="1.6">0</span><small> SEC</small></div>
+          <div class="i-label">Typical time to staff alerts &amp; lockdown after signal loss</div>
+        </div>
+        <div class="i-stat">
+          <div class="i-num"><span data-count="4" data-dur="1.2">0</span><small> SEC</small></div>
+          <div class="i-label">How fast an infant can be removed from a room</div>
+        </div>
+      </div>
+      <p class="infant-note reveal">Automatic tag check-in runs up to <strong style="color:var(--soft)">90 seconds faster</strong> than competing systems.</p>
+      <div class="infant-cta-row reveal">
+        <a class="btn btn-soft" href="#contact" data-open-tab="assessment" data-interest="Infant Protection Systems">Request an Infant Protection Consultation</a>
+        <a class="text-link soft-link" href="tel:+18504849300">Or call 850-484-9300 <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+    <ul class="infant-feats rv-stagger">
+      <li><span class="dot" aria-hidden="true"></span><span><b>Independent by design.</b> Operates independently of hospital networks, with battery backup &mdash; protection continues even when infrastructure fails.</span></li>
+      <li><span class="dot" aria-hidden="true"></span><span><b>Automated tag transfers.</b> Mother and child move through the facility; the system follows them without manual re-registration.</span></li>
+      <li><span class="dot" aria-hidden="true"></span><span><b>Door-control integration.</b> Exits lock down the moment a tag signal is lost or a tamper event is detected.</span></li>
+      <li><span class="dot" aria-hidden="true"></span><span><b>License-free software.</b> No recurring software costs &mdash; the system you buy is the system you own.</span></li>
+      <li><span class="dot" aria-hidden="true"></span><span><b>Pairs with existing CCTV.</b> Your current cameras become part of the protection perimeter.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ WHY US / LEGACY -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div class="why-sticky">
+      <p class="kicker">Proven Security. Trusted Expertise</p>
+      <div class="year-giant" id="yearGiant" aria-hidden="true">1975</div>
+      <p class="why-claims"><strong>Nearly 50 years</strong> as the oldest security company in the Florida Panhandle &mdash; trusted by hundreds of facilities across eight states, with local relationships and enterprise-level expertise.</p>
+      <blockquote class="why-quote">&ldquo;We deliver more than systems &mdash; we deliver confidence.&rdquo;</blockquote>
+    </div>
+    <div>
+      <div class="pillars" id="pillars">
+        <div class="pillar-rail" aria-hidden="true"><div class="pillar-fill" id="pillarFill"></div></div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">01</span>Culture</h3>
+          <p>Fifty years in one community builds a way of working: show up, do it right, stand behind it. Our culture is why clients from the 1970s are still clients today.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">02</span>Colleagues</h3>
+          <p>Factory-trained, certified technicians and engineers who know your facility by name &mdash; not a rotating cast of subcontractors.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">03</span>Service Excellence</h3>
+          <p>Design, installation, and maintenance held to UL standards and NFPA code compliance &mdash; with 24/7 emergency service when it matters most.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">04</span>National Platform</h3>
+          <p>Local relationships with enterprise-level expertise: the reach to serve facilities across nine states with the accountability of a hometown firm.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">05</span>Innovation</h3>
+          <p>From verified intrusion analytics to IP-based everything, we adopt technology when it makes clients safer &mdash; not when it makes proposals longer.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3><span class="p-idx">06</span>Partnerships</h3>
+          <p>Built on the world's most trusted security technology, and on relationships with clients, responders, and communities that span generations.</p>
+        </div>
+      </div>
+      <div class="why-ceres reveal">
+        <h4><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8 H16 M8 12 H16 M8 16 H12"/></svg>Sister Company &middot; Ceres Building Technologies</h4>
+        <p>Security Engineering focuses on life safety and security systems; Ceres specializes in the technology infrastructure that powers and unites those systems &mdash; network infrastructure, commercial fire alarm, ERCES, and nurse call. One team, end to end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COVERAGE MAP -->
+<section class="coverage" id="coverage">
+  <div class="wrap cov-grid">
+    <div>
+      <p class="kicker reveal">Where We Work</p>
+      <h2 class="h2 reveal">Headquartered in Pensacola.<br>Trusted Across Nine States.</h2>
+      <p class="lead reveal" style="color:var(--muted);margin-top:18px;max-width:46ch">Local relationships with enterprise-level expertise &mdash; from the Gulf Coast to the Midwest, our teams design, install, and maintain systems wherever your facilities are.</p>
+      <div class="cov-states rv-stagger" role="list" aria-label="States served">
+        <span class="cov-chip hq" role="listitem">Florida &middot; HQ</span>
+        <span class="cov-chip" role="listitem">Alabama</span>
+        <span class="cov-chip" role="listitem">Georgia</span>
+        <span class="cov-chip" role="listitem">Louisiana</span>
+        <span class="cov-chip" role="listitem">Mississippi</span>
+        <span class="cov-chip" role="listitem">Arkansas</span>
+        <span class="cov-chip" role="listitem">Kansas</span>
+        <span class="cov-chip" role="listitem">Missouri</span>
+        <span class="cov-chip" role="listitem">Oklahoma</span>
+      </div>
+      <p class="cov-caption reveal"><span class="pulse-dot" aria-hidden="true"></span>6001 Enterprise Dr., Pensacola, FL 32505 &mdash; 24/7 emergency service available</p>
+    </div>
+    <div class="map-frame reveal">
+      <span class="corner c-tl" aria-hidden="true"></span><span class="corner c-tr" aria-hidden="true"></span>
+      <span class="corner c-bl" aria-hidden="true"></span><span class="corner c-br" aria-hidden="true"></span>
+      <svg class="cov-map" id="covMap" viewBox="0 0 900 520" role="img" aria-label="Stylized map of the nine states served: Kansas, Missouri, Oklahoma, Arkansas, Louisiana, Mississippi, Alabama, Georgia, and Florida, with headquarters in Pensacola, Florida.">
+        <g class="m-grid" aria-hidden="true">
+          <line x1="0" y1="65" x2="900" y2="65"/><line x1="0" y1="130" x2="900" y2="130"/>
+          <line x1="0" y1="195" x2="900" y2="195"/><line x1="0" y1="260" x2="900" y2="260"/>
+          <line x1="0" y1="325" x2="900" y2="325"/><line x1="0" y1="390" x2="900" y2="390"/>
+          <line x1="0" y1="455" x2="900" y2="455"/>
+          <line x1="90" y1="0" x2="90" y2="520"/><line x1="180" y1="0" x2="180" y2="520"/>
+          <line x1="270" y1="0" x2="270" y2="520"/><line x1="360" y1="0" x2="360" y2="520"/>
+          <line x1="450" y1="0" x2="450" y2="520"/><line x1="540" y1="0" x2="540" y2="520"/>
+          <line x1="630" y1="0" x2="630" y2="520"/><line x1="720" y1="0" x2="720" y2="520"/>
+          <line x1="810" y1="0" x2="810" y2="520"/>
+        </g>
+        <g aria-hidden="true">
+          <path class="m-link" d="M600 372 Q450 300 285 112"/>
+          <path class="m-link" d="M600 372 Q510 220 432 108"/>
+          <path class="m-link" d="M600 372 Q430 320 268 218"/>
+          <path class="m-link" d="M600 372 Q510 290 428 214"/>
+          <path class="m-link" d="M600 372 Q510 360 425 330"/>
+          <path class="m-link" d="M600 372 Q555 330 517 296"/>
+          <path class="m-link" d="M600 372 Q590 320 583 282"/>
+          <path class="m-link" d="M600 372 Q640 310 672 262"/>
+          <path class="m-link" d="M600 372 Q680 400 742 442"/>
+        </g>
+        <g class="m-node" data-node><circle class="core" cx="285" cy="112" r="7"/><text x="285" y="94" text-anchor="middle">KS</text><text class="sub" x="285" y="140" text-anchor="middle">KANSAS</text></g>
+        <g class="m-node" data-node><circle class="core" cx="432" cy="108" r="7"/><text x="432" y="90" text-anchor="middle">MO</text><text class="sub" x="432" y="136" text-anchor="middle">MISSOURI</text></g>
+        <g class="m-node" data-node><circle class="core" cx="268" cy="218" r="7"/><text x="268" y="200" text-anchor="middle">OK</text><text class="sub" x="268" y="246" text-anchor="middle">OKLAHOMA</text></g>
+        <g class="m-node" data-node><circle class="core" cx="428" cy="214" r="7"/><text x="428" y="196" text-anchor="middle">AR</text><text class="sub" x="428" y="242" text-anchor="middle">ARKANSAS</text></g>
+        <g class="m-node" data-node><circle class="core" cx="425" cy="330" r="7"/><text x="425" y="312" text-anchor="middle">LA</text><text class="sub" x="425" y="358" text-anchor="middle">LOUISIANA</text></g>
+        <g class="m-node" data-node><circle class="core" cx="517" cy="296" r="7"/><text x="517" y="278" text-anchor="middle">MS</text><text class="sub" x="517" y="324" text-anchor="middle">MISSISSIPPI</text></g>
+        <g class="m-node" data-node><circle class="core" cx="583" cy="282" r="7"/><text x="583" y="264" text-anchor="middle">AL</text><text class="sub" x="600" y="252" text-anchor="middle" opacity="0">.</text><text class="sub" x="583" y="310" text-anchor="middle">ALABAMA</text></g>
+        <g class="m-node" data-node><circle class="core" cx="672" cy="262" r="7"/><text x="672" y="244" text-anchor="middle">GA</text><text class="sub" x="672" y="290" text-anchor="middle">GEORGIA</text></g>
+        <g class="m-node" data-node><circle class="core" cx="742" cy="442" r="7"/><text x="742" y="424" text-anchor="middle">FL</text><text class="sub" x="742" y="470" text-anchor="middle">FLORIDA</text></g>
+        <g class="m-node hq-node" data-node>
+          <circle class="hq-ring" cx="600" cy="372" r="14"/>
+          <circle class="hq-ring r2" cx="600" cy="372" r="14"/>
+          <circle class="hq-core" cx="600" cy="372" r="8"/>
+          <text class="hq-label" x="600" y="404" text-anchor="middle">PENSACOLA — HQ</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ LEADERSHIP -->
+<section class="leadership" id="leadership">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker reveal">Leadership</p>
+      <h2 class="h2 reveal">The People Behind the Protection.</h2>
+    </header>
+    <div class="lead-grid rv-stagger">
+      <div class="person"><div class="avatar" aria-hidden="true">MG</div><h3>Micah Garner</h3><p>CEO / President</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">DS</div><h3>Doug Strobel</h3><p>COO / Vice President</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">RP</div><h3>Richard Pearson</h3><p>Senior Account Manager</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">PH</div><h3>Patrick Harrison</h3><p>Director of Federal Sales</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">JE</div><h3>Josh Edwards</h3><p>Solutions Engineer</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">RM</div><h3>Ray Macias</h3><p>Account Manager</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">RS</div><h3>Roy Suarez</h3><p>Operations Manager</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">CP</div><h3>Cindy Pace</h3><p>Office Manager</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">AG</div><h3>Angel Gelfo</h3><p>Accounts Receivable Manager</p></div>
+      <div class="person"><div class="avatar" aria-hidden="true">TT</div><h3>Thor Thorsen</h3><p>Compliance &amp; Safety Manager</p></div>
+    </div>
+    <p class="lead-note reveal">Initial placeholders shown &mdash; replace with team headshots.</p>
+  </div>
+</section>
+
+<!-- ============================================================ PARTNERS -->
+<section class="partners" id="partners" aria-label="Technology partners">
+  <div class="wrap sec-head" style="text-align:center">
+    <p class="kicker reveal" style="justify-content:center">Technology Partners</p>
+    <h2 class="h2 reveal" style="font-size:clamp(1.6rem,3vw,2.4rem)">Built on the World's Most Trusted Technology</h2>
+  </div>
+  <div class="marquee" aria-hidden="false">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="p-logo">AIPHONE</span>
+      <span class="p-logo">VINGTOR&#8209;STENTOFON<small>&nbsp;PULSE</small></span>
+      <span class="p-logo">ACCUTECH<small>&nbsp;CUDDLES</small></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+      <span class="p-logo"><img src="https://placehold.co/220x72/111926/7B8DA0?text=PARTNER+LOGO+%E2%80%94+REPLACE" alt="Partner logo placeholder — replace" loading="lazy" width="220" height="72"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COMMUNITY -->
+<section class="community" id="community" aria-label="Community involvement">
+  <div class="wrap">
+    <div class="community-band reveal">
+      <div class="comm-badge" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M9.5 9.5 C15 15 25 25 30.5 30.5 M30.5 9.5 C25 15 15 25 9.5 30.5"/><path d="M13 7 A15 15 0 0 1 27 7 M13 33 A15 15 0 0 0 27 33"/></svg>
+      </div>
+      <div class="comm-copy">
+        <p class="kicker" style="margin-bottom:10px">Rooted in Pensacola</p>
+        <h2>Proud Sponsor of the Pensacola Blue Wahoos</h2>
+        <p>Fifty years of protecting the Gulf Coast means being part of it. Our Blue Wahoos sponsorship reflects what we stand for off the job site: <span class="comm-line">community, connection, and excellence.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA BAND -->
+<section class="cta-band" id="cta" aria-labelledby="ctaTitle">
+  <div class="cta-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="wrap">
+    <p class="kicker reveal" style="justify-content:center">Protecting People. Powering Confidence.</p>
+    <h2 id="ctaTitle" class="reveal">Your security can't wait until tomorrow.</h2>
+    <a class="cta-tel reveal" href="tel:+18504849300" aria-label="Call Security Engineering at 850-484-9300">850-484-9300</a>
+    <div class="cta-row reveal">
+      <a class="btn btn-accent magnetic" href="#contact" data-open-tab="assessment">Get a Free Assessment <span class="arr">&rarr;</span></a>
+    </div>
+    <p class="cta-existing reveal">Existing client? <a href="#contact" data-open-tab="service">Request Service</a></p>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker reveal">Contact</p>
+      <h2 class="h2 reveal">Two Ways to Reach Us.<br>One Team Behind Both.</h2>
+    </header>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div class="c-block reveal">
+          <h4>Headquarters</h4>
+          <p>6001 Enterprise Dr.<br>Pensacola, FL 32505</p>
+        </div>
+        <div class="c-block reveal">
+          <h4>Phone</h4>
+          <p><a href="tel:+18504849300">850-484-9300</a></p>
+          <p class="sub">Mon&ndash;Fri, 8AM&ndash;5PM CST</p>
+          <span class="badge-247"><span class="live" aria-hidden="true"></span>24/7 Emergency Service</span>
+        </div>
+        <div class="c-block reveal">
+          <h4>Email</h4>
+          <p><a href="mailto:security@seceng.com">security@seceng.com</a></p>
+        </div>
+        <div class="c-block reveal">
+          <h4>Careers</h4>
+          <p class="c-careers">No open positions currently &mdash; reach out at <a href="mailto:security@seceng.com">security@seceng.com</a>.</p>
+        </div>
+      </div>
+      <div class="c-form-shell reveal">
+        <div class="c-tabs" role="tablist" aria-label="Contact forms">
+          <button class="c-tab" id="tabAssessment" role="tab" aria-selected="true" aria-controls="panelAssessment">
+            New Assessment<small>Free on-site security assessment</small>
+          </button>
+          <button class="c-tab" id="tabService" role="tab" aria-selected="false" aria-controls="panelService" tabindex="-1">
+            Request Service<small>Technical requests for existing systems</small>
+          </button>
+        </div>
+
+        <div class="c-panel" id="panelAssessment" role="tabpanel" aria-labelledby="tabAssessment" tabindex="0">
+          <form id="formAssessment" novalidate>
+            <div class="f-grid">
+              <div class="field"><input type="text" id="aName" name="name" placeholder=" " autocomplete="name" required><label for="aName">Name</label></div>
+              <div class="field"><input type="text" id="aCompany" name="company" placeholder=" " autocomplete="organization" required><label for="aCompany">Company / Facility</label></div>
+              <div class="field"><input type="tel" id="aPhone" name="phone" placeholder=" " autocomplete="tel" required><label for="aPhone">Phone</label></div>
+              <div class="field"><input type="email" id="aEmail" name="email" placeholder=" " autocomplete="email" required><label for="aEmail">Email</label></div>
+              <div class="field full">
+                <select id="aIndustry" name="industry" required>
+                  <option value="" selected disabled hidden></option>
+                  <option>Government</option>
+                  <option>Education</option>
+                  <option>Healthcare</option>
+                  <option>Transportation</option>
+                  <option>Industrial &amp; Manufacturing</option>
+                  <option>Hospitality &amp; Public Assembly</option>
+                  <option>Small Business</option>
+                </select>
+                <label for="aIndustry">Your Industry</label>
+                <svg class="sel-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4 L6 8 L10 4"/></svg>
+              </div>
+              <div class="field full"><textarea id="aMsg" name="message" placeholder=" "></textarea><label for="aMsg">Tell us about your facility (optional)</label></div>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-accent" type="submit">Request My Free Assessment <span class="arr">&rarr;</span></button>
+              <p class="note">A security specialist will respond within one business day.</p>
+            </div>
+          </form>
+          <div class="form-success" id="successAssessment" hidden>
+            <div class="fs-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6.5"/></svg></div>
+            <h3>Assessment Requested.</h3>
+            <p>Thank you &mdash; your request is in. A security specialist will contact you within one business day. Need us sooner? Call <a href="tel:+18504849300" style="color:var(--accent-2)">850-484-9300</a>.</p>
+          </div>
+        </div>
+
+        <div class="c-panel" id="panelService" role="tabpanel" aria-labelledby="tabService" tabindex="0" hidden>
+          <form id="formService" novalidate>
+            <div class="f-grid">
+              <div class="field"><input type="text" id="sName" name="name" placeholder=" " autocomplete="name" required><label for="sName">Name</label></div>
+              <div class="field"><input type="text" id="sCompany" name="company" placeholder=" " autocomplete="organization" required><label for="sCompany">Company / Facility</label></div>
+              <div class="field"><input type="tel" id="sPhone" name="phone" placeholder=" " autocomplete="tel" required><label for="sPhone">Phone</label></div>
+              <div class="field"><input type="email" id="sEmail" name="email" placeholder=" " autocomplete="email" required><label for="sEmail">Email</label></div>
+              <div class="field full">
+                <select id="sSystem" name="system" required>
+                  <option value="" selected disabled hidden></option>
+                  <option>Access Control</option>
+                  <option>Burglary Alarm &amp; Verified Intrusion</option>
+                  <option>Video Surveillance</option>
+                  <option>IP Intercom &amp; Critical Communication</option>
+                  <option>Infant Protection Systems</option>
+                  <option>Ceres Building Technologies (Fire, ERCES, Nurse Call, Network)</option>
+                </select>
+                <label for="sSystem">System Type</label>
+                <svg class="sel-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4 L6 8 L10 4"/></svg>
+              </div>
+              <div class="field full"><textarea id="sIssue" name="issue" placeholder=" " required></textarea><label for="sIssue">Describe the issue</label></div>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-accent" type="submit">Submit Service Request <span class="arr">&rarr;</span></button>
+              <p class="note">For technical service requests only. Emergencies: call <a href="tel:+18504849300" style="color:var(--muted);text-decoration:underline">850-484-9300</a> &mdash; 24/7.</p>
+            </div>
+          </form>
+          <div class="form-success" id="successService" hidden>
+            <div class="fs-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6.5"/></svg></div>
+            <h3>Service Request Received.</h3>
+            <p>Our service team has your request and will follow up shortly. For urgent issues, call <a href="tel:+18504849300" style="color:var(--accent-2)">850-484-9300</a> &mdash; 24/7 emergency service is available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 64 74" aria-hidden="true"><path d="M32 3 L59 12 V36 C59 54 47 66 32 71 C17 66 5 54 5 36 V12 Z" fill="none" stroke="#2F9DFF" stroke-width="3"/><path d="M22 37 L29 45 L43 27" fill="none" stroke="#F2F6FB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand-text">Security Engineering, Inc.<small>Since 1975 &middot; Pensacola, FL</small></span>
+        </a>
+        <p class="tag">Protecting People. Powering Confidence.</p>
+        <p>The oldest security company in the Florida Panhandle &mdash; serving FL, AL, GA, LA, MS, AR, KS, MO &amp; OK.</p>
+        <p>Sister company: Ceres Building Technologies &mdash; the technology infrastructure that powers and unites our life safety and security systems.</p>
+      </div>
+      <nav class="foot-col" aria-label="Solutions">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#access-control">Access Control</a></li>
+          <li><a href="#verified-intrusion">Burglary Alarm &amp; Verified Intrusion</a></li>
+          <li><a href="#video-surveillance">Video Surveillance</a></li>
+          <li><a href="#ip-intercom">IP Intercom &amp; Critical Communication</a></li>
+          <li><a href="#infant">Infant Protection Systems</a></li>
+          <li><a href="#ceres">Ceres Building Technologies</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="Industries">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="#industries">Government</a></li>
+          <li><a href="#industries">Education</a></li>
+          <li><a href="#industries">Healthcare</a></li>
+          <li><a href="#industries">Transportation</a></li>
+          <li><a href="#industries">Industrial &amp; Manufacturing</a></li>
+          <li><a href="#industries">Hospitality &amp; Public Assembly</a></li>
+          <li><a href="#industries">Small Business</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Who We Are</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="mailto:security@seceng.com">Careers</a></li>
+          <li><a href="#community">Blue Wahoos</a></li>
+        </ul>
+      </nav>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+18504849300">850-484-9300</a></li>
+          <li><a href="mailto:security@seceng.com">security@seceng.com</a></li>
+          <li><a href="#contact">6001 Enterprise Dr.<br>Pensacola, FL 32505</a></li>
+          <li><a href="#contact" data-open-tab="assessment">Free Assessment</a></li>
+          <li><a href="#contact" data-open-tab="service">Request Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; <span id="year">2026</span> Security Engineering, Inc. &middot; Trusted. Proven. Secure.</p>
+      <div class="legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <a class="back-top" href="#top">Back to top <svg viewBox="0 0 16 16"><path d="M8 13 V3 M3.5 7.5 L8 3 L12.5 7.5"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ ENTRY POPUP -->
+<div class="popup-overlay" id="popupOverlay" aria-hidden="true"></div>
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+  <button class="popup-x" id="popupClose" aria-label="Close dialog"><svg viewBox="0 0 16 16"><path d="M3 3 L13 13 M13 3 L3 13"/></svg></button>
+  <p class="kicker">Complimentary &middot; No Obligation</p>
+  <h2 id="popupTitle">Get a Free On-Site Security Assessment</h2>
+  <p class="pop-sub">50 years of trusted protection across the Southeast. Tell us where to reach you, and a security specialist will schedule your walk-through.</p>
+  <form id="formPopup" novalidate>
+    <div class="field"><input type="text" id="pName" name="name" placeholder=" " autocomplete="name" required><label for="pName">Name</label></div>
+    <div class="field"><input type="tel" id="pPhone" name="phone" placeholder=" " autocomplete="tel" required><label for="pPhone">Phone</label></div>
+    <div class="field"><input type="email" id="pEmail" name="email" placeholder=" " autocomplete="email" required><label for="pEmail">Email</label></div>
+    <div class="form-foot">
+      <button class="btn btn-accent" type="submit">Request My Assessment</button>
+      <button class="btn-ghost" type="button" id="popupDismiss">Not now</button>
+    </div>
+  </form>
+  <div class="form-success" id="successPopup" hidden>
+    <div class="fs-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6.5"/></svg></div>
+    <h3>We'll Be In Touch.</h3>
+    <p>Thank you &mdash; a specialist will reach out shortly to schedule your free assessment.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined');
+  var indViewport = $('#indViewport');
+
+  $('#year').textContent = new Date().getFullYear();
+
+  /* Final values for count-up stats (used when animation is unavailable) */
+  function setFinalCounts(){
+    $$('[data-count]').forEach(function(el){
+      var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+      el.textContent = parseFloat(el.getAttribute('data-count')).toFixed(dec);
+    });
+  }
+
+  /* ============================ NO-MOTION / NO-GSAP PATH ============================ */
+  if(reduced || !hasGSAP){
+    document.body.classList.add('reduced');
+    setFinalCounts();
+    if(indViewport){ indViewport.style.overflowX = 'auto'; }
+    var pl = $('#preloader'); if(pl) pl.remove();
+  }
+
+  var animate = hasGSAP && !reduced;
+  if(hasGSAP){ gsap.registerPlugin(ScrollTrigger); }
+
+  /* ============================ NAV STATE ============================ */
+  var nav = $('#nav');
+  if(hasGSAP){
+    ScrollTrigger.create({
+      start: 30, end: 'max',
+      onToggle: function(self){ nav.classList.toggle('scrolled', self.isActive); }
+    });
+  } else {
+    var onScr = function(){ nav.classList.toggle('scrolled', window.scrollY > 30); };
+    window.addEventListener('scroll', onScr, {passive:true}); onScr();
+  }
+
+  /* ============================ MOBILE MENU ============================ */
+  var burger = $('#navBurger');
+  function closeMenu(){
+    document.body.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
+  }
+  burger.addEventListener('click', function(){
+    var open = document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  $$('#mobileMenu a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  /* ============================ CONTACT TABS ============================ */
+  var tabs = { assessment: $('#tabAssessment'), service: $('#tabService') };
+  var panels = { assessment: $('#panelAssessment'), service: $('#panelService') };
+  function selectTab(name, focus){
+    Object.keys(tabs).forEach(function(k){
+      var on = (k === name);
+      tabs[k].setAttribute('aria-selected', String(on));
+      tabs[k].tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+    });
+    if(focus) tabs[name].focus();
+  }
+  tabs.assessment.addEventListener('click', function(){ selectTab('assessment'); });
+  tabs.service.addEventListener('click', function(){ selectTab('service'); });
+  [tabs.assessment, tabs.service].forEach(function(tab, i, arr){
+    tab.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        var next = arr[(i + 1) % 2];
+        selectTab(next === tabs.service ? 'service' : 'assessment', true);
+      }
+    });
+  });
+
+  /* Deep links: any element with data-open-tab switches the contact tab;
+     data-interest pre-fills the assessment message. */
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-open-tab]');
+    if(!t) return;
+    selectTab(t.getAttribute('data-open-tab'));
+    var interest = t.getAttribute('data-interest');
+    if(interest){
+      var msg = $('#aMsg');
+      if(msg && !msg.value){
+        msg.value = 'Interested in: ' + interest;
+        msg.classList.add('filled');
+      }
+    }
+  });
+
+  /* ============================ FLOATING SELECT LABELS ============================ */
+  $$('select').forEach(function(sel){
+    var sync = function(){ sel.classList.toggle('filled', !!sel.value); };
+    sel.addEventListener('change', sync); sync();
+  });
+
+  /* ============================ FORMS (front-end only) ============================ */
+  function wireForm(formId, successId, after){
+    var form = $(formId), success = $(successId);
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      form.hidden = true;
+      success.hidden = false;
+      if(animate){
+        gsap.fromTo(success, {opacity:0, y:16}, {opacity:1, y:0, duration:.7, ease:'power3.out'});
+        gsap.fromTo(success.querySelector('.fs-ico'), {scale:.6}, {scale:1, duration:.8, ease:'back.out(1.6)'});
+      }
+      if(after) after();
+    });
+  }
+  wireForm('#formAssessment', '#successAssessment');
+  wireForm('#formService', '#successService');
+
+  /* ============================ SOLUTION CARD ACCORDIONS ============================ */
+  $$('.card-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.card');
+      var open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  /* ============================ PARTNER MARQUEE (seamless loop) ============================ */
+  var track = $('#marqueeTrack');
+  if(track && !reduced){
+    $$('.p-logo', track).forEach(function(item){
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      track.appendChild(clone);
+    });
+  }
+
+  /* ============================ ENTRY POPUP ============================ */
+  var popup = $('#popup'), overlay = $('#popupOverlay');
+  var popupShown = false, lastFocus = null;
+  try { popupShown = sessionStorage.getItem('sei_popup') === '1'; } catch(err){}
+
+  function trapFocus(e){
+    if(e.key === 'Escape'){ closePopup(); return; }
+    if(e.key !== 'Tab') return;
+    var items = $$('#popup button, #popup input, #popup a[href]').filter(function(el){ return el.offsetParent !== null; });
+    if(!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+  function openPopup(){
+    if(popupShown) return;
+    popupShown = true;
+    closeMenu();
+    try { sessionStorage.setItem('sei_popup','1'); } catch(err){}
+    lastFocus = document.activeElement;
+    document.body.classList.add('modal-open');
+    overlay.classList.add('on');
+    overlay.setAttribute('aria-hidden','false');
+    popup.setAttribute('aria-hidden','false');
+    if(animate){
+      /* x/y:0 keeps GSAP from stacking the parsed CSS translate(-50%,-50%) pixels on top of xPercent/yPercent */
+      gsap.fromTo(popup,
+        {autoAlpha:0, scale:.92, x:0, y:0, xPercent:-50, yPercent:-50},
+        {autoAlpha:1, scale:1, duration:.55, ease:'power3.out'});
+    } else {
+      popup.style.opacity = '1'; popup.style.visibility = 'visible';
+    }
+    document.addEventListener('keydown', trapFocus);
+    setTimeout(function(){ var f = $('#pName'); if(f) f.focus(); }, animate ? 350 : 0);
+  }
+  function closePopup(){
+    document.body.classList.remove('modal-open');
+    overlay.classList.remove('on');
+    overlay.setAttribute('aria-hidden','true');
+    popup.setAttribute('aria-hidden','true');
+    if(animate){
+      gsap.to(popup, {autoAlpha:0, scale:.95, duration:.35, ease:'power2.in'});
+    } else {
+      popup.style.opacity = '0'; popup.style.visibility = 'hidden';
+    }
+    document.removeEventListener('keydown', trapFocus);
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#popupClose').addEventListener('click', closePopup);
+  $('#popupDismiss').addEventListener('click', closePopup);
+  overlay.addEventListener('click', closePopup);
+  wireForm('#formPopup', '#successPopup', function(){ setTimeout(closePopup, 2600); });
+
+  if(!popupShown){
+    setTimeout(openPopup, 4000); /* openPopup self-guards, so scroll + timer race safely */
+    if(hasGSAP){
+      ScrollTrigger.create({
+        start: 0, end: 'max',
+        onUpdate: function(self){ if(self.progress > 0.4) openPopup(); }
+      });
+    }
+  }
+
+  if(!animate) return; /* static experience ends here — content is fully visible */
+
+  /* ============================================================
+     ANIMATED EXPERIENCE (GSAP + ScrollTrigger, motion allowed)
+     ============================================================ */
+  gsap.defaults({ease:'power3.out'});
+
+  /* ---------- count-up helper ---------- */
+  function countUp(el){
+    var end = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+    var dur = parseFloat(el.getAttribute('data-dur')||'1.5');
+    var obj = {v:0};
+    gsap.to(obj, {
+      v: end, duration: dur, ease: 'power2.out',
+      scrollTrigger: {trigger: el, start: 'top 90%', once: true},
+      onUpdate: function(){ el.textContent = obj.v.toFixed(dec); }
+    });
+  }
+  $$('[data-count]').forEach(countUp);
+
+  /* ---------- hero intro (chained from preloader) ---------- */
+  var heroIntro = gsap.timeline({paused:true});
+  /* the CSS pre-hide uses translateY(112%), which GSAP parses as a pixel y —
+     zero it explicitly and drive the reveal with yPercent only */
+  gsap.set('.h-line-in', {y:0, yPercent:112});
+  heroIntro
+    .to('.h-line-in', {yPercent:0, duration:1.1, ease:'expo.out', stagger:.14}, 0)
+    .to('[data-rv="hero"]', {opacity:1, y:0, duration:.9, stagger:.12}, .35);
+
+  /* ---------- preloader ---------- */
+  var plPaths = $$('.pl-shield path');
+  plPaths.forEach(function(p){
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+  });
+  var yearObj = {v:1975}, plYear = $('#plYear');
+  var plTl = gsap.timeline({
+    onComplete: function(){ var pl = $('#preloader'); if(pl) pl.remove(); }
+  });
+  plTl
+    .to(plPaths, {strokeDashoffset:0, duration:.75, ease:'power2.out', stagger:.18}, 0)
+    .to(yearObj, {v:2026, duration:.95, ease:'power2.out',
+        onUpdate:function(){ plYear.textContent = Math.round(yearObj.v); }}, 0)
+    .to('.pl-core', {autoAlpha:0, y:-18, duration:.3, ease:'power2.in'}, .95)
+    .to('.pl-curtain', {yPercent:-100, duration:.65, ease:'expo.inOut'}, 1.02)
+    .add(function(){ heroIntro.play(); }, 1.1);
+
+  /* ---------- generic reveals ---------- */
+  var reveals = gsap.utils.toArray('.reveal').filter(function(el){
+    return el.getAttribute('data-rv') !== 'hero';
+  });
+  ScrollTrigger.batch(reveals, {
+    start: 'top 88%', once: true,
+    onEnter: function(els){ gsap.to(els, {opacity:1, y:0, duration:1, stagger:.09}); }
+  });
+  $$('.rv-stagger').forEach(function(group){
+    gsap.to(group.children, {
+      opacity:1, y:0, duration:.9, stagger:.1,
+      scrollTrigger: {trigger: group, start: 'top 88%', once: true}
+    });
+  });
+
+  /* ---------- solution cards: clip-path ignition ---------- */
+  var cards = gsap.utils.toArray('.sol-card');
+  gsap.set(cards, {clipPath:'inset(0 0 100% 0)', y:36});
+  ScrollTrigger.batch(cards, {
+    start: 'top 86%', once: true,
+    onEnter: function(els){
+      gsap.to(els, {
+        clipPath:'inset(0 0 0% 0)', y:0, duration:1.05, ease:'power3.out', stagger:.12,
+        onComplete: function(){ gsap.set(els, {clearProps:'clipPath'}); }
+      });
+    }
+  });
+
+  /* ---------- magnetic CTAs + pillar fill + why parallax + coverage draw ---------- */
+  var mm = gsap.matchMedia();
+
+  mm.add('(min-width: 769px)', function(){
+    /* magnetic hover */
+    $$('.magnetic').forEach(function(btn){
+      var xTo = gsap.quickTo(btn, 'x', {duration:.4, ease:'power3.out'});
+      var yTo = gsap.quickTo(btn, 'y', {duration:.4, ease:'power3.out'});
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        xTo((e.clientX - (r.left + r.width/2)) * .25);
+        yTo((e.clientY - (r.top + r.height/2)) * .25);
+      });
+      btn.addEventListener('mouseleave', function(){ xTo(0); yTo(0); });
+    });
+
+    /* ----- PINNED PROCESS ----- */
+    var process = $('#process');
+    process.classList.add('is-pinned');
+    var steps = $$('.p-step', process);
+    var icos  = $$('.p-ico', process);
+    var fill  = $('#pFill'), label = $('#pLabel');
+    gsap.set(steps[0], {autoAlpha:1, y:0});
+    gsap.set(icos[0], {autoAlpha:1});
+
+    var ptl = gsap.timeline({
+      scrollTrigger: {
+        trigger: process, start: 'top top', end: '+=3400',
+        pin: true, scrub: 1, anticipatePin: 1,
+        onUpdate: function(self){
+          gsap.set(fill, {scaleX: self.progress});
+          var idx = Math.min(4, Math.round(self.progress * 4));
+          label.textContent = '0' + (idx + 1) + ' / 05';
+        }
+      }
+    });
+    ptl.to('#pDial', {rotation:180, transformOrigin:'50% 50%', duration:4.5, ease:'none'}, 0);
+    for(var i = 0; i < 4; i++){
+      var at = i + .55;
+      ptl.to(steps[i], {autoAlpha:0, y:-26, duration:.32, ease:'power2.in'}, at);
+      ptl.fromTo(steps[i+1], {autoAlpha:0, y:26}, {autoAlpha:1, y:0, duration:.42, ease:'power3.out'}, at + .2);
+      ptl.to(icos[i], {autoAlpha:0, scale:.9, transformOrigin:'50% 50%', duration:.32, ease:'power2.in'}, at);
+      ptl.fromTo(icos[i+1], {autoAlpha:0, scale:1.08, transformOrigin:'50% 50%'}, {autoAlpha:1, scale:1, duration:.42, ease:'power3.out'}, at + .2);
+    }
+    ptl.to({}, {duration:.5}); /* settle hold at the end */
+
+    /* ----- HORIZONTAL INDUSTRIES ----- */
+    var indSection = $('#industries');
+    var indTrack = $('#indTrack');
+    var dist = function(){ return Math.max(0, indTrack.scrollWidth - window.innerWidth); };
+    gsap.to(indTrack, {
+      x: function(){ return -dist(); },
+      ease: 'none',
+      scrollTrigger: {
+        trigger: indSection, start: 'top top',
+        end: function(){ return '+=' + dist(); },
+        pin: true, scrub: 1, anticipatePin: 1, invalidateOnRefresh: true
+      }
+    });
+
+    return function(){ process.classList.remove('is-pinned'); };
+  });
+
+  /* why-us: giant year parallax + pillar progress hairline */
+  gsap.fromTo('#yearGiant', {yPercent:-7}, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: {trigger: '#why', start: 'top bottom', end: 'bottom top', scrub: 1}
+  });
+  gsap.fromTo('#pillarFill', {scaleY:0}, {
+    scaleY: 1, ease: 'none',
+    scrollTrigger: {trigger: '#pillars', start: 'top 75%', end: 'bottom 45%', scrub: 1}
+  });
+
+  /* coverage map: draw connection lines, pop nodes */
+  var links = $$('#covMap .m-link');
+  links.forEach(function(p){
+    var len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = len;
+  });
+  var nodes = $$('#covMap [data-node]');
+  gsap.set(nodes, {autoAlpha:0, scale:.5, transformOrigin:'50% 50%'});
+  ScrollTrigger.create({
+    trigger: '#covMap', start: 'top 78%', once: true,
+    onEnter: function(){
+      gsap.to(links, {strokeDashoffset:0, duration:1.3, ease:'power2.inOut', stagger:.09});
+      gsap.to(nodes, {autoAlpha:1, scale:1, duration:.8, ease:'back.out(1.7)', stagger:.08, delay:.35});
+    }
+  });
+})();
+</script>
+</body>
+</html>
