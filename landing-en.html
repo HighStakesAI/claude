@@ -107,7 +107,8 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 
 /* ── STATS BAND ───────────────────────────────────────────────────── */
 .stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px;max-width:480px;margin:0 auto}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
 .stat{text-align:center}
 .stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
 @media(min-width:768px){.stat-num{font-size:46px}}
@@ -453,6 +454,16 @@ input[type=hidden]{display:none}
         <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
         <span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mo">0</span>
         <span class="stat-lbl">Fully Managed — Cancel Anytime</span>
+      </div>
+      <div class="stat reveal reveal-d2">
+        <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
+        <span class="stat-num" data-target="2" data-suffix=" Weeks">0</span>
+        <span class="stat-lbl">From Signup to Launch</span>
+      </div>
+      <div class="stat reveal reveal-d3">
+        <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
+        <span class="stat-num" data-target="30" data-suffix=" Min">0</span>
+        <span class="stat-lbl">Free Strategy Call — Zero Pressure</span>
       </div>
     </div>
   </div>

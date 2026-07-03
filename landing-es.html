@@ -99,7 +99,8 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .urgency{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--rust);margin-top:14px;padding:8px 14px;background:rgba(181,69,27,.08);border:1px solid rgba(181,69,27,.2);border-radius:6px}
 
 .stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px;max-width:480px;margin:0 auto}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
 .stat{text-align:center}
 .stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
 @media(min-width:768px){.stat-num{font-size:46px}}
@@ -421,6 +422,8 @@ input[type=hidden]{display:none}
     <div class="stats-grid">
       <div class="stat reveal"><span class="was-price">Antes $3,000</span><span class="stat-num" data-target="1000" data-prefix="$">0</span><span class="stat-lbl">Instalación Única — Sin Costos Ocultos</span></div>
       <div class="stat reveal reveal-d1"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mes">0</span><span class="stat-lbl">Totalmente Gestionado — Cancela Cuando Quieras</span></div>
+      <div class="stat reveal reveal-d2"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="2" data-suffix=" Semanas">0</span><span class="stat-lbl">Del Registro al Lanzamiento</span></div>
+      <div class="stat reveal reveal-d3"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="30" data-suffix=" Min">0</span><span class="stat-lbl">Llamada Estratégica Gratis — Sin Presión</span></div>
     </div>
   </div>
 </div>
