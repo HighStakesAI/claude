@@ -18,7 +18,7 @@
   · Banda de estadísticas y fila de confianza: reemplazamos las cifras de trayectoria inventadas (clientes, prospectos, calificación, ingresos) por datos reales de la oferta ($1,000 instalación, $97/mes, 2 semanas, llamada de 30 min, sin contratos) — sin estadísticas inventadas ya que aún no tenemos historial de clientes
   · Testimonios: citas reales de Cade (The Golden Plumber), Logan Deel (Built by Deel) y el dueño de Professional Painting Services — los logos son placeholders de iniciales (testi-av) hasta que se proporcionen los archivos de logo reales
   · Urgencia: "Solo quedan N cupos" — configura SPOTS_LEFT en el script; mantenlo veraz o elimínalo
-  · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: YOUR_WEBHOOK_URL · Enlace de Calendly: conectado (calendly.com/byrerben/introcall)
+  · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: conectado (flujo "Meta ads webhook" en GHL) · Enlace de Calendly: conectado (calendly.com/byrerben/introcall)
 -->
 <!--
 <script>
@@ -820,8 +820,8 @@ document.getElementById('btnSubmit').addEventListener('click',function(){
   var data={name:document.getElementById('f-name').value.trim(),phone:document.getElementById('f-phone').value.trim(),email:email,trade:selectedTrade,lang:'es',source:document.referrer||'direct'};
   Object.assign(data,utmData);
   window.leadData=data;
-  // if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
-  // fetch('YOUR_WEBHOOK_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
+  fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   setTimeout(function(){
     btn.classList.remove('loading');
     document.getElementById('step2').classList.add('hidden');

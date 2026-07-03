@@ -18,7 +18,7 @@
   · Stats band + trust row: swapped fabricated track-record numbers (client count, leads, rating, revenue) for real offer facts ($1,000 setup, $97/mo, 2-week launch, 30-min call, no contracts) — no invented stats since we don't have client history yet
   · Testimonials: real quotes from Cade (The Golden Plumber), Logan Deel (Built by Deel), and the owner of Professional Painting Services — logos are placeholder initial-badges (testi-av) until real logo image files are supplied
   · Urgency: "Only N spots remaining" — set SPOTS_LEFT in the script at the bottom; keep it truthful or remove
-  · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: YOUR_WEBHOOK_URL · Calendly link: connected (calendly.com/byrerben/introcall)
+  · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: connected (GHL "Meta ads webhook" workflow) · Calendly link: connected (calendly.com/byrerben/introcall)
 -->
 <!--
 <script>
@@ -992,8 +992,8 @@ document.getElementById('btnSubmit').addEventListener('click',function(){
     email:email,trade:selectedTrade,lang:'en',source:document.referrer||'direct'};
   Object.assign(data,utmData);
   window.leadData=data;
-  // if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
-  // fetch('YOUR_WEBHOOK_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
+  fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   setTimeout(function(){
     btn.classList.remove('loading');
     document.getElementById('step2').classList.add('hidden');
