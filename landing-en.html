@@ -15,8 +15,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312212E'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='800' fill='%23E8963C' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <!--
   VERIFY BEFORE LAUNCH — every claim below is sample copy [PLACEHOLDER] until confirmed:
-  · Stats band: "120+ Local Businesses Served", "38,000+ Leads Generated", "4.9 Average Client Rating", "$2M+ Revenue Generated for Clients"
-  · Trust row: "4.9 Rating · 120+ Reviews", "38,000+ Leads Delivered", "100% Exclusive Leads"
+  · Stats band + trust row: swapped fabricated track-record numbers (client count, leads, rating, revenue) for real offer facts ($1,000 setup, $97/mo, 2-week launch, 30-min call, no contracts) — no invented stats since we don't have client history yet
   · Testimonials: real quotes from Cade (The Golden Plumber), Logan Deel (Built by Deel), and the owner of Professional Painting Services — logos are placeholder initial-badges (testi-av) until real logo image files are supplied
   · Urgency: "Only N spots remaining" — set SPOTS_LEFT in the script at the bottom; keep it truthful or remove
   · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: YOUR_WEBHOOK_URL · Calendly link: connected (calendly.com/byrerben/introcall)
@@ -404,9 +403,9 @@ input[type=hidden]{display:none}
     </div>
 
     <div class="trust-row reveal">
-      <span class="t"><svg class="i i-fill" style="color:var(--amber)"><use href="#i-star"/></svg> 4.9 Rating · 120+ Reviews</span>
-      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> 38,000+ Leads Delivered</span>
-      <span class="t"><svg class="i" style="color:var(--steel)"><use href="#i-lock"/></svg> 100% Exclusive Leads</span>
+      <span class="t"><svg class="i i-fill" style="color:var(--amber)"><use href="#i-star"/></svg> 2-Week Setup, Fully Managed</span>
+      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> 100% Exclusive Leads</span>
+      <span class="t"><svg class="i" style="color:var(--steel)"><use href="#i-lock"/></svg> No Long-Term Contracts</span>
     </div>
 
     <div class="reveal">
@@ -421,20 +420,20 @@ input[type=hidden]{display:none}
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat reveal">
-        <span class="stat-num" data-target="120" data-suffix="+">0</span>
-        <span class="stat-lbl">Local Businesses Served</span>
+        <span class="stat-num" data-target="1000" data-prefix="$">0</span>
+        <span class="stat-lbl">One-Time Setup — No Hidden Fees</span>
       </div>
       <div class="stat reveal reveal-d1">
-        <span class="stat-num" data-target="38000" data-suffix="+" data-format="k">0</span>
-        <span class="stat-lbl">Leads Generated</span>
+        <span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mo">0</span>
+        <span class="stat-lbl">Fully Managed — Cancel Anytime</span>
       </div>
       <div class="stat reveal reveal-d2">
-        <span class="stat-num" data-target="49" data-suffix="★" data-decimal="1">0</span>
-        <span class="stat-lbl">Average Client Rating</span>
+        <span class="stat-num" data-target="2" data-suffix=" Weeks">0</span>
+        <span class="stat-lbl">From Signup to Launch</span>
       </div>
       <div class="stat reveal reveal-d3">
-        <span class="stat-num" data-target="2" data-prefix="$" data-suffix="M+">0</span>
-        <span class="stat-lbl">Revenue Generated for Clients</span>
+        <span class="stat-num" data-target="30" data-suffix=" Min">0</span>
+        <span class="stat-lbl">Free Strategy Call — Zero Pressure</span>
       </div>
     </div>
   </div>
@@ -808,13 +807,13 @@ function countUp(el){
     }else if(isK&&val>=1000){
       el.textContent=prefix+Math.floor(val/1000)+'k'+suffix;
     }else{
-      el.textContent=prefix+Math.floor(val)+suffix;
+      el.textContent=prefix+Math.floor(val).toLocaleString('en-US')+suffix;
     }
     if(p<1)requestAnimationFrame(tick);
     else{
       if(isDecimal)el.textContent=prefix+(target/10).toFixed(1)+suffix;
       else if(isK)el.textContent=prefix+Math.floor(target/1000)+'k'+suffix;
-      else el.textContent=prefix+Math.floor(target)+suffix;
+      else el.textContent=prefix+Math.floor(target).toLocaleString('en-US')+suffix;
     }
   }
   requestAnimationFrame(tick);
