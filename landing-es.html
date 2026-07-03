@@ -884,7 +884,7 @@ function initCalendly(){
 window.addEventListener('message',function(e){
   if(e.data&&e.data.event==='calendly.event_scheduled'){
     if(typeof fbq!=='undefined')fbq('track','Schedule');
-    window.location.href='thankyou-es.html';
+    window.location.href='/thankyou-es';
   }
 });
 
