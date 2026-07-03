@@ -18,6 +18,7 @@
   · Banda de estadísticas y fila de confianza: reemplazamos las cifras de trayectoria inventadas (clientes, prospectos, calificación, ingresos) por datos reales de la oferta ($1,000 instalación, $97/mes, 2 semanas, llamada de 30 min, sin contratos) — sin estadísticas inventadas ya que aún no tenemos historial de clientes
   · Testimonios: citas reales y logos reales de clientes para Cade (The Golden Plumber), Logan Deel (Built by Deel) y el dueño de Professional Painting Services
   · Urgencia: "Solo quedan N cupos" — configura SPOTS_LEFT en el script; mantenlo veraz o elimínalo
+  · Precio ancla "Antes $3,000" en la tarifa de instalación (banda de estadísticas + tarjeta de precios) — confirma que $3,000 refleja tu precio anterior/de lista real antes del lanzamiento
   · Meta Pixel: conectado (1544932160338845) · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: conectado (flujo "Meta ads webhook" en GHL) · Enlace de Calendly: conectado (calendly.com/byrerben/introcall)
 -->
 <!-- Meta Pixel Code -->
@@ -103,6 +104,7 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
 @media(min-width:768px){.stat-num{font-size:46px}}
 .stat-lbl{font-size:13px;color:var(--steel);font-weight:500}
+.was-price{display:block;font-size:13px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px;margin-bottom:2px}
 
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
 @media(min-width:768px){.svc-grid{grid-template-columns:1fr 1fr}}
@@ -412,7 +414,7 @@ input[type=hidden]{display:none}
 <div class="stats-band">
   <div class="wrap">
     <div class="stats-grid">
-      <div class="stat reveal"><span class="stat-num" data-target="1000" data-prefix="$">0</span><span class="stat-lbl">Instalación Única — Sin Costos Ocultos</span></div>
+      <div class="stat reveal"><span class="was-price">Antes $3,000</span><span class="stat-num" data-target="1000" data-prefix="$">0</span><span class="stat-lbl">Instalación Única — Sin Costos Ocultos</span></div>
       <div class="stat reveal reveal-d1"><span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mes">0</span><span class="stat-lbl">Totalmente Gestionado — Cancela Cuando Quieras</span></div>
       <div class="stat reveal reveal-d2"><span class="stat-num" data-target="2" data-suffix=" Semanas">0</span><span class="stat-lbl">Del Registro al Lanzamiento</span></div>
       <div class="stat reveal reveal-d3"><span class="stat-num" data-target="30" data-suffix=" Min">0</span><span class="stat-lbl">Llamada Estratégica Gratis — Sin Presión</span></div>
@@ -499,6 +501,7 @@ input[type=hidden]{display:none}
       <div class="price-header-row">
         <div class="price-tag">
           <span class="amt-label">Configuración única</span>
+          <span class="was-price">Antes $3,000</span>
           $<span id="setupFee">1,000</span>
         </div>
         <div class="price-setup">

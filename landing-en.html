@@ -18,6 +18,7 @@
   · Stats band + trust row: swapped fabricated track-record numbers (client count, leads, rating, revenue) for real offer facts ($1,000 setup, $97/mo, 2-week launch, 30-min call, no contracts) — no invented stats since we don't have client history yet
   · Testimonials: real quotes and real client logos in for Cade (The Golden Plumber), Logan Deel (Built by Deel), and the owner of Professional Painting Services
   · Urgency: "Only N spots remaining" — set SPOTS_LEFT in the script at the bottom; keep it truthful or remove
+  · "Was $3,000" anchor price on the setup fee (stats band + pricing card) — confirm $3,000 reflects your actual former/list price before launch
   · Meta Pixel: connected (1544932160338845) · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: connected (GHL "Meta ads webhook" workflow) · Calendly link: connected (calendly.com/byrerben/introcall)
 -->
 <!-- Meta Pixel Code -->
@@ -111,6 +112,7 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
 @media(min-width:768px){.stat-num{font-size:46px}}
 .stat-lbl{font-size:13px;color:var(--steel);font-weight:500}
+.was-price{display:block;font-size:13px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px;margin-bottom:2px}
 
 /* ── SERVICE CARDS ────────────────────────────────────────────────── */
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
@@ -437,6 +439,7 @@ input[type=hidden]{display:none}
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat reveal">
+        <span class="was-price">Was $3,000</span>
         <span class="stat-num" data-target="1000" data-prefix="$">0</span>
         <span class="stat-lbl">One-Time Setup — No Hidden Fees</span>
       </div>
@@ -548,6 +551,7 @@ input[type=hidden]{display:none}
       <div class="price-header-row">
         <div class="price-tag">
           <span class="amt-label">One-time setup</span>
+          <span class="was-price">Was $3,000</span>
           $<span id="setupFee">1,000</span>
         </div>
         <div class="price-setup">
