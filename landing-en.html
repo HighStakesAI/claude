@@ -16,7 +16,7 @@
 <!--
   VERIFY BEFORE LAUNCH — every claim below is sample copy [PLACEHOLDER] until confirmed:
   · Stats band + trust row: swapped fabricated track-record numbers (client count, leads, rating, revenue) for real offer facts ($1,000 setup, $97/mo, 2-week launch, 30-min call, no contracts) — no invented stats since we don't have client history yet
-  · Testimonials: real quotes from Cade (The Golden Plumber), Logan Deel (Built by Deel), and the owner of Professional Painting Services — logos are placeholder initial-badges (testi-av) until real logo image files are supplied
+  · Testimonials: real quotes and real client logos in for Cade (The Golden Plumber), Logan Deel (Built by Deel), and the owner of Professional Painting Services
   · Urgency: "Only N spots remaining" — set SPOTS_LEFT in the script at the bottom; keep it truthful or remove
   · Meta Pixel: connected (1544932160338845) · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: connected (GHL "Meta ads webhook" workflow) · Calendly link: connected (calendly.com/byrerben/introcall)
 -->
@@ -156,7 +156,8 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-stars{color:var(--amber);font-size:14px;margin-bottom:12px;letter-spacing:.04em}
 .testi-quote{font-size:14px;line-height:1.7;color:var(--steel);font-style:italic;margin-bottom:18px}
 .testi-author{display:flex;align-items:center;gap:11px}
-.testi-av{width:38px;height:38px;background:var(--paper-2);border:2px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0}
+.testi-av{width:40px;height:40px;background:var(--white);border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;overflow:hidden;padding:4px}
+.testi-av img{width:100%;height:100%;object-fit:contain}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
 
@@ -506,17 +507,17 @@ input[type=hidden]{display:none}
       <div class="testi-card reveal">
         <div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div>
         <p class="testi-quote">"We went from page 6 to #1 in most searches in Pensacola. The leads are night and day."</p>
-        <div class="testi-author"><div class="testi-av">CA</div><div><p class="testi-name">Cade</p><p class="testi-biz">The Golden Plumber</p></div></div>
+        <div class="testi-author"><div class="testi-av"><img src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4808dd9114462c711fc341.png" alt="The Golden Plumber logo" loading="lazy"></div><div><p class="testi-name">Cade</p><p class="testi-biz">The Golden Plumber</p></div></div>
       </div>
       <div class="testi-card reveal reveal-d1">
         <div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div>
         <p class="testi-quote">"Loved the new website — clean, fast, and exactly what we pictured."</p>
-        <div class="testi-author"><div class="testi-av">LD</div><div><p class="testi-name">Logan Deel</p><p class="testi-biz">Built by Deel</p></div></div>
+        <div class="testi-author"><div class="testi-av" style="background:var(--ink)"><img src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4808dd6f5641e105388460.png" alt="Built by Deel logo" loading="lazy"></div><div><p class="testi-name">Logan Deel</p><p class="testi-biz">Built by Deel</p></div></div>
       </div>
       <div class="testi-card reveal reveal-d2">
         <div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div>
         <p class="testi-quote">"A clean, professional website and they handle our Facebook for us. Great work."</p>
-        <div class="testi-author"><div class="testi-av">PP</div><div><p class="testi-name">Owner</p><p class="testi-biz">Professional Painting Services</p></div></div>
+        <div class="testi-author"><div class="testi-av"><img src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4808dd39a69d42f8290854.png" alt="Professional Painting Services logo" loading="lazy"></div><div><p class="testi-name">Owner</p><p class="testi-biz">Professional Painting Services</p></div></div>
       </div>
     </div>
   </div>
