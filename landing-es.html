@@ -17,8 +17,7 @@
   VERIFICAR ANTES DEL LANZAMIENTO — todo lo siguiente es contenido de muestra [PLACEHOLDER]:
   · Banda de estadísticas: "120+ Negocios", "38,000+ Prospectos", "4.9 Calificación", "$2M+ Ingresos"
   · Fila de confianza: "4.9 Calificación · 120+ Reseñas", "38,000+ Prospectos Entregados", "100% Prospectos Exclusivos"
-  · Testimonios: Mike R., Carlos D., Jenna P. — nombres, citas y resultados son copy de muestra
-  · Videos de testimonios: TESTI_YT_ID_1..3
+  · Testimonios: citas reales de Cade (The Golden Plumber), Logan Deel (Built by Deel) y el dueño de Professional Painting Services — los logos son placeholders de iniciales (testi-av) hasta que se proporcionen los archivos de logo reales
   · Urgencia: "Solo quedan N cupos" — configura SPOTS_LEFT en el script; mantenlo veraz o elimínalo
   · Meta Pixel: YOUR_PIXEL_ID · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: YOUR_WEBHOOK_URL · Enlace de Calendly: conectado (calendly.com/byrerben/introcall)
 -->
@@ -149,14 +148,6 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-av{width:38px;height:38px;background:var(--paper-2);border:2px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
-
-.vtesti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-@media(max-width:540px){.vtesti-grid{grid-template-columns:1fr;gap:12px}}
-.vtesti-card{position:relative;aspect-ratio:9/16;max-height:260px;background:var(--ink-2);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,border-color .2s}
-.vtesti-card:hover{transform:scale(1.02);border-color:rgba(232,150,60,.4)}
-.vtesti-play{width:44px;height:44px;background:rgba(232,150,60,.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.vtesti-play svg{width:18px;height:18px;fill:var(--ink);margin-left:3px}
-.vtesti-name{position:absolute;bottom:12px;left:12px;right:12px;font-size:12px;font-weight:600;color:var(--white);line-height:1.3}
 
 .price-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:32px 28px;margin-top:32px;max-width:560px}
 .price-header-row{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap;gap:12px}
@@ -477,14 +468,9 @@ input[type=hidden]{display:none}
     <h2 class="reveal">Dueños de negocio como tú están consiguiendo más trabajos cada mes.</h2>
     <p class="sec-sub reveal">Esto es lo que dicen después de trabajar con HighStakes.AI.</p>
     <div class="testi-grid">
-      <div class="testi-card reveal"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Antes de HighStakes mi teléfono estaba muerto cada invierno. Ahora tenemos agenda llena 3 meses adelante y tuve que contratar dos personas más. La mejor inversión en 8 años de negocio."</p><div class="testi-author"><div class="testi-av">MR</div><div><p class="testi-name">Mike R.</p><p class="testi-biz">HVAC · Dallas, TX</p></div></div></div>
-      <div class="testi-card reveal reveal-d1"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Pasé de 8 trabajos por semana a más de 30 en 90 días. Los prospectos son 100% exclusivos — nadie más recibe mis llamadas. El seguimiento automático solo cerró 3 trabajos que hubiera perdido."</p><div class="testi-author"><div class="testi-av">CD</div><div><p class="testi-name">Carlos D.</p><p class="testi-biz">Plomería · Houston, TX</p></div></div></div>
-      <div class="testi-card reveal reveal-d2"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Construyeron nuestro sitio, nos posicionaron #1 en Austin, y nuestras campañas de Meta están generando dinero real. El ROI llegó en menos de 30 días. Ojalá los hubiera encontrado antes."</p><div class="testi-author"><div class="testi-av">JP</div><div><p class="testi-name">Jenna P.</p><p class="testi-biz">Pintura · Austin, TX</p></div></div></div>
-    </div>
-    <div class="vtesti-grid reveal" style="margin-top:24px">
-      <div class="vtesti-card" data-id="TESTI_YT_ID_1"><div class="vtesti-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><p class="vtesti-name">Mike R. — HVAC</p></div>
-      <div class="vtesti-card" data-id="TESTI_YT_ID_2"><div class="vtesti-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><p class="vtesti-name">Carlos D. — Plomero</p></div>
-      <div class="vtesti-card" data-id="TESTI_YT_ID_3"><div class="vtesti-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><p class="vtesti-name">Jenna P. — Pintora</p></div>
+      <div class="testi-card reveal"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Pasamos de la página 6 al puesto #1 en la mayoría de las búsquedas en Pensacola. Los prospectos son totalmente diferentes ahora."</p><div class="testi-author"><div class="testi-av">CA</div><div><p class="testi-name">Cade</p><p class="testi-biz">The Golden Plumber</p></div></div></div>
+      <div class="testi-card reveal reveal-d1"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Nos encantó el sitio web nuevo — limpio, rápido y exactamente como lo imaginamos."</p><div class="testi-author"><div class="testi-av">LD</div><div><p class="testi-name">Logan Deel</p><p class="testi-biz">Built by Deel</p></div></div></div>
+      <div class="testi-card reveal reveal-d2"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Un sitio web limpio y profesional, y además manejan nuestro Facebook. Excelente trabajo."</p><div class="testi-author"><div class="testi-av">PP</div><div><p class="testi-name">Dueño</p><p class="testi-biz">Professional Painting Services</p></div></div></div>
     </div>
   </div>
 </section>
@@ -622,6 +608,7 @@ input[type=hidden]{display:none}
 
 <footer class="footer">
   <p>© 2025 HighStakes.AI. Todos los derechos reservados. &nbsp;·&nbsp; <a href="https://histakesai.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a> &nbsp;·&nbsp; <a href="https://histakesai.com/terms" target="_blank" rel="noopener">Términos y Condiciones</a></p>
+  <p style="margin-top:4px">¿Preguntas? Llama al <a href="tel:+18509432040">(850) 943-2040</a></p>
   <p style="margin-top:4px;opacity:.4">Los resultados pueden variar según el mercado, el presupuesto y las características individuales del negocio.</p>
 </footer>
 
@@ -674,16 +661,6 @@ muteBtn&&muteBtn.addEventListener('click',function(){
   if(!ytPlayer)return;
   if(isMuted){ytPlayer.unMute();muteBtn.innerHTML='<svg class="i"><use href="#i-vol-on"/></svg>';isMuted=false;}
   else{ytPlayer.mute();muteBtn.innerHTML='<svg class="i"><use href="#i-vol-off"/></svg>';isMuted=true;}
-});
-
-document.querySelectorAll('.vtesti-card').forEach(function(c){
-  c.addEventListener('click',function(){
-    var id=c.dataset.id;if(!id||id.startsWith('TESTI'))return;
-    var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+id+'?autoplay=1';
-    f.allow='autoplay;fullscreen';f.allowFullscreen=true;
-    f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px;';
-    c.innerHTML='';c.appendChild(f);
-  });
 });
 
 function countUp(el){
