@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>You're Confirmed! | HighStakes.AI</title>
+<meta name="robots" content="noindex">
+<!-- META PIXEL — replace YOUR_PIXEL_ID. Schedule event fires on page load. -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+fbq('track','Schedule');
+</script>
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12212E;--ink-2:#1D3040;
+  --amber:#E8963C;--amber-dark:#C97A28;
+  --rust:#B5451B;
+  --paper:#FAF7F1;--paper-2:#F1ECE0;
+  --steel:#4B5A66;--line:#DAD3C6;--white:#FFFFFF;
+  --green:#27AE60;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+
+/* HEADER */
+.hdr{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:center}
+.logo{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--white);text-decoration:none}
+
+/* MAIN */
+main{flex:1;padding:56px 20px 72px;display:flex;flex-direction:column;align-items:center}
+.inner{width:100%;max-width:600px}
+
+/* CHECK RING */
+.check-ring{
+  width:76px;height:76px;border-radius:50%;
+  border:2px solid var(--green);
+  background:rgba(39,174,96,.08);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;
+  animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) both;
+}
+.check-ring svg{width:34px;height:34px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(39,174,96,.25)}60%{box-shadow:0 0 0 12px rgba(39,174,96,0)}}
+
+/* CONFIRMATION */
+.eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--rust);margin-bottom:10px;text-align:center}
+h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:12px;text-align:center}
+@media(min-width:768px){h1{font-size:36px}}
+.confirm-sub{font-size:16px;color:var(--steel);line-height:1.6;text-align:center;margin-bottom:40px}
+
+/* STEPS */
+.steps-wrap{margin-bottom:36px}
+.steps-title{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:16px;text-align:center}
+.step-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{width:30px;height:30px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-body{}
+.step-title{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:2px}
+.step-desc{font-size:14px;color:var(--steel);line-height:1.55}
+
+/* TIMER CARD */
+.timer-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;margin-bottom:24px}
+.timer-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--steel);opacity:.6;margin-bottom:8px}
+.timer-display{font-family:'Archivo',sans-serif;font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--amber);line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.timer-sub{font-size:13px;color:var(--steel);opacity:.55;margin-bottom:18px}
+.timer-msg{font-size:14px;color:var(--steel);line-height:1.6}
+.timer-msg strong{color:var(--ink);font-weight:600}
+
+/* WEBSITE CARD */
+.site-card{display:block;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;text-decoration:none;transition:border-color .2s,transform .15s}
+.site-card:hover{border-color:var(--amber);transform:translateY(-2px)}
+.site-card .site-icon{font-size:2rem;margin-bottom:10px}
+.site-card h2{font-family:'Archivo',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.site-card p{font-size:14px;color:var(--steel);line-height:1.55;margin-bottom:18px}
+.site-btn{display:inline-block;background:var(--amber);color:var(--ink);font-weight:600;font-size:15px;padding:12px 28px;border-radius:10px;text-decoration:none;transition:background .2s}
+.site-btn:hover{background:var(--amber-dark)}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:22px 20px;text-align:center}
+.footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
+.footer a{color:#B7C2CA}
+.footer a:hover{color:var(--white)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a href="https://histakesai.com" class="logo">HighStakes.AI</a>
+</header>
+
+<main>
+  <div class="inner">
+
+    <!-- CONFIRMATION -->
+    <div class="check-ring pulse">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p class="eyebrow">You're all set</p>
+    <h1>Your Strategy Call is <span id="nameConfirm"></span>Confirmed!</h1>
+    <p class="confirm-sub">Check your email and phone for the calendar invite. We'll arrive on the call with a custom plan already built for your market.</p>
+
+    <!-- NEXT STEPS -->
+    <div class="steps-wrap">
+      <p class="steps-title">Here's what happens next</p>
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p class="step-title">Check your inbox</p>
+          <p class="step-desc">You'll receive a calendar invite with the meeting link. Add it so you don't miss it.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p class="step-title">We'll research your market</p>
+          <p class="step-desc">Before the call, our team audits your online presence and maps out your local competitors — we arrive with data, not guesses.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p class="step-title">Join your 30-minute strategy call</p>
+          <p class="step-desc">We walk you through a custom growth plan. No sales pressure — just a clear, actionable roadmap for your business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN TIMER -->
+    <div class="timer-card">
+      <p class="timer-lbl">While you wait — see what we do</p>
+      <div class="timer-display" id="timerDisplay">10:00</div>
+      <p class="timer-sub">Redirecting to our website in <span id="timerSub">10 minutes</span></p>
+      <p class="timer-msg">In the meantime, see the full HighStakes.AI story — <strong>results we've gotten for businesses like yours</strong> and the exact strategies we'll use for your market.</p>
+    </div>
+
+    <!-- WEBSITE LINK -->
+    <a href="https://histakesai.com" class="site-card" target="_blank" rel="noopener">
+      <div class="site-icon">🌐</div>
+      <h2>Visit Our Full Website</h2>
+      <p>Case studies, our team, and the exact process we use to get home service businesses more local jobs every month.</p>
+      <span class="site-btn">Visit HighStakes.AI →</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 HighStakes.AI. All rights reserved. &nbsp;·&nbsp; <a href="https://histakesai.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://histakesai.com/terms" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
+</footer>
+
+<script>
+// Personalize with name from URL params
+(function(){
+  var name = new URLSearchParams(window.location.search).get('name');
+  if (name) document.getElementById('nameConfirm').textContent = name.split(' ')[0] + ', ';
+})();
+
+// Countdown timer → redirect to histakesai.com
+(function(){
+  var SECS = 10 * 60;
+  var remaining = SECS;
+  var display = document.getElementById('timerDisplay');
+  var sub     = document.getElementById('timerSub');
+  var DEST    = 'https://histakesai.com';
+
+  function fmt(s){
+    var m = Math.floor(s/60), sec = s%60;
+    return (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  }
+  display.textContent = fmt(remaining);
+
+  var t = setInterval(function(){
+    remaining--;
+    display.textContent = fmt(remaining);
+    if(remaining <= 60){
+      sub.textContent = 'Redirecting in '+remaining+' second'+(remaining===1?'':'s');
+      display.style.color = 'var(--amber-dark)';
+    }
+    if(remaining <= 0){ clearInterval(t); window.location.href = DEST; }
+  }, 1000);
+})();
+</script>
+</body>
+</html>
