@@ -99,17 +99,18 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
 .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
 .footer a{color:#B7C2CA}
 .footer a:hover{color:var(--white)}
-/* This page has no full-bleed section (everything sits in a 600px centered
-   column), so a host that sizes its embed to the widest in-flow content
-   (e.g. GHL's Custom Code element) shrinks the whole page down to ~600px.
-   This invisible spacer gives it a legitimately wide element to size against,
-   the same way the landing page's full-bleed hero/sections do naturally. */
-html{overflow-x:hidden}
-.wide-spacer{width:1200px;max-width:none;height:0;overflow:hidden;font-size:0;line-height:0}
+/* GHL's Custom Code element wraps this content in its own container div
+   (confirmed via DevTools: id like "custom-code-XXXXXXXX", classes
+   "c-custom-code c-wrapper" on the outer div and "custom-code-container" on
+   the inner one) which was computing to a fixed 600px regardless of our
+   own content. Since that div is a real element in the DOM (not an iframe)
+   and this <style> tag ends up injected as one of its children, we can
+   target it directly — a stylesheet applies to its own ancestors same as
+   anywhere else in the document. */
+.c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
 </head>
 <body>
-<div class="wide-spacer" aria-hidden="true"></div>
 
 <header class="hdr">
   <a href="https://histakesai.com" class="logo">HighStakes.AI</a>

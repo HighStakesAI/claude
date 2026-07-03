@@ -77,16 +77,18 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
 .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
 .footer a{color:#B7C2CA}
 .footer a:hover{color:var(--white)}
-/* Ver comentario equivalente en thankyou-en.html: sin esta ayuda, un host que
-   dimensiona el embed según el contenido más ancho en flujo (como el elemento
-   Custom Code de GHL) reduce toda la página a ~600px, ya que aquí no hay
-   ninguna sección de ancho completo como en la landing page. */
-html{overflow-x:hidden}
-.wide-spacer{width:1200px;max-width:none;height:0;overflow:hidden;font-size:0;line-height:0}
+/* El elemento Custom Code de GHL envuelve este contenido en su propio div
+   contenedor (confirmado con DevTools: id tipo "custom-code-XXXXXXXX",
+   clases "c-custom-code c-wrapper" en el div externo y
+   "custom-code-container" en el interno), que se calculaba en 600px fijos
+   sin importar nuestro contenido. Como ese div es un elemento real del DOM
+   (no un iframe) y esta etiqueta <style> termina inyectada como hija suya,
+   podemos apuntarle directamente — una hoja de estilos aplica a sus propios
+   ancestros igual que a cualquier otro lugar del documento. */
+.c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
 </head>
 <body>
-<div class="wide-spacer" aria-hidden="true"></div>
 
 <header class="hdr">
   <a href="https://histakesai.com" class="logo">HighStakes.AI</a>

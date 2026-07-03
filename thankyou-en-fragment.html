@@ -98,6 +98,13 @@ fbq('track','Schedule');
 .ty-scope .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
 .ty-scope .footer a{color:#B7C2CA}
 .ty-scope .footer a:hover{color:var(--white)}
+/* GHL's Custom Code element wraps embedded content in its own container div
+   (confirmed via DevTools: classes "c-custom-code c-wrapper" outer,
+   "custom-code-container" inner) that was computing to a fixed 600px
+   regardless of our content. It's a real element, not an iframe, and this
+   <style> ends up injected as one of its children, so we can target it
+   directly. */
+.c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
 
 <div class="ty-scope">
