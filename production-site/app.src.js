@@ -994,7 +994,14 @@ const RotatingNoun = ({ nouns: e }) => {
       }, [e.length]),
       React.createElement(
         "span",
-        { className: "noun-slot", style: { minWidth: "110px" } },
+        { className: "noun-slot relative inline-block text-left" },
+        e.map((n, i) =>
+          React.createElement(
+            "span",
+            { key: "sizer-" + i, className: "invisible block h-0 overflow-hidden", "aria-hidden": "true" },
+            n,
+          ),
+        ),
         React.createElement("span", { key: t, className: "noun-enter block" }, e[t]),
       )
     );
@@ -1531,12 +1538,20 @@ const RotatingNoun = ({ nouns: e }) => {
   REEL_SLIDE_MS = 800,
   REEL_EASE = "cubic-bezier(0.65,0,0.35,1)",
   ReelCell = () =>
-    React.createElement("div", {
-      "aria-hidden": "true",
-      className:
-        "shrink-0 rounded-2xl border border-black/5 dark:border-white/5 bg-gradient-to-b from-gold-500/[0.07] to-transparent blur-[1px]",
-      style: { width: 116, height: 116 },
-    }),
+    React.createElement(
+      "div",
+      {
+        "aria-hidden": "true",
+        className:
+          "shrink-0 rounded-2xl border border-black/5 dark:border-white/5 bg-gradient-to-b from-gold-500/[0.07] to-transparent blur-[1px] flex items-center justify-center",
+        style: { width: 116, height: 116 },
+      },
+      React.createElement(
+        "span",
+        { className: "font-serif font-bold text-3xl text-gold-500/[0.09] select-none" },
+        "H",
+      ),
+    ),
   ReelTile = ({ logo: e, business: t, logoBg: a }) => {
     const [r, l] = useState(!1),
       n = "dark" === a,
@@ -1770,7 +1785,7 @@ const RotatingNoun = ({ nouns: e }) => {
                 { className: "relative w-full max-w-[440px] overflow-hidden", "aria-live": "polite" },
                 React.createElement(
                   "div",
-                  { "aria-hidden": "true", className: "invisible flex min-h-[150px] flex-col gap-4" },
+                  { "aria-hidden": "true", className: "invisible flex min-h-[120px] flex-col gap-4" },
                   React.createElement(
                     "p",
                     { className: "m-0 font-serif italic text-lg sm:text-xl leading-snug text-heading" },
@@ -2326,7 +2341,7 @@ const RotatingNoun = ({ nouns: e }) => {
                 "span",
                 {
                   className:
-                    "hero-title-line2 text-transparent bg-clip-text bg-gradient-to-r from-gold-500 via-gold-300 to-gold-600 dark:from-gold-300 dark:via-gold-100 dark:to-gold-400 bg-[length:200%_auto] animate-gradient-x mt-2 block pb-2",
+                    "hero-title-line2 text-transparent bg-clip-text bg-gradient-to-r from-gold-600 via-gold-500 to-gold-700 dark:from-gold-300 dark:via-gold-100 dark:to-gold-400 bg-[length:200%_auto] animate-gradient-x mt-2 block pb-2",
                 },
                 e.hero.title2,
               ),
@@ -3165,7 +3180,9 @@ const RotatingNoun = ({ nouns: e }) => {
         let e = "";
         (m.forEach((t) => {
           const a = document.getElementById(t.id);
-          a && window.scrollY >= a.offsetTop - 200 && (e = t.id);
+          if (!a) return;
+          const r = a.getBoundingClientRect();
+          r.top <= 200 && r.bottom > 120 && (e = t.id);
         }),
           d(e));
       };

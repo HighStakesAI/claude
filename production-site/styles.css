@@ -6,3 +6,15 @@
 .consent-check:checked{background:#D4AF37;border-color:#D4AF37}
 .consent-check:checked::before{content:'';width:.62rem;height:.62rem;background:#0a0a0a;clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%)}
 
+
+/* --- custom: phase 2 polish --- */
+.horiz-header{padding-top:118px}
+@media(max-width:767px){.horiz-header{padding-top:104px}}
+@media(hover:none){.bc-shot-hint{display:none}}
+:root:not(.dark) .announcement-bar p{color:#6b4e0a}
+:root:not(.dark) .announcement-bar p span,:root:not(.dark) .announcement-bar p button{color:#5a4108}
+.bc-shot{position:relative}
+.bc-shot:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05),inset 0 -28px 44px rgba(0,0,0,.16);pointer-events:none;border-radius:inherit}
+.h-0{height:0px}
+.via-gold-500{--tw-gradient-to:rgba(212,175,55,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#d4af37 var(--tw-gradient-via-position),var(--tw-gradient-to)}
+.to-gold-700{--tw-gradient-to:#9a7d26 var(--tw-gradient-to-position)}
