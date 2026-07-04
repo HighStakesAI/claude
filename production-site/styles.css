@@ -18,3 +18,5 @@
 .h-0{height:0px}
 .via-gold-500{--tw-gradient-to:rgba(212,175,55,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#d4af37 var(--tw-gradient-via-position),var(--tw-gradient-to)}
 .to-gold-700{--tw-gradient-to:#9a7d26 var(--tw-gradient-to-position)}
+.px-9{padding-left:2.25rem;padding-right:2.25rem}
+@media(min-width:640px){.sm\:inline{display:inline}.sm\:inline-block{display:inline-block}}

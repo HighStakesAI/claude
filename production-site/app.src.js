@@ -136,26 +136,43 @@ const G = window.gsap,
       { className: "announcement-bar relative z-[60]" },
       React.createElement(
         "div",
-        { className: "max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-3 text-center" },
+        { className: "max-w-7xl mx-auto px-9 py-2 flex items-center justify-center gap-2 text-center" },
         React.createElement("span", {
-          className: "scarcity-dot w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0 inline-block",
+          className: "scarcity-dot w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0 hidden sm:inline-block",
           "aria-hidden": "true",
         }),
         React.createElement(
           "p",
-          { className: "text-[11px] font-bold text-gold-700 dark:text-gold-400 tracking-wide" },
-          "Only ",
+          {
+            className:
+              "text-[11px] font-bold text-gold-700 dark:text-gold-400 tracking-wide whitespace-nowrap min-w-0 truncate",
+          },
           React.createElement(
             "span",
-            { className: "text-gold-600 dark:text-gold-300" },
-            "3 onboarding spots",
+            { className: "hidden sm:inline" },
+            "Only ",
+            React.createElement(
+              "span",
+              { className: "text-gold-600 dark:text-gold-300" },
+              "3 onboarding spots",
+            ),
+            ` remaining in ${CURRENT_MONTH} — `,
           ),
-          ` remaining in ${CURRENT_MONTH} —`,
-          " ",
+          React.createElement(
+            "span",
+            { className: "sm:hidden" },
+            React.createElement(
+              "span",
+              { className: "text-gold-600 dark:text-gold-300" },
+              "3 spots left",
+            ),
+            ` in ${CURRENT_MONTH} — `,
+          ),
           React.createElement(
             "button",
             { onClick: b, className: "underline underline-offset-2 cursor-pointer font-bold" },
-            "Book your free call now",
+            React.createElement("span", { className: "hidden sm:inline" }, "Book your free call now"),
+            React.createElement("span", { className: "sm:hidden" }, "Book now"),
           ),
         ),
         React.createElement(
@@ -3855,7 +3872,7 @@ function App() {
           React.createElement(
             "a",
             {
-              href: "https://instagram.com",
+              href: "https://www.instagram.com/highstakesai/",
               target: "_blank",
               rel: "noopener noreferrer",
               className:
