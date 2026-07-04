@@ -217,6 +217,52 @@ const G = window.gsap,
           o,
         );
   },
+  FeaturedVideo = ({ src: e, logo: t, name: a, sub: r }) => {
+    const l = useRef(null),
+      [n, c] = useState(!1);
+    return React.createElement(
+      "div",
+      { className: "fv-wrap" },
+      React.createElement("video", {
+        ref: l,
+        src: e,
+        controls: n,
+        preload: "metadata",
+        playsInline: !0,
+        className: "fv-video",
+      }),
+      !n &&
+        React.createElement(
+          "button",
+          {
+            type: "button",
+            className: "fv-overlay",
+            "aria-label": `Play video: ${a}`,
+            onClick: () => {
+              c(!0);
+              const e = l.current && l.current.play();
+              e && e.catch && e.catch(() => {});
+            },
+          },
+          t &&
+            React.createElement("img", {
+              src: t,
+              alt: "",
+              loading: "lazy",
+              width: "56",
+              height: "56",
+              className: "fv-logo",
+            }),
+          React.createElement(
+            "span",
+            { className: "fv-play", "aria-hidden": "true" },
+            React.createElement(PlayIcon, { className: "w-6 h-6" }),
+          ),
+          React.createElement("span", { className: "fv-name" }, a),
+          React.createElement("span", { className: "fv-sub" }, r),
+        ),
+    );
+  },
   AnnouncementBar = ({ onDismiss: e, onBook: b }) =>
     React.createElement(
       "div",
@@ -1830,6 +1876,16 @@ const RotatingNoun = ({ nouns: e }) => {
           ),
         ),
         React.createElement(
+          RevealOnScroll,
+          null,
+          React.createElement(FeaturedVideo, {
+            src: CADE_VIDEO,
+            logo: "golden-plumber.png",
+            name: "Cade \u00b7 The Golden Plumber",
+            sub: "How our SEO brings him new customers",
+          }),
+        ),
+        React.createElement(
           "div",
           {
             onMouseEnter: () => {
@@ -1940,19 +1996,10 @@ const RotatingNoun = ({ nouns: e }) => {
               ),
               React.createElement(
                 "div",
-                { className: "flex items-center gap-3 mt-1 flex-wrap" },
-                React.createElement(
-                  "span",
-                  { className: "flex items-center gap-1.5" },
-                  [...Array(5)].map((e, t) =>
-                    React.createElement(StarFilled, { key: t, className: "w-3.5 h-3.5 text-gold-500" }),
-                  ),
+                { className: "flex items-center gap-1.5 mt-1" },
+                [...Array(5)].map((e, t) =>
+                  React.createElement(StarFilled, { key: t, className: "w-3.5 h-3.5 text-gold-500" }),
                 ),
-                w.hasVideo &&
-                  React.createElement(WatchVideoButton, {
-                    src: CADE_VIDEO,
-                    title: "Watch Cade tell it",
-                  }),
               ),
             ),
             React.createElement(
@@ -3825,19 +3872,12 @@ const RotatingNoun = ({ nouns: e }) => {
             React.createElement(
               "div",
               { className: "mt-10 pt-8 border-t border-gray-200/50 dark:border-white/10" },
-              React.createElement(WatchVideoButton, {
-                src: CADE_VIDEO,
-                variant: "card",
-                logo: "golden-plumber.png",
-                title: "Hear it from a client",
-                sub: "Cade of The Golden Plumber on how our SEO brings him new customers",
-              }),
               React.createElement(
                 "a",
                 {
                   href: "tel:8504859926",
                   className:
-                    "mt-6 font-serif text-xl font-bold text-heading hover:text-gold-600 dark:hover:text-gold-400 transition-colors flex items-center justify-center gap-3 group/phone cursor-pointer",
+                    "font-serif text-xl font-bold text-heading hover:text-gold-600 dark:hover:text-gold-400 transition-colors flex items-center justify-center gap-3 group/phone cursor-pointer",
                 },
                 React.createElement(Phone, {
                   className:
