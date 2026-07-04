@@ -2781,6 +2781,8 @@ const RotatingNoun = ({ nouns: e }) => {
                       src: e.shot,
                       alt: `${e.client} website`,
                       loading: "lazy",
+                      width: 760,
+                      height: 1306,
                       className: "bc-shot-img",
                     }),
                     React.createElement("span", { className: "bc-shot-hint" }, "Hover to scroll ↓"),
@@ -3680,11 +3682,22 @@ function App() {
     p.nav.services,
     p.nav.work,
     p.nav.process);
+  useEffect(() => {
+    "#contact" === window.location.hash && o("contact");
+    const e = () => o("#contact" === window.location.hash ? "contact" : "home");
+    return (window.addEventListener("hashchange", e), () => window.removeEventListener("hashchange", e));
+  }, []);
   const h = useCallback(
     (e, t = null) => {
       if ((t && m((e) => ({ ...e, service: t })), "contact" === e))
-        (o("contact"), window.scrollTo({ top: 0, behavior: "smooth" }));
-      else if ("home" !== c)
+        ("#contact" !== window.location.hash && (window.location.hash = "contact"),
+          o("contact"),
+          window.scrollTo({ top: 0, behavior: "smooth" }));
+      else if (
+        ("#contact" === window.location.hash &&
+          history.replaceState(null, "", window.location.pathname + window.location.search),
+        "home" !== c)
+      )
         (o("home"),
           setTimeout(() => {
             if ("home" === e) window.scrollTo({ top: 0, behavior: "smooth" });

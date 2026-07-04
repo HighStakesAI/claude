@@ -30,19 +30,19 @@
   <meta name="twitter:description" content="High-converting websites, local SEO that ranks you on Google, and done-for-you ads + social media management.">
   <meta name="twitter:image" content="https://histakesai.com/og-image.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Fonts: self-hosted latin woff2, no third-party request in the critical path -->
+  <link rel="preload" href="fonts/playfair-display-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
 
   <!-- Precompiled Tailwind (built once, not generated at runtime) -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Libraries + precompiled app (defer = run in order, after parse) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <!-- Libraries + precompiled app, all same-origin (defer = run in order, after parse) -->
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/react.production.min.js"></script>
+  <script defer src="vendor/react-dom.production.min.js"></script>
   <script defer src="app.js"></script>
 
   <style>
@@ -51,13 +51,18 @@
     #boot .ring{width:44px;height:44px;border-radius:50%;border:3px solid rgba(212,175,55,.16);border-top-color:#D4AF37;animation:bootspin .8s linear infinite;margin:0 auto 16px}
     #boot .wm{font-family:'Playfair Display',Georgia,serif;color:#f5f5f0;font-weight:700;font-size:19px;letter-spacing:.02em;text-align:center}
     #boot .wm span{color:#D4AF37}
+    #boot .fail{display:none;margin-top:14px;text-align:center;font-family:Inter,system-ui,sans-serif}
+    #boot.failed .fail{display:block}
+    #boot.failed .ring{display:none}
+    #boot .fail p{color:#a3a3a3;font-size:13px;margin:0 0 12px}
+    #boot .fail button{background:#D4AF37;color:#0a0a0a;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:0;border-radius:9999px;padding:10px 22px;cursor:pointer}
     @keyframes bootspin{to{transform:rotate(360deg)}}
     @media(prefers-reduced-motion:reduce){#boot .ring{animation:none}}
   </style>
 </head>
 <body>
-  <div id="boot"><div><div class="ring"></div><div class="wm">High <span>Stakes</span></div></div></div>
+  <div id="boot"><div><div class="ring"></div><div class="wm">High <span>Stakes</span></div><div class="fail"><p>Something went wrong loading the page.</p><button type="button" onclick="location.reload()">Reload</button></div></div></div>
   <div id="root"></div>
-  <script>(function(){var b=document.getElementById('boot');if(!b)return;function hide(){b.classList.add('hide');setTimeout(function(){if(b&&b.parentNode)b.parentNode.removeChild(b);},600);}var n=0,t=setInterval(function(){n++;var r=document.getElementById('root');if(r&&r.children.length){clearInterval(t);hide();}else if(n>200){clearInterval(t);hide();}},40);})();</script>
+  <script>(function(){var b=document.getElementById('boot');if(!b)return;function hide(){b.classList.add('hide');setTimeout(function(){if(b&&b.parentNode)b.parentNode.removeChild(b);},600);}var n=0,t=setInterval(function(){n++;var r=document.getElementById('root');if(r&&r.children.length){clearInterval(t);hide();}else if(n>250){clearInterval(t);b.classList.add('failed');}},40);})();</script>
 </body>
 </html>
