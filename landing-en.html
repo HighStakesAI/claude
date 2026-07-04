@@ -169,6 +169,13 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-av img{width:100%;height:100%;object-fit:contain}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
+.testi-video{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;margin:32px auto 0;max-width:640px}
+.testi-video video{width:100%;border-radius:8px;display:block;background:var(--ink)}
+.testi-video-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);opacity:.6;margin-bottom:12px;text-align:center}
+.testi-video-caption{font-size:13px;color:var(--steel);margin-top:12px;text-align:center}
+.testi-video-ph{aspect-ratio:16/9;border-radius:8px;background:var(--paper-2);border:1.5px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.testi-video-ph svg{width:28px;height:28px;fill:var(--steel);opacity:.4}
+.testi-video-ph span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);opacity:.55}
 
 /* ── PRICING ──────────────────────────────────────────────────────── */
 .price-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 28px;margin-top:32px;max-width:560px;box-shadow:0 8px 32px rgba(18,33,46,.10)}
@@ -526,6 +533,14 @@ input[type=hidden]{display:none}
     <p class="eyebrow reveal">Real client results</p>
     <h2 class="reveal">Business owners just like you are getting more jobs every month.</h2>
     <p class="sec-sub reveal">Here's what they say after working with HighStakes.AI.</p>
+
+    <div class="testi-video reveal">
+      <p class="testi-video-lbl">Hear it from a real client</p>
+      <video controls playsinline preload="metadata">
+        <source src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6969250dd01e74c1bba89778.mp4" type="video/mp4">
+      </video>
+      <p class="testi-video-caption">Cade · The Golden Plumber — went from page 6 to #1 in most searches in Pensacola.</p>
+    </div>
 
     <div class="testi-grid">
       <div class="testi-card reveal">

@@ -158,6 +158,13 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-av img{width:100%;height:100%;object-fit:contain}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
+.testi-video{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;margin:32px auto 0;max-width:640px}
+.testi-video video{width:100%;border-radius:8px;display:block;background:var(--ink)}
+.testi-video-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);opacity:.6;margin-bottom:12px;text-align:center}
+.testi-video-caption{font-size:13px;color:var(--steel);margin-top:12px;text-align:center}
+.testi-video-ph{aspect-ratio:16/9;border-radius:8px;background:var(--paper-2);border:1.5px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.testi-video-ph svg{width:28px;height:28px;fill:var(--steel);opacity:.4}
+.testi-video-ph span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);opacity:.55}
 
 .price-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 28px;margin-top:32px;max-width:560px;box-shadow:0 8px 32px rgba(18,33,46,.10)}
 .price-group-lbl{font-family:'Archivo',sans-serif;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);opacity:.65;padding:14px 0 4px}
@@ -489,6 +496,19 @@ input[type=hidden]{display:none}
     <p class="eyebrow reveal">Resultados reales de clientes</p>
     <h2 class="reveal">Dueños de negocio como tú están consiguiendo más trabajos cada mes.</h2>
     <p class="sec-sub reveal">Esto es lo que dicen después de trabajar con HighStakes.AI.</p>
+
+    <!-- Testimonio en video: placeholder hasta tener la versión en español.
+         Cuando esté listo, reemplaza el div.testi-video-ph por:
+         <video controls playsinline preload="metadata"><source src="URL_DEL_MP4" type="video/mp4"></video> -->
+    <div class="testi-video reveal">
+      <p class="testi-video-lbl">Escucha a un cliente real</p>
+      <div class="testi-video-ph">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <span>Video próximamente</span>
+      </div>
+      <p class="testi-video-caption">Cade · The Golden Plumber — pasó de la página 6 al #1 en la mayoría de búsquedas en Pensacola.</p>
+    </div>
+
     <div class="testi-grid">
       <div class="testi-card reveal"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Pasamos de la página 6 al puesto #1 en la mayoría de las búsquedas en Pensacola. Los prospectos son totalmente diferentes ahora."</p><div class="testi-author"><div class="testi-av"><img src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4808dd9114462c711fc341.png" alt="Logo de The Golden Plumber" loading="lazy"></div><div><p class="testi-name">Cade</p><p class="testi-biz">The Golden Plumber</p></div></div></div>
       <div class="testi-card reveal reveal-d1"><div class="testi-stars"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></div><p class="testi-quote">"Nos encantó el sitio web nuevo — limpio, rápido y exactamente como lo imaginamos."</p><div class="testi-author"><div class="testi-av" style="background:var(--ink)"><img src="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4808dd6f5641e105388460.png" alt="Logo de Built by Deel" loading="lazy"></div><div><p class="testi-name">Logan Deel</p><p class="testi-biz">Built by Deel</p></div></div></div>
