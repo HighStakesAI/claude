@@ -130,6 +130,93 @@ const G = window.gsap,
       "High ",
       React.createElement("span", { className: "text-gold-600 dark:text-gold-500" }, "Stakes"),
     ),
+  CADE_VIDEO = "https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6969250dd01e74c1bba89778.mp4",
+  WatchVideoButton = ({ src: e, variant: t = "pill", logo: a, title: r, sub: l }) => {
+    const [n, c] = useState(!1);
+    useEffect(() => {
+      if (!n) return;
+      const e = (e) => {
+        "Escape" === e.key && c(!1);
+      };
+      return (
+        document.addEventListener("keydown", e),
+        (document.body.style.overflow = "hidden"),
+        () => {
+          (document.removeEventListener("keydown", e), (document.body.style.overflow = ""));
+        }
+      );
+    }, [n]);
+    const o =
+      n &&
+      React.createElement(
+        "div",
+        {
+          className: "video-lightbox",
+          role: "dialog",
+          "aria-modal": "true",
+          "aria-label": r || "Client video",
+          onClick: () => c(!1),
+        },
+        React.createElement(
+          "div",
+          { className: "video-lightbox-inner", onClick: (e) => e.stopPropagation() },
+          React.createElement(
+            "button",
+            { className: "video-lightbox-close", "aria-label": "Close video", onClick: () => c(!1) },
+            "\u00d7",
+          ),
+          React.createElement("video", {
+            src: e,
+            controls: !0,
+            autoPlay: !0,
+            playsInline: !0,
+            className: "video-lightbox-video",
+          }),
+        ),
+      );
+    return "card" === t
+      ? React.createElement(
+          React.Fragment,
+          null,
+          React.createElement(
+            "button",
+            { type: "button", onClick: () => c(!0), className: "watch-card" },
+            React.createElement(
+              "span",
+              { className: "watch-thumb" },
+              a && React.createElement("img", { src: a, alt: "", loading: "lazy", width: "48", height: "48" }),
+              React.createElement(
+                "span",
+                { className: "watch-play", "aria-hidden": "true" },
+                React.createElement(PlayIcon, { className: "w-3.5 h-3.5" }),
+              ),
+            ),
+            React.createElement(
+              "span",
+              { className: "min-w-0 text-left" },
+              React.createElement("span", { className: "block font-bold text-sm text-heading" }, r),
+              React.createElement("span", { className: "block text-xs text-muted mt-0.5" }, l),
+            ),
+            React.createElement("span", { className: "watch-cta", "aria-hidden": "true" }, "Watch"),
+          ),
+          o,
+        )
+      : React.createElement(
+          React.Fragment,
+          null,
+          React.createElement(
+            "button",
+            { type: "button", onClick: (e) => (e.stopPropagation(), c(!0)), className: "watch-pill" },
+            React.createElement(
+              "span",
+              { className: "watch-play sm", "aria-hidden": "true" },
+              React.createElement(PlayIcon, { className: "w-3 h-3" }),
+            ),
+            r,
+          ),
+          o,
+        );
+  },
   AnnouncementBar = ({ onDismiss: e, onBook: b }) =>
     React.createElement(
       "div",
@@ -769,6 +856,7 @@ const G = window.gsap,
             quote: "We went from page 6 to #1 in most searches in Pensacola. The leads are night and day.",
             name: "Cade",
             business: "The Golden Plumber",
+            hasVideo: !0,
             service: "Website + Local SEO",
             initials: "GP",
             logo: "golden-plumber.png",
@@ -818,6 +906,7 @@ const G = window.gsap,
             clientLabel: "Satisfied Client",
             url: "https://thegoldenplumber.com",
             type: "logo",
+            hasVideo: !0,
           },
           {
             id: "pro-painting",
@@ -973,12 +1062,15 @@ const G = window.gsap,
       contact: {
         title: "Book Your Free Strategy Call",
         sub: "15 minutes. No pitch. Real answers about growing your business.",
-        promise: "We'll call you within one business day to schedule your free 15-minute call.",
-        steps: [
-          "Tell us about your business below",
-          "We call you within one business day",
-          "Get your free website & SEO audit on the call",
+        promise: "We'll call you within one business day to schedule your free 15-minute call \u2014 and prepare your free website & SEO audit.",
+        stepLabels: ["Service", "Your business", "Contact"],
+        stepTitles: [
+          "What do you need help with?",
+          "Tell us about your business",
+          "Where should we send your free audit?",
         ],
+        next: "Continue",
+        backStep: "Back",
         labels: {
           name: "Name",
           email: "Email",
@@ -1848,10 +1940,19 @@ const RotatingNoun = ({ nouns: e }) => {
               ),
               React.createElement(
                 "div",
-                { className: "flex items-center gap-1.5 mt-1" },
-                [...Array(5)].map((e, t) =>
-                  React.createElement(StarFilled, { key: t, className: "w-3.5 h-3.5 text-gold-500" }),
+                { className: "flex items-center gap-3 mt-1 flex-wrap" },
+                React.createElement(
+                  "span",
+                  { className: "flex items-center gap-1.5" },
+                  [...Array(5)].map((e, t) =>
+                    React.createElement(StarFilled, { key: t, className: "w-3.5 h-3.5 text-gold-500" }),
+                  ),
                 ),
+                w.hasVideo &&
+                  React.createElement(WatchVideoButton, {
+                    src: CADE_VIDEO,
+                    title: "Watch Cade tell it",
+                  }),
               ),
             ),
             React.createElement(
@@ -2863,6 +2964,15 @@ const RotatingNoun = ({ nouns: e }) => {
                     e.quote,
                     React.createElement("cite", { className: "bc-cite" }, e.quoteAuthor),
                   ),
+                  e.hasVideo &&
+                    React.createElement(
+                      "div",
+                      { className: "mt-3" },
+                      React.createElement(WatchVideoButton, {
+                        src: CADE_VIDEO,
+                        title: "Watch Cade tell it",
+                      }),
+                    ),
                   e.isCta
                     ? React.createElement(
                         MagneticButton,
@@ -3329,7 +3439,27 @@ const RotatingNoun = ({ nouns: e }) => {
     navigateTo: l,
     formStatus: n,
   }) => {
-    const c = useRef(null);
+    const c = useRef(null),
+      [st, setSt] = useState(0),
+      [msgErr, setMsgErr] = useState(!1),
+      inputCls =
+        "w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl py-3.5 px-4 outline-none text-sm text-heading focus:border-gold-500 focus:ring-1 focus:ring-gold-500/20",
+      labelCls =
+        "text-[10px] uppercase font-bold tracking-widest text-gold-700 dark:text-gold-500/80 pl-1 block",
+      SERVICE_META = [
+        { icon: Globe, desc: "A high-converting site, live in about a week" },
+        { icon: TrendingUp, desc: "Rank on Google & Maps where customers search" },
+        { icon: Megaphone, desc: "Done-for-you ads, posts, and reputation" },
+        { icon: Sparkles, desc: "The full growth stack, handled for you" },
+      ],
+      goNext = () => setSt((s) => Math.min(s + 1, 2)),
+      goBack = () => setSt((s) => Math.max(s - 1, 0)),
+      onSubmitGuard = (ev) => {
+        if (!t.message.trim()) return (ev.preventDefault(), setMsgErr(!0), void setSt(1));
+        const f = c.current;
+        if (f && !f.checkValidity()) return (ev.preventDefault(), void f.reportValidity());
+        r(ev);
+      };
     return React.createElement(
       "div",
       {
@@ -3350,9 +3480,9 @@ const RotatingNoun = ({ nouns: e }) => {
       ),
       React.createElement(
         "div",
-        { className: "w-full max-w-2xl mx-auto relative z-10" },
+        { className: "max-w-2xl w-full relative z-10" },
         React.createElement(
-          RevealOnScroll,
+          React.Fragment,
           null,
           React.createElement(
             "div",
@@ -3376,7 +3506,7 @@ const RotatingNoun = ({ nouns: e }) => {
             ),
             React.createElement(
               "div",
-              { className: "text-center mb-10" },
+              { className: "text-center mb-8" },
               React.createElement(
                 "h2",
                 { className: "font-serif text-4xl md:text-5xl font-bold text-heading mb-3" },
@@ -3384,279 +3514,330 @@ const RotatingNoun = ({ nouns: e }) => {
               ),
               React.createElement("p", { className: "text-muted text-base font-light" }, e.contact.sub),
             ),
-            React.createElement(
-              "ol",
-              { className: "grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10" },
-              (e.contact.steps || []).map((s, i) =>
-                React.createElement(
-                  "li",
-                  {
-                    key: i,
-                    className:
-                      "flex items-start gap-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50/60 dark:bg-white/[0.03] px-4 py-3",
-                  },
-                  React.createElement(
-                    "span",
-                    {
-                      className:
-                        "flex-shrink-0 w-6 h-6 rounded-full bg-gold-500/15 text-gold-700 dark:text-gold-400 text-[11px] font-bold flex items-center justify-center",
-                      "aria-hidden": "true",
-                    },
-                    i + 1,
-                  ),
-                  React.createElement("span", { className: "text-xs leading-relaxed text-muted" }, s),
-                ),
-              ),
-            ),
-            "success" === n &&
-              React.createElement(
-                "div",
-                {
-                  className:
-                    "mb-8 p-5 rounded-2xl bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-center",
-                  role: "alert",
-                },
-                React.createElement(
+            "success" === n
+              ? React.createElement(
                   "div",
                   {
                     className:
-                      "text-green-700 dark:text-green-400 font-bold text-sm mb-1 flex items-center justify-center gap-2",
+                      "mb-8 p-6 rounded-2xl bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-center",
+                    role: "alert",
                   },
-                  React.createElement(CheckCircle, { className: "w-4 h-4" }),
-                  "Request received!",
-                ),
-                React.createElement(
-                  "div",
-                  { className: "text-green-600 dark:text-green-500 text-xs" },
-                  "We'll call you within one business day to schedule your free strategy call.",
-                ),
-              ),
-            React.createElement(
-              "form",
-              { ref: c, className: "space-y-5", onSubmit: r, noValidate: !0 },
-              React.createElement(
-                "div",
-                { className: "grid grid-cols-1 md:grid-cols-2 gap-5" },
-                [
-                  ["name", "text", "Name", "John Doe"],
-                  ["email", "email", "Email", "john@example.com"],
-                ].map(([e, r, l, c]) =>
                   React.createElement(
                     "div",
-                    { key: e, className: "space-y-2" },
-                    React.createElement(
-                      "label",
-                      {
-                        htmlFor: `c-${e}`,
-                        className:
-                          "text-[10px] uppercase font-bold tracking-widest text-gold-700 dark:text-gold-500/80 pl-1 block",
-                      },
-                      l,
-                    ),
-                    React.createElement("input", {
-                      id: `c-${e}`,
-                      type: r,
-                      name: e,
-                      value: t[e],
-                      onChange: a,
-                      className:
-                        "w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl py-3.5 px-4 outline-none text-sm text-heading focus:border-gold-500 focus:ring-1 focus:ring-gold-500/20",
-                      placeholder: c,
-                      required: !0,
-                      disabled: "sending" === n,
-                    }),
-                  ),
-                ),
-              ),
-              React.createElement(
-                "div",
-                { className: "grid grid-cols-1 md:grid-cols-2 gap-5" },
-                React.createElement(
-                  "div",
-                  { className: "space-y-2" },
-                  React.createElement(
-                    "label",
                     {
-                      htmlFor: "c-phone",
                       className:
-                        "text-[10px] uppercase font-bold tracking-widest text-gold-700 dark:text-gold-500/80 pl-1 block",
+                        "text-green-700 dark:text-green-400 font-bold text-base mb-1 flex items-center justify-center gap-2",
                     },
-                    "Phone",
-                  ),
-                  React.createElement("input", {
-                    id: "c-phone",
-                    type: "tel",
-                    name: "phone",
-                    value: t.phone,
-                    onChange: a,
-                    className:
-                      "w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl py-3.5 px-4 outline-none text-sm text-heading focus:border-gold-500",
-                    placeholder: "+1 (555) 000-0000",
-                    required: !0,
-                    disabled: "sending" === n,
-                  }),
-                ),
-                React.createElement(
-                  "div",
-                  { className: "space-y-2" },
-                  React.createElement(
-                    "label",
-                    {
-                      htmlFor: "c-service",
-                      className:
-                        "text-[10px] uppercase font-bold tracking-widest text-gold-700 dark:text-gold-500/80 pl-1 block",
-                    },
-                    "Service",
+                    React.createElement(CheckCircle, { className: "w-5 h-5" }),
+                    "Request received!",
                   ),
                   React.createElement(
                     "div",
-                    { className: "relative" },
-                    React.createElement(
-                      "select",
-                      {
-                        id: "c-service",
-                        name: "service",
-                        value: t.service,
-                        onChange: a,
-                        className:
-                          "w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl py-3.5 px-4 outline-none cursor-pointer text-sm appearance-none text-gray-700 dark:text-gray-200 focus:border-gold-500",
-                        disabled: "sending" === n,
-                      },
-                      e.contact.services.map((e) => React.createElement("option", { key: e, value: e }, e)),
-                    ),
-                    React.createElement(
-                      "div",
-                      {
-                        className: "absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50",
-                        "aria-hidden": "true",
-                      },
+                    { className: "text-green-600 dark:text-green-500 text-sm" },
+                    "We'll call you within one business day to schedule your free strategy call.",
+                  ),
+                )
+              : React.createElement(
+                  React.Fragment,
+                  null,
+                  React.createElement(
+                    "div",
+                    { className: "stepper mb-8", "aria-label": `Step ${st + 1} of 3` },
+                    (e.contact.stepLabels || []).map((lb, i) =>
                       React.createElement(
-                        "svg",
-                        {
-                          width: "10",
-                          height: "6",
-                          viewBox: "0 0 10 6",
-                          fill: "none",
-                          stroke: "currentColor",
-                        },
-                        React.createElement("path", {
-                          d: "M1 1L5 5L9 1",
-                          strokeWidth: "1.5",
-                          strokeLinecap: "round",
-                          strokeLinejoin: "round",
-                        }),
+                        "div",
+                        { key: i, className: "stepper-seg" + (i <= st ? " done" : "") },
+                        React.createElement("span", { className: "stepper-num" }, i + 1),
+                        React.createElement("span", { className: "stepper-lbl" }, lb),
                       ),
                     ),
                   ),
-                ),
-              ),
-              React.createElement(
-                "div",
-                { className: "space-y-2" },
-                React.createElement(
-                  "label",
-                  {
-                    htmlFor: "c-msg",
-                    className:
-                      "text-[10px] uppercase font-bold tracking-widest text-gold-700 dark:text-gold-500/80 pl-1 block",
-                  },
-                  "Project Details",
-                ),
-                React.createElement("textarea", {
-                  id: "c-msg",
-                  name: "message",
-                  rows: "4",
-                  value: t.message,
-                  onChange: a,
-                  className:
-                    "w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl resize-none py-3.5 px-4 outline-none text-sm text-heading focus:border-gold-500 focus:ring-1 focus:ring-gold-500/20",
-                  placeholder: "Tell us about your project...",
-                  required: !0,
-                  disabled: "sending" === n,
-                }),
-              ),
-              React.createElement(
-                "div",
-                {
-                  className:
-                    "flex items-start gap-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50/60 dark:bg-white/[0.03] px-4 py-3.5",
-                },
-                React.createElement("input", {
-                  type: "checkbox",
-                  id: "c-consent",
-                  name: "sms_consent",
-                  checked: !!t.sms_consent,
-                  onChange: a,
-                  disabled: "sending" === n,
-                  className: "consent-check mt-0.5 flex-shrink-0 cursor-pointer",
-                }),
-                React.createElement(
-                  "label",
-                  {
-                    htmlFor: "c-consent",
-                    className: "text-[11px] leading-relaxed text-muted cursor-pointer",
-                  },
-                  "By checking this box, I agree to receive SMS text messages from High Stakes at the phone number provided (such as appointment reminders, project updates, and occasional offers). Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help. See our ",
                   React.createElement(
-                    "a",
-                    { href: "/privacy", className: "text-gold-600 dark:text-gold-400 hover:underline" },
-                    "Privacy Policy",
+                    "form",
+                    { ref: c, className: "space-y-5", onSubmit: onSubmitGuard, noValidate: !0 },
+                    0 === st &&
+                      React.createElement(
+                        "div",
+                        null,
+                        React.createElement(
+                          "p",
+                          { className: "text-heading font-semibold text-lg mb-5 text-center" },
+                          e.contact.stepTitles[0],
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "grid grid-cols-1 sm:grid-cols-2 gap-3" },
+                          e.contact.services.map((sv, i) =>
+                            React.createElement(
+                              "button",
+                              {
+                                key: sv,
+                                type: "button",
+                                onClick: () => {
+                                  (a({ target: { name: "service", value: sv } }),
+                                    setTimeout(goNext, 200));
+                                },
+                                className: "svc-card" + (t.service === sv ? " active" : ""),
+                              },
+                              React.createElement(SERVICE_META[i].icon, {
+                                className: "w-6 h-6 svc-ic",
+                              }),
+                              React.createElement(
+                                "span",
+                                { className: "font-bold text-sm text-heading block" },
+                                sv,
+                              ),
+                              React.createElement(
+                                "span",
+                                { className: "text-xs text-muted block mt-1" },
+                                SERVICE_META[i].desc,
+                              ),
+                            ),
+                          ),
+                        ),
+                        React.createElement(
+                          "p",
+                          { className: "text-center text-xs text-muted mt-4" },
+                          "Pick the closest fit — you can change it later.",
+                        ),
+                      ),
+                    1 === st &&
+                      React.createElement(
+                        "div",
+                        { className: "space-y-5" },
+                        React.createElement(
+                          "p",
+                          { className: "text-heading font-semibold text-lg mb-1 text-center" },
+                          e.contact.stepTitles[1],
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "space-y-2" },
+                          React.createElement(
+                            "label",
+                            { htmlFor: "c-website", className: labelCls },
+                            "Current website (optional)",
+                          ),
+                          React.createElement("input", {
+                            id: "c-website",
+                            type: "text",
+                            name: "website",
+                            value: t.website,
+                            onChange: a,
+                            onKeyDown: (ev) => {
+                              "Enter" === ev.key && (ev.preventDefault(), goNext());
+                            },
+                            className: inputCls,
+                            placeholder: "yourbusiness.com — leave blank if you don't have one yet",
+                            disabled: "sending" === n,
+                          }),
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "space-y-2" },
+                          React.createElement(
+                            "label",
+                            { htmlFor: "c-msg", className: labelCls },
+                            "Project Details",
+                          ),
+                          React.createElement("textarea", {
+                            id: "c-msg",
+                            name: "message",
+                            rows: "4",
+                            value: t.message,
+                            onChange: (ev) => {
+                              (setMsgErr(!1), a(ev));
+                            },
+                            className:
+                              inputCls + " resize-none" + (msgErr ? " !border-red-500" : ""),
+                            placeholder:
+                              "Tell us about your business — what you do, what's working, what isn't...",
+                            required: !0,
+                            disabled: "sending" === n,
+                          }),
+                          msgErr &&
+                            React.createElement(
+                              "p",
+                              { className: "text-red-500 text-xs pl-1", role: "alert" },
+                              "Tell us a little about your business so we can prepare your audit.",
+                            ),
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "flex items-center justify-between pt-2" },
+                          React.createElement(
+                            "button",
+                            { type: "button", onClick: goBack, className: "step-back" },
+                            React.createElement(ChevronLeft, { className: "w-4 h-4" }),
+                            e.contact.backStep,
+                          ),
+                          React.createElement(
+                            "button",
+                            {
+                              type: "button",
+                              onClick: () => {
+                                if (!t.message.trim()) return void setMsgErr(!0);
+                                goNext();
+                              },
+                              className:
+                                "flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white font-bold uppercase tracking-[0.18em] text-xs py-3.5 px-7 rounded-2xl cursor-pointer transition-all shadow-lg shadow-gold-600/20",
+                            },
+                            e.contact.next,
+                            React.createElement(ArrowRight, { className: "w-4 h-4" }),
+                          ),
+                        ),
+                      ),
+                    2 === st &&
+                      React.createElement(
+                        "div",
+                        { className: "space-y-5" },
+                        React.createElement(
+                          "p",
+                          { className: "text-heading font-semibold text-lg mb-1 text-center" },
+                          e.contact.stepTitles[2],
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "grid grid-cols-1 md:grid-cols-2 gap-5" },
+                          [
+                            ["name", "text", "Name", "John Doe"],
+                            ["email", "email", "Email", "john@example.com"],
+                          ].map(([f, ty, lb, ph]) =>
+                            React.createElement(
+                              "div",
+                              { key: f, className: "space-y-2" },
+                              React.createElement("label", { htmlFor: `c-${f}`, className: labelCls }, lb),
+                              React.createElement("input", {
+                                id: `c-${f}`,
+                                type: ty,
+                                name: f,
+                                value: t[f],
+                                onChange: a,
+                                className: inputCls,
+                                placeholder: ph,
+                                required: !0,
+                                disabled: "sending" === n,
+                              }),
+                            ),
+                          ),
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "space-y-2" },
+                          React.createElement(
+                            "label",
+                            { htmlFor: "c-phone", className: labelCls },
+                            "Phone Number",
+                          ),
+                          React.createElement("input", {
+                            id: "c-phone",
+                            type: "tel",
+                            name: "phone",
+                            value: t.phone,
+                            onChange: a,
+                            className: inputCls,
+                            placeholder: "+1 (555) 000-0000",
+                            required: !0,
+                            disabled: "sending" === n,
+                          }),
+                        ),
+                        React.createElement(
+                          "div",
+                          {
+                            className:
+                              "flex items-start gap-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50/60 dark:bg-white/[0.03] px-4 py-3.5",
+                          },
+                          React.createElement("input", {
+                            type: "checkbox",
+                            id: "c-consent",
+                            name: "sms_consent",
+                            checked: !!t.sms_consent,
+                            onChange: a,
+                            disabled: "sending" === n,
+                            className: "consent-check mt-0.5 flex-shrink-0 cursor-pointer",
+                          }),
+                          React.createElement(
+                            "label",
+                            {
+                              htmlFor: "c-consent",
+                              className: "text-[11px] leading-relaxed text-muted cursor-pointer",
+                            },
+                            "By checking this box, I agree to receive SMS text messages from High Stakes at the phone number provided (such as appointment reminders, project updates, and occasional offers). Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help. See our ",
+                            React.createElement(
+                              "a",
+                              { href: "/privacy", className: "text-gold-600 dark:text-gold-400 hover:underline" },
+                              "Privacy Policy",
+                            ),
+                            " and ",
+                            React.createElement(
+                              "a",
+                              { href: "/terms", className: "text-gold-600 dark:text-gold-400 hover:underline" },
+                              "Terms",
+                            ),
+                            ".",
+                          ),
+                        ),
+                        React.createElement(
+                          "div",
+                          { className: "flex items-center gap-3 pt-2" },
+                          React.createElement(
+                            "button",
+                            { type: "button", onClick: goBack, className: "step-back flex-shrink-0" },
+                            React.createElement(ChevronLeft, { className: "w-4 h-4" }),
+                            e.contact.backStep,
+                          ),
+                          React.createElement(
+                            "button",
+                            {
+                              type: "submit",
+                              disabled: "sending" === n,
+                              className:
+                                "flex-1 flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 disabled:opacity-60 disabled:cursor-wait text-white font-bold uppercase tracking-[0.18em] text-xs py-4 px-8 rounded-2xl cursor-pointer transition-all shadow-lg shadow-gold-600/20 hover:shadow-gold-500/30 hover:-translate-y-0.5",
+                            },
+                            "sending" === n ? "Sending…" : e.contact.btn,
+                            "sending" !== n &&
+                              React.createElement(
+                                "svg",
+                                {
+                                  className: "w-4 h-4",
+                                  viewBox: "0 0 24 24",
+                                  fill: "none",
+                                  stroke: "currentColor",
+                                  strokeWidth: "2.5",
+                                  "aria-hidden": "true",
+                                },
+                                React.createElement("path", {
+                                  d: "M5 12h14M13 6l6 6-6 6",
+                                  strokeLinecap: "round",
+                                  strokeLinejoin: "round",
+                                }),
+                              ),
+                          ),
+                        ),
+                        React.createElement(
+                          "p",
+                          { className: "text-center text-xs text-muted" },
+                          e.contact.promise,
+                        ),
+                      ),
                   ),
-                  " and ",
-                  React.createElement(
-                    "a",
-                    { href: "/terms", className: "text-gold-600 dark:text-gold-400 hover:underline" },
-                    "Terms",
-                  ),
-                  ".",
                 ),
-              ),
-              React.createElement(
-                "div",
-                { className: "pt-6" },
-                React.createElement(
-                  "button",
-                  {
-                    type: "submit",
-                    disabled: "sending" === n,
-                    className:
-                      "w-full flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 disabled:opacity-60 disabled:cursor-wait text-white font-bold uppercase tracking-[0.18em] text-xs py-4 px-8 rounded-2xl cursor-pointer transition-all shadow-lg shadow-gold-600/20 hover:shadow-gold-500/30 hover:-translate-y-0.5",
-                  },
-                  "sending" === n ? "Sending…" : e.contact.btn,
-                  "sending" !== n &&
-                    React.createElement(
-                      "svg",
-                      {
-                        className: "w-4 h-4",
-                        viewBox: "0 0 24 24",
-                        fill: "none",
-                        stroke: "currentColor",
-                        strokeWidth: "2.5",
-                        "aria-hidden": "true",
-                      },
-                      React.createElement("path", {
-                        d: "M5 12h14M13 6l6 6-6 6",
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round",
-                      }),
-                    ),
-                ),
-                React.createElement(
-                  "p",
-                  { className: "text-center text-xs text-muted mt-4" },
-                  e.contact.promise,
-                ),
-              ),
-            ),
             React.createElement(
               "div",
-              { className: "mt-10 text-center pt-8 border-t border-gray-200/50 dark:border-white/10" },
+              { className: "mt-10 pt-8 border-t border-gray-200/50 dark:border-white/10" },
+              React.createElement(WatchVideoButton, {
+                src: CADE_VIDEO,
+                variant: "card",
+                logo: "golden-plumber.png",
+                title: "Hear it from a client",
+                sub: "Cade of The Golden Plumber on how our SEO brings him new customers",
+              }),
               React.createElement(
                 "a",
                 {
                   href: "tel:8504859926",
                   className:
-                    "font-serif text-xl font-bold text-heading hover:text-gold-600 dark:hover:text-gold-400 transition-colors flex items-center justify-center gap-3 group/phone cursor-pointer",
+                    "mt-6 font-serif text-xl font-bold text-heading hover:text-gold-600 dark:hover:text-gold-400 transition-colors flex items-center justify-center gap-3 group/phone cursor-pointer",
                 },
                 React.createElement(Phone, {
                   className:
@@ -3680,6 +3861,7 @@ function App() {
       name: "",
       email: "",
       phone: "",
+      website: "",
       service: "Website Design",
       message: "",
       sms_consent: !1,
@@ -3792,6 +3974,7 @@ function App() {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams({
+                      website: d.website || "",
                       name: d.name,
                       email: d.email,
                       phone: d.phone,
@@ -3805,7 +3988,7 @@ function App() {
                   g("success"),
                   "function" == typeof window.gtag &&
                     window.gtag("event", "generate_lead", { event_category: "form", event_label: d.service }),
-                  m({ name: "", email: "", phone: "", service: "Website Design", message: "", sms_consent: !1 }),
+                  m({ name: "", email: "", phone: "", website: "", service: "Website Design", message: "", sms_consent: !1 }),
                   setTimeout(() => g("idle"), 8e3));
               } catch {
                 (g("error"), setTimeout(() => g("idle"), 5e3));
