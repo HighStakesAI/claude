@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>¡Confirmado! | HighStakes.AI</title>
+<!-- Versión para el elemento Custom Code de GHL — sin envoltorio <!DOCTYPE>/<html>/<head>/<body>.
+     Un documento completo pegado en medio de la página puede poner al analizador
+     HTML del navegador en modo "after body" al encontrar nuestro </body></html>
+     de cierre, lo que puede dañar o eliminar lo que GHL renderiza después de
+     este bloque en esa página específica. <style>/<script> funcionan igual
+     sin importar dónde estén en el DOM, así que no se pierde nada al quitar
+     el envoltorio del documento. -->
 <meta name="robots" content="noindex">
+<!-- Etiqueta de favicon — probablemente el navegador no la respete una vez que
+     GHL la aplana en medio del body de su página (los favicons normalmente se
+     leen del <head>, y la configuración de favicon del propio sitio en GHL
+     tendrá prioridad de todas formas). Configura el favicon real en los
+     ajustes de sitio/dominio de GHL. -->
 <link rel="icon" type="image/jpeg" href="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6924733f37de760d60dba930.jpg">
 <!-- Meta Pixel Code -->
 <script>
@@ -23,7 +29,7 @@ fbq('track','Schedule');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
+.ty-scope{
   --ink:#12212E;--ink-2:#1D3040;
   --amber:#E8963C;--amber-dark:#C97A28;
   --rust:#B5451B;
@@ -31,65 +37,58 @@ fbq('track','Schedule');
   --steel:#4B5A66;--line:#DAD3C6;--white:#FFFFFF;
   --green:#27AE60;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+.ty-scope,.ty-scope *,.ty-scope *::before,.ty-scope *::after{box-sizing:border-box}
+.ty-scope{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:var(--paper);color:var(--ink);display:flex;flex-direction:column;width:100%}
 
-.hdr{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:center}
-.logo{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--white);text-decoration:none}
+.ty-scope .hdr{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:center}
+.ty-scope .logo{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--white);text-decoration:none}
 
-main{flex:1;padding:56px 20px 72px;display:flex;flex-direction:column;align-items:center}
-.inner{width:100%;max-width:600px}
+.ty-scope main{flex:1;padding:56px 20px 72px;display:flex;flex-direction:column;align-items:center}
+.ty-scope .inner{width:100%;max-width:600px}
 
-.check-ring{width:76px;height:76px;border-radius:50%;border:2px solid var(--green);background:rgba(39,174,96,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) both}
-.check-ring svg{width:34px;height:34px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.pulse{animation:pulse 2.2s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(39,174,96,.25)}60%{box-shadow:0 0 0 12px rgba(39,174,96,0)}}
+.ty-scope .check-ring{width:76px;height:76px;border-radius:50%;border:2px solid var(--green);background:rgba(39,174,96,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;animation:tyPopInEs .5s cubic-bezier(.175,.885,.32,1.275) both}
+.ty-scope .check-ring svg{width:34px;height:34px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@keyframes tyPopInEs{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.ty-scope .pulse{animation:tyPulseEs 2.2s ease-in-out infinite}
+@keyframes tyPulseEs{0%,100%{box-shadow:0 0 0 0 rgba(39,174,96,.25)}60%{box-shadow:0 0 0 12px rgba(39,174,96,0)}}
 
-.eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--rust);margin-bottom:10px;text-align:center}
-h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:12px;text-align:center}
-@media(min-width:768px){h1{font-size:36px}}
-.confirm-sub{font-size:16px;color:var(--steel);line-height:1.6;text-align:center;margin-bottom:40px}
+.ty-scope .eyebrow{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--rust);margin-bottom:10px;text-align:center}
+.ty-scope h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1.15;color:var(--ink);margin-bottom:12px;text-align:center}
+@media(min-width:768px){.ty-scope h1{font-size:36px}}
+.ty-scope .confirm-sub{font-size:16px;color:var(--steel);line-height:1.6;text-align:center;margin-bottom:40px}
 
-.steps-wrap{margin-bottom:36px}
-.steps-title{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:16px;text-align:center}
-.step-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
-.step-item:last-child{border-bottom:none}
-.step-num{width:30px;height:30px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-title{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:2px}
-.step-desc{font-size:14px;color:var(--steel);line-height:1.55}
+.ty-scope .steps-wrap{margin-bottom:36px}
+.ty-scope .steps-title{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:16px;text-align:center}
+.ty-scope .step-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ty-scope .step-item:last-child{border-bottom:none}
+.ty-scope .step-num{width:30px;height:30px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ty-scope .step-title{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:2px}
+.ty-scope .step-desc{font-size:14px;color:var(--steel);line-height:1.55}
 
-.timer-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;margin-bottom:24px}
-.timer-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--steel);opacity:.6;margin-bottom:8px}
-.timer-display{font-family:'Archivo',sans-serif;font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--amber);line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
-.timer-sub{font-size:13px;color:var(--steel);opacity:.55;margin-bottom:18px}
-.timer-msg{font-size:14px;color:var(--steel);line-height:1.6}
-.timer-msg strong{color:var(--ink);font-weight:600}
+.ty-scope .timer-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;margin-bottom:24px}
+.ty-scope .timer-lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--steel);opacity:.6;margin-bottom:8px}
+.ty-scope .timer-display{font-family:'Archivo',sans-serif;font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--amber);line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.ty-scope .timer-sub{font-size:13px;color:var(--steel);opacity:.55;margin-bottom:18px}
+.ty-scope .timer-msg{font-size:14px;color:var(--steel);line-height:1.6}
+.ty-scope .timer-msg strong{color:var(--ink);font-weight:600}
 
-.site-card{display:block;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;text-decoration:none;transition:border-color .2s,transform .15s}
-.site-card:hover{border-color:var(--amber);transform:translateY(-2px)}
-.site-card .site-icon{font-size:2rem;margin-bottom:10px}
-.site-card h2{font-family:'Archivo',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.site-card p{font-size:14px;color:var(--steel);line-height:1.55;margin-bottom:18px}
-.site-btn{display:inline-block;background:var(--amber);color:var(--ink);font-weight:600;font-size:15px;padding:12px 28px;border-radius:10px;text-decoration:none;transition:background .2s}
-.site-btn:hover{background:var(--amber-dark)}
+.ty-scope .site-card{display:block;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;text-decoration:none;transition:border-color .2s,transform .15s}
+.ty-scope .site-card:hover{border-color:var(--amber);transform:translateY(-2px)}
+.ty-scope .site-card .site-icon{font-size:2rem;margin-bottom:10px}
+.ty-scope .site-card h2{font-family:'Archivo',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.ty-scope .site-card p{font-size:14px;color:var(--steel);line-height:1.55;margin-bottom:18px}
+.ty-scope .site-btn{display:inline-block;background:var(--amber);color:var(--ink);font-weight:600;font-size:15px;padding:12px 28px;border-radius:10px;text-decoration:none;transition:background .2s}
+.ty-scope .site-btn:hover{background:var(--amber-dark)}
 
-.footer{background:var(--ink);padding:22px 20px;text-align:center}
-.footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
-.footer a{color:#B7C2CA}
-.footer a:hover{color:var(--white)}
-/* El elemento Custom Code de GHL envuelve este contenido en su propio div
-   contenedor (confirmado con DevTools: id tipo "custom-code-XXXXXXXX",
-   clases "c-custom-code c-wrapper" en el div externo y
-   "custom-code-container" en el interno), que se calculaba en 600px fijos
-   sin importar nuestro contenido. Como ese div es un elemento real del DOM
-   (no un iframe) y esta etiqueta <style> termina inyectada como hija suya,
-   podemos apuntarle directamente — una hoja de estilos aplica a sus propios
-   ancestros igual que a cualquier otro lugar del documento. */
+.ty-scope .footer{background:var(--ink);padding:22px 20px;text-align:center}
+.ty-scope .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
+.ty-scope .footer a{color:#B7C2CA}
+.ty-scope .footer a:hover{color:var(--white)}
+/* Ver comentario en thankyou-en.html sobre el div contenedor de GHL. */
 .c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
-</head>
-<body>
+
+<div class="ty-scope">
 
 <header class="hdr">
   <a href="https://histakesai.com" class="logo">HighStakes.AI</a>
@@ -102,28 +101,28 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
       <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <p class="eyebrow">Todo listo</p>
-    <h1>¡Tu Llamada Estratégica <span id="nameConfirm"></span>Está Confirmada!</h1>
+    <h1>¡Tu Llamada Estratégica <span id="tyNameConfirmEs"></span>Está Confirmada!</h1>
     <p class="confirm-sub">Revisa tu correo y teléfono para la invitación de calendario. Llegaremos a la llamada con un plan personalizado ya construido para tu mercado.</p>
 
     <div class="steps-wrap">
       <p class="steps-title">Esto es lo que pasa ahora</p>
       <div class="step-item">
         <div class="step-num">1</div>
-        <div class="step-body">
+        <div>
           <p class="step-title">Revisa tu correo</p>
           <p class="step-desc">Recibirás una invitación de calendario con el enlace a la reunión. Agrégala para no perdértela.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">2</div>
-        <div class="step-body">
+        <div>
           <p class="step-title">Investigaremos tu mercado</p>
           <p class="step-desc">Antes de la llamada, auditamos tu presencia online y mapeamos a tu competencia local — llegamos con datos, no con suposiciones.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
-        <div class="step-body">
+        <div>
           <p class="step-title">Únete a tu reunión estratégica de 30 min</p>
           <p class="step-desc">Te presentamos un plan de crecimiento personalizado. Sin presión de ventas — solo un plan claro y accionable para tu negocio.</p>
         </div>
@@ -132,8 +131,8 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
 
     <div class="timer-card">
       <p class="timer-lbl">Mientras esperas — conoce lo que hacemos</p>
-      <div class="timer-display" id="timerDisplay">10:00</div>
-      <p class="timer-sub">Redirigiendo a nuestro sitio en <span id="timerSub">10 minutos</span></p>
+      <div class="timer-display" id="tyTimerDisplayEs">10:00</div>
+      <p class="timer-sub">Redirigiendo a nuestro sitio en <span id="tyTimerSubEs">10 minutos</span></p>
       <p class="timer-msg">Mientras tanto, conoce la historia de HighStakes.AI — <strong>los resultados que hemos obtenido para negocios como el tuyo</strong> y las estrategias exactas que usaremos en tu mercado.</p>
     </div>
 
@@ -153,17 +152,19 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
   <script>if(typeof fbq!=='undefined')fbq('track','Lead');</script>
 </footer>
 
+</div>
+
 <script>
 (function(){
   var name = new URLSearchParams(window.location.search).get('name');
-  if (name) document.getElementById('nameConfirm').textContent = name.split(' ')[0] + ', ';
+  if (name) document.getElementById('tyNameConfirmEs').textContent = name.split(' ')[0] + ', ';
 })();
 
 (function(){
   var SECS = 10 * 60;
   var remaining = SECS;
-  var display = document.getElementById('timerDisplay');
-  var sub     = document.getElementById('timerSub');
+  var display = document.getElementById('tyTimerDisplayEs');
+  var sub     = document.getElementById('tyTimerSubEs');
   var DEST    = 'https://histakesai.com';
 
   function fmt(s){
@@ -183,5 +184,3 @@ h1{font-family:'Archivo',sans-serif;font-size:28px;font-weight:800;line-height:1
   }, 1000);
 })();
 </script>
-</body>
-</html>
