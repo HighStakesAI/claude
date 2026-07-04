@@ -55,57 +55,56 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:va
 .wrap{max-width:680px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.wrap{max-width:920px}}
 .section{padding:56px 0}
-.section--sm{padding:40px 0}
+.section--sm{padding:44px 0}
+.section--lg{padding:72px 0}
 .section--dark{background:var(--ink);background-image:radial-gradient(rgba(232,150,60,.06) 1px,transparent 1px);background-size:22px 22px}
 .section--form{background:var(--ink-2)}
 
 .hdr{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.06);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-.01em}
 .hdr-right{display:flex;align-items:center;gap:16px}
-.lang-link{font-size:12px;font-weight:600;color:#B7C2CA;text-decoration:none;opacity:.55;transition:opacity .2s}
-.lang-link:hover{opacity:1}
 .hdr-cta{font-size:13px;font-weight:600;color:var(--ink);background:var(--amber);padding:9px 18px;border-radius:8px;text-decoration:none;transition:background .2s;white-space:nowrap}
 .hdr-cta:hover{background:var(--amber-dark)}
 
-.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:10px}
-.founder-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:8px 16px;border-radius:99px;margin-bottom:16px;box-shadow:0 3px 12px rgba(232,150,60,.35)}
+.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:8px}
+.founder-badge{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:8px 16px;border-radius:99px;margin-bottom:12px;box-shadow:0 3px 12px rgba(232,150,60,.35)}
+.founder-badge .i{width:14px;height:14px;stroke-width:2.2}
+.founder-badge--outline{background:var(--paper);border:1.5px solid var(--amber);color:var(--amber-dark);box-shadow:none}
 .eyebrow--amber{color:var(--amber)}
-h1{font-family:'Archivo',sans-serif;font-size:30px;font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
-@media(min-width:768px){h1{font-size:44px}}
-h2{font-family:'Archivo',sans-serif;font-size:26px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:0}
-@media(min-width:768px){h2{font-size:30px}}
+h1{font-family:'Archivo',sans-serif;font-size:clamp(30px,8vw,44px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:12px;text-wrap:balance}
+h2{font-family:'Archivo',sans-serif;font-size:clamp(24px,6vw,30px);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:0;text-wrap:balance}
 h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1.2;color:inherit;margin-bottom:5px}
-.subhead{font-size:17px;line-height:1.6;color:var(--steel);margin-bottom:22px}
+.subhead{font-size:clamp(16px,4.5vw,18px);line-height:1.6;color:var(--steel);margin-bottom:18px}
 .sec-sub{font-size:15px;color:var(--steel);margin-top:8px;margin-bottom:36px;line-height:1.6}
 .on-dark{color:#B7C2CA}
 
-.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:0 20px;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:background .2s,transform .1s;line-height:1.2}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:0 20px;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;text-decoration:none;transition:background .2s,transform .1s;line-height:1.2}
 .btn:hover{background:var(--amber-dark)}
 .btn:active{transform:scale(.99)}
 @media(min-width:768px){.btn{display:inline-flex;width:auto;padding:0 40px}}
 .btn--full{display:flex !important;width:100% !important}
 
-.hero{padding:44px 0 40px}
-.video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ink-2);margin:24px 0;box-shadow:0 8px 40px rgba(18,33,46,.18)}
+.hero{padding:36px 0 36px}
+.video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ink-2);margin:20px 0;box-shadow:0 8px 40px rgba(18,33,46,.18)}
 .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer}
 .play-ring{width:60px;height:60px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;box-shadow:0 4px 20px rgba(232,150,60,.4)}
 .play-ring svg{width:22px;height:22px;fill:var(--ink);margin-left:4px}
 .video-wrap:hover .play-ring{background:var(--amber-dark);transform:scale(1.1)}
 .ph-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B7C2CA;opacity:.45}
 .mute-btn{position:absolute;bottom:12px;right:12px;width:48px;height:48px;background:rgba(18,33,46,.82);border:none;border-radius:8px;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;z-index:5;transition:background .2s}
-.trust-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:500;color:var(--steel);margin-bottom:22px}
-.trust-row .t{display:flex;align-items:center;gap:5px;white-space:nowrap}
-.star{color:var(--amber)}
-.urgency{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--rust);margin-top:14px;padding:8px 14px;background:rgba(181,69,27,.08);border:1px solid rgba(181,69,27,.2);border-radius:6px}
+.trust-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.trust-row .t{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:12px;font-weight:600;color:var(--steel);background:var(--paper-2);border:1px solid var(--line);border-radius:99px;padding:7px 13px}
+.hero-cta{display:flex;flex-direction:column;gap:12px}
+@media(min-width:768px){.hero-cta{align-items:flex-start}}
+.urgency{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:600;color:var(--rust);padding:8px 14px;background:rgba(181,69,27,.08);border:1px solid rgba(181,69,27,.2);border-radius:8px}
 
-.stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px}
-@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-.stat{text-align:center}
-.stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
-@media(min-width:768px){.stat-num{font-size:46px}}
-.stat-lbl{font-size:13px;color:var(--steel);font-weight:500}
-.was-price{display:block;font-size:13px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px;margin-bottom:2px}
+.stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:20px 12px}
+.stat-num{font-family:'Archivo',sans-serif;font-size:clamp(28px,7vw,40px);font-weight:800;color:var(--ink);line-height:1;display:block}
+.stat-lbl{font-size:12.5px;color:var(--steel);font-weight:500;line-height:1.4}
+.was-price{display:block;font-size:12.5px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px}
 
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
 @media(min-width:768px){.svc-grid{grid-template-columns:1fr 1fr}}
@@ -124,6 +123,13 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .svc-grid .svc-card:nth-child(4){transition-delay:330ms}
 .svc-grid .svc-card:nth-child(5){transition-delay:440ms}
 .svc-card:hover{transition-delay:0ms}
+
+.steps-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+@media(min-width:768px){.steps-grid{grid-template-columns:1fr 1fr 1fr}}
+.step-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 22px}
+.step-num-tile{width:48px;height:48px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:17px;font-weight:800;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.step-card h3{color:var(--white);margin-bottom:8px;font-size:16px}
+.step-card p{font-size:14px;color:#B7C2CA;line-height:1.6}
 
 .ba-wrap{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:540px){.ba-wrap{grid-template-columns:1fr}}
@@ -148,16 +154,17 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-stars{color:var(--amber);font-size:14px;margin-bottom:12px;letter-spacing:.04em}
 .testi-quote{font-size:14px;line-height:1.7;color:var(--steel);font-style:italic;margin-bottom:18px}
 .testi-author{display:flex;align-items:center;gap:11px}
-.testi-av{width:40px;height:40px;background:var(--white);border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;overflow:hidden;padding:4px}
+.testi-av{width:40px;height:40px;background:var(--white);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;overflow:hidden;padding:4px}
 .testi-av img{width:100%;height:100%;object-fit:contain}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
 
-.price-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:32px 28px;margin-top:32px;max-width:560px}
+.price-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 28px;margin-top:32px;max-width:560px;box-shadow:0 8px 32px rgba(18,33,46,.10)}
+.price-group-lbl{font-family:'Archivo',sans-serif;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);opacity:.65;padding:14px 0 4px}
+.price-group-lbl:first-child{padding-top:0}
 .price-header-row{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .price-tag{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1}
 .price-tag .amt-label{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--steel);display:block;margin-bottom:4px}
-.price-tag .per{font-size:18px;font-weight:600}
 .price-setup{text-align:right}
 .price-setup .s-val{font-family:'Archivo',sans-serif;font-size:22px;font-weight:700;color:var(--steel)}
 .price-setup .s-lbl{font-size:12px;color:var(--steel);opacity:.7;display:block;margin-top:2px}
@@ -180,7 +187,7 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .faq-item.open .faq-icon{transform:rotate(180deg)}
 .faq-item.open .faq-body{padding-bottom:18px}
 
-.form-card{background:var(--white);border-radius:14px;padding:28px 24px;margin-top:28px}
+.form-card{background:var(--white);border-radius:16px;padding:28px 24px;margin-top:28px}
 @media(min-width:768px){.form-card{padding:36px 32px}}
 
 .form-prog{display:flex;align-items:center;margin-bottom:24px;gap:0}
@@ -226,10 +233,6 @@ input[type=hidden]{display:none}
 .sched-intro{text-align:center;margin-bottom:20px}
 .sched-name{font-family:'Archivo',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .sched-sub{font-size:14px;color:var(--steel)}
-.sched-box{min-height:300px;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:36px;text-align:center}
-.sched-box .ico{font-size:2.4rem;opacity:.3}
-.sched-box p{font-size:13px;color:var(--steel);line-height:1.6;max-width:300px}
-.sched-box code{font-size:.85em;color:var(--amber)}
 
 /* ── CALENDLY EMBED ───────────────────────────────────────────────────── */
 /* Al mostrar el calendario, ensancha la tarjeta para que Calendly use su
@@ -245,7 +248,7 @@ input[type=hidden]{display:none}
    Calendly) y luego la ajusta automáticamente su propia opción resize:true —
    sin regla de altura aquí, ya que una altura !important bloquearía ese
    auto-resize. min-height es solo un marcador antes de que cargue el widget. */
-.sched-embed{min-height:700px;border-radius:10px;overflow:visible;display:block;padding:0;background:none;border:none}
+.sched-embed{min-height:700px;border-radius:12px;overflow:visible;display:block;padding:0;background:none;border:none}
 .sched-embed .calendly-inline-widget{width:100%!important;min-width:320px}
 /* Mismo comportamiento del contenedor Custom Code de GHL confirmado en las
    páginas de agradecimiento — override defensivo por si el paso del
@@ -257,8 +260,8 @@ input[type=hidden]{display:none}
 .footer a{color:#B7C2CA;text-underline-offset:2px}
 .footer a:hover{color:var(--white)}
 
-.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(18,33,46,.97);border-top:1px solid rgba(255,255,255,.08);padding:10px 16px 18px}
-.mob-bar-btn{display:block;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-weight:700;font-size:15px;text-align:center;text-decoration:none;padding:14px;border-radius:10px;transition:background .2s}
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(18,33,46,.88);border-top:1px solid rgba(255,255,255,.08);padding:10px 16px 18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -6px 24px rgba(0,0,0,.16)}
+.mob-bar-btn{display:block;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-weight:700;font-size:15px;text-align:center;text-decoration:none;padding:14px;border-radius:12px;transition:background .2s}
 .mob-bar-btn:hover{background:var(--amber-dark)}
 @media(max-width:767px){.mob-bar{display:block}body{padding-bottom:96px}}
 
@@ -287,15 +290,13 @@ input[type=hidden]{display:none}
 .mute-btn{color:var(--white)}
 .mute-btn .i{width:20px;height:20px}
 .urgency .i{width:14px;height:14px;margin-right:2px}
-.sched-box .ico{color:var(--steel);opacity:.35}
-.sched-box .ico .i{width:42px;height:42px;stroke-width:1.5}
 .mob-bar-btn{display:flex;align-items:center;justify-content:center;gap:8px}
 .mob-bar-btn .i{width:17px;height:17px}
-.hdr{transition:box-shadow .25s ease,transform .4s cubic-bezier(.16,1,.3,1)}
+.hdr{transition:box-shadow .25s ease,transform .4s cubic-bezier(.16,1,.3,1),top .35s cubic-bezier(.16,1,.3,1)}
 .hdr.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.32)}
 .hdr.hide{transform:translateY(-100%)}
-.btn:focus-visible,.hdr-cta:focus-visible,.trade-btn:focus-visible,.faq-btn:focus-visible,.mute-btn:focus-visible,.mob-bar-btn:focus-visible,.lang-link:focus-visible,.logo:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
-.btn:focus-visible{border-radius:10px}
+.btn:focus-visible,.hdr-cta:focus-visible,.trade-btn:focus-visible,.faq-btn:focus-visible,.mute-btn:focus-visible,.mob-bar-btn:focus-visible,.logo:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
+.btn:focus-visible{border-radius:12px}
 
 /* ── GRAIN TEXTURE ─────────────────────────────────────────────────── */
 .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;mix-blend-mode:overlay;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>')}
@@ -314,7 +315,7 @@ input[type=hidden]{display:none}
 
 /* ── SIDE SCROLL-SPY NAV ──────────────────────────────────────────── */
 .side-nav{display:none;position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:40}
-@media(min-width:1024px){.side-nav{display:block}}
+@media(min-width:1200px){.side-nav{display:block}}
 .side-nav ul{list-style:none;display:flex;flex-direction:column;align-items:flex-end;gap:15px}
 .side-nav li{transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .side-nav a{display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--steel);opacity:.5;text-decoration:none;letter-spacing:.02em;text-align:right;white-space:nowrap;transition:font-size .3s cubic-bezier(.16,1,.3,1),font-weight .3s ease,color .3s ease,opacity .3s ease}
@@ -368,6 +369,7 @@ input[type=hidden]{display:none}
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
 </svg>
 
 <div class="exit-bar" id="exitBar">
@@ -379,7 +381,6 @@ input[type=hidden]{display:none}
 <header class="hdr">
   <a href="https://histakesai.com" class="logo">HighStakes.AI</a>
   <div class="hdr-right">
-    <a href="landing-en.html" class="lang-link">EN</a>
     <a href="#form" class="hdr-cta">Reservar Llamada Gratis</a>
   </div>
 </header>
@@ -387,7 +388,7 @@ input[type=hidden]{display:none}
 <!-- HERO -->
 <section class="hero" id="sec-home">
   <div class="wrap">
-    <span class="founder-badge reveal">🏆 Tarifa Fundador — $1,000 para nuestros primeros 10 clientes</span>
+    <span class="founder-badge reveal"><svg class="i"><use href="#i-award"/></svg> Tarifa Fundador — $1,000 para nuestros primeros 10 clientes</span>
     <p class="eyebrow reveal">Para plomeros · pintores · HVAC · remodeladores</p>
     <h1 class="hero-title" aria-label="Un Sitio Web Que Hace Sonar Tu Teléfono.">
       <span class="word" style="animation-delay:.05s">Un</span> <span class="word" style="animation-delay:.11s">Sitio</span> <span class="word" style="animation-delay:.17s">Web</span> <span class="word" style="animation-delay:.23s">Que</span> <span class="word" style="animation-delay:.29s">Hace</span><br>
@@ -404,12 +405,12 @@ input[type=hidden]{display:none}
     </div>
 
     <div class="trust-row reveal">
-      <span class="t"><svg class="i i-fill" style="color:var(--amber)"><use href="#i-star"/></svg> Instalación en 2 Semanas, Todo Gestionado</span>
-      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> 100% Prospectos Exclusivos</span>
+      <span class="t"><svg class="i" style="color:var(--amber-dark)"><use href="#i-clock"/></svg> Instalación en 2 Semanas, Todo Gestionado</span>
+      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> Todo Es Tuyo</span>
       <span class="t"><svg class="i" style="color:var(--steel)"><use href="#i-lock"/></svg> Sin Contratos a Largo Plazo</span>
     </div>
 
-    <div class="reveal">
+    <div class="hero-cta reveal">
       <a href="#form" class="btn">Obtener Mi Llamada Estratégica Gratis<svg class="i btn-arrow"><use href="#i-arrow"/></svg></a>
       <div class="urgency"><svg class="i"><use href="#i-clock"/></svg> <span class="urgency-txt">Solo quedan 3 cupos para llamada estratégica este mes</span></div>
     </div>
@@ -421,9 +422,9 @@ input[type=hidden]{display:none}
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat reveal"><span class="was-price">Antes $3,000</span><span class="stat-num" data-target="1000" data-prefix="$">0</span><span class="stat-lbl">Instalación Única — Sin Costos Ocultos</span></div>
-      <div class="stat reveal reveal-d1"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mes">0</span><span class="stat-lbl">Totalmente Gestionado — Cancela Cuando Quieras</span></div>
-      <div class="stat reveal reveal-d2"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="2" data-suffix=" Semanas">0</span><span class="stat-lbl">Del Registro al Lanzamiento</span></div>
-      <div class="stat reveal reveal-d3"><span class="was-price" aria-hidden="true" style="visibility:hidden">Antes $0,000</span><span class="stat-num" data-target="30" data-suffix=" Min">0</span><span class="stat-lbl">Llamada Estratégica Gratis — Sin Presión</span></div>
+      <div class="stat reveal reveal-d1"><span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mes">0</span><span class="stat-lbl">Totalmente Gestionado — Cancela Cuando Quieras</span></div>
+      <div class="stat reveal reveal-d2"><span class="stat-num" data-target="2" data-suffix=" Semanas">0</span><span class="stat-lbl">Del Registro al Lanzamiento</span></div>
+      <div class="stat reveal reveal-d3"><span class="stat-num" data-target="30" data-suffix=" Min">0</span><span class="stat-lbl">Llamada Estratégica Gratis — Sin Presión</span></div>
     </div>
   </div>
 </div>
@@ -436,19 +437,19 @@ input[type=hidden]{display:none}
     <div class="ba-wrap reveal">
       <div class="ba-card ba-without">
         <p class="ba-head"><svg class="i"><use href="#i-x"/></svg> Sin HighStakes.AI</p>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Temporadas muertas en cada baja del año — sin trabajo predecible</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Prospectos compartidos con 3–5 contratistas más</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Pagando por clics que nunca se convierten en trabajos</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Horas persiguiendo prospectos que nunca devuelven la llamada</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Creciendo solo por referencias — lento e impredecible</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Invisible cuando los vecinos buscan en Google</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Prospectos regados entre textos, buzones de voz y mensajes directos</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Un sitio hecho a mano que parece de 2015</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Sin forma de saber de dónde llegan los clientes</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Dolores de cabeza técnicos sin tiempo para resolverlos</span></div>
       </div>
       <div class="ba-card ba-with">
         <p class="ba-head"><svg class="i"><use href="#i-check"/></svg> Con HighStakes.AI</p>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Flujo constante — 20–50 trabajos nuevos por mes</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">100% prospectos exclusivos — solo tuyos, de nadie más</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Campañas optimizadas para trabajos agendados, no clics</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">El seguimiento automático cierra mientras tú trabajas</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Sistema escalable que crece con tu negocio</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Un sitio profesional en línea en 2 semanas</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Te encuentran en Google cuando buscan tu oficio</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Cada prospecto capturado y organizado en un CRM</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Las solicitudes de cita llegan solas a tu panel</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Todo gestionado por nosotros — tú solo contesta el teléfono</span></div>
       </div>
     </div>
     <div class="reveal" style="margin-top:32px;display:flex;justify-content:center">
@@ -462,22 +463,22 @@ input[type=hidden]{display:none}
   <div class="wrap">
     <p class="eyebrow eyebrow--amber reveal">Cómo funciona</p>
     <h2 style="color:var(--white)" class="reveal">Proceso simple. Resultados reales.</h2>
-    <p class="sec-sub on-dark reveal">De la llamada al calendario lleno en 30 días o menos.</p>
-    <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px" id="stepsGrid">
-      <div class="reveal" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">1</div>
-        <h3 style="color:var(--white);margin-bottom:8px">Hacemos una llamada gratis</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Cuéntanos tu oficio, mercado y metas. Auditamos tu presencia digital actual y te mostramos exactamente qué te está frenando — sin costo alguno.</p>
+    <p class="sec-sub on-dark reveal">De la primera llamada a estar completamente en línea en 2 semanas.</p>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num-tile">1</div>
+        <h3>Hacemos una llamada gratis</h3>
+        <p>Cuéntanos tu oficio, mercado y metas. Auditamos tu presencia digital actual y te mostramos exactamente qué te está frenando — sin costo alguno.</p>
       </div>
-      <div class="reveal reveal-d1" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">2</div>
-        <h3 style="color:var(--white);margin-bottom:8px">Construimos todo</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Anuncios, sitio web, seguimiento automático, SEO — todo gestionado en 2 semanas para que puedas enfocarte en el trabajo real.</p>
+      <div class="step-card reveal reveal-d1">
+        <div class="step-num-tile">2</div>
+        <h3>Construimos tu kit</h3>
+        <p>Tu sitio web profesional, base de SEO local y CRM — construidos y en línea en 2 semanas para que puedas enfocarte en el trabajo real.</p>
       </div>
-      <div class="reveal reveal-d2" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">3</div>
-        <h3 style="color:var(--white);margin-bottom:8px">Los trabajos llegan a tu calendario</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Los prospectos calificados agendan directamente en tu horario. Tú apareces, cierras el trabajo y creces — nosotros mantenemos el flujo lleno y optimizamos cada mes.</p>
+      <div class="step-card reveal reveal-d2">
+        <div class="step-num-tile">3</div>
+        <h3>Los clientes te encuentran y agendan</h3>
+        <p>Cuando los vecinos buscan tu oficio, te encuentran — y cada llamada, formulario y solicitud de cita llega organizada a tu panel, lista para que respondas.</p>
       </div>
     </div>
   </div>
@@ -498,13 +499,13 @@ input[type=hidden]{display:none}
 </section>
 
 <!-- PRECIOS — KIT DE INICIO -->
-<section class="section" id="sec-pricing" style="background:var(--paper-2);border-top:1px solid var(--line)">
+<section class="section--lg" id="sec-pricing" style="background:var(--paper-2);border-top:1px solid var(--line)">
   <div class="wrap">
     <p class="eyebrow reveal">Tu kit de inicio</p>
     <h2 class="reveal">Ponte en línea y organizado — por $1,000.</h2>
     <p class="sec-sub reveal">Una tarifa fija de configuración para construir tu base, luego un pago mensual bajo para mantener todo funcionando. Sin costos ocultos, sin contratos largos.</p>
     <div class="price-card reveal">
-      <span class="founder-badge" style="margin-bottom:18px">🏆 Tarifa Fundador — Solo los Primeros 10 Clientes</span>
+      <span class="founder-badge founder-badge--outline" style="margin-bottom:18px"><svg class="i"><use href="#i-award"/></svg> Tarifa Fundador — Solo los Primeros 10 Clientes</span>
       <div class="price-header-row">
         <div class="price-tag">
           <span class="amt-label">Configuración única</span>
@@ -517,12 +518,18 @@ input[type=hidden]{display:none}
         </div>
       </div>
       <div class="price-list">
+        <p class="price-group-lbl">Sitio Web y SEO</p>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Sitio web personalizado y optimizado para móvil</span></div>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">SEO local básico (Perfil de Google Business + configuración on-page)</span></div>
-        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Sistema CRM y gestión de prospectos, todo en un panel</span></div>
-        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Formularios de contacto y reserva conectados a tu CRM</span></div>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Dominio, hosting y mantenimiento incluidos</span></div>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Llamada de incorporación personalizada para dejar todo listo</span></div>
+        <p class="price-group-lbl">Prospectos y Reputación</p>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Sistema CRM y gestión de prospectos, todo en un panel</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Formularios de contacto y reserva conectados a tu CRM</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Chatbot en tu sitio web que responde visitantes y captura prospectos en el CRM</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Respuestas automáticas a tus reseñas de Google</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Código QR para que tus clientes dejen reseñas</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Filtro inteligente de reseñas</span></div>
       </div>
       <div class="price-cta-wrap">
         <a href="#form" class="btn btn--full">Obtener Mi Kit de Inicio<svg class="i btn-arrow"><use href="#i-arrow"/></svg></a>
@@ -568,7 +575,7 @@ input[type=hidden]{display:none}
     <p class="eyebrow reveal">¿Tienes preguntas?</p>
     <h2 class="reveal">Preguntas Frecuentes</h2>
     <div class="faq-list reveal" style="margin-top:32px">
-      <div class="faq-item"><button class="faq-btn">¿Qué recibo exactamente por los $1,000? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button><div class="faq-body"><p>Todo el kit de inicio: un sitio web personalizado optimizado para móvil, tu Perfil de Google Business y SEO on-page configurados, un CRM que captura y organiza cada prospecto, formularios de contacto y reserva conectados directamente, más dominio, hosting y una llamada de incorporación personalizada. Una tarifa fija — sin cargos sorpresa.</p></div></div>
+      <div class="faq-item"><button class="faq-btn">¿Qué recibo exactamente por los $1,000? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button><div class="faq-body"><p>Todo el kit de inicio: un sitio web personalizado optimizado para móvil, tu Perfil de Google Business y SEO on-page configurados, un CRM que captura y organiza cada prospecto, formularios de contacto y reserva conectados directamente, un chatbot en tu sitio que responde visitantes y captura sus datos, y un sistema completo de reseñas — respuestas automáticas a tus reseñas de Google, un código QR para que tus clientes dejen la suya y un filtro inteligente de reseñas — más dominio, hosting y una llamada de incorporación personalizada. Una tarifa fija — sin cargos sorpresa.</p></div></div>
       <div class="faq-item"><button class="faq-btn">¿Cuánto tarda la construcción? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button><div class="faq-body"><p>La mayoría de los kits de inicio se lanzan en 7–14 días después de tu llamada de incorporación. Revisas una vista previa completa del sitio antes del lanzamiento y hacemos revisiones hasta que estés satisfecho — nunca te sorprende el resultado final.</p></div></div>
       <div class="faq-item"><button class="faq-btn">¿Qué cubren los $97/mes? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button><div class="faq-body"><p>Hosting, actualizaciones de seguridad, mantenimiento continuo, acceso a tu CRM y pequeños cambios de contenido cuando los necesites — fotos nuevas, horarios actualizados, ajustes de servicios. Tu sitio web y sistema de prospectos totalmente gestionados: nunca tienes que tocar la parte técnica.</p></div></div>
       <div class="faq-item"><button class="faq-btn">¿Soy dueño del sitio si cancelo? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button><div class="faq-body"><p>Sí. Tu dominio y tu contenido son tuyos. No hay contrato a largo plazo — pagas mensualmente y puedes cancelar con 30 días de aviso, y te ayudamos a hacer la transición sin problemas.</p></div></div>
@@ -654,6 +661,8 @@ input[type=hidden]{display:none}
 
 <script>
 var SPOTS_LEFT = 3; /* actualiza en un solo lugar; mantenlo veraz o elimina las insignias */
+/* Guardia de pruebas locales: nunca dispares el webhook ni el pixel desde una máquina de desarrollo */
+var IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
 document.querySelectorAll('.urgency-txt').forEach(function(el){
   el.textContent = 'Solo quedan ' + SPOTS_LEFT + ' cupos para llamada estratégica este mes';
 });
@@ -669,6 +678,11 @@ var utmData = {};
 
 var vslWrap=document.getElementById('vslWrap'),vslPh=document.getElementById('vslPh'),muteBtn=document.getElementById('muteBtn');
 var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,isMuted=true;
+
+/* Oculta el bloque de video mientras el ID siga siendo el placeholder para que
+   producción nunca muestre un reproductor vacío. Reaparece automáticamente al
+   poner un ID real en data-id. */
+if(!vslId||vslId==='YOUR_YOUTUBE_VIDEO_ID'){vslWrap.style.display='none';}
 
 if(vslType==='youtube'&&vslId&&vslId!=='YOUR_YOUTUBE_VIDEO_ID'){
   var _yts=document.createElement('script');_yts.src='https://www.youtube.com/iframe_api';document.head.appendChild(_yts);
@@ -708,8 +722,6 @@ new IntersectionObserver(function(e){if(!statsTriggered&&e[0].isIntersecting){st
 
 var revObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
-
-(function(){var g=document.getElementById('stepsGrid');function upd(){g.style.gridTemplateColumns=window.innerWidth>=768?'1fr 1fr 1fr':'1fr';}upd();window.addEventListener('resize',upd,{passive:true});})();
 
 document.querySelectorAll('.faq-btn').forEach(function(btn){
   btn.setAttribute('aria-expanded','false');
@@ -841,12 +853,16 @@ document.getElementById('btnSubmit').addEventListener('click',function(){
   if(!consent){document.getElementById('consentRow').classList.add('consent-err');ok=false;}
   else document.getElementById('consentRow').classList.remove('consent-err');
   if(!ok)return;
+  /* Honeypot: un usuario real nunca ve ni llena hp_url — un valor aquí es un bot */
+  if(document.querySelector('input[name="hp_url"]').value)return;
   var btn=this;btn.classList.add('loading');
   var data={name:document.getElementById('f-name').value.trim(),phone:document.getElementById('f-phone').value.trim(),email:email,trade:selectedTrade,lang:'es',source:document.referrer||'direct'};
   Object.assign(data,utmData);
   window.leadData=data;
-  if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
-  fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(!IS_LOCAL){
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
+    fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),keepalive:true}).catch(function(){});
+  }
   setTimeout(function(){
     btn.classList.remove('loading');
     document.getElementById('step2').classList.add('hidden');
@@ -899,24 +915,29 @@ function initCalendly(){
   }
 }
 /* Redirige a la página de agradecimiento en cuanto el visitante reserve un horario. */
+/* El retraso de ~400ms da tiempo a que el evento Schedule del pixel se envíe primero. */
 window.addEventListener('message',function(e){
   if(e.data&&e.data.event==='calendly.event_scheduled'){
-    if(typeof fbq!=='undefined')fbq('track','Schedule');
-    window.location.href='/thankyou-es';
+    if(!IS_LOCAL&&typeof fbq!=='undefined')fbq('track','Schedule');
+    setTimeout(function(){window.location.href='/thankyou-es';},400);
   }
 });
 
 (function(){
   var bar=document.getElementById('exitBar');
   if(!bar||!window.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+  var hdr=document.querySelector('.hdr');
+  /* Baja el header fijo la altura de la barra para que nunca se encimen */
+  function showBar(){bar.classList.add('show');hdr.style.top=bar.offsetHeight+'px';}
+  function hideBar(){bar.classList.remove('show');hdr.style.top='';}
   document.addEventListener('mouseout',function(e){
     if(e.clientY<=0&&!e.relatedTarget&&!sessionStorage.getItem('exitShown')){
       sessionStorage.setItem('exitShown','1');
-      bar.classList.add('show');
+      showBar();
     }
   });
-  document.getElementById('exitBarClose').addEventListener('click',function(){bar.classList.remove('show');});
-  document.getElementById('exitBarLink').addEventListener('click',function(){bar.classList.remove('show');});
+  document.getElementById('exitBarClose').addEventListener('click',hideBar);
+  document.getElementById('exitBarLink').addEventListener('click',hideBar);
 })();
 </script>
 </body>

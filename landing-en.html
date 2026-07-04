@@ -56,7 +56,8 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:va
 .wrap{max-width:680px;margin:0 auto;padding:0 20px}
 @media(min-width:768px){.wrap{max-width:920px}}
 .section{padding:56px 0}
-.section--sm{padding:40px 0}
+.section--sm{padding:44px 0}
+.section--lg{padding:72px 0}
 .section--dark{background:var(--ink);background-image:radial-gradient(rgba(232,150,60,.06) 1px,transparent 1px);background-size:22px 22px}
 .section--form{background:var(--ink-2)}
 
@@ -64,35 +65,32 @@ body{font-family:'Inter',sans-serif;font-size:16px;line-height:1.5;background:va
 .hdr{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.06);padding:13px 20px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-.01em}
 .hdr-right{display:flex;align-items:center;gap:16px}
-.lang-link{font-size:12px;font-weight:600;color:#B7C2CA;text-decoration:none;opacity:.55;transition:opacity .2s}
-.lang-link:hover{opacity:1}
 .hdr-cta{font-size:13px;font-weight:600;color:var(--ink);background:var(--amber);padding:9px 18px;border-radius:8px;text-decoration:none;transition:background .2s;white-space:nowrap}
 .hdr-cta:hover{background:var(--amber-dark)}
 
 /* ── TYPE ─────────────────────────────────────────────────────────── */
-.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:10px}
-.founder-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:8px 16px;border-radius:99px;margin-bottom:16px;box-shadow:0 3px 12px rgba(232,150,60,.35)}
+.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:8px}
+.founder-badge{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:8px 16px;border-radius:99px;margin-bottom:12px;box-shadow:0 3px 12px rgba(232,150,60,.35)}
+.founder-badge .i{width:14px;height:14px;stroke-width:2.2}
+.founder-badge--outline{background:var(--paper);border:1.5px solid var(--amber);color:var(--amber-dark);box-shadow:none}
 .eyebrow--amber{color:var(--amber)}
-h1{font-family:'Archivo',sans-serif;font-size:30px;font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:14px}
-@media(min-width:768px){h1{font-size:44px}}
-h2{font-family:'Archivo',sans-serif;font-size:26px;font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:0}
-@media(min-width:768px){h2{font-size:30px}}
+h1{font-family:'Archivo',sans-serif;font-size:clamp(30px,8vw,44px);font-weight:800;line-height:1.1;color:var(--ink);margin-bottom:12px;text-wrap:balance}
+h2{font-family:'Archivo',sans-serif;font-size:clamp(24px,6vw,30px);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:0;text-wrap:balance}
 h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1.2;color:inherit;margin-bottom:5px}
-.subhead{font-size:17px;line-height:1.6;color:var(--steel);margin-bottom:22px}
-@media(min-width:768px){.subhead{font-size:18px}}
+.subhead{font-size:clamp(16px,4.5vw,18px);line-height:1.6;color:var(--steel);margin-bottom:18px}
 .sec-sub{font-size:15px;color:var(--steel);margin-top:8px;margin-bottom:36px;line-height:1.6}
 .on-dark{color:#B7C2CA}
 
 /* ── BUTTONS ──────────────────────────────────────────────────────── */
-.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:0 20px;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:background .2s,transform .1s;line-height:1.2}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:0 20px;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;font-weight:600;border:none;border-radius:12px;cursor:pointer;text-decoration:none;transition:background .2s,transform .1s;line-height:1.2}
 .btn:hover{background:var(--amber-dark)}
 .btn:active{transform:scale(.99)}
 @media(min-width:768px){.btn{display:inline-flex;width:auto;padding:0 40px}}
 .btn--full{display:flex !important;width:100% !important}
 
 /* ── HERO ─────────────────────────────────────────────────────────── */
-.hero{padding:44px 0 40px}
-.video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ink-2);margin:24px 0;box-shadow:0 8px 40px rgba(18,33,46,.18)}
+.hero{padding:36px 0 36px}
+.video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ink-2);margin:20px 0;box-shadow:0 8px 40px rgba(18,33,46,.18)}
 .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer}
 .play-ring{width:60px;height:60px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;box-shadow:0 4px 20px rgba(232,150,60,.4)}
 .play-ring svg{width:22px;height:22px;fill:var(--ink);margin-left:4px}
@@ -100,20 +98,20 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .ph-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B7C2CA;opacity:.45}
 .mute-btn{position:absolute;bottom:12px;right:12px;width:48px;height:48px;background:rgba(18,33,46,.82);border:none;border-radius:8px;cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;z-index:5;transition:background .2s}
 .mute-btn:hover{background:rgba(18,33,46,1)}
-.trust-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:500;color:var(--steel);margin-bottom:22px}
-.trust-row .t{display:flex;align-items:center;gap:5px;white-space:nowrap}
-.star{color:var(--amber)}
-.urgency{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--rust);margin-top:14px;padding:8px 14px;background:rgba(181,69,27,.08);border:1px solid rgba(181,69,27,.2);border-radius:6px}
+.trust-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.trust-row .t{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:12px;font-weight:600;color:var(--steel);background:var(--paper-2);border:1px solid var(--line);border-radius:99px;padding:7px 13px}
+.hero-cta{display:flex;flex-direction:column;gap:12px}
+@media(min-width:768px){.hero-cta{align-items:flex-start}}
+.urgency{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:600;color:var(--rust);padding:8px 14px;background:rgba(181,69,27,.08);border:1px solid rgba(181,69,27,.2);border-radius:8px}
 
 /* ── STATS BAND ───────────────────────────────────────────────────── */
-.stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 16px}
-@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-.stat{text-align:center}
-.stat-num{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1;display:block;margin-bottom:4px}
-@media(min-width:768px){.stat-num{font-size:46px}}
-.stat-lbl{font-size:13px;color:var(--steel);font-weight:500}
-.was-price{display:block;font-size:13px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px;margin-bottom:2px}
+.stats-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:20px 12px}
+.stat-num{font-family:'Archivo',sans-serif;font-size:clamp(28px,7vw,40px);font-weight:800;color:var(--ink);line-height:1;display:block}
+.stat-lbl{font-size:12.5px;color:var(--steel);font-weight:500;line-height:1.4}
+.was-price{display:block;font-size:12.5px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px}
 
 /* ── SERVICE CARDS ────────────────────────────────────────────────── */
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
@@ -133,6 +131,14 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .svc-grid .svc-card:nth-child(4){transition-delay:330ms}
 .svc-grid .svc-card:nth-child(5){transition-delay:440ms}
 .svc-card:hover{transition-delay:0ms}
+
+/* ── HOW IT WORKS STEPS ───────────────────────────────────────────── */
+.steps-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+@media(min-width:768px){.steps-grid{grid-template-columns:1fr 1fr 1fr}}
+.step-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 22px}
+.step-num-tile{width:48px;height:48px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--ink);font-family:'Archivo',sans-serif;font-size:17px;font-weight:800;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.step-card h3{color:var(--white);margin-bottom:8px;font-size:16px}
+.step-card p{font-size:14px;color:#B7C2CA;line-height:1.6}
 
 /* ── BEFORE / AFTER ───────────────────────────────────────────────── */
 .ba-wrap{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -159,17 +165,18 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .testi-stars{color:var(--amber);font-size:14px;margin-bottom:12px;letter-spacing:.04em}
 .testi-quote{font-size:14px;line-height:1.7;color:var(--steel);font-style:italic;margin-bottom:18px}
 .testi-author{display:flex;align-items:center;gap:11px}
-.testi-av{width:40px;height:40px;background:var(--white);border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;overflow:hidden;padding:4px}
+.testi-av{width:40px;height:40px;background:var(--white);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;overflow:hidden;padding:4px}
 .testi-av img{width:100%;height:100%;object-fit:contain}
 .testi-name{font-weight:600;font-size:13.5px;color:var(--ink)}
 .testi-biz{font-size:12px;color:var(--steel)}
 
 /* ── PRICING ──────────────────────────────────────────────────────── */
-.price-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:32px 28px;margin-top:32px;max-width:560px}
+.price-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 28px;margin-top:32px;max-width:560px;box-shadow:0 8px 32px rgba(18,33,46,.10)}
+.price-group-lbl{font-family:'Archivo',sans-serif;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);opacity:.65;padding:14px 0 4px}
+.price-group-lbl:first-child{padding-top:0}
 .price-header-row{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .price-tag{font-family:'Archivo',sans-serif;font-size:38px;font-weight:800;color:var(--ink);line-height:1}
 .price-tag .amt-label{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--steel);display:block;margin-bottom:4px}
-.price-tag .per{font-size:18px;font-weight:600}
 .price-setup{text-align:right}
 .price-setup .s-val{font-family:'Archivo',sans-serif;font-size:22px;font-weight:700;color:var(--steel)}
 .price-setup .s-lbl{font-size:12px;color:var(--steel);opacity:.7;display:block;margin-top:2px}
@@ -194,7 +201,7 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .faq-item.open .faq-body{padding-bottom:18px}
 
 /* ── FORM ─────────────────────────────────────────────────────────── */
-.form-card{background:var(--white);border-radius:14px;padding:28px 24px;margin-top:28px}
+.form-card{background:var(--white);border-radius:16px;padding:28px 24px;margin-top:28px}
 @media(min-width:768px){.form-card{padding:36px 32px}}
 
 /* Progress indicator */
@@ -235,17 +242,12 @@ input[type=hidden]{display:none}
 .consent-txt a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
 .consent-err .consent-txt{color:#c0392b}
 
-.form-step{}
 .form-step.hidden{display:none}
 .scheduler{display:none}
 .scheduler.show{display:block}
 .sched-intro{text-align:center;margin-bottom:20px}
 .sched-name{font-family:'Archivo',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .sched-sub{font-size:14px;color:var(--steel)}
-.sched-box{min-height:300px;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:36px;text-align:center}
-.sched-box .ico{font-size:2.4rem;opacity:.3}
-.sched-box p{font-size:13px;color:var(--steel);line-height:1.6;max-width:300px}
-.sched-box code{font-size:.85em;color:var(--amber)}
 
 /* ── CALENDLY EMBED ───────────────────────────────────────────────────── */
 /* When the scheduler is showing, widen the card so Calendly can use its
@@ -263,7 +265,7 @@ input[type=hidden]{display:none}
    height would block that auto-resize from ever taking effect. min-height
    below is just a placeholder so the section doesn't look collapsed before
    the widget loads. */
-.sched-embed{min-height:700px;border-radius:10px;overflow:visible;display:block;padding:0;background:none;border:none}
+.sched-embed{min-height:700px;border-radius:12px;overflow:visible;display:block;padding:0;background:none;border:none}
 .sched-embed .calendly-inline-widget{width:100%!important;min-width:320px}
 /* Same GHL Custom Code container behavior confirmed on the thank-you pages
    (a real div, not an iframe, that can independently constrain width) —
@@ -278,8 +280,8 @@ input[type=hidden]{display:none}
 .footer a:hover{color:var(--white)}
 
 /* ── MOBILE STICKY BAR ────────────────────────────────────────────── */
-.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(18,33,46,.97);border-top:1px solid rgba(255,255,255,.08);padding:10px 16px 18px;backdrop-filter:none}
-.mob-bar-btn{display:block;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-weight:700;font-size:15px;text-align:center;text-decoration:none;padding:14px;border-radius:10px;transition:background .2s}
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(18,33,46,.88);border-top:1px solid rgba(255,255,255,.08);padding:10px 16px 18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -6px 24px rgba(0,0,0,.16)}
+.mob-bar-btn{display:block;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-weight:700;font-size:15px;text-align:center;text-decoration:none;padding:14px;border-radius:12px;transition:background .2s}
 .mob-bar-btn:hover{background:var(--amber-dark)}
 @media(max-width:767px){.mob-bar{display:block}body{padding-bottom:96px}}
 
@@ -310,11 +312,9 @@ input[type=hidden]{display:none}
 .mute-btn{color:var(--white)}
 .mute-btn .i{width:20px;height:20px}
 .urgency .i{width:14px;height:14px;margin-right:2px}
-.sched-box .ico{color:var(--steel);opacity:.35}
-.sched-box .ico .i{width:42px;height:42px;stroke-width:1.5}
 .mob-bar-btn{display:flex;align-items:center;justify-content:center;gap:8px}
 .mob-bar-btn .i{width:17px;height:17px}
-.hdr{transition:box-shadow .25s ease,transform .4s cubic-bezier(.16,1,.3,1)}
+.hdr{transition:box-shadow .25s ease,transform .4s cubic-bezier(.16,1,.3,1),top .35s cubic-bezier(.16,1,.3,1)}
 .hdr.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.32)}
 .hdr.hide{transform:translateY(-100%)}
 
@@ -335,7 +335,7 @@ input[type=hidden]{display:none}
 
 /* ── SIDE SCROLL-SPY NAV ──────────────────────────────────────────── */
 .side-nav{display:none;position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:40}
-@media(min-width:1024px){.side-nav{display:block}}
+@media(min-width:1200px){.side-nav{display:block}}
 .side-nav ul{list-style:none;display:flex;flex-direction:column;align-items:flex-end;gap:15px}
 .side-nav li{transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .side-nav a{display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:var(--steel);opacity:.5;text-decoration:none;letter-spacing:.02em;text-align:right;white-space:nowrap;transition:font-size .3s cubic-bezier(.16,1,.3,1),font-weight .3s ease,color .3s ease,opacity .3s ease}
@@ -358,8 +358,8 @@ input[type=hidden]{display:none}
 .exit-bar button:hover{color:var(--white)}
 .exit-bar button .i{width:14px;height:14px}
 @media(prefers-reduced-motion:reduce){.exit-bar{transition:none}}
-.btn:focus-visible,.hdr-cta:focus-visible,.trade-btn:focus-visible,.faq-btn:focus-visible,.mute-btn:focus-visible,.mob-bar-btn:focus-visible,.lang-link:focus-visible,.logo:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
-.btn:focus-visible{border-radius:10px}
+.btn:focus-visible,.hdr-cta:focus-visible,.trade-btn:focus-visible,.faq-btn:focus-visible,.mute-btn:focus-visible,.mob-bar-btn:focus-visible,.logo:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:4px}
+.btn:focus-visible{border-radius:12px}
 </style>
 </head>
 <body>
@@ -391,6 +391,7 @@ input[type=hidden]{display:none}
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
 </svg>
 
 <!-- EXIT-INTENT BANNER (desktop only, once per session) -->
@@ -404,7 +405,6 @@ input[type=hidden]{display:none}
 <header class="hdr">
   <a href="https://histakesai.com" class="logo">HighStakes.AI</a>
   <div class="hdr-right">
-    <a href="landing-es.html" class="lang-link">ES</a>
     <a href="#form" class="hdr-cta">Book Free Call</a>
   </div>
 </header>
@@ -412,7 +412,7 @@ input[type=hidden]{display:none}
 <!-- ① HERO ──────────────────────────────────────────────────────────── -->
 <section class="hero" id="sec-home">
   <div class="wrap">
-    <span class="founder-badge reveal">🏆 Founder's Rate — $1,000 for our first 10 clients</span>
+    <span class="founder-badge reveal"><svg class="i"><use href="#i-award"/></svg> Founder's Rate — $1,000 for our first 10 clients</span>
     <p class="eyebrow reveal">For plumbers · painters · HVAC · remodelers</p>
     <h1 class="hero-title" aria-label="A Website That Makes Your Phone Ring.">
       <span class="word" style="animation-delay:.05s">A</span> <span class="word" style="animation-delay:.11s">Website</span> <span class="word" style="animation-delay:.17s">That</span> <span class="word" style="animation-delay:.23s">Makes</span><br>
@@ -429,12 +429,12 @@ input[type=hidden]{display:none}
     </div>
 
     <div class="trust-row reveal">
-      <span class="t"><svg class="i i-fill" style="color:var(--amber)"><use href="#i-star"/></svg> 2-Week Setup, Fully Managed</span>
-      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> 100% Exclusive Leads</span>
+      <span class="t"><svg class="i" style="color:var(--amber-dark)"><use href="#i-clock"/></svg> 2-Week Setup, Fully Managed</span>
+      <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> You Own Everything</span>
       <span class="t"><svg class="i" style="color:var(--steel)"><use href="#i-lock"/></svg> No Long-Term Contracts</span>
     </div>
 
-    <div class="reveal">
+    <div class="hero-cta reveal">
       <a href="#form" class="btn">Get My Free Strategy Call<svg class="i btn-arrow"><use href="#i-arrow"/></svg></a>
       <div class="urgency"><svg class="i"><use href="#i-clock"/></svg> <span class="urgency-txt">Only 3 strategy call spots remaining this month</span></div>
     </div>
@@ -451,17 +451,14 @@ input[type=hidden]{display:none}
         <span class="stat-lbl">One-Time Setup — No Hidden Fees</span>
       </div>
       <div class="stat reveal reveal-d1">
-        <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
         <span class="stat-num" data-target="97" data-prefix="$" data-suffix="/mo">0</span>
         <span class="stat-lbl">Fully Managed — Cancel Anytime</span>
       </div>
       <div class="stat reveal reveal-d2">
-        <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
         <span class="stat-num" data-target="2" data-suffix=" Weeks">0</span>
         <span class="stat-lbl">From Signup to Launch</span>
       </div>
       <div class="stat reveal reveal-d3">
-        <span class="was-price" aria-hidden="true" style="visibility:hidden">Was $0,000</span>
         <span class="stat-num" data-target="30" data-suffix=" Min">0</span>
         <span class="stat-lbl">Free Strategy Call — Zero Pressure</span>
       </div>
@@ -477,19 +474,19 @@ input[type=hidden]{display:none}
     <div class="ba-wrap reveal">
       <div class="ba-card ba-without">
         <p class="ba-head"><svg class="i"><use href="#i-x"/></svg> Without HighStakes.AI</p>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Dry spells every slow season — no predictable work</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Leads shared with 3–5 other contractors</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Paying for clicks that never turn into jobs</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Hours chasing leads who never call back</span></div>
-        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Growing by referral only — slow and unpredictable</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Invisible when locals search Google</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Leads scattered across texts, voicemails, and DMs</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">A DIY site that looks like 2015</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">No way to know where customers came from</span></div>
+        <div class="ba-row"><span class="ba-ico"><svg class="i"><use href="#i-x"/></svg></span><span class="ba-txt">Tech headaches you don't have time for</span></div>
       </div>
       <div class="ba-card ba-with">
         <p class="ba-head"><svg class="i"><use href="#i-check"/></svg> With HighStakes.AI</p>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Consistent pipeline — 20–50 new jobs/month</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">100% exclusive leads — yours and nobody else's</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Campaigns optimized for booked jobs, not clicks</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Automated follow-up works while you're on the job</span></div>
-        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Scalable system you own — grows with your business</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">A professional site live in 2 weeks</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Found on Google when neighbors search your trade</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Every lead captured and organized in one CRM</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Booking requests land in your dashboard automatically</span></div>
+        <div class="ba-row"><span class="ba-ico" style="color:var(--amber)"><svg class="i"><use href="#i-check"/></svg></span><span class="ba-txt">Everything managed for you — you just answer the phone</span></div>
       </div>
     </div>
     <div class="reveal" style="margin-top:32px;display:flex;justify-content:center">
@@ -503,22 +500,22 @@ input[type=hidden]{display:none}
   <div class="wrap">
     <p class="eyebrow eyebrow--amber reveal">How it works</p>
     <h2 style="color:var(--white)" class="reveal">Simple process. Real results.</h2>
-    <p class="sec-sub on-dark reveal">From call to calendar-full in 30 days or less.</p>
-    <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px" id="stepsGrid">
-      <div class="reveal" style="flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">1</div>
-        <h3 style="color:var(--white);margin-bottom:8px">We jump on a free call</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Tell us your trade, market, and goals. We audit your current online presence and show you exactly what's holding you back — at no cost.</p>
+    <p class="sec-sub on-dark reveal">From first call to fully live in 2 weeks.</p>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num-tile">1</div>
+        <h3>We jump on a free call</h3>
+        <p>Tell us your trade, market, and goals. We audit your current online presence and show you exactly what's holding you back — at no cost.</p>
       </div>
-      <div class="reveal reveal-d1" style="flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">2</div>
-        <h3 style="color:var(--white);margin-bottom:8px">We build everything</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Ads, website, automated follow-up, SEO — fully handled within 2 weeks so you can stay focused on the actual work.</p>
+      <div class="step-card reveal reveal-d1">
+        <div class="step-num-tile">2</div>
+        <h3>We build your kit</h3>
+        <p>Your professional website, local SEO foundation, and CRM — built and live within 2 weeks so you can stay focused on the actual work.</p>
       </div>
-      <div class="reveal reveal-d2" style="flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:26px 22px">
-        <div style="width:32px;height:32px;background:var(--amber);color:var(--ink);font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px">3</div>
-        <h3 style="color:var(--white);margin-bottom:8px">Jobs land on your calendar</h3>
-        <p style="font-size:14px;color:#B7C2CA;line-height:1.6">Qualified leads book directly into your schedule. You show up, close the job, and grow — we keep the pipeline full and optimize every month.</p>
+      <div class="step-card reveal reveal-d2">
+        <div class="step-num-tile">3</div>
+        <h3>Customers find you and book</h3>
+        <p>When neighbors search your trade, they find you — and every call, form, and booking request lands organized in your dashboard, ready for you to answer.</p>
       </div>
     </div>
   </div>
@@ -552,13 +549,13 @@ input[type=hidden]{display:none}
 </section>
 
 <!-- ⑥ PRICING — STARTING KIT ─────────────────────────────────────────── -->
-<section class="section" id="sec-pricing" style="background:var(--paper-2);border-top:1px solid var(--line)">
+<section class="section--lg" id="sec-pricing" style="background:var(--paper-2);border-top:1px solid var(--line)">
   <div class="wrap">
     <p class="eyebrow reveal">Your starting kit</p>
     <h2 class="reveal">Get online and organized — for $1,000.</h2>
     <p class="sec-sub reveal">One flat setup fee to build your foundation, then a low monthly to keep everything running. No hidden costs, no long-term lock-in.</p>
     <div class="price-card reveal">
-      <span class="founder-badge" style="margin-bottom:18px">🏆 Founder's Rate — First 10 Clients Only</span>
+      <span class="founder-badge founder-badge--outline" style="margin-bottom:18px"><svg class="i"><use href="#i-award"/></svg> Founder's Rate — First 10 Clients Only</span>
       <div class="price-header-row">
         <div class="price-tag">
           <span class="amt-label">One-time setup</span>
@@ -571,12 +568,18 @@ input[type=hidden]{display:none}
         </div>
       </div>
       <div class="price-list">
+        <p class="price-group-lbl">Website &amp; SEO</p>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Custom-built, mobile-friendly business website</span></div>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Basic local SEO (Google Business Profile + on-page setup)</span></div>
-        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">CRM & lead management system, all in one dashboard</span></div>
-        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Contact & booking forms wired straight to your CRM</span></div>
-        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Domain, hosting & maintenance included</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Domain, hosting &amp; maintenance included</span></div>
         <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Personal onboarding call to get everything dialed in</span></div>
+        <p class="price-group-lbl">Leads &amp; Reputation</p>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">CRM &amp; lead management system, all in one dashboard</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Contact &amp; booking forms wired straight to your CRM</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Website chatbot that answers visitors and captures leads into the CRM</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Automatic replies to your Google reviews</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">A review QR code your customers scan to leave a review</span></div>
+        <div class="price-row"><span class="price-check"><svg class="i"><use href="#i-check"/></svg></span><span class="price-item">Smart review filter</span></div>
       </div>
       <div class="price-cta-wrap">
         <a href="#form" class="btn btn--full">Get My Starting Kit<svg class="i btn-arrow"><use href="#i-arrow"/></svg></a>
@@ -644,7 +647,7 @@ input[type=hidden]{display:none}
     <div class="faq-list reveal" style="margin-top:32px">
       <div class="faq-item">
         <button class="faq-btn">What exactly do I get for the $1,000? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button>
-        <div class="faq-body"><p>Everything in the starting kit: a custom mobile-friendly website, your Google Business Profile and on-page SEO set up, a CRM that captures and organizes every lead, contact and booking forms wired straight to it, plus domain, hosting, and a personal onboarding call. One flat fee — no surprise add-ons.</p></div>
+        <div class="faq-body"><p>Everything in the starting kit: a custom mobile-friendly website, your Google Business Profile and on-page SEO set up, a CRM that captures and organizes every lead, contact and booking forms wired straight to it, a website chatbot that answers visitors and captures their info, and a full review system — automatic replies to your Google reviews, a QR code customers scan to leave one, and a smart review filter — plus domain, hosting, and a personal onboarding call. One flat fee — no surprise add-ons.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-btn">How long does the build take? <svg class="i faq-icon"><use href="#i-chevron"/></svg></button>
@@ -781,6 +784,8 @@ input[type=hidden]{display:none}
 <script>
 /* ── CONFIG ───────────────────────────────────────────────────────────── */
 var SPOTS_LEFT = 3; /* update in one place; keep truthful or remove the badges */
+/* Local testing guard: never fire the webhook or pixel events from a dev machine */
+var IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
 document.querySelectorAll('.urgency-txt').forEach(function(el){
   el.textContent = 'Only ' + SPOTS_LEFT + ' strategy call spots remaining this month';
 });
@@ -798,6 +803,11 @@ var utmData = {};
 /* ── VSL ──────────────────────────────────────────────────────────────── */
 var vslWrap=document.getElementById('vslWrap'),vslPh=document.getElementById('vslPh'),muteBtn=document.getElementById('muteBtn');
 var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,isMuted=true;
+
+/* Auto-hide the whole video block while the ID is still the placeholder so
+   production never shows an empty player. Reappears automatically once a
+   real ID is set in data-id — this check simply stops matching. */
+if(!vslId||vslId==='YOUR_YOUTUBE_VIDEO_ID'){vslWrap.style.display='none';}
 
 if(vslType==='youtube'&&vslId&&vslId!=='YOUR_YOUTUBE_VIDEO_ID'){
   var _yts=document.createElement('script');_yts.src='https://www.youtube.com/iframe_api';document.head.appendChild(_yts);
@@ -865,13 +875,6 @@ var revObs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target);}});
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
-
-/* ── HOW IT WORKS GRID RESPONSIVE ────────────────────────────────────── */
-(function(){
-  var g=document.getElementById('stepsGrid');
-  function upd(){g.style.gridTemplateColumns=window.innerWidth>=768?'1fr 1fr 1fr':'1fr';}
-  upd();window.addEventListener('resize',upd,{passive:true});
-})();
 
 /* ── FAQ ──────────────────────────────────────────────────────────────── */
 document.querySelectorAll('.faq-btn').forEach(function(btn){
@@ -1019,13 +1022,17 @@ document.getElementById('btnSubmit').addEventListener('click',function(){
   if(!consent){document.getElementById('consentRow').classList.add('consent-err');ok=false;}
   else document.getElementById('consentRow').classList.remove('consent-err');
   if(!ok)return;
+  /* Honeypot: real users never see or fill hp_url — a value here means a bot */
+  if(document.querySelector('input[name="hp_url"]').value)return;
   var btn=this;btn.classList.add('loading');
   var data={name:document.getElementById('f-name').value.trim(),phone:document.getElementById('f-phone').value.trim(),
     email:email,trade:selectedTrade,lang:'en',source:document.referrer||'direct'};
   Object.assign(data,utmData);
   window.leadData=data;
-  if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
-  fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(!IS_LOCAL){
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:selectedTrade});
+    fetch('https://services.leadconnectorhq.com/hooks/w3F7XRjmSEsSojrwWvHN/webhook-trigger/APBVgzm097BSLYyCbZPP',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),keepalive:true}).catch(function(){});
+  }
   setTimeout(function(){
     btn.classList.remove('loading');
     document.getElementById('step2').classList.add('hidden');
@@ -1078,11 +1085,12 @@ function initCalendly(){
     document.body.appendChild(s);
   }
 }
-/* Redirect to the thank-you page once the visitor actually books a slot. */
+/* Redirect to the thank-you page once the visitor actually books a slot.
+   The ~400ms delay gives the Schedule pixel event time to flush first. */
 window.addEventListener('message',function(e){
   if(e.data&&e.data.event==='calendly.event_scheduled'){
-    if(typeof fbq!=='undefined')fbq('track','Schedule');
-    window.location.href='/thankyou-en';
+    if(!IS_LOCAL&&typeof fbq!=='undefined')fbq('track','Schedule');
+    setTimeout(function(){window.location.href='/thankyou-en';},400);
   }
 });
 
@@ -1090,14 +1098,18 @@ window.addEventListener('message',function(e){
 (function(){
   var bar=document.getElementById('exitBar');
   if(!bar||!window.matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+  var hdr=document.querySelector('.hdr');
+  /* Push the sticky header down by the bar's height so they never overlap */
+  function showBar(){bar.classList.add('show');hdr.style.top=bar.offsetHeight+'px';}
+  function hideBar(){bar.classList.remove('show');hdr.style.top='';}
   document.addEventListener('mouseout',function(e){
     if(e.clientY<=0&&!e.relatedTarget&&!sessionStorage.getItem('exitShown')){
       sessionStorage.setItem('exitShown','1');
-      bar.classList.add('show');
+      showBar();
     }
   });
-  document.getElementById('exitBarClose').addEventListener('click',function(){bar.classList.remove('show');});
-  document.getElementById('exitBarLink').addEventListener('click',function(){bar.classList.remove('show');});
+  document.getElementById('exitBarClose').addEventListener('click',hideBar);
+  document.getElementById('exitBarLink').addEventListener('click',hideBar);
 })();
 </script>
 </body>
