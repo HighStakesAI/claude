@@ -423,13 +423,12 @@ input[type=hidden]{display:none}
     <div class="video-wrap reveal" id="vslWrap" data-type="youtube" data-id="YOUR_YOUTUBE_VIDEO_ID">
       <div class="video-ph" id="vslPh">
         <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        <p class="ph-label">Add your YouTube video ID in data-id</p>
+        <p class="ph-label">Video coming soon</p>
       </div>
       <button class="mute-btn" id="muteBtn" aria-label="Toggle mute"><svg class="i"><use href="#i-vol-off"/></svg></button>
     </div>
 
     <div class="trust-row reveal">
-      <span class="t"><svg class="i" style="color:var(--amber-dark)"><use href="#i-clock"/></svg> 2-Week Setup, Fully Managed</span>
       <span class="t"><svg class="i" style="color:var(--green)"><use href="#i-check"/></svg> You Own Everything</span>
       <span class="t"><svg class="i" style="color:var(--steel)"><use href="#i-lock"/></svg> No Long-Term Contracts</span>
     </div>
@@ -807,7 +806,6 @@ var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,isMuted=true;
 /* Auto-hide the whole video block while the ID is still the placeholder so
    production never shows an empty player. Reappears automatically once a
    real ID is set in data-id — this check simply stops matching. */
-if(!vslId||vslId==='YOUR_YOUTUBE_VIDEO_ID'){vslWrap.style.display='none';}
 
 if(vslType==='youtube'&&vslId&&vslId!=='YOUR_YOUTUBE_VIDEO_ID'){
   var _yts=document.createElement('script');_yts.src='https://www.youtube.com/iframe_api';document.head.appendChild(_yts);
