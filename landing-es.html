@@ -21,14 +21,22 @@
   · Precio ancla "Antes $3,000" en la tarifa de instalación (banda de estadísticas + tarjeta de precios) — confirma que $3,000 refleja tu precio anterior/de lista real antes del lanzamiento
   · Meta Pixel: conectado (1544932160338845) · VSL: YOUR_YOUTUBE_VIDEO_ID · Webhook: conectado (flujo "Meta ads webhook" en GHL) · Enlace de Calendly: conectado (calendly.com/byrerben/introcall)
 -->
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code.
+     Guarded: when this page is pasted into GHL and the pixel base code is
+     ALSO installed in GHL's site-level tracking header (the recommended
+     setup — it puts the pixel in the page's real <head>), the header copy
+     loads first and this block skips itself so PageView doesn't fire twice.
+     Served standalone (Cloudflare), no header pixel exists, so this block
+     runs and the page still tracks on its own. -->
 <script>
+if(!window.fbq){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1544932160338845');fbq('track','PageView');
+}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1544932160338845&ev=PageView&noscript=1" /></noscript>
 <!-- End Meta Pixel Code -->

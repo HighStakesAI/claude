@@ -1,7 +1,8 @@
-<!-- Página independiente servida desde el Worker de Cloudflare
-     (home-services-landing). NO pegues este archivo en GHL — GHL usa el
-     shell iframe de ghl-embeds/thankyou-es.html, que carga esta página en
-     vivo. -->
+<!-- Página servida desde el Worker de Cloudflare (home-services-landing)
+     Y TAMBIÉN pegada completa en el elemento Custom Code de GHL para
+     /thankyou-es. (El enfoque de iframe se revirtió — ocultaba el Meta
+     Pixel de las herramientas de GHL y de la atribución de Meta.) Después
+     de editar este archivo, vuelve a pegarlo en GHL. -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,6 +13,10 @@
 <link rel="icon" type="image/jpeg" href="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6924733f37de760d60dba930.jpg">
 <!-- Meta Pixel Code -->
 <script>
+/* Guarded like the landing pages: if GHL's tracking header already loaded
+   the pixel, skip init+PageView here (no double-count) but still fire the
+   Schedule event this page exists to report. */
+if(!window.fbq){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -19,6 +24,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1544932160338845');
 fbq('track','PageView');
+}
 fbq('track','Schedule');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1544932160338845&ev=PageView&noscript=1" /></noscript>
