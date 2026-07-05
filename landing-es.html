@@ -469,6 +469,7 @@ input[type=hidden]{display:none}
           <option value="roofing">Techado</option>
           <option value="electrical">Electricidad</option>
           <option value="landscaping">Jardinería</option>
+          <option value="construction">Remodelación / Construcción</option>
           <option value="other">Otro</option>
         </select>
         <input id="exclCity" type="text" placeholder="Tu ciudad (ej. Pensacola, FL)" aria-label="Tu ciudad">
@@ -731,22 +732,35 @@ document.querySelectorAll('.urgency-txt').forEach(function(el){
 });
 
 /* ── VERIFICADOR DE EXCLUSIVIDAD ──────────────────────────────────────
-   Un cliente por oficio, por ciudad. ACTUALIZA ESTA LISTA desde el
-   dashboard de clientes cada vez que un cliente firma o se va. Todo en
-   minúsculas y sin acentos. Claves de oficio (idénticas en la página EN
-   — mantén ambos archivos sincronizados):
-   hvac, plumbing, painting, roofing, electrical, landscaping. */
+   Un cliente por oficio, por ciudad. Esta lista es una SINCRONIZACIÓN
+   del dashboard de clientes (peach-koi-985: tablas clients +
+   client_locations), tomada el 2026-07-05 — cada entrada es una ciudad
+   de servicio de un cliente. Resincronízala cuando un cliente firme, se
+   vaya o cambie de cobertura. Todo en minúsculas y sin acentos. Claves
+   de oficio (idénticas en la página EN — mantén ambos archivos
+   sincronizados): hvac, plumbing, painting, roofing, electrical,
+   landscaping, construction. */
 var TAKEN_SPOTS=[
-  {trade:'plumbing',city:'pensacola'}
+  /* The Golden Plumber */
+  {trade:'plumbing',city:'pensacola'},{trade:'plumbing',city:'east pensacola heights'},{trade:'plumbing',city:'ferry pass'},{trade:'plumbing',city:'cantonment'},{trade:'plumbing',city:'bellview'},{trade:'plumbing',city:'brent'},{trade:'plumbing',city:'west pensacola'},{trade:'plumbing',city:'ensley'},{trade:'plumbing',city:'pace'},{trade:'plumbing',city:'midway'},
+  /* Professional Painting Services */
+  {trade:'painting',city:'pensacola'},{trade:'painting',city:'gulf breeze'},{trade:'painting',city:'pensacola beach'},{trade:'painting',city:'navarre'},{trade:'painting',city:'navarre beach'},{trade:'painting',city:'crestview'},{trade:'painting',city:'fort walton beach'},{trade:'painting',city:'cantonment'},{trade:'painting',city:'molino'},{trade:'painting',city:'milton'},{trade:'painting',city:'pace'},
+  /* Built By Deel */
+  {trade:'construction',city:'molino'}
 ];
-var EXCL_LABELS={hvac:'negocio de HVAC',plumbing:'plomero',painting:'pintor',roofing:'techador',electrical:'electricista',landscaping:'jardinero',other:'negocio'};
+var EXCL_LABELS={hvac:'negocio de HVAC',plumbing:'plomero',painting:'pintor',roofing:'techador',electrical:'electricista',landscaping:'jardinero',construction:'contratista',other:'negocio'};
 function exclNorm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z\s]/g,' ').replace(/\s+/g,' ').trim()}
 document.getElementById('exclBtn').addEventListener('click',function(){
   var trade=document.getElementById('exclTrade').value;
-  var city=exclNorm(document.getElementById('exclCity').value);
+  var city=exclNorm(document.getElementById('exclCity').value.split(',')[0]);
   var box=document.getElementById('exclResult');
   if(!trade||!city){box.className='excl-result on no';box.textContent='Elige tu oficio y escribe tu ciudad para poder verificar.';return;}
-  var taken=TAKEN_SPOTS.some(function(t){return t.trade===trade&&(city.indexOf(t.city)>-1||t.city.indexOf(city)>-1)});
+  /* Coincidencia exacta de ciudad. "Pensacola, FL" se corta en la coma;
+     un estado al final sin coma ("Pensacola Florida") se quita — pero
+     solo si es un estado real, así "Pensacola Beach" se mantiene aparte. */
+  var cands=[city];var w=city.split(' ');
+  if(w.length>1&&/^(al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|va|wa|wv|wi|wy|alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|ohio|oklahoma|oregon|pennsylvania|tennessee|texas|utah|vermont|virginia|washington|wisconsin|wyoming|usa)$/.test(w[w.length-1]))cands.push(w.slice(0,-1).join(' '));
+  var taken=TAKEN_SPOTS.some(function(t){return t.trade===trade&&cands.indexOf(t.city)>-1});
   var lbl=EXCL_LABELS[trade]||'negocio';
   if(taken){
     box.className='excl-result on no';
