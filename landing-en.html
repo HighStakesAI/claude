@@ -113,6 +113,25 @@ h3{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;line-height:1
 .stat-lbl{font-size:12.5px;color:var(--steel);font-weight:500;line-height:1.4}
 .was-price{display:block;font-size:12.5px;font-weight:600;color:var(--steel);text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px}
 
+/* ── EXCLUSIVITY CHECK ────────────────────────────────────────────── */
+.excl-band{padding:44px 0}
+.excl-card{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:24px 22px;max-width:720px;margin:0 auto;box-shadow:0 2px 10px rgba(18,33,46,.04)}
+.excl-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);margin-bottom:10px}
+.excl-tag .i{width:14px;height:14px}
+.excl-title{font-family:'Archivo',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.excl-sub{font-size:14px;color:var(--steel);line-height:1.55;margin-bottom:16px}
+.excl-form{display:flex;gap:10px;flex-wrap:wrap}
+.excl-form select,.excl-form input{flex:1;min-width:150px;height:46px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--white)}
+.excl-form select:focus,.excl-form input:focus{outline:none;border-color:var(--amber)}
+.excl-btn{height:46px;padding:0 20px;background:var(--amber);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:14px;border:none;border-radius:8px;cursor:pointer;transition:background .2s}
+.excl-btn:hover{background:var(--amber-dark)}
+.excl-result{margin-top:14px;padding:14px 16px;border-radius:8px;font-size:14px;line-height:1.6;color:var(--ink);display:none}
+.excl-result.on{display:block}
+.excl-result.ok{background:rgba(39,174,96,.08);border:1px solid rgba(39,174,96,.35)}
+.excl-result.no{background:rgba(181,69,27,.06);border:1px solid rgba(181,69,27,.3)}
+.excl-result a{color:var(--amber-dark);font-weight:600}
+@media(max-width:560px){.excl-form{flex-direction:column}.excl-form select,.excl-form input{min-width:0}.excl-btn{width:100%}}
+
 /* ── SERVICE CARDS ────────────────────────────────────────────────── */
 .svc-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
 @media(min-width:768px){.svc-grid{grid-template-columns:1fr 1fr}}
@@ -472,6 +491,32 @@ input[type=hidden]{display:none}
   </div>
 </div>
 
+<!-- ②b EXCLUSIVITY CHECK ─────────────────────────────────────────────── -->
+<section class="excl-band" id="sec-exclusive">
+  <div class="wrap">
+    <div class="excl-card reveal">
+      <span class="excl-tag"><svg class="i"><use href="#i-lock"/></svg> Important — One Spot Per City</span>
+      <p class="excl-title">We only work with one business per trade, per city.</p>
+      <p class="excl-sub">If you're our plumber in your city, we will never promote a competing plumber there — that's the deal. Check if your spot is still open:</p>
+      <div class="excl-form">
+        <select id="exclTrade" aria-label="Your trade">
+          <option value="">Your trade…</option>
+          <option value="hvac">HVAC</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="painting">Painting</option>
+          <option value="roofing">Roofing</option>
+          <option value="electrical">Electrical</option>
+          <option value="landscaping">Landscaping</option>
+          <option value="other">Other</option>
+        </select>
+        <input id="exclCity" type="text" placeholder="Your city (e.g., Pensacola, FL)" aria-label="Your city">
+        <button type="button" class="excl-btn" id="exclBtn">Check My City</button>
+      </div>
+      <div class="excl-result" id="exclResult" role="status"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ③ BEFORE / AFTER + CTA ───────────────────────────────────────────── -->
 <section class="section--sm" id="sec-difference" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
@@ -802,6 +847,33 @@ var SPOTS_LEFT = 3; /* update in one place; keep truthful or remove the badges *
 var IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
 document.querySelectorAll('.urgency-txt').forEach(function(el){
   el.textContent = 'Only ' + SPOTS_LEFT + ' strategy call spots remaining this month';
+});
+
+/* ── EXCLUSIVITY CHECK ────────────────────────────────────────────────
+   One client per trade, per city. UPDATE THIS LIST from the clients
+   dashboard whenever a client signs or leaves. All lowercase, no accents.
+   Trade keys (same in the EN and ES pages — keep both files in sync):
+   hvac, plumbing, painting, roofing, electrical, landscaping. */
+var TAKEN_SPOTS=[
+  {trade:'plumbing',city:'pensacola'}
+];
+var EXCL_LABELS={hvac:'HVAC company',plumbing:'plumber',painting:'painter',roofing:'roofer',electrical:'electrician',landscaping:'landscaper',other:'business'};
+function exclNorm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z\s]/g,' ').replace(/\s+/g,' ').trim()}
+document.getElementById('exclBtn').addEventListener('click',function(){
+  var trade=document.getElementById('exclTrade').value;
+  var city=exclNorm(document.getElementById('exclCity').value);
+  var box=document.getElementById('exclResult');
+  if(!trade||!city){box.className='excl-result on no';box.textContent='Choose your trade and type your city so we can check.';return;}
+  var taken=TAKEN_SPOTS.some(function(t){return t.trade===trade&&(city.indexOf(t.city)>-1||t.city.indexOf(city)>-1)});
+  var lbl=EXCL_LABELS[trade]||'business';
+  if(taken){
+    box.className='excl-result on no';
+    box.innerHTML='<strong>Sorry — that spot is taken.</strong> We already partner with a '+lbl+' in your city, and exclusivity means we never promote their competition. We can still build you a professional website, just not the local growth services (SEO, leads, reputation). Want the website anyway? <a href="#form">Book a call</a> and mention your city is taken.';
+  }else{
+    box.className='excl-result on ok';
+    box.innerHTML='<strong>Good news — your city is open.</strong> No '+lbl+' has claimed it yet. <a href="#form">Book your free call</a> to lock in your spot before a competitor does.';
+  }
+  if(!IS_LOCAL&&typeof fbq!=='undefined')fbq('trackCustom','ExclusivityCheck',{trade:trade,city:city,taken:taken});
 });
 
 /* ── UTM / CLICK-ID CAPTURE ───────────────────────────────────────────── */
