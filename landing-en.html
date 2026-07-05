@@ -446,7 +446,7 @@ input[type=hidden]{display:none}
     </h1>
     <p class="subhead reveal">Get online and organized for <strong style="color:var(--ink)">$1,000 flat</strong> — a custom website, local SEO foundation, and a CRM that captures every lead. Then just $97/month to keep it all running, fully managed.</p>
 
-    <div class="video-wrap reveal" id="vslWrap" data-type="youtube" data-id="YOUR_YOUTUBE_VIDEO_ID">
+    <div class="video-wrap reveal" id="vslWrap" data-type="file" data-id="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6a4aa7191bf938e5471dc7b8.mov">
       <div class="video-ph" id="vslPh">
         <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <p class="ph-label">Video coming soon</p>
@@ -917,7 +917,7 @@ var utmData = {};
 
 /* ── VSL ──────────────────────────────────────────────────────────────── */
 var vslWrap=document.getElementById('vslWrap'),vslPh=document.getElementById('vslPh'),muteBtn=document.getElementById('muteBtn');
-var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,isMuted=true;
+var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,vslVideoEl,isMuted=true;
 
 /* Auto-hide the whole video block while the ID is still the placeholder so
    production never shows an empty player. Reappears automatically once a
@@ -925,6 +925,20 @@ var vslType=vslWrap.dataset.type,vslId=vslWrap.dataset.id,ytPlayer,isMuted=true;
 
 if(vslType==='youtube'&&vslId&&vslId!=='YOUR_YOUTUBE_VIDEO_ID'){
   var _yts=document.createElement('script');_yts.src='https://www.youtube.com/iframe_api';document.head.appendChild(_yts);
+}
+
+/* data-type="file": a directly-hosted video (e.g. a CDN .mp4/.mov link)
+   instead of a YouTube/Vimeo ID — same muted-autoplay + mute-toggle UX,
+   just a plain <video> element instead of a platform embed. */
+if(vslType==='file'&&vslId){
+  vslPh.style.display='none';
+  vslVideoEl=document.createElement('video');
+  vslVideoEl.src=vslId;vslVideoEl.muted=true;vslVideoEl.autoplay=true;vslVideoEl.loop=true;
+  vslVideoEl.playsInline=true;vslVideoEl.setAttribute('playsinline','');
+  vslVideoEl.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover';
+  vslWrap.insertBefore(vslVideoEl,muteBtn);
+  vslVideoEl.play().catch(function(){});
+  muteBtn.style.display='flex';
 }
 
 function onYouTubeIframeAPIReady(){
@@ -941,6 +955,11 @@ vslPh&&vslPh.addEventListener('click',function(){
     vslWrap.appendChild(f);vslPh.style.display='none';muteBtn.style.display='flex';}
 });
 muteBtn&&muteBtn.addEventListener('click',function(){
+  if(vslVideoEl){
+    isMuted=!isMuted;vslVideoEl.muted=isMuted;
+    muteBtn.innerHTML=isMuted?'<svg class="i"><use href="#i-vol-off"/></svg>':'<svg class="i"><use href="#i-vol-on"/></svg>';
+    return;
+  }
   if(!ytPlayer)return;
   if(isMuted){ytPlayer.unMute();muteBtn.innerHTML='<svg class="i"><use href="#i-vol-on"/></svg>';isMuted=false;}
   else{ytPlayer.mute();muteBtn.innerHTML='<svg class="i"><use href="#i-vol-off"/></svg>';isMuted=true;}
