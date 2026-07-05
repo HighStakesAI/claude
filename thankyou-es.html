@@ -1,16 +1,14 @@
-<!-- Versión para el elemento Custom Code de GHL — sin envoltorio <!DOCTYPE>/<html>/<head>/<body>.
-     Un documento completo pegado en medio de la página puede poner al analizador
-     HTML del navegador en modo "after body" al encontrar nuestro </body></html>
-     de cierre, lo que puede dañar o eliminar lo que GHL renderiza después de
-     este bloque en esa página específica. <style>/<script> funcionan igual
-     sin importar dónde estén en el DOM, así que no se pierde nada al quitar
-     el envoltorio del documento. -->
+<!-- Página independiente servida desde el Worker de Cloudflare
+     (home-services-landing). NO pegues este archivo en GHL — GHL usa el
+     shell iframe de ghl-embeds/thankyou-es.html, que carga esta página en
+     vivo. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>¡Confirmado! | HighStakes.AI</title>
 <meta name="robots" content="noindex">
-<!-- Etiqueta de favicon — probablemente el navegador no la respete una vez que
-     GHL la aplana en medio del body de su página (los favicons normalmente se
-     leen del <head>, y la configuración de favicon del propio sitio en GHL
-     tendrá prioridad de todas formas). Configura el favicon real en los
-     ajustes de sitio/dominio de GHL. -->
 <link rel="icon" type="image/jpeg" href="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6924733f37de760d60dba930.jpg">
 <!-- Meta Pixel Code -->
 <script>
@@ -29,6 +27,7 @@ fbq('track','Schedule');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+html,body{margin:0;padding:0}
 .ty-scope{
   --ink:#12212E;--ink-2:#1D3040;
   --amber:#E8963C;--amber-dark:#C97A28;
@@ -84,9 +83,9 @@ fbq('track','Schedule');
 .ty-scope .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
 .ty-scope .footer a{color:#B7C2CA}
 .ty-scope .footer a:hover{color:var(--white)}
-/* Ver comentario en thankyou-en.html sobre el div contenedor de GHL. */
-.c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
+</head>
+<body>
 
 <div class="ty-scope">
 
@@ -184,3 +183,5 @@ fbq('track','Schedule');
   }, 1000);
 })();
 </script>
+</body>
+</html>

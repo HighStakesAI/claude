@@ -1,14 +1,14 @@
-<!-- GHL Custom Code embed version — no <!DOCTYPE>/<html>/<head>/<body> wrapper.
-     A full standalone document pasted mid-page can flip the browser's HTML
-     parser into "after body" mode when it hits our closing </body></html>,
-     which can mangle or drop whatever GHL renders after this block on this
-     specific page. <style>/<script> work identically wherever they sit in
-     the DOM, so nothing is lost by dropping the document wrapper. -->
+<!-- Served as a standalone page from the Cloudflare Worker
+     (home-services-landing). Do NOT paste this file into GHL — GHL gets the
+     small iframe shell from ghl-embeds/thankyou-en.html instead, which loads
+     this page live. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>You're All Set | HighStakes.AI</title>
 <meta name="robots" content="noindex">
-<!-- Favicon tag — likely won't be honored by the browser once GHL flattens this
-     into the middle of its page body (favicons are normally read from <head>,
-     and GHL's own site-level favicon setting will take priority anyway).
-     Set the real favicon in GHL's own site/domain settings instead. -->
 <link rel="icon" type="image/jpeg" href="https://assets.cdn.filesafe.space/w3F7XRjmSEsSojrwWvHN/media/6924733f37de760d60dba930.jpg">
 <!-- Meta Pixel Code -->
 <script>
@@ -27,6 +27,7 @@ fbq('track','Schedule');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+html,body{margin:0;padding:0}
 .ty-scope{
   --ink:#12212E;--ink-2:#1D3040;
   --amber:#E8963C;--amber-dark:#C97A28;
@@ -97,14 +98,9 @@ fbq('track','Schedule');
 .ty-scope .footer p{font-size:12px;color:#B7C2CA;line-height:1.7}
 .ty-scope .footer a{color:#B7C2CA}
 .ty-scope .footer a:hover{color:var(--white)}
-/* GHL's Custom Code element wraps embedded content in its own container div
-   (confirmed via DevTools: classes "c-custom-code c-wrapper" outer,
-   "custom-code-container" inner) that was computing to a fixed 600px
-   regardless of our content. It's a real element, not an iframe, and this
-   <style> ends up injected as one of its children, so we can target it
-   directly. */
-.c-custom-code,.c-wrapper,.custom-code-container{width:100%!important;max-width:100%!important}
 </style>
+</head>
+<body>
 
 <div class="ty-scope">
 
@@ -206,3 +202,5 @@ fbq('track','Schedule');
   }, 1000);
 })();
 </script>
+</body>
+</html>
