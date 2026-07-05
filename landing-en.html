@@ -889,6 +889,21 @@ document.getElementById('exclBtn').addEventListener('click',function(){
   }
   if(!IS_LOCAL&&typeof fbq!=='undefined')fbq('trackCustom','ExclusivityCheck',{trade:trade,city:city,taken:taken});
 });
+/* Live sync: pull current availability from the clients dashboard on
+   every page load, so signing a new client updates this checker without
+   touching the page. Endpoint: GET /api/availability on the dashboard
+   app — returns {taken:[{trade,city},...]} (or a bare array), CORS open.
+   Until that endpoint is deployed (or if it's ever down), the baked-in
+   TAKEN_SPOTS list above silently stays in effect. */
+fetch('https://peach-koi-985.higgsfield.app/api/availability')
+  .then(function(r){return r.ok?r.json():null})
+  .then(function(d){
+    var list=Array.isArray(d)?d:(d&&Array.isArray(d.taken)?d.taken:null);
+    if(!list)return;
+    var rows=list.filter(function(t){return t&&t.trade&&t.city})
+      .map(function(t){return {trade:exclNorm(String(t.trade)),city:exclNorm(String(t.city))}});
+    if(rows.length)TAKEN_SPOTS=rows;
+  }).catch(function(){});
 
 /* ── UTM / CLICK-ID CAPTURE ───────────────────────────────────────────── */
 var utmData = {};

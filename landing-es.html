@@ -771,6 +771,22 @@ document.getElementById('exclBtn').addEventListener('click',function(){
   }
   if(!IS_LOCAL&&typeof fbq!=='undefined')fbq('trackCustom','ExclusivityCheck',{trade:trade,city:city,taken:taken});
 });
+/* Sincronización en vivo: obtiene la disponibilidad actual del dashboard
+   de clientes en cada carga de página, así firmar un cliente nuevo
+   actualiza este verificador sin tocar la página. Endpoint:
+   GET /api/availability en el dashboard — devuelve
+   {taken:[{trade,city},...]} (o un array), con CORS abierto. Hasta que
+   ese endpoint esté desplegado (o si falla), la lista TAKEN_SPOTS de
+   arriba sigue vigente como respaldo. */
+fetch('https://peach-koi-985.higgsfield.app/api/availability')
+  .then(function(r){return r.ok?r.json():null})
+  .then(function(d){
+    var list=Array.isArray(d)?d:(d&&Array.isArray(d.taken)?d.taken:null);
+    if(!list)return;
+    var rows=list.filter(function(t){return t&&t.trade&&t.city})
+      .map(function(t){return {trade:exclNorm(String(t.trade)),city:exclNorm(String(t.city))}});
+    if(rows.length)TAKEN_SPOTS=rows;
+  }).catch(function(){});
 
 var utmData = {};
 (function(){
