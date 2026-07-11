@@ -1,7 +1,11 @@
 # One-shot helper: fetches the Higgsfield-generated demo images into the repo
-# so they can be served locally instead of hot-linked. Manual dispatch only.
+# so they can be served locally instead of hot-linked from a CDN.
+# Runs on pushes to the demo branch and skips itself once img/ exists;
+# its own commit carries [skip ci] so it never loops.
 name: fetch-veranda-assets
-on: workflow_dispatch
+on:
+  push:
+    branches: [claude/meta-ads-niche-website-prompt-m5vj3b]
 
 permissions:
   contents: write
@@ -11,11 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: claude/meta-ads-niche-website-prompt-m5vj3b
       - name: Download generated images
+        id: dl
         run: |
           set -euo pipefail
+          if [ -d veranda-painting/img ]; then
+            echo "img dir already present — nothing to do"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           mkdir -p veranda-painting/img
           base="https://d8j0ntlcm91z4.cloudfront.net/user_3Eh6PqCZESPKJv2KMHsim5UDjhH"
           curl -fSL -o veranda-painting/img/hero.png                "$base/hf_20260711_191335_711d5efe-ba70-4f77-92e7-2e589452ec52.png"
@@ -25,10 +33,12 @@ jobs:
           curl -fSL -o veranda-painting/img/ba-exterior-before.png  "$base/hf_20260711_191913_c70c85c7-09a8-4e2f-9b97-d419f8bc0915.png"
           curl -fSL -o veranda-painting/img/ba-exterior-after.png   "$base/hf_20260711_192601_19a8bfe0-0c38-48db-a538-64034f4d6a9e.png"
           ls -la veranda-painting/img
+          echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Commit
+        if: steps.dl.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add veranda-painting/img
-          git commit -m "Fetch Higgsfield-generated demo assets into repo"
+          git commit -m "Fetch Higgsfield-generated demo assets into repo [skip ci]"
           git push
