@@ -1,0 +1,34 @@
+# One-shot helper: fetches the Higgsfield-generated demo images into the repo
+# so they can be served locally instead of hot-linked. Manual dispatch only.
+name: fetch-veranda-assets
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/meta-ads-niche-website-prompt-m5vj3b
+      - name: Download generated images
+        run: |
+          set -euo pipefail
+          mkdir -p veranda-painting/img
+          base="https://d8j0ntlcm91z4.cloudfront.net/user_3Eh6PqCZESPKJv2KMHsim5UDjhH"
+          curl -fSL -o veranda-painting/img/hero.png                "$base/hf_20260711_191335_711d5efe-ba70-4f77-92e7-2e589452ec52.png"
+          curl -fSL -o veranda-painting/img/owner.png               "$base/hf_20260711_191401_26cb7bb6-e61e-4f1b-8999-de4414bcf40d.png"
+          curl -fSL -o veranda-painting/img/ba-cabinets-before.png  "$base/hf_20260711_191624_2bee482d-de39-4b3f-914b-e3dd8e48b32c.png"
+          curl -fSL -o veranda-painting/img/ba-cabinets-after.png   "$base/hf_20260711_191726_79f90367-012a-44b5-b561-d5900c035091.png"
+          curl -fSL -o veranda-painting/img/ba-exterior-before.png  "$base/hf_20260711_191913_c70c85c7-09a8-4e2f-9b97-d419f8bc0915.png"
+          curl -fSL -o veranda-painting/img/ba-exterior-after.png   "$base/hf_20260711_192601_19a8bfe0-0c38-48db-a538-64034f4d6a9e.png"
+          ls -la veranda-painting/img
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add veranda-painting/img
+          git commit -m "Fetch Higgsfield-generated demo assets into repo"
+          git push
