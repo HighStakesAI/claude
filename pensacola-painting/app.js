@@ -79,9 +79,34 @@ const SITE_CONFIG = {
 
   /* ---------- reveal on scroll ---------- */
   const io = new IntersectionObserver(entries => {
-    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in-view');
+      en.target.querySelectorAll('[data-count]').forEach(startCount);
+      io.unobserve(en.target);
+    });
   }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
-  doc.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  doc.querySelectorAll('.reveal, .reveal-group, .section-head').forEach(el => io.observe(el));
+
+  /* ---------- count-up ---------- */
+  function startCount(el) {
+    if (el.dataset.done) return;
+    el.dataset.done = '1';
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (reduceMotion) { el.textContent = target + suffix; return; }
+    const dur = 1400, t0 = performance.now();
+    const tick = now => {
+      const p = Math.min((now - t0) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4))) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- trust marquee: duplicate track for seamless -50% loop ---------- */
+  const mtrack = doc.querySelector('.marquee-track');
+  if (mtrack && !reduceMotion) mtrack.innerHTML += mtrack.innerHTML;
 
   /* ---------- before/after slider (pointer + keyboard) ---------- */
   doc.querySelectorAll('[data-ba]').forEach(ba => {
@@ -265,4 +290,109 @@ const SITE_CONFIG = {
   toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
   doc.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============================================================
+     GSAP scroll choreography — skipped entirely under
+     prefers-reduced-motion or if GSAP fails to load (CSS
+     fallbacks make everything visible either way).
+     ============================================================ */
+  if (reduceMotion || typeof gsap === 'undefined') {
+    doc.documentElement.classList.add('no-motion');
+    doc.querySelectorAll('[data-count]').forEach(el => {
+      el.textContent = el.dataset.count + (el.dataset.suffix || '');
+    });
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero load sequence: masked headline lines -> badge/sub/CTAs/stats */
+  gsap.timeline({ defaults: { ease: 'expo.out' } })
+    .to('.hero-title .line-inner', { y: 0, duration: 1, stagger: 0.12 }, 0.05)
+    .fromTo('.hero-badge', { y: 14 }, { opacity: 1, y: 0, duration: 0.7 }, 0.15)
+    .fromTo('.hero-sub', { y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, 0.55)
+    .fromTo('.hero-ctas', { y: 18 }, { opacity: 1, y: 0, duration: 0.7 }, 0.7)
+    .fromTo('.hero-stats', { y: 18 }, {
+      opacity: 1, y: 0, duration: 0.7,
+      onComplete: () => doc.querySelectorAll('.hero-stats [data-count]').forEach(startCount),
+    }, 0.85);
+
+  /* paint-progress bar across the whole page */
+  gsap.to('#scrollPaint', {
+    scaleX: 1, ease: 'none',
+    scrollTrigger: { trigger: doc.body, start: 'top top', end: 'max', scrub: 0.3 },
+  });
+
+  /* hero photo parallax + floating trust cards drift */
+  gsap.to('.hero-photo img', {
+    yPercent: 10, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+  });
+  gsap.to('.hero-card-left', {
+    y: -18, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+  });
+  gsap.to('.hero-card-right', {
+    y: 22, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
+  });
+
+  /* service photos: clip-wipe open as they enter */
+  doc.querySelectorAll('.service-card figure').forEach(fig => {
+    gsap.fromTo(fig, { clipPath: 'inset(0 0 100% 0 round 12px)' }, {
+      clipPath: 'inset(0 0 0% 0 round 12px)', duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: fig, start: 'top 88%' },
+    });
+  });
+
+  /* before/after: divider paints itself from Before to center on first view */
+  const ba = doc.querySelector('[data-ba]');
+  if (ba) {
+    const proxy = { p: 100 };
+    gsap.to(proxy, {
+      p: 50, duration: 1.4, ease: 'power3.inOut',
+      onUpdate: () => {
+        ba.style.setProperty('--pos', proxy.p + '%');
+        ba.setAttribute('aria-valuenow', Math.round(proxy.p));
+      },
+      scrollTrigger: { trigger: ba, start: 'top 75%' },
+    });
+  }
+
+  /* word band scrubs sideways with scroll */
+  const wordTrack = doc.getElementById('wordTrack');
+  if (wordTrack) {
+    gsap.fromTo(wordTrack, { x: 0 }, {
+      x: () => -(wordTrack.scrollWidth / 2), ease: 'none',
+      scrollTrigger: { trigger: '.word-band', start: 'top bottom', end: 'bottom top', scrub: 0.5 },
+    });
+  }
+
+  /* guarantee band: red paints in from the left as it enters */
+  gsap.fromTo('.guarantee', { backgroundImage: 'linear-gradient(90deg, #DC2626 0%, #B91C1C 0%, #111827 0%)' }, {
+    backgroundImage: 'linear-gradient(90deg, #DC2626 60%, #B91C1C 100%, #111827 100%)',
+    ease: 'none',
+    scrollTrigger: { trigger: '.guarantee', start: 'top 90%', end: 'top 35%', scrub: true },
+  });
+
+  /* closing CTA masked lines */
+  ScrollTrigger.create({
+    trigger: '.close-title', start: 'top 82%',
+    onEnter: () => doc.querySelector('.close-title').classList.add('lines-in'),
+  });
+
+  /* magnetic primary buttons (pointer devices only) */
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    doc.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        gsap.to(btn, {
+          x: (e.clientX - r.left - r.width / 2) * 0.16,
+          y: (e.clientY - r.top - r.height / 2) * 0.28,
+          duration: 0.35, ease: 'power2.out',
+        });
+      });
+      btn.addEventListener('mouseleave', () =>
+        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,.5)' }));
+    });
+  }
 })();

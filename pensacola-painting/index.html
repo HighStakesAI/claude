@@ -79,6 +79,9 @@
 </head>
 <body>
 
+<!-- scroll paint-progress bar -->
+<div class="scroll-paint" aria-hidden="true"><span id="scrollPaint"></span></div>
+
 <!-- Announcement bar -->
 <div class="announce" role="region" aria-label="Announcement">
   <p>Free estimates — serving Pensacola &amp; the Gulf Coast</p>
@@ -128,23 +131,27 @@
   <section class="hero" id="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="hero-badge">
+        <p class="hero-badge hero-el">
           <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           Top-Rated Pensacola Painting Contractors
         </p>
-        <h1>Transform Your Space with <span class="accent">Professional</span> Painting Services</h1>
-        <p class="hero-sub">Premium residential and commercial painting serving Pensacola, Gulf Breeze, Navarre, Crestview, Cantonment &amp; Molino. 10+ years of transforming homes across the Gulf Coast with precision and passion.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-solid btn-lg" href="tel:+18505124505" data-track="phone">
+        <h1 class="hero-title">
+          <span class="line"><span class="line-inner">Transform Your Space</span></span>
+          <span class="line"><span class="line-inner">with <span class="accent">Professional</span></span></span>
+          <span class="line"><span class="line-inner">Painting Services</span></span>
+        </h1>
+        <p class="hero-sub hero-el">Premium residential and commercial painting serving Pensacola, Gulf Breeze, Navarre, Crestview, Cantonment &amp; Molino. 10+ years of transforming homes across the Gulf Coast with precision and passion.</p>
+        <div class="hero-ctas hero-el">
+          <a class="btn btn-solid btn-lg" href="tel:+18505124505" data-track="phone" data-magnetic>
             <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7.2 3.8 9 3l2.2 4.1-1.7 1.8a12.6 12.6 0 0 0 5.6 5.6l1.8-1.7L21 15l-.8 1.8c-.6 1.4-2 2.3-3.5 2A16.2 16.2 0 0 1 5.2 7.3c-.3-1.5.6-2.9 2-3.5Z"/></svg>
             Call or Text (850) 512-4505
           </a>
           <a class="btn btn-outline btn-lg" href="#contact">Get My Free Estimate</a>
         </div>
-        <dl class="hero-stats">
-          <div><dt>10+</dt><dd>Years Experience</dd></div>
-          <div><dt>500+</dt><dd>Projects Completed</dd></div>
-          <div><dt>100%</dt><dd>Satisfaction</dd></div>
+        <dl class="hero-stats hero-el">
+          <div><dt><span data-count="10" data-suffix="+">0</span></dt><dd>Years Experience</dd></div>
+          <div><dt><span data-count="500" data-suffix="+">0</span></dt><dd>Projects Completed</dd></div>
+          <div><dt><span data-count="100" data-suffix="%">0</span></dt><dd>Satisfaction</dd></div>
         </dl>
       </div>
       <div class="hero-media reveal">
@@ -168,6 +175,20 @@
     </div>
   </section>
 
+  <!-- Trust marquee -->
+  <section class="proof-strip" aria-label="Why homeowners choose us">
+    <div class="marquee" data-marquee>
+      <div class="marquee-track">
+        <span class="proof-badge">★ 5.0 Google Reviews</span>
+        <span class="proof-badge">Licensed &amp; Insured in Florida</span>
+        <span class="proof-badge">500+ Projects Completed</span>
+        <span class="proof-badge">10+ Years on the Gulf Coast</span>
+        <span class="proof-badge">2-Year Workmanship Warranty</span>
+        <span class="proof-badge">Free Detailed Estimates</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section class="section" id="services">
     <div class="container">
@@ -175,43 +196,43 @@
         <h2>Our Painting <span class="accent">Services</span></h2>
         <p>Top-tier interior and exterior painting services for homeowners and businesses in Escambia and Santa Rosa counties.</p>
       </header>
-      <div class="services-grid">
-        <article class="service-card reveal">
+      <div class="services-grid reveal-group">
+        <article class="service-card">
           <figure><img src="img/svc-interior-exterior.webp" alt="Interior and exterior house painting in Pensacola FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Interior &amp; Exterior Painting</h3>
           <p>Complete residential and commercial painting. Walls, ceilings, siding, trim &amp; doors with flawless, weather-resistant finishes.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-cabinets.webp" alt="Kitchen cabinet refinishing and painting in Gulf Breeze FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Cabinet Refinishing</h3>
           <p>Transform your kitchen or bathroom. Cost-effective cabinet painting &amp; staining that looks brand new without the cost of replacement.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-limewash.webp" alt="Custom limewash accent wall painting in Pensacola FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Accent Walls &amp; Limewash</h3>
           <p>Add unique character with custom accent walls. Limewash finishes &amp; textured effects for stunning interior focal points.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-shutters.webp" alt="Custom shutters and columns painting in Navarre FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Shutters &amp; Columns</h3>
           <p>Custom-built shutters &amp; columns. Professional painting &amp; staining to perfectly match your Gulf Coast home's style.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-epoxy.webp" alt="Epoxy garage floor coating in Pensacola FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Epoxy Floors &amp; Garage Coatings</h3>
           <p>Highly durable floor coatings for garages &amp; commercial spaces. Premium epoxy &amp; staining that resists tire marks and wear.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-pressure.webp" alt="Pressure washing and exterior prep in Cantonment FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Pressure Washing</h3>
           <p>Professional exterior cleaning &amp; prep. We remove dirt, mildew, and old paint to ensure the best possible paint adhesion.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-furniture.webp" alt="Furniture staining and painting restoration in Pensacola FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Furniture Staining &amp; Painting</h3>
           <p>Breathe new life into your furniture. From restoring family antiques to giving pieces a sleek modern makeover.</p>
         </article>
-        <article class="service-card reveal">
+        <article class="service-card">
           <figure><img src="img/svc-deck.webp" alt="Deck and fence wood staining in Milton FL" width="400" height="300" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('img-failed')"></figure>
           <h3>Deck, Fence &amp; Wood Staining</h3>
           <p>Protect outdoor wood from the Florida climate. Quality stains &amp; sealants for decks, privacy fences, and pergolas.</p>
@@ -258,7 +279,7 @@
         <h2>Pensacola's Trusted <span class="accent">Painting Professionals</span></h2>
         <p>Bringing 10 years of experience, Professional Painting Services takes pride in transforming homes and businesses across Pensacola, Gulf Breeze, and the Gulf Coast. Our team of skilled painters brings craftsmanship, attention to detail, and a strict commitment to customer satisfaction to every project.</p>
         <p>From single-room interior touch-ups to large-scale commercial painting renovations, we approach each job with the same dedication to quality. We use premium paints, employ proven prep techniques, and never cut corners on your investment.</p>
-        <ul class="about-list" role="list">
+        <ul class="about-list reveal-group" role="list">
           <li>Licensed and insured professionals</li>
           <li>Free detailed estimates</li>
           <li>Premium quality paints</li>
@@ -280,7 +301,7 @@
         <p>If any surface we painted peels, blisters, or flakes within two years, we come back and make it right — no charge, no arguing. Fully licensed &amp; insured in Florida.</p>
         <p class="guarantee-fine">License #<span data-replace>REPLACE-LICENSE-NUMBER</span> · General liability &amp; workers' comp on every crew</p>
       </div>
-      <a class="btn btn-white" href="#contact">Claim Your Free Estimate</a>
+      <a class="btn btn-white" href="#contact" data-magnetic>Claim Your Free Estimate</a>
     </div>
   </section>
 
@@ -293,18 +314,18 @@
       </header>
       <!-- REPLACE: swap these sample reviews for the client's real Google reviews (with permission).
            The 5.0 rating badge in the hero and the aggregateRating in the schema must match reality. -->
-      <div class="reviews-grid">
-        <article class="review-card reveal">
+      <div class="reviews-grid reveal-group">
+        <article class="review-card">
           <div class="review-head"><span class="review-avatar" aria-hidden="true">M</span><div><strong>Melissa R.</strong><span>East Hill, Pensacola</span></div></div>
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>"They repainted our whole interior in four days. Furniture moved, covered, and put back — you'd never know they were here except the walls look incredible."</p>
         </article>
-        <article class="review-card reveal">
+        <article class="review-card">
           <div class="review-head"><span class="review-avatar" aria-hidden="true">J</span><div><strong>James T.</strong><span>Gulf Breeze</span></div></div>
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>"Our kitchen cabinets look factory-new. Fair quote, showed up on time every day, and the sprayed finish is flawless."</p>
         </article>
-        <article class="review-card reveal">
+        <article class="review-card">
           <div class="review-head"><span class="review-avatar" aria-hidden="true">D</span><div><strong>Dana W.</strong><span>Navarre</span></div></div>
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
           <p>"Exterior repaint plus pressure washing — the house looks brand new and survived the summer storms without a single peel. Highly recommend."</p>
@@ -368,6 +389,13 @@
           <div class="faq-body"><p>Most residential exterior painting projects in Pensacola and Gulf Breeze take between 3 to 5 days. However, this depends heavily on the size of the home, weather conditions, and the amount of prep work (like pressure washing, scraping, and siding repair) required to guarantee a perfect finish.</p></div>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- scroll-scrub word band -->
+  <section class="word-band" aria-hidden="true">
+    <div class="word-track" id="wordTrack">
+      <span>Interior&nbsp;·&nbsp;Exterior&nbsp;·&nbsp;Cabinets&nbsp;·&nbsp;Epoxy&nbsp;·&nbsp;Limewash&nbsp;·&nbsp;Decks&nbsp;·&nbsp;</span><span>Interior&nbsp;·&nbsp;Exterior&nbsp;·&nbsp;Cabinets&nbsp;·&nbsp;Epoxy&nbsp;·&nbsp;Limewash&nbsp;·&nbsp;Decks&nbsp;·&nbsp;</span>
     </div>
   </section>
 
@@ -477,6 +505,18 @@
     </div>
   </section>
 
+  <!-- Closing CTA -->
+  <section class="close-cta">
+    <div class="container close-cta-inner">
+      <p class="close-eyebrow reveal">Free estimates · 24-hour response</p>
+      <h2 class="close-title"><span class="line"><span class="line-inner">Ready to transform</span></span><span class="line"><span class="line-inner">your <span class="accent">space?</span></span></span></h2>
+      <div class="close-actions reveal">
+        <a class="btn btn-solid btn-lg" href="tel:+18505124505" data-track="phone" data-magnetic>Call or Text (850) 512-4505</a>
+        <a class="btn btn-ghost-dark btn-lg" href="#contact">Request a Quote Online</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
@@ -557,6 +597,8 @@
   </div>
 </div>
 
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
