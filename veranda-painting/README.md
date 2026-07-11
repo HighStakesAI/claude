@@ -27,8 +27,14 @@ rebranding is a config edit, not a rebuild.
 3. **`styles.css` → `:root`** — swap `--accent` (and optionally `--brass`) to
    the client's palette. Nothing else in the CSS needs touching.
 4. **Photos** — search `index.html` for `REPLACE` comments: hero, 3 before/after
-   pairs, owner portrait, OG image. Drop in real `<img>` tags where the `.ph`
-   placeholder divs sit (keep the class hooks / scrim divs noted in each comment).
+   pairs, owner portrait, OG image. The hero, owner portrait, and the first two
+   before/after pairs currently use **AI-generated placeholders** (Higgsfield
+   `soul_2`; the "after" shots are same-angle `nano_banana_pro` repaint edits)
+   hot-linked from Higgsfield's CDN, layered over `.ph` tone divs that show if
+   an image fails to load. Before launch, replace every one with the client's
+   real photos — download local copies rather than hot-linking, and never pass
+   AI imagery off as real project work. The third slider (living room) is still
+   a tone placeholder.
 5. **`index.html` head** — title, meta description, canonical URL, OG tags, and
    the JSON-LD block (NAP must match `SITE_CONFIG`, plus real geo coordinates,
    hours, and FAQ answers verified against the client's actual pricing/warranty).

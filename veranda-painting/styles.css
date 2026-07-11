@@ -110,6 +110,12 @@ h3{font-size:1.25rem;line-height:1.25}
 .btn-arrow{transition:transform .3s var(--ease)}
 .btn:hover .btn-arrow{transform:translateX(4px)}
 
+/* generated/real photos layered over their .ph fallback tone */
+.media-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hero-media .media-img{position:absolute;inset:0}
+.hero-scrim{z-index:2}
+.ba-tag{z-index:3}
+
 /* ---------- placeholders (swap for real photos) ---------- */
 .ph{width:100%;height:100%;position:relative;overflow:hidden}
 .ph::after{
