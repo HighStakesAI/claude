@@ -1,8 +1,8 @@
-# One-shot helper: fetches the Higgsfield-generated demo images into the repo
-# so they can be served locally instead of hot-linked from a CDN.
-# Runs on pushes to the demo branch and skips itself once img/ exists;
-# its own commit carries [skip ci] so it never loops.
-name: fetch-veranda-assets
+# One-shot helper: fetches externally-hosted demo/client images into the repo
+# so they can be served locally instead of hot-linked. Runs on pushes to the
+# demo branch; each job skips itself once its img/ dir exists, and its own
+# commit carries [skip ci] so it never loops.
+name: fetch-assets
 on:
   push:
     branches: [claude/meta-ads-niche-website-prompt-m5vj3b]
@@ -15,30 +15,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download generated images
+      - name: Download Pensacola client images
         id: dl
         run: |
           set -euo pipefail
-          if [ -d veranda-painting/img ]; then
-            echo "img dir already present — nothing to do"
+          if [ -d pensacola-painting/img ]; then
+            echo "pensacola img dir already present — nothing to do"
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          mkdir -p veranda-painting/img
-          base="https://d8j0ntlcm91z4.cloudfront.net/user_3Eh6PqCZESPKJv2KMHsim5UDjhH"
-          curl -fSL -o veranda-painting/img/hero.png                "$base/hf_20260711_191335_711d5efe-ba70-4f77-92e7-2e589452ec52.png"
-          curl -fSL -o veranda-painting/img/owner.png               "$base/hf_20260711_191401_26cb7bb6-e61e-4f1b-8999-de4414bcf40d.png"
-          curl -fSL -o veranda-painting/img/ba-cabinets-before.png  "$base/hf_20260711_191624_2bee482d-de39-4b3f-914b-e3dd8e48b32c.png"
-          curl -fSL -o veranda-painting/img/ba-cabinets-after.png   "$base/hf_20260711_191726_79f90367-012a-44b5-b561-d5900c035091.png"
-          curl -fSL -o veranda-painting/img/ba-exterior-before.png  "$base/hf_20260711_191913_c70c85c7-09a8-4e2f-9b97-d419f8bc0915.png"
-          curl -fSL -o veranda-painting/img/ba-exterior-after.png   "$base/hf_20260711_192601_19a8bfe0-0c38-48db-a538-64034f4d6a9e.png"
-          ls -la veranda-painting/img
+          mkdir -p pensacola-painting/img
+          base="https://assets.cdn.filesafe.space/H8M36AU3Oe3YJUSSRQbu/media"
+          curl -fSL -o pensacola-painting/img/logo.png                 "$base/699e7acf5dfd50bc97066050.png"
+          curl -fSL -o pensacola-painting/img/hero-exterior.jpg        "$base/699554b0bf62aadea9747679.jpeg"
+          curl -fSL -o pensacola-painting/img/svc-interior-exterior.jpg "$base/699554b1905d4772a284ae18.jpeg"
+          curl -fSL -o pensacola-painting/img/svc-cabinets.jpg         "$base/699e6fa72837e8516564246f.jpg"
+          curl -fSL -o pensacola-painting/img/svc-limewash.jpg         "$base/699e6ff55dfd500f0d02195e.jpg"
+          curl -fSL -o pensacola-painting/img/svc-shutters.jpg         "$base/699e70141001a53b53623905.jpg"
+          curl -fSL -o pensacola-painting/img/svc-epoxy.jpg            "$base/699e70742837e80b94648e53.jpg"
+          curl -fSL -o pensacola-painting/img/svc-pressure.jpg         "$base/699554b00c416cf920497c5f.jpeg"
+          curl -fSL -o pensacola-painting/img/svc-furniture.jpg        "$base/699e72105dfd5073b90348fd.jpg"
+          curl -fSL -o pensacola-painting/img/svc-deck.jpg             "$base/699e72301001a556f4636155.jpg"
+          curl -fSL -o pensacola-painting/img/ba-before.jpg            "$base/699554b05c2265eaf213efec.jpeg"
+          curl -fSL -o pensacola-painting/img/ba-after.jpg             "$base/699554b05c2265c1e913efe5.jpeg"
+          curl -fSL -o pensacola-painting/img/about-crew.jpg           "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=800"
+          ls -la pensacola-painting/img
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Commit
         if: steps.dl.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add veranda-painting/img
-          git commit -m "Fetch Higgsfield-generated demo assets into repo [skip ci]"
+          git add pensacola-painting/img
+          git commit -m "Fetch Pensacola client images into repo [skip ci]"
           git push
