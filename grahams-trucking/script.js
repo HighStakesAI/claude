@@ -1,9 +1,14 @@
 /*
     Project: Graham's Trucking and Excavation Website
     Filename: script.js
+
+    Animation strategy: GSAP + ScrollTrigger when available (loaded from CDN),
+    IntersectionObserver + CSS transitions as the fallback. Everything animates
+    transform/opacity only, so scrolling stays smooth.
 */
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const gsapReady = !prefersReducedMotion && window.gsap && window.ScrollTrigger;
 
   /* ---------- Header: shadow + shrink after scrolling past the top ---------- */
   const header = document.getElementById('site-header');
@@ -36,20 +41,124 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Scroll reveals ---------- */
+  /* ---------- Animations ---------- */
   const revealEls = document.querySelectorAll('.reveal');
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-    revealEls.forEach(el => el.classList.add('in-view'));
-  } else {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
+
+  if (gsapReady) {
+    document.documentElement.classList.add('gsap-on');
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal helper: fires once, from either direction, so content never
+    // stays hidden after a deep-link jump or a fast scroll past it
+    const revealOnce = (trigger, start, play) => {
+      const st = ScrollTrigger.create({
+        trigger,
+        start,
+        onEnter: () => { play(); st.kill(); },
+        onEnterBack: () => { play(); st.kill(); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => observer.observe(el));
+    };
+
+    // Word-by-word title reveals: wrap each word in a masked span, then
+    // slide the words up out of their masks as the title scrolls in
+    document.querySelectorAll('.split-words').forEach(title => {
+      const words = title.textContent.trim().split(/\s+/);
+      title.textContent = '';
+      words.forEach((w, i) => {
+        const mask = document.createElement('span');
+        mask.className = 'word-mask';
+        const word = document.createElement('span');
+        word.className = 'word';
+        word.textContent = w;
+        mask.appendChild(word);
+        title.appendChild(mask);
+        if (i < words.length - 1) title.appendChild(document.createTextNode(' '));
+      });
+      gsap.set(title.querySelectorAll('.word'), { yPercent: 110 });
+      revealOnce(title, 'top 88%', () => gsap.to(title.querySelectorAll('.word'), {
+        yPercent: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out'
+      }));
+    });
+
+    // Section/content reveals — replaces the CSS transition fallback.
+    // Grouped staggers for grids, simple rises for everything else.
+    const staggerGroups = [
+      '.work-grid', '.testimonial-grid', '.area-grid', '.contact-info-cards'
+    ];
+    const grouped = new Set();
+    staggerGroups.forEach(sel => {
+      document.querySelectorAll(sel).forEach(grid => {
+        const items = grid.querySelectorAll('.reveal');
+        items.forEach(el => grouped.add(el));
+        if (!items.length) return;
+        gsap.set(items, { autoAlpha: 0, y: 36 });
+        revealOnce(grid, 'top 85%', () => gsap.to(items, {
+          autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out', clearProps: 'transform'
+        }));
+      });
+    });
+
+    revealEls.forEach(el => {
+      if (grouped.has(el)) return;
+      const fromX = el.classList.contains('reveal-right') ? 40 : 0;
+      gsap.set(el, { autoAlpha: 0, y: fromX ? 0 : 30, x: fromX });
+      revealOnce(el, 'top 88%', () => gsap.to(el, {
+        autoAlpha: 1, x: 0, y: 0, duration: 0.8, ease: 'power3.out', clearProps: 'transform'
+      }));
+    });
+
+    // Gallery tiles: rise in with a soft stagger per project row
+    document.querySelectorAll('.gallery-grid').forEach(grid => {
+      const tiles = grid.children;
+      gsap.set(tiles, { autoAlpha: 0, y: 30, scale: 0.97 });
+      revealOnce(grid, 'top 85%', () => gsap.to(tiles, {
+        autoAlpha: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.08, ease: 'power3.out', clearProps: 'transform'
+      }));
+    });
+
+    // Subtle hero parallax: content drifts up, video drifts down
+    const heroContent = document.querySelector('.hero-content');
+    const heroVideo = document.querySelector('.hero-video-bg');
+    if (heroContent) {
+      gsap.to(heroContent, {
+        yPercent: -14,
+        autoAlpha: 0.35,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+    }
+    if (heroVideo) {
+      gsap.to(heroVideo, {
+        yPercent: 12,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+    }
+
+    // Ghost backdrop in the service-area section slides sideways on scroll
+    const backdrop = document.querySelector('.area-backdrop');
+    if (backdrop) {
+      gsap.fromTo(backdrop, { xPercent: -56 }, {
+        xPercent: -44,
+        ease: 'none',
+        scrollTrigger: { trigger: '.service-area', start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    }
+  } else {
+    // Fallback: IntersectionObserver + the CSS .reveal transitions
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealEls.forEach(el => el.classList.add('in-view'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
   }
 
   /* ---------- Gallery lightbox ---------- */

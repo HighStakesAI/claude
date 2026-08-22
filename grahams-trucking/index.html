@@ -23,6 +23,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- GSAP + ScrollTrigger. script.js falls back to CSS reveals if these fail to load -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
 
     <!-- Local business schema for search engines -->
@@ -61,6 +65,7 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#work" class="nav-link">Services</a>
             <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#areas" class="nav-link">Areas</a>
             <a href="#faq" class="nav-link">FAQs</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
@@ -89,10 +94,11 @@
         <a href="#about" class="mobile-link" style="--i:1">About</a>
         <a href="#work" class="mobile-link" style="--i:2">Services</a>
         <a href="#gallery" class="mobile-link" style="--i:3">Gallery</a>
-        <a href="#faq" class="mobile-link" style="--i:4">FAQs</a>
-        <a href="#contact" class="mobile-link" style="--i:5">Contact</a>
+        <a href="#areas" class="mobile-link" style="--i:4">Areas</a>
+        <a href="#faq" class="mobile-link" style="--i:5">FAQs</a>
+        <a href="#contact" class="mobile-link" style="--i:6">Contact</a>
     </nav>
-    <div class="mobile-menu-footer" style="--i:6">
+    <div class="mobile-menu-footer" style="--i:7">
         <a href="tel:219-670-1483" class="btn btn-yellow btn-block">Call 219-670-1483</a>
         <p class="mobile-menu-note">Licensed &amp; Insured &nbsp;•&nbsp; US DOT #761453</p>
     </div>
@@ -107,7 +113,11 @@
 
     <div class="container hero-content">
         <span class="hero-kicker">Lake County's Premier Site Prep &amp; Heavy Hauling</span>
-        <h1 class="hero-title">Reliable<br>Excavation<br><span class="accent">Solutions</span></h1>
+        <h1 class="hero-title">
+            <span class="line-mask"><span class="line">Reliable</span></span>
+            <span class="line-mask"><span class="line">Excavation</span></span>
+            <span class="line-mask"><span class="line accent">Solutions</span></span>
+        </h1>
         <div class="hero-cta">
             <a href="#contact" class="btn btn-yellow btn-lg">Get Free Quote</a>
             <a href="tel:219-670-1483" class="btn btn-ghost btn-lg">Call Now</a>
@@ -124,12 +134,20 @@
     <div class="hazard-stripe" aria-hidden="true"></div>
 </section>
 
+<!-- Rolling services marquee -->
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <span>Excavation</span><span class="outline">Grading</span><span>Demolition</span><span class="outline">Water &amp; Sewer</span><span>Heavy Hauling</span><span class="outline">Material Delivery</span>
+        <span>Excavation</span><span class="outline">Grading</span><span>Demolition</span><span class="outline">Water &amp; Sewer</span><span>Heavy Hauling</span><span class="outline">Material Delivery</span>
+    </div>
+</div>
+
 <!-- ===================== ABOUT ===================== -->
 <section class="section" id="about">
     <div class="container about">
         <div class="about-text reveal">
             <span class="section-kicker">Who We Are</span>
-            <h2 class="section-title">About GTE</h2>
+            <h2 class="section-title split-words">About GTE</h2>
             <p>Graham's Trucking and Excavation is a locally owned company focused on dependable mass excavation and heavy hauling.</p>
             <p>We use robust, modern iron and highly experienced operators to ensure every project is completed safely, strictly to code, and efficiently to save you time and money.</p>
             <div class="about-badges">
@@ -137,6 +155,7 @@
                 <span class="badge">Modern Equipment</span>
                 <span class="badge">Experienced Operators</span>
             </div>
+            <a href="#contact" class="btn btn-dark about-cta">Start Your Project</a>
         </div>
         <div class="about-media reveal reveal-right">
             <img src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b8568987f2fb6c5baebd3b.jpeg" alt="GTE excavator moving earth on a Lake County job site" loading="lazy">
@@ -149,7 +168,7 @@
     <div class="container">
         <div class="section-head reveal">
             <span class="section-kicker">What We Do</span>
-            <h2 class="section-title">Our Work</h2>
+            <h2 class="section-title split-words">Our Work</h2>
         </div>
 
         <div class="work-grid">
@@ -203,6 +222,14 @@
                 </div>
             </article>
         </div>
+
+        <div class="inline-cta reveal">
+            <p>Not sure what your project needs? We'll walk the site with you and quote it straight.</p>
+            <div class="inline-cta-actions">
+                <a href="tel:219-670-1483" class="btn btn-yellow">Call 219-670-1483</a>
+                <a href="#contact" class="btn btn-ghost">Get Free Quote</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -211,7 +238,7 @@
     <div class="container">
         <div class="section-head text-center reveal">
             <span class="section-kicker">Recent Projects</span>
-            <h2 class="section-title">Our Work In Action</h2>
+            <h2 class="section-title split-words">Our Work In Action</h2>
             <p class="section-sub">Recent excavation and hauling projects across Lake County.</p>
         </div>
 
@@ -221,18 +248,22 @@
                 <h3 class="project-city">Hammond, IN</h3>
                 <span class="project-date">2026</span>
             </div>
-            <div class="gallery-grid" data-gallery="hammond">
-                <button class="gallery-item" type="button" data-caption="Hammond, IN — 2026">
+            <div class="gallery-grid mosaic" data-gallery="hammond">
+                <button class="gallery-item featured" type="button" data-caption="Hammond, IN — 2026">
                     <img src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b9b9deb2351458c2031fe2.jpeg" alt="Hammond project — excavation in progress" loading="lazy">
+                    <span class="gallery-cap" aria-hidden="true">Hammond, IN</span>
                 </button>
                 <button class="gallery-item" type="button" data-caption="Hammond, IN — 2026">
                     <img src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b85aba87f0f2318a40a207.jpeg" alt="Hammond project — graded lot" loading="lazy">
+                    <span class="gallery-cap" aria-hidden="true">Hammond, IN</span>
                 </button>
                 <button class="gallery-item" type="button" data-caption="Hammond, IN — 2026">
                     <img src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b9bb149c981730a5cd25d3.jpeg" alt="Hammond project — trenching work" loading="lazy">
+                    <span class="gallery-cap" aria-hidden="true">Hammond, IN</span>
                 </button>
                 <button class="gallery-item" type="button" data-caption="Hammond, IN — 2026">
                     <img src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b9bad5dac584eb08ab3e94.jpeg" alt="Hammond project — hauling and site work" loading="lazy">
+                    <span class="gallery-cap" aria-hidden="true">Hammond, IN</span>
                 </button>
             </div>
         </div>
@@ -243,8 +274,8 @@
                 <h3 class="project-city">Dyer, IN</h3>
                 <span class="project-date">2025</span>
             </div>
-            <div class="gallery-grid" data-gallery="dyer">
-                <div class="video-click-wrap" data-click-video>
+            <div class="gallery-grid mosaic" data-gallery="dyer">
+                <div class="video-click-wrap featured" data-click-video>
                     <video playsinline preload="metadata" muted>
                         <source src="https://assets.cdn.filesafe.space/Qil0mqWxldrFDzqZyLwh/media/69b8c1e1c625854cecdb1295.mp4" type="video/mp4">
                     </video>
@@ -274,9 +305,9 @@
                 <h3 class="project-city">Crown Point, IN</h3>
                 <span class="project-date">2026</span>
             </div>
-            <div class="gallery-grid" data-gallery="crown-point">
+            <div class="gallery-grid mosaic" data-gallery="crown-point">
                 <!-- PLACEHOLDER: all four slots reused Hammond photos on the old site — need unique Crown Point photos -->
-                <div class="gallery-placeholder" role="img" aria-label="Photo coming soon — Crown Point project">
+                <div class="gallery-placeholder featured" role="img" aria-label="Photo coming soon — Crown Point project">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                     <span>Photo needed<br>Crown Point, IN</span>
                 </div>
@@ -292,6 +323,13 @@
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                     <span>Photo needed<br>Crown Point, IN</span>
                 </div>
+            </div>
+        </div>
+
+        <div class="inline-cta inline-cta-light reveal">
+            <p>Want results like these on your property?</p>
+            <div class="inline-cta-actions">
+                <a href="#contact" class="btn btn-yellow">Get Your Free Quote</a>
             </div>
         </div>
     </div>
@@ -308,12 +346,66 @@
     <button class="lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
 </div>
 
+<!-- ===================== TESTIMONIALS ===================== -->
+<!-- PLACEHOLDER QUOTES: swap in real customer reviews (and real first names) before launch -->
+<section class="section section-dark testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-head text-center reveal">
+            <span class="section-kicker">Word Around The County</span>
+            <h2 class="section-title split-words">What Customers Say</h2>
+        </div>
+
+        <div class="testimonial-grid">
+            <figure class="testimonial-card reveal" style="--i:0">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>They dug and graded our whole lot in two days and left the site cleaner than they found it. Straight shooters on price, too.</blockquote>
+                <figcaption><strong>M. R.</strong><span>Hammond, IN</span></figcaption>
+            </figure>
+            <figure class="testimonial-card reveal" style="--i:1">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>New sewer line trenched, tied in, and inspected without a hitch. Showed up when they said they would — every day.</blockquote>
+                <figcaption><strong>D. K.</strong><span>Dyer, IN</span></figcaption>
+            </figure>
+            <figure class="testimonial-card reveal" style="--i:2">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>Took down the old garage and hauled everything off in one afternoon. Fair quote, zero surprises, great crew.</blockquote>
+                <figcaption><strong>S. T.</strong><span>Crown Point, IN</span></figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== SERVICE AREA ===================== -->
+<section class="section service-area" id="areas">
+    <span class="area-backdrop" aria-hidden="true">Lake County</span>
+    <div class="container">
+        <div class="section-head text-center reveal">
+            <span class="section-kicker">Coverage</span>
+            <h2 class="section-title split-words">Proudly Serving Lake County</h2>
+            <p class="section-sub">Based in Hebron — running iron across Northwest Indiana.</p>
+        </div>
+
+        <ul class="area-grid">
+            <li class="area-chip reveal" style="--i:0"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Hammond</li>
+            <li class="area-chip reveal" style="--i:1"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Dyer</li>
+            <li class="area-chip reveal" style="--i:2"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Crown Point</li>
+            <li class="area-chip reveal" style="--i:3"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Valparaiso</li>
+            <li class="area-chip reveal" style="--i:4"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Lowell</li>
+            <li class="area-chip home reveal" style="--i:5"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Hebron<em>Home Base</em></li>
+            <li class="area-chip reveal" style="--i:6"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Schererville</li>
+            <li class="area-chip reveal" style="--i:7"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Merrillville</li>
+        </ul>
+
+        <p class="area-note reveal">Don't see your town? We travel — <a href="tel:219-670-1483">call 219-670-1483</a> and ask.</p>
+    </div>
+</section>
+
 <!-- ===================== MATERIAL DELIVERY ===================== -->
 <section class="section section-light" id="materials">
     <div class="container">
         <div class="section-head text-center reveal">
             <span class="section-kicker">Materials</span>
-            <h2 class="section-title">Material Delivery</h2>
+            <h2 class="section-title split-words">Material Delivery</h2>
         </div>
 
         <div class="product-box reveal">
@@ -323,7 +415,7 @@
             <div class="product-content">
                 <h3>Buy Pulverized Black Dirt</h3>
                 <p>High quality black dirt available for pickup or delivery straight to your job site. Call us today to order your truckload.</p>
-                <p class="product-price">$25–45 <span>per yard</span></p>
+                <p class="product-price">$25&ndash;45 <span>per yard</span></p>
                 <a href="tel:219-670-1483" class="btn btn-yellow">Call to Order</a>
             </div>
         </div>
@@ -335,7 +427,7 @@
     <div class="container container-narrow">
         <div class="section-head text-center reveal">
             <span class="section-kicker">Good to Know</span>
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title split-words">Frequently Asked Questions</h2>
         </div>
 
         <div class="faq-accordion reveal">
@@ -378,7 +470,7 @@
 <!-- ===================== CTA BANNER ===================== -->
 <section class="cta-banner">
     <div class="container cta-banner-inner reveal">
-        <h2>Ready to break ground?</h2>
+        <h2 class="split-words">Ready to break ground?</h2>
         <p>Free quotes. Fast response. Licensed &amp; insured.</p>
         <div class="cta-banner-actions">
             <a href="tel:219-670-1483" class="btn btn-dark btn-lg">Call 219-670-1483</a>
@@ -392,7 +484,7 @@
     <div class="container">
         <div class="section-head text-center reveal">
             <span class="section-kicker">Get In Touch</span>
-            <h2 class="section-title">Contact Information</h2>
+            <h2 class="section-title split-words">Contact Information</h2>
         </div>
 
         <div class="contact-info-cards">
@@ -452,6 +544,12 @@
         </div>
     </div>
 </footer>
+
+<!-- Sticky call bar (mobile only) -->
+<div class="call-bar" aria-hidden="false">
+    <a href="tel:219-670-1483" class="btn btn-yellow">Call Now</a>
+    <a href="#contact" class="btn btn-dark">Free Quote</a>
+</div>
 
 </body>
 </html>
