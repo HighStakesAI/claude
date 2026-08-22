@@ -97,7 +97,7 @@ h1, h2, h3, .btn {
 .btn-yellow { background: var(--yellow); color: var(--black); box-shadow: 0 5px 14px rgba(253, 184, 19, 0.35); }
 .btn-yellow:hover { background: var(--yellow-dark); }
 
-.btn-ghost { background: rgba(255, 255, 255, 0.08); color: var(--white); border-color: rgba(255, 255, 255, 0.65); backdrop-filter: blur(4px); }
+.btn-ghost { background: rgba(17, 17, 17, 0.35); color: var(--white); border-color: rgba(255, 255, 255, 0.65); }
 .btn-ghost:hover { background: var(--white); color: var(--black); }
 
 .btn-dark { background: var(--black); color: var(--white); }
@@ -127,17 +127,16 @@ h1, h2, h3, .btn {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  transition: height 0.3s var(--ease);
 }
-.site-header.scrolled .header-inner { height: 64px; }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
 .brand-logo {
   height: 54px;
   width: auto;
-  transition: height 0.3s var(--ease);
+  transform-origin: left center;
+  transition: transform 0.3s var(--ease);
 }
-.site-header.scrolled .brand-logo { height: 44px; }
+.site-header.scrolled .brand-logo { transform: scale(0.85); }
 
 .desktop-nav { display: flex; gap: 2px; }
 .nav-link {
@@ -284,6 +283,7 @@ body.menu-open { overflow: hidden; }
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 1;
+  will-change: transform;
 }
 
 .hero-overlay {
@@ -845,6 +845,7 @@ body.menu-open { overflow: hidden; }
   -webkit-text-stroke: 1.5px rgba(17, 17, 17, 0.07);
   pointer-events: none;
   user-select: none;
+  will-change: transform;
 }
 
 .area-grid {
@@ -1156,7 +1157,7 @@ body.menu-open .call-bar { display: none; }
 @media (max-width: 640px) {
   :root { --header-h: 64px; }
 
-  .brand-logo, .site-header.scrolled .brand-logo { height: 42px; }
+  .brand-logo { height: 42px; }
   .header-phone-number { display: none; }
   .header-phone {
     width: 46px; height: 46px;
