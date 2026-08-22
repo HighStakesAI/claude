@@ -1068,7 +1068,7 @@ body.menu-open { overflow: hidden; }
   align-items: start;
   text-align: center;
 }
-.footer-brand img { margin-inline: auto; height: 64px; width: auto; }
+.footer-brand img { margin-inline: auto; height: 96px; width: auto; }
 .footer-text { color: #9AA3AB; font-size: 14px; margin-top: 14px; }
 .footer-section h4 {
   color: var(--yellow);
