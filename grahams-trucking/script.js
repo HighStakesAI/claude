@@ -8,14 +8,55 @@
 */
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 640px)').matches;
   const gsapReady = !prefersReducedMotion && window.gsap && window.ScrollTrigger;
+
+  /* On phones, skip downloading/decoding the hero video — the poster frame
+     shows instead, saving several MB and the ongoing decode cost */
+  if (isMobile) {
+    const heroVid = document.querySelector('.hero-video-bg');
+    if (heroVid) {
+      heroVid.removeAttribute('autoplay');
+      heroVid.preload = 'none';
+      heroVid.pause();
+    }
+  }
 
   /* ---------- Header: shadow + shrink after scrolling past the top ---------- */
   const header = document.getElementById('site-header');
   if (header) {
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 24);
+      if (isMobile) {
+        if (y > lastY + 8 && y > 220) header.classList.add('tucked');
+        else if (y < lastY - 8 || y <= 220) header.classList.remove('tucked');
+      }
+      lastY = y;
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* Sticky call bar: rises into the thumb zone once the hero CTAs scroll away */
+  const callBar = document.querySelector('.call-bar');
+  if (callBar) {
+    const onBarScroll = () => callBar.classList.toggle('visible', window.scrollY > 420);
+    onBarScroll();
+    window.addEventListener('scroll', onBarScroll, { passive: true });
+  }
+
+  /* Hero scroll cue fades after the first real scroll */
+  const cue = document.querySelector('.scroll-cue');
+  if (cue) {
+    const onCue = () => {
+      if (window.scrollY > 60) {
+        cue.classList.add('faded');
+        window.removeEventListener('scroll', onCue);
+      }
+    };
+    window.addEventListener('scroll', onCue, { passive: true });
   }
 
   /* ---------- Mobile menu ---------- */
@@ -48,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add('gsap-on');
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
+
+    // Phones get shorter travel and quicker timing — motion reads cleaner
+    // on a small screen when it stays subtle
+    const RISE = isMobile ? 18 : 36;
+    const DUR = isMobile ? 0.55 : 0.7;
+    const STAG = isMobile ? 0.07 : 0.1;
 
     // Reveal helper: fires once, from either direction, so content never
     // stays hidden after a deep-link jump or a fast scroll past it
@@ -92,28 +139,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const items = grid.querySelectorAll('.reveal');
         items.forEach(el => grouped.add(el));
         if (!items.length) return;
-        gsap.set(items, { autoAlpha: 0, y: 36 });
+        gsap.set(items, { autoAlpha: 0, y: RISE });
         revealOnce(grid, 'top 85%', () => gsap.to(items, {
-          autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out', clearProps: 'transform'
+          autoAlpha: 1, y: 0, duration: DUR, stagger: STAG, ease: 'power3.out', clearProps: 'transform'
         }));
       });
     });
 
     revealEls.forEach(el => {
       if (grouped.has(el)) return;
-      const fromX = el.classList.contains('reveal-right') ? 40 : 0;
-      gsap.set(el, { autoAlpha: 0, y: fromX ? 0 : 30, x: fromX });
+      const fromX = el.classList.contains('reveal-right') && !isMobile ? 40 : 0;
+      gsap.set(el, { autoAlpha: 0, y: fromX ? 0 : RISE, x: fromX });
       revealOnce(el, 'top 88%', () => gsap.to(el, {
-        autoAlpha: 1, x: 0, y: 0, duration: 0.8, ease: 'power3.out', clearProps: 'transform'
+        autoAlpha: 1, x: 0, y: 0, duration: isMobile ? 0.6 : 0.8, ease: 'power3.out', clearProps: 'transform'
       }));
     });
 
     // Gallery tiles: rise in with a soft stagger per project row
     document.querySelectorAll('.gallery-grid').forEach(grid => {
       const tiles = grid.children;
-      gsap.set(tiles, { autoAlpha: 0, y: 30, scale: 0.97 });
+      gsap.set(tiles, { autoAlpha: 0, y: isMobile ? 16 : 30, scale: 0.97 });
       revealOnce(grid, 'top 85%', () => gsap.to(tiles, {
-        autoAlpha: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.08, ease: 'power3.out', clearProps: 'transform'
+        autoAlpha: 1, y: 0, scale: 1, duration: isMobile ? 0.5 : 0.65, stagger: isMobile ? 0.06 : 0.08, ease: 'power3.out', clearProps: 'transform'
       }));
     });
 
@@ -155,6 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
       lbImg.src = item.src;
       lbImg.alt = item.alt;
       lbCaption.textContent = item.caption;
+      if (items.length > 1) {
+        const count = document.createElement('span');
+        count.className = 'count';
+        count.textContent = (index + 1) + ' / ' + items.length;
+        lbCaption.appendChild(count);
+      }
       const showNav = items.length > 1;
       btnPrev.hidden = !showNav;
       btnNext.hidden = !showNav;
