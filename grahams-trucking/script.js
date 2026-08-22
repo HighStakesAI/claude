@@ -117,39 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }));
     });
 
-    // Parallax and scroll-scrubbed motion: desktop only — phones get the
-    // reveals without per-frame scroll work. scrub uses a small catch-up
-    // time so the motion is eased rather than hard-locked to each scroll event.
-    const mm = gsap.matchMedia();
-    mm.add('(min-width: 769px)', () => {
-      const heroContent = document.querySelector('.hero-content');
-      const heroVideo = document.querySelector('.hero-video-bg');
-      if (heroContent) {
-        gsap.to(heroContent, {
-          yPercent: -14,
-          autoAlpha: 0.35,
-          ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
-        });
-      }
-      if (heroVideo) {
-        gsap.to(heroVideo, {
-          yPercent: 12,
-          ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
-        });
-      }
-
-      // Ghost backdrop in the service-area section slides sideways on scroll
-      const backdrop = document.querySelector('.area-backdrop');
-      if (backdrop) {
-        gsap.fromTo(backdrop, { xPercent: -56 }, {
-          xPercent: -44,
-          ease: 'none',
-          scrollTrigger: { trigger: '.service-area', start: 'top bottom', end: 'bottom top', scrub: 0.6 }
-        });
-      }
-    });
+    // No scroll-scrubbed motion: every animation fires once and completes on
+    // its own clock, so nothing ever lags behind the scroll position.
   } else {
     // Fallback: IntersectionObserver + the CSS .reveal transitions
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
