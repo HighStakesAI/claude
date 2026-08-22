@@ -131,7 +131,7 @@ h1, h2, h3, .btn {
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
 .brand-logo {
-  height: 54px;
+  height: 56px;
   width: auto;
   transform-origin: left center;
   transition: transform 0.3s var(--ease);
