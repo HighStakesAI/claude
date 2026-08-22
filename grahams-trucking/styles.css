@@ -1101,19 +1101,19 @@ body.menu-open { overflow: hidden; }
 .call-bar .btn-dark { background: transparent; border-color: rgba(255, 255, 255, 0.5); color: var(--white); }
 body.menu-open .call-bar { display: none; }
 
-/* ---------- Scroll reveals (CSS fallback; GSAP takes over when loaded) ---------- */
-.reveal {
+/* ---------- Scroll reveals ----------
+   The CSS hidden state exists ONLY while GSAP is not running (:not(.gsap-on)).
+   Once script.js adds .gsap-on, these rules vanish entirely: GSAP hides and
+   animates via inline styles and clears them when done, leaving the elements
+   with no leftover offset and their :hover transforms intact. */
+:root:not(.gsap-on) .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
   transition-delay: calc(0.08s * var(--i, 0));
 }
-.reveal-right { transform: translateX(36px); }
-.reveal.in-view { opacity: 1; transform: none; }
-
-/* When GSAP drives the animations, neutralize the CSS transition layer so
-   the two systems never fight over transform/opacity */
-.gsap-on .reveal { transition: none; }
+:root:not(.gsap-on) .reveal-right { transform: translateX(36px); }
+:root:not(.gsap-on) .reveal.in-view { opacity: 1; transform: none; }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
