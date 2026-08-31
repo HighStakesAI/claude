@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!item) return;
       lbImg.src = item.src;
       lbImg.alt = item.alt;
-      lbCaption.textContent = item.caption;
+      lbCaption.textContent = '';
       if (items.length > 1) {
         const count = document.createElement('span');
         count.className = 'count';

@@ -355,9 +355,19 @@ body.menu-open { overflow: hidden; }
 }
 .hero-trust .icon { color: var(--yellow); }
 
+.hero-family {
+  color: var(--text-on-dark);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  border-left: 3px solid var(--yellow);
+  padding-left: 12px;
+}
+
 /* Staggered hero entrance on load: lines rise out of their masks.
    Pure CSS so it runs even if GSAP hasn't loaded yet — no flash, no jump. */
-.hero-kicker, .hero-cta, .hero-trust {
+.hero-kicker, .hero-cta, .hero-family {
   opacity: 0;
   transform: translateY(24px);
   animation: hero-in 0.8s var(--ease) forwards;
@@ -370,7 +380,7 @@ body.menu-open { overflow: hidden; }
 .hero-title .line-mask:nth-child(2) .line { animation-delay: 0.15s; }
 .hero-title .line-mask:nth-child(3) .line { animation-delay: 0.25s; }
 .hero-cta { animation-delay: 0.45s; }
-.hero-trust { animation-delay: 0.6s; }
+.hero-family { animation-delay: 0.6s; }
 @keyframes hero-in { to { opacity: 1; transform: translateY(0); } }
 @keyframes line-up { to { transform: translateY(0); } }
 
@@ -581,6 +591,7 @@ body.menu-open { overflow: hidden; }
 .card-body p { color: var(--text-muted); font-size: 16px; }
 
 /* ---------- Gallery ---------- */
+.gallery-wall { padding-top: clamp(40px, 6vw, 70px); }
 .project-row { margin-bottom: clamp(44px, 6vw, 64px); }
 
 .project-head {
@@ -683,6 +694,7 @@ body.menu-open { overflow: hidden; }
   line-height: 1.3;
 }
 .gallery-placeholder .icon { width: 30px; height: 30px; }
+.gallery-placeholder.wordless .icon { width: 36px; height: 36px; }
 
 /* Click-to-play video tiles */
 .video-click-wrap {
@@ -892,10 +904,17 @@ body.menu-open { overflow: hidden; }
   position: relative;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
-  max-width: 980px;
+  max-width: 1050px;
   margin-inline: auto;
+}
+.area-chip em {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
 }
 
 .area-chip {
@@ -938,6 +957,14 @@ body.menu-open { overflow: hidden; }
   color: var(--text-muted);
   font-size: 17px;
   font-weight: 600;
+}
+.area-note.area-il {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
 }
 .area-note a { color: var(--teal-dark); font-weight: 700; text-decoration: none; }
 .area-note a:hover { text-decoration: underline; }
@@ -1168,7 +1195,7 @@ body.menu-open .call-bar { display: none; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .reveal, .hero-kicker, .hero-cta, .hero-trust { opacity: 1 !important; transform: none !important; }
+  .reveal, .hero-kicker, .hero-cta, .hero-family { opacity: 1 !important; transform: none !important; }
   .hero-title .line { transform: none !important; }
   .marquee-track { animation: none !important; }
 }
