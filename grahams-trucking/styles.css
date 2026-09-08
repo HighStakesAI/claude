@@ -134,14 +134,32 @@ h1, h2, h3, .btn {
   gap: 20px;
 }
 
-.brand { display: flex; align-items: center; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; text-decoration: none; }
 .brand-logo {
-  height: 56px;
+  height: 44px;
   width: auto;
   transform-origin: left center;
   transition: transform 0.3s var(--ease);
 }
-.site-header.scrolled .brand-logo { transform: scale(0.85); }
+.site-header.scrolled .brand-logo { transform: scale(0.88); }
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.brand-wordmark small {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--yellow);
+  letter-spacing: 0.24em;
+  margin-top: 4px;
+}
 
 .desktop-nav { display: flex; gap: 2px; }
 .nav-link {
@@ -1137,7 +1155,7 @@ body.menu-open { overflow: hidden; }
   align-items: start;
   text-align: center;
 }
-.footer-brand img { margin-inline: auto; height: 96px; width: auto; }
+.footer-brand img { margin-inline: auto; height: 64px; width: auto; }
 .footer-text { color: #9AA3AB; font-size: 14px; margin-top: 14px; }
 .footer-section h4 {
   color: var(--yellow);
@@ -1227,7 +1245,8 @@ body.menu-open .call-bar { display: none; }
 @media (max-width: 640px) {
   :root { --header-h: 64px; }
 
-  .brand-logo { height: 42px; }
+  .brand-logo { height: 36px; }
+  .brand-wordmark { display: none; }
   .header-phone-number { display: none; }
   .header-phone {
     width: 46px; height: 46px;
