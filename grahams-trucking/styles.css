@@ -1191,6 +1191,21 @@ body.menu-open { overflow: hidden; }
 .call-bar .btn-dark { background: transparent; border-color: rgba(255, 255, 255, 0.5); color: var(--white); }
 body.menu-open .call-bar { display: none; }
 
+/* ---------- Gallery page & full-gallery CTA ---------- */
+.gallery-more { text-align: center; margin-top: 26px; }
+.gallery-page { padding-top: clamp(28px, 4vw, 44px); }
+.page-head { margin-bottom: 18px; }
+.back-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--black); }
+
 /* ---------- Scroll reveals ----------
    The CSS hidden state exists ONLY while GSAP is not running (:not(.gsap-on)).
    Once script.js adds .gsap-on, these rules vanish entirely: GSAP hides and
@@ -1315,6 +1330,17 @@ body.menu-open .call-bar { display: none; }
   /* Comfortable 48px touch targets in the footer */
   .footer-section p { margin-bottom: 4px; }
   .footer-section a { display: inline-block; padding: 8px 4px; }
+
+  .gallery-full {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    overflow-x: visible;
+    gap: 10px;
+  }
+  .gallery-full > * { height: auto; min-height: 0; }
+  .gallery-full .featured { grid-column: span 2; grid-row: span 2; }
 
   .call-bar { display: flex; }
   /* Keep the fixed bar from covering the last content */
