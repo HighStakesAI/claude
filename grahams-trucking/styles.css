@@ -1331,6 +1331,9 @@ body.menu-open .call-bar { display: none; }
   .footer-section p { margin-bottom: 4px; }
   .footer-section a { display: inline-block; padding: 8px 4px; }
 
+  /* Per client: video tiles are desktop-only; phones show photos */
+  .video-click-wrap { display: none; }
+
   .gallery-full {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
