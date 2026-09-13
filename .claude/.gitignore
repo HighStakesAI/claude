@@ -1,0 +1,7 @@
+# claude-seo managed Python runtime (created per machine by `/seo setup`)
+skills/seo/.venv/
+skills/seo/.venv.*/
+skills/seo/ms-playwright/
+skills/seo/runtime-state.json
+skills/seo/.runtime-state.next
+skills/seo/.setup.lock

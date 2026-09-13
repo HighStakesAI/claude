@@ -138,3 +138,38 @@ Keep all 4 files in the same folder so relative links (`thankyou-en.html`, `land
 - Set the landing page URL for each ad set accordingly
 - Use **Broad + Interest** audiences for cold traffic; retarget **Landing Page Views** who didn't submit
 - Recommended video formats: 9:16 (Stories/Reels) and 1:1 (Feed) — same VSL, different crops
+
+---
+
+# Claude Code SEO skill (`/seo`)
+
+This repo vendors [claude-seo](https://github.com/AgriciDaniel/claude-seo) v2.3.1
+(MIT) under `.claude/skills/` and `.claude/agents/`, so any Claude Code session
+opened at this repo root gets the `/seo` command and its 18 sub-agents.
+
+First run on each machine (builds an isolated Python venv + Playwright Chromium
+inside `.claude/skills/seo/`, which is gitignored):
+
+```
+/seo setup
+/seo doctor
+```
+
+Then, for example:
+
+```
+/seo audit https://example.com
+/seo local https://example.com
+/seo page  https://example.com/some-page
+```
+
+Requires Python 3.10+, git, and Node (for the optional schema hook). The
+launcher path inside the skill files is resolved with `git rev-parse
+--show-toplevel`, so run Claude Code from inside this repository.
+
+To upgrade: re-copy `skills/`, `agents/`, `scripts/`, `schema/`, `data/`,
+`pdf/`, `hooks/`, `extensions/`, `requirements.txt`, and
+`.claude-plugin/plugin.json` (as `runtime-plugin.json`) from the new upstream tag,
+then replace the string `"${CLAUDE_PLUGIN_ROOT}/scripts/claude-seo"` with
+`"$(git rev-parse --show-toplevel)/.claude/skills/seo/scripts/claude-seo"`
+in every `.md` file.
