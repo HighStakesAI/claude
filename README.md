@@ -6,18 +6,21 @@ The main marketing site served at histakesai.com via Cloudflare Workers
 static assets (`wrangler.jsonc` points at this directory; pushes to `main`
 auto-deploy).
 
-- `app.src.js` is the **readable source of truth**. `app.js` is built from it:
-  ```
-  npx terser production-site/app.src.js --compress --mangle -o production-site/app.js
-  ```
-  Never edit `app.js` directly.
-- `styles.css` is a **precompiled** Tailwind build. Utility classes that were
-  not in the original build do not exist in it — new utilities must be added
-  manually to the custom block at the end of the file.
-- All fonts (`fonts/`) and JS libraries (`vendor/`) are self-hosted; do not
-  reintroduce CDN or Google Fonts references into the critical path.
-- The lead form posts to the GHL/LeadConnector webhook and fires a
+**September 2026 "High Stakes" redesign — fully static, no build step.**
+
+- `index.html` / `es/index.html` — the pages (EN / ES). All content lives in
+  the HTML; edit directly.
+- `style.css` — handwritten design system (black & white + red `--red`
+  accent). No Tailwind, no compile step.
+- `main.js` — vanilla JS (~2KB gz): scroll reveals, counters, sticky call
+  bar, contact form.
+- The lead form posts to the GHL/LeadConnector webhook (field contract:
+  name, email, phone, service, message, sms_consent) and fires a
   `generate_lead` gtag event on success.
+- Fonts (`fonts/*-latin-var.woff2`) are self-hosted latin variable subsets;
+  do not reintroduce CDN or Google Fonts references into the critical path.
+- Source of truth also mirrored in the `HighStakesAI/high-stakes-ai` repo
+  (`High Stakes AI production website/`); keep the two in sync or retire one.
 
 ---
 
