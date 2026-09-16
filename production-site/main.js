@@ -29,7 +29,34 @@
   var heroTitle = document.getElementById("hero-title");
   var heroSub = document.getElementById("hero-sub");
   var bar = document.getElementById("callbar");
+  var frames = [].slice.call(document.querySelectorAll(".shot-frame"));
   var ticking = false;
+
+  // Case-study screenshots: pan the full image through the frame while the
+  // card crosses the viewport — top edge shown on entry, bottom edge before
+  // exit. Short images (landscape shots) are letterbox-centered instead.
+  function panFrames() {
+    frames.forEach(function (f) {
+      var img = f.querySelector("img");
+      if (!img || !img.offsetHeight) return;
+      var over = img.offsetHeight - f.offsetHeight;
+      if (over <= 0) {
+        img.style.top = "50%";
+        img.style.transform = "translateY(-50%)";
+        return;
+      }
+      img.style.top = "0";
+      if (reduced) return;
+      var r = f.getBoundingClientRect(), vh = innerHeight;
+      var pad = 96;
+      var travel = vh - r.height - 2 * pad;
+      var p = travel > 40
+        ? (vh - pad - r.bottom) / travel
+        : (vh - r.top) / (vh + r.height);
+      p = Math.min(1, Math.max(0, p));
+      img.style.transform = "translateY(" + (-over * p) + "px)";
+    });
+  }
 
   function onScroll() {
     var d = document.documentElement, y = window.scrollY;
@@ -48,11 +75,16 @@
         words.forEach(function (w, i) { w.classList.toggle("lit", i < lit); });
       }
     }
+    panFrames();
     ticking = false;
   }
   addEventListener("scroll", function () {
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
+  addEventListener("resize", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  addEventListener("load", panFrames);
   onScroll();
   if (reduced) words.forEach(function (w) { w.classList.add("lit"); });
 
