@@ -130,7 +130,7 @@
         form.reset();
       } catch (err) {
         msg.className = "form-msg err";
-        msg.textContent = form.dataset.errText || "Something went wrong. Call us instead: (850) 485-9926.";
+        msg.textContent = form.dataset.errText || "Something went wrong. Call us instead: (850) 943-2040.";
       }
       btn.disabled = false;
       sending = false;
