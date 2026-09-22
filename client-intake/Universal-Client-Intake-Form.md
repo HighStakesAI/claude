@@ -110,9 +110,7 @@ Answer: ______________________________________________
 
 **2.3 Additional licenses, registrations, or certifications you want displayed**
 
-☐ EPA Section 608 ☐ Gas / LP ☐ Electrical ☐ Low-voltage / alarm ☐ Roofing
-☐ Plumbing ☐ Pest control ☐ ISA Certified Arborist ☐ Backflow
-☐ County/city business tax receipt ☐ Other: ______________________________
+☐ EPA Section 608 ☐ Gas / LP ☐ Electrical ☐ Low-voltage / alarm ☐ Roofing ☐ Plumbing ☐ Pest control ☐ ISA Certified Arborist ☐ Backflow ☐ County/city business tax receipt ☐ Other: ______________________________
 
 List numbers and expiry dates for any you want on the site:
 
@@ -142,8 +140,7 @@ Answer: ______________________________________________
 
 **2.9 Any of these you want mentioned prominently?**
 
-☐ Veteran-owned ☐ Family-owned ☐ Woman-owned ☐ Minority-owned ☐ Locally owned
-☐ Bilingual staff — languages: __________ ☐ Other: __________
+☐ Veteran-owned ☐ Family-owned ☐ Woman-owned ☐ Minority-owned ☐ Locally owned ☐ Bilingual staff — languages: __________ ☐ Other: __________
 
 ---
 
@@ -155,9 +152,9 @@ travels to customers. Getting this wrong is a top cause of profile suspension, s
 
 **3.1 Which describes you?** **[REQUIRED TO START]**
 
-☐ **Storefront** — customers come to our address during posted hours (shop, showroom, salon)
-☐ **Service-area business** — we travel to customers; no public-facing location
-☐ **Hybrid** — we have a real staffed location customers can visit *and* we travel out
+- ☐ **Storefront** — customers come to our address during posted hours (shop, showroom, salon)
+- ☐ **Service-area business** — we travel to customers; no public-facing location
+- ☐ **Hybrid** — we have a real staffed location customers can visit *and* we travel out
 
 > Note: a P.O. box, a mailbox store, or a virtual office you do not actually work from is
 > **not eligible** for a Google Business Profile. A desk in a co-working space only
@@ -226,10 +223,10 @@ number: __________
 **4.7 Where should new leads actually go?** **[REQUIRED TO START]** — check all, and give
 the exact destination.
 
-☐ Email to: ______________________
-☐ SMS to: ______________________
-☐ CRM — which one: ______________________ (GoHighLevel, Jobber, Housecall Pro, ServiceTitan, none)
-☐ Phone call / call forwarding to: ______________________
+- ☐ Email to: ______________________
+- ☐ SMS to: ______________________
+- ☐ CRM — which one: ______________________ (GoHighLevel, Jobber, Housecall Pro, ServiceTitan, none)
+- ☐ Phone call / call forwarding to: ______________________
 
 **4.8 Who answers the phone during business hours?** ☐ Owner ☐ Office staff
 ☐ Answering service ☐ Goes to voicemail ☐ Other: __________
@@ -307,16 +304,14 @@ they book? ☐ Yes ☐ No
 
 **5.8 May we publish prices or price ranges on the site?**
 
-☐ Yes, exact prices ☐ Yes, "starting at" ranges ☐ Ranges only, no numbers
-☐ No pricing at all
+☐ Yes, exact prices ☐ Yes, "starting at" ranges ☐ Ranges only, no numbers ☐ No pricing at all
 
 > Pages with any pricing signal convert meaningfully better than pages with none. If you
 > say no, tell us why so we can find another trust signal.
 
 **5.9 Payment methods accepted**
 
-☐ Cash ☐ Check ☐ Credit/debit ☐ ACH ☐ Apple/Google Pay ☐ Financing
-☐ Invoice / net terms ☐ Other: __________
+☐ Cash ☐ Check ☐ Credit/debit ☐ ACH ☐ Apple/Google Pay ☐ Financing ☐ Invoice / net terms ☐ Other: __________
 
 **5.10 Financing offered?** ☐ No ☐ Yes — provider and terms (e.g. "Synchrony, 0% for
 12 months"): ______________________
@@ -460,8 +455,7 @@ Answer: ______________________________________________
 
 **8.10 Brand voice — pick up to three**
 
-☐ Professional ☐ Friendly / neighborly ☐ Blunt and direct ☐ Premium / high-end
-☐ Funny ☐ Technical / expert ☐ Faith-based ☐ Family-oriented ☐ No-nonsense
+☐ Professional ☐ Friendly / neighborly ☐ Blunt and direct ☐ Premium / high-end ☐ Funny ☐ Technical / expert ☐ Faith-based ☐ Family-oriented ☐ No-nonsense
 
 **8.11 Tagline or slogan you already use** ______________________
 
@@ -517,15 +511,11 @@ Answer: ______________________________________________
 
 **9.10 Pages you know you need**
 
-☐ Home ☐ About ☐ Services overview ☐ Individual service pages ☐ Service-area / city
-pages ☐ Contact ☐ Request a quote ☐ Gallery / before-and-after ☐ Reviews
-☐ Financing ☐ FAQ ☐ Blog ☐ Careers / hiring ☐ Commercial (separate from residential)
-☐ Privacy policy & terms ☐ Other: ______________________
+☐ Home ☐ About ☐ Services overview ☐ Individual service pages ☐ Service-area / city pages ☐ Contact ☐ Request a quote ☐ Gallery / before-and-after ☐ Reviews ☐ Financing ☐ FAQ ☐ Blog ☐ Careers / hiring ☐ Commercial (separate from residential) ☐ Privacy policy & terms ☐ Other: ______________________
 
 **9.11 What is the #1 action you want a visitor to take?**
 
-☐ Call now ☐ Fill out a quote form ☐ Book an appointment online ☐ Text us
-☐ Download something ☐ Other: __________
+☐ Call now ☐ Fill out a quote form ☐ Book an appointment online ☐ Text us ☐ Download something ☐ Other: __________
 
 **9.12 Do you want online booking / self-scheduling?** ☐ Yes ☐ No ☐ Later —
 if yes, which calendar or scheduler: ______________________
@@ -570,8 +560,11 @@ asset most frequently lost, hijacked, or duplicated — so these questions matte
 
 **10.1 Do you have a Google Business Profile?** **[REQUIRED TO START]**
 
-☐ Yes, I own it and can log in ☐ Yes, but someone else controls it
-☐ It exists but I have never claimed it ☐ No ☐ Don't know
+- ☐ Yes, I own it and can log in
+- ☐ Yes, but someone else controls it
+- ☐ It exists but I have never claimed it
+- ☐ No
+- ☐ Don't know
 
 **10.2 If it exists, paste the link or the exact name and address shown on it**
 
@@ -642,9 +635,7 @@ Answer: ______________________________________________
 
 **11.5 Where does most of your business come from today?**
 
-☐ Referrals / word of mouth ☐ Google search ☐ Google Maps ☐ Facebook / Instagram
-☐ Paid ads ☐ Repeat customers ☐ Angi / Thumbtack / HomeAdvisor ☐ Yard signs / trucks
-☐ Other: __________
+☐ Referrals / word of mouth ☐ Google search ☐ Google Maps ☐ Facebook / Instagram ☐ Paid ads ☐ Repeat customers ☐ Angi / Thumbtack / HomeAdvisor ☐ Yard signs / trucks ☐ Other: __________
 
 **11.6 Approximately how many leads per month do you get now?** __________
 
@@ -704,9 +695,9 @@ Answer: ______________________________________________
 
 **12.4 Do you have existing ad accounts?**
 
-☐ Google Ads — account ID: __________
-☐ Meta Business Manager — ID: __________
-☐ Meta Pixel installed? ☐ Yes ☐ No ☐ Don't know
+- ☐ Google Ads — account ID: __________
+- ☐ Meta Business Manager — ID: __________
+- ☐ Meta Pixel installed? ☐ Yes ☐ No ☐ Don't know
 
 **12.5 Social profiles you have** (paste links + follower counts)
 
@@ -794,16 +785,16 @@ Mark each row **Done**, **Need help**, or **N/A**.
 
 | # | Asset | What we need | How to grant it | Status |
 |---|---|---|---|---|
-| 14.1 | **Google Business Profile** | **Manager** access | Profile → Menu → Business Profile settings → People and access → Add → Manager | |
-| 14.2 | **Google Search Console** | **Full user**, or Owner if we are moving the site | Search Console → Settings → Users and permissions → Add user | |
-| 14.3 | **Google Analytics** | **Editor** at property level | Admin → Property access management → + → Editor | |
-| 14.4 | **Google Tag Manager** | **Publish** permission on the container | Admin → User Management → + | |
-| 14.5 | **Google Ads** | **Standard** access (or your 10-digit customer ID for a link request) | Admin → Access and security → + | |
-| 14.6 | **Meta Business Manager** | Partner access to the Page, Ad Account, and Pixel | Business Settings → Partners → Add → share assets | |
-| 14.7 | **Domain registrar** | Delegate/invite access, OR you make the DNS changes we send you | Varies — tell us the registrar and we will send exact steps | |
-| 14.8 | **Web hosting / CMS** | Admin user created for us | Create a new admin user with our email — do not share yours | |
-| 14.9 | **Anything with no way to invite a user** | Tell us which, and we will send an encrypted one-time link | — | |
-| 14.10 | **Other platforms** (CRM, scheduler, email marketing, review tool) | List them below | | |
+| 14.1 | Google Business Profile | Manager access | Profile → Menu → Business Profile settings → People and access → Add → Manager | |
+| 14.2 | Google Search Console | Full user, or Owner if we are moving the site | Search Console → Settings → Users and permissions → Add user | |
+| 14.3 | Google Analytics | Editor at property level | Admin → Property access management → + → Editor | |
+| 14.4 | Google Tag Manager | Publish permission on the container | Admin → User Management → + | |
+| 14.5 | Google Ads | Standard access (or your 10-digit customer ID for a link request) | Admin → Access and security → + | |
+| 14.6 | Meta Business Manager | Partner access to the Page, Ad Account, and Pixel | Business Settings → Partners → Add → share assets | |
+| 14.7 | Domain registrar | Delegate/invite access, OR you make the DNS changes we send you | Varies — tell us the registrar and we will send exact steps | |
+| 14.8 | Web hosting / CMS | Admin user created for us | Create a new admin user with our email — do not share yours | |
+| 14.9 | Anything with no way to invite a user | Tell us which, and we will send an encrypted one-time link | — | |
+| 14.10 | Other platforms (CRM, scheduler, email marketing, review tool) | List them below | | |
 
 **14.11 List any other logins or tools involved in your marketing:**
 
@@ -888,32 +879,37 @@ If you checked "almost none" in 8.4, shoot these with your phone. Horizontal, go
 no filters. Twenty photos from this list beats a thousand dollars of stock photography.
 
 **Work**
-☐ 5 before-and-after pairs of jobs you are proud of
-☐ 3 in-progress shots showing real work being done
-☐ Close-ups of finished, clean, quality workmanship
-☐ Any job where the "before" was genuinely bad
+
+- ☐ 5 before-and-after pairs of jobs you are proud of
+- ☐ 3 in-progress shots showing real work being done
+- ☐ Close-ups of finished, clean, quality workmanship
+- ☐ Any job where the "before" was genuinely bad
 
 **People**
-☐ Owner, alone, looking at the camera, no sunglasses
-☐ Each crew member individually, in uniform
-☐ The whole team together
-☐ Someone actually talking to a customer
+
+- ☐ Owner, alone, looking at the camera, no sunglasses
+- ☐ Each crew member individually, in uniform
+- ☐ The whole team together
+- ☐ Someone actually talking to a customer
 
 **Equipment & trade dress**
-☐ Trucks, clean, with your logo visible
-☐ Shop or office exterior with signage
-☐ Uniforms, hats, branded gear
-☐ Tools and equipment laid out
+
+- ☐ Trucks, clean, with your logo visible
+- ☐ Shop or office exterior with signage
+- ☐ Uniforms, hats, branded gear
+- ☐ Tools and equipment laid out
 
 **Proof**
-☐ Certificates, licenses, awards on the wall
-☐ Manufacturer badges or plaques
+
+- ☐ Certificates, licenses, awards on the wall
+- ☐ Manufacturer badges or plaques
 
 **Video (phone is fine, horizontal, 30–90 seconds)**
-☐ Owner answering: "Why should someone hire you instead of the other guy?"
-☐ Owner answering: "What is the most common mistake homeowners make with [your trade]?"
-☐ A 60-second walkthrough of a finished job
-☐ A happy customer saying one sentence about the work
+
+- ☐ Owner answering: "Why should someone hire you instead of the other guy?"
+- ☐ Owner answering: "What is the most common mistake homeowners make with [your trade]?"
+- ☐ A 60-second walkthrough of a finished job
+- ☐ A happy customer saying one sentence about the work
 
 > Send the original files, not screenshots and not compressed messaging-app versions.
 > Upload straight to the Drive folder we shared with you.
