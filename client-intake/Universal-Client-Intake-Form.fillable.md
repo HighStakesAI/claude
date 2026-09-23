@@ -4,6 +4,13 @@
 
 Version 2.0 — supersedes the "Client Onboarding Brief" used through September 2026.
 
+> **This copy belongs to one business.** Anything you type is visible only to you
+> and to High Stakes AI — no other client can see this document.
+
+| Prepared for | Date sent | Please return by |
+|---|---|---|
+|  |  |  |
+
 ---
 
 ## BEFORE YOU START — PLEASE READ
@@ -14,7 +21,7 @@ to three weeks of back-and-forth later.
 
 **How to fill it out.**
 
-- Type your answers directly under each question, in the blank line or box.
+- Click inside the grey box under each question and type. Boxes grow as you write, so answer at whatever length you like.
 - Mark checkboxes by replacing ☐ with ☑ (or just bold the ones that apply).
 - If something does not apply, write **N/A**. If you do not know, write **DON'T KNOW** —
   that is a useful answer and we will find it for you. Please do not leave blanks.
@@ -44,7 +51,9 @@ and of profile suspensions, so we need the *exact* strings, not approximations.
 
 > e.g. Miller Heating and Cooling, LLC
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **1.2 Public / trading name (DBA) — the name customers actually use** **[REQUIRED TO START]**
 
@@ -52,7 +61,9 @@ Answer: ______________________________________________
 > a city — Google prohibits names like "Miller HVAC Pensacola Best AC Repair" and
 > profiles using them get suspended.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **1.3 Entity type**
 
@@ -60,18 +71,24 @@ Answer: ______________________________________________
 
 **1.4 State of registration + state entity / document number**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **1.5 Year founded (the year you started serving customers)**
 
-Answer: __________
+|  |
+|---|
+|  |
 
 **1.6 Do you operate under more than one brand or DBA?**
 
 ☐ No ☐ Yes — list each name, and tell us whether each one needs its own website and
 its own Google profile:
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **1.7 Are you a franchise, dealer, or part of a brand network with marketing rules?**
 
@@ -106,7 +123,9 @@ for all licensed trades]**
 **2.2 Who is the qualifying agent / license holder?** (the individual the license is
 attached to, if different from the owner)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **2.3 Additional licenses, registrations, or certifications you want displayed**
 
@@ -114,12 +133,16 @@ Answer: ______________________________________________
 
 List numbers and expiry dates for any you want on the site:
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **2.4 General liability insurance** — carrier, coverage limit, expiry. Please also attach
 a current Certificate of Insurance (COI) to the shared folder.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **2.5 Workers' compensation** ☐ Carried ☐ Exempt (attach exemption certificate) ☐ N/A
 
@@ -132,11 +155,15 @@ BBB Accredited, Angi Super Service Award)
 > For each one: do you have written permission and the official logo files? We cannot
 > put a manufacturer's badge on your site without it.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **2.8 Professional memberships / associations** (ACCA, PHCC, NARI, local chamber, etc.)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **2.9 Any of these you want mentioned prominently?**
 
@@ -167,11 +194,15 @@ travels to customers. Getting this wrong is a top cause of profile suspension, s
 > If you are a service-area business we will hide it from public view — it is used only
 > to verify you.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **3.3 Mailing address, if different**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **3.4 Service area** **[REQUIRED TO START]**
 
@@ -188,12 +219,16 @@ Answer: ______________________________________________
 
 **3.5 Maximum distance you will travel, and any trip/surcharge rules**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **3.6 Additional locations** (branch offices, second shop) — list each with its address.
 Each real location needs its own Google profile and its own page on the site.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -202,9 +237,17 @@ Answer: ______________________________________________
 These exact strings go on the website, the Google profile, and every citation we build.
 A digit out of place across listings costs you rankings.
 
-**4.1 Main public phone number** **[REQUIRED TO START]** ______________________
+**4.1 Main public phone number** **[REQUIRED TO START]**
 
-**4.2 Is that number a mobile, a landline, or a VoIP/tracking number?** __________
+|  |
+|---|
+|  |
+
+**4.2 Is that number a mobile, a landline, or a VoIP/tracking number?**
+
+|  |
+|---|
+|  |
 
 **4.3 Do you want us to use a call-tracking number on the website?**
 
@@ -213,27 +256,43 @@ A digit out of place across listings costs you rankings.
 > We never put a tracking number on your Google profile — only the website. Your Google
 > profile always carries your real number.
 
-**4.4 Secondary / after-hours / emergency number** ______________________
+**4.4 Secondary / after-hours / emergency number**
+
+|  |
+|---|
+|  |
 
 **4.5 Do you accept text messages at your main number?** ☐ Yes ☐ No ☐ Separate texting
-number: __________
+number:
 
-**4.6 Public email address for the website** ______________________
+|  |
+|---|
+|  |
+
+**4.6 Public email address for the website**
+
+|  |
+|---|
+|  |
 
 **4.7 Where should new leads actually go?** **[REQUIRED TO START]** — check all, and give
 the exact destination.
 
-- ☐ Email to: ______________________
-- ☐ SMS to: ______________________
-- ☐ CRM — which one: ______________________ (GoHighLevel, Jobber, Housecall Pro, ServiceTitan, none)
-- ☐ Phone call / call forwarding to: ______________________
+| Send leads to | Tick | Exact destination |
+|---|---|---|
+| Email | ☐ |  |
+| Text message | ☐ |  |
+| CRM (GoHighLevel, Jobber, Housecall Pro, ServiceTitan…) | ☐ |  |
+| Phone call / forwarding | ☐ |  |
 
 **4.8 Who answers the phone during business hours?** ☐ Owner ☐ Office staff
 ☐ Answering service ☐ Goes to voicemail ☐ Other: __________
 
 **4.9 What happens to a form submission at 9pm on a Saturday?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **4.10 Realistically, how fast do you respond to a new lead?**
 
@@ -255,16 +314,24 @@ Answer: ______________________________________________
 | Sunday |  |  |  |
 
 **4.12 Do you offer genuine 24/7 emergency service?** ☐ Yes ☐ No ☐ After-hours at a
-premium rate — explain: ______________________
+premium rate — explain:
+
+|  |
+|---|
+|  |
 
 **4.13 Holidays you close** (we will set these on your Google profile in advance —
 holiday hours are one of the few things that visibly affect customer trust)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **4.14 Seasonal shutdowns or vacation periods**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -286,16 +353,30 @@ that ranks for nothing.
 | 7 |  |  |  |  |
 | 8 |  |  |  |  |
 
-**5.2 Which ONE service is most profitable for you?** ______________________
+**5.2 Which ONE service is most profitable for you?**
 
-**5.3 Which service do you want to stop selling?** ______________________
+|  |
+|---|
+|  |
+
+**5.3 Which service do you want to stop selling?**
+
+|  |
+|---|
+|  |
 
 **5.4 Anything you do NOT do** that people keep calling about (so we can filter those leads out)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **5.5 Residential, commercial, or both?** ☐ Residential ☐ Commercial ☐ Both —
-approximate split: ______%
+approximate split:
+
+|  |
+|---|
+|  |
 
 **5.6 Do you charge a service call / diagnostic fee?** ☐ No ☐ Yes — $______, waived if
 they book? ☐ Yes ☐ No
@@ -314,21 +395,33 @@ they book? ☐ Yes ☐ No
 ☐ Cash ☐ Check ☐ Credit/debit ☐ ACH ☐ Apple/Google Pay ☐ Financing ☐ Invoice / net terms ☐ Other: __________
 
 **5.10 Financing offered?** ☐ No ☐ Yes — provider and terms (e.g. "Synchrony, 0% for
-12 months"): ______________________
+12 months"):
+
+|  |
+|---|
+|  |
 
 **5.11 Warranty or guarantee you will stand behind in writing**
 
 > e.g. "1-year labor warranty", "satisfaction guaranteed or we return free". This becomes
 > a headline on the site, so only promise what you will honor.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **5.12 Do you offer a maintenance plan / service agreement?** ☐ No ☐ Yes — name, price,
-what's included: ______________________________________________
+what's included:
+
+|  |
+|---|
+|  |
 
 **5.13 Brands you carry, install, or service** (and any you refuse to work on)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -340,32 +433,42 @@ other contractor. Please write in your own words — full sentences beat bullet 
 **6.1 Describe your single best customer of the last year.** Who were they, what was the
 job, what did they pay, and why did they pick you?
 
-Answer: ______________________________________________
-______________________________________________
+|  |
+|---|
+|  |
 
 **6.2 Describe a customer you would rather not repeat, and why.**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **6.3 What triggers someone to finally call you?** (the AC dies, the closing date, a
 storm, a failed inspection)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **6.4 What is the #1 objection or hesitation you hear before someone books?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **6.5 What do you say that turns that objection around?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **6.6 Why do customers choose you over the competition?** Be concrete. "Great service"
 tells us nothing; "we text a photo of the tech before he arrives" is worth a section on
 the homepage.
 
-Answer: ______________________________________________
-______________________________________________
+|  |
+|---|
+|  |
 
 **6.7 Name your top 3 local competitors** — with their websites if you know them.
 
@@ -377,12 +480,16 @@ ______________________________________________
 
 **6.8 Is there anyone whose website or branding you admire?** (in or out of your industry)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **6.9 Anything we must NOT say, claim, or imply** — legal restrictions, a competitor you
 do not want named, a service you are winding down, a sensitive local history
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -407,7 +514,9 @@ Answer: ______________________________________________
 **7.3 Is there a negative review you want addressed?** ☐ No ☐ Yes — link and your side
 of the story (we will draft a professional public response):
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **7.4 May we set up automated review requests after each completed job?** ☐ Yes ☐ No
 ☐ Tell me more
@@ -415,7 +524,9 @@ Answer: ______________________________________________
 **7.5 Three customers who would happily give a written testimonial** (name + how to
 reach them — we will handle the ask)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -429,7 +540,9 @@ transparent background ☐ Only a low-res JPG ☐ No logo — we need one design
 
 **8.2 Brand colors** — hex codes if you have them, or "the red on my truck"
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **8.3 Fonts your brand uses** (or a written brand guide) ☐ Attached ☐ None
 
@@ -457,12 +570,18 @@ Answer: ______________________________________________
 
 ☐ Professional ☐ Friendly / neighborly ☐ Blunt and direct ☐ Premium / high-end ☐ Funny ☐ Technical / expert ☐ Faith-based ☐ Family-oriented ☐ No-nonsense
 
-**8.11 Tagline or slogan you already use** ______________________
+**8.11 Tagline or slogan you already use**
+
+|  |
+|---|
+|  |
 
 **8.12 Anything about your look you actively dislike** (colors, styles, stock-photo
 clichés, competitors' sites)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 ---
 
@@ -475,20 +594,25 @@ Answer: ______________________________________________
 
 **9.3 What do you dislike about the current site?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **9.4 Is there anything on the current site that must be preserved?** (a page that ranks,
 a booking widget, a customer portal, a blog)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **9.5 Domain** **[REQUIRED TO START]**
 
-- Domain name: ______________________
-- Where is it registered? ☐ GoDaddy ☐ Namecheap ☐ Google/Squarespace ☐ Wix
-  ☐ Network Solutions ☐ Cloudflare ☐ Don't know ☐ Other: __________
-- Do you have login access to the registrar? ☐ Yes ☐ No ☐ My old web guy has it
-- Who is the registrant of record (the legal owner of the domain)? __________
+| Question | Your answer |
+|---|---|
+| Domain name |  |
+| Where is it registered? (GoDaddy, Namecheap, Google/Squarespace, Wix, Network Solutions, Cloudflare, don't know…) |  |
+| Do you have login access to the registrar? (yes / no / my old web guy has it) |  |
+| Who is the registrant of record — the legal owner of the domain? |  |
 
 > If a former marketer or employee controls your domain, that is an emergency and we
 > should talk this week. It is the single most common way a business loses its website.
@@ -502,9 +626,10 @@ Answer: ______________________________________________
 
 **9.9 Business email — this matters more than it sounds**
 
-- Your business email addresses: ______________________
-- Who provides that email? ☐ Google Workspace ☐ Microsoft 365 ☐ The web host
-  ☐ Gmail/Yahoo free account ☐ Don't know
+| Question | Your answer |
+|---|---|
+| Your business email addresses |  |
+| Who provides that email? (Google Workspace, Microsoft 365, the web host, free Gmail/Yahoo, don't know) |  |
 
 > When we move DNS, email can break if we do not know who handles it. We need this
 > **before** launch day, not during it.
@@ -518,7 +643,11 @@ Answer: ______________________________________________
 ☐ Call now ☐ Fill out a quote form ☐ Book an appointment online ☐ Text us ☐ Download something ☐ Other: __________
 
 **9.12 Do you want online booking / self-scheduling?** ☐ Yes ☐ No ☐ Later —
-if yes, which calendar or scheduler: ______________________
+if yes, which calendar or scheduler:
+
+|  |
+|---|
+|  |
 
 **9.13 Do you need to take payments or deposits online?** ☐ No ☐ Yes — processor: __________
 
@@ -527,11 +656,15 @@ __________ ☐ Live chat ☐ Quoting tool ☐ Accounting ☐ Inventory ☐ Other
 
 **9.15 Websites you like the look of** — paste 2–3 URLs and say what you like about each.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **9.16 Websites you hate** — just as useful.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **9.17 Do you need the site in more than one language?** ☐ English only
 ☐ English + Spanish ☐ Other: __________
@@ -567,17 +700,23 @@ asset most frequently lost, hijacked, or duplicated — so these questions matte
 
 **10.2 If it exists, paste the link or the exact name and address shown on it**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **10.3 Which Google account owns it?** (the email address, not the password)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **10.4 Is the profile verified?** ☐ Yes ☐ No ☐ Verification failed ☐ Don't know
 
 **10.5 Has it ever been suspended or had an edit rejected?** ☐ No ☐ Yes — what happened:
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **10.6 Are there duplicate or outdated listings for your business on Google Maps?**
 (old address, old name, a former partner's listing)
@@ -593,7 +732,9 @@ Answer: ______________________________________________
 **10.8 In one sentence: what does your business DO?** (not what it has — "HVAC
 contractor", not "air conditioners")
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **10.9 Can you take new photos for the profile if we ask?** ☐ Yes ☐ No
 
@@ -618,17 +759,22 @@ Answer: ______________________________________________
 
 > e.g. "the commercial refrigeration guy in Santa Rosa County"
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **11.2 Search terms you believe customers use.** Don't worry about being technically
 correct — we do keyword research, but your instincts about your market are valuable.
 
-Answer: ______________________________________________
-______________________________________________
+|  |
+|---|
+|  |
 
 **11.3 Which city + service combination would make you the most money if you ranked #1?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **11.4 Do you currently rank for anything?** ☐ Yes: __________ ☐ No ☐ Don't know
 
@@ -636,18 +782,26 @@ Answer: ______________________________________________
 
 ☐ Referrals / word of mouth ☐ Google search ☐ Google Maps ☐ Facebook / Instagram ☐ Paid ads ☐ Repeat customers ☐ Angi / Thumbtack / HomeAdvisor ☐ Yard signs / trucks ☐ Other: __________
 
-**11.6 Approximately how many leads per month do you get now?** __________
+**11.6 Approximately how many leads per month do you get now?**
+
+|  |
+|---|
+|  |
 
 **11.7 How many more jobs per month do you actually want — and can you staff them?**
 
 > Be honest. We have made clients regret this question.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **11.8 Have you done SEO before, or hired anyone for it?** ☐ No ☐ Yes — who, when,
 and what did they do?
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **11.9 Has anyone ever built backlinks, directory listings, or "citations" for you?**
 
@@ -659,7 +813,9 @@ Answer: ______________________________________________
 **11.10 Do you know of directory listings with your OLD address or OLD phone number
 still live?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **11.11 Have you ever received a manual action or penalty notice from Google?**
 ☐ No ☐ Yes ☐ Don't know
@@ -686,17 +842,25 @@ voice memo about a job, approve drafts)
 **12.1 Which do you want?** ☐ Google Ads ☐ Local Services Ads ☐ Meta (FB/IG) Ads
 ☐ Social media management ☐ None right now
 
-**12.2 Monthly ad budget, separate from management fees** $__________
+**12.2 Monthly ad budget, separate from management fees**
+
+|  |
+|---|
+|  |
 
 **12.3 Have you run ads before?** ☐ No ☐ Yes — platform, spend, and result:
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **12.4 Do you have existing ad accounts?**
 
-- ☐ Google Ads — account ID: __________
-- ☐ Meta Business Manager — ID: __________
-- ☐ Meta Pixel installed? ☐ Yes ☐ No ☐ Don't know
+| Account | Have it? | ID / notes |
+|---|---|---|
+| Google Ads | ☐ |  |
+| Meta Business Manager | ☐ |  |
+| Meta Pixel installed | ☐ |  |
 
 **12.5 Social profiles you have** (paste links + follower counts)
 
@@ -709,11 +873,23 @@ Answer: ______________________________________________
 | LinkedIn |  |  |  |
 | Nextdoor |  |  |  |
 
-**12.6 What is an acceptable cost per lead for you?** $__________
+**12.6 What is an acceptable cost per lead for you?**
 
-**12.7 What is a closed job worth to you on average?** $__________
+|  |
+|---|
+|  |
 
-**12.8 What percentage of leads do you typically close?** ______%
+**12.7 What is a closed job worth to you on average?**
+
+|  |
+|---|
+|  |
+
+**12.8 What percentage of leads do you typically close?**
+
+|  |
+|---|
+|  |
 
 > 12.6–12.8 are how we tell whether a campaign is actually working. Estimates are fine.
 
@@ -729,7 +905,9 @@ Answer: ______________________________________________
 > (47 C.F.R. §64.1200). Our forms include compliant consent language and we keep the
 > records. If you already have consent wording, paste it below so we stay consistent.
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **13.2 Is your business phone number registered for A2P 10DLC texting?**
 ☐ Yes ☐ No ☐ Don't know ☐ We don't text
@@ -742,11 +920,15 @@ EU/California residents at scale) ☐ No ☐ Yes — explain: __________
 **13.5 Are there claims you are legally barred from making?**
 (e.g. "guaranteed", "best", "#1", savings percentages, licensed-professional claims)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **13.6 Who approves website copy and design?** **[REQUIRED TO START]**
 
-Name: __________ Email: __________ Phone: __________
+| Name | Email | Phone |
+|---|---|---|
+|  |  |  |
 
 **13.7 Is there anyone else whose sign-off is required?** (spouse, business partner,
 franchise HQ) ☐ No ☐ Yes: __________
@@ -755,7 +937,9 @@ franchise HQ) ☐ No ☐ Yes: __________
 
 **13.8 Backup contact if the primary is unreachable**
 
-Name: __________ Email: __________ Phone: __________
+| Name | Email | Phone |
+|---|---|---|
+|  |  |  |
 
 **13.9 How fast can you turn around an approval request?**
 
@@ -764,7 +948,11 @@ Name: __________ Email: __________ Phone: __________
 **13.10 Preferred communication channel** ☐ Email ☐ Text ☐ Phone call ☐ WhatsApp
 ☐ Slack ☐ Whatever's fastest
 
-**13.11 Best time of day to reach you** ______________________
+**13.11 Best time of day to reach you**
+
+|  |
+|---|
+|  |
 
 **13.12 Do you want to be involved in the details, or just see results?**
 
@@ -797,7 +985,9 @@ Mark each row **Done**, **Need help**, or **N/A**.
 
 **14.11 List any other logins or tools involved in your marketing:**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **14.12 Is there a former employee, agency, or "web guy" who still has access to any of
 the above?**
@@ -816,38 +1006,60 @@ the above?**
 > e.g. "20 booked jobs a month from Google", "page 1 for commercial refrigeration in
 > Milton", "stop paying Angi"
 
-Answer: ______________________________________________
-______________________________________________
+|  |
+|---|
+|  |
 
 **15.2 And 12 months from now?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **15.3 Is there a hard deadline or seasonal window?** (summer rush, a truck wrap being
 printed, a trade show, a grand opening)
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
-**15.4 Total monthly marketing budget, all in (including ad spend)** $__________
+**15.4 Total monthly marketing budget, all in (including ad spend)**
 
-**15.5 Is there a one-time build budget separate from the monthly?** $__________
+|  |
+|---|
+|  |
+
+**15.5 Is there a one-time build budget separate from the monthly?**
+
+|  |
+|---|
+|  |
 
 **15.6 What is your biggest fear about hiring a marketing company?**
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **15.7 Have you worked with an agency before?** ☐ No ☐ Yes — what went wrong, and what
 must never be repeated?
 
-Answer: ______________________________________________
+|  |
+|---|
+|  |
 
 **15.8 Is there anything about your business we have not asked about, that we would
 regret not knowing?**
 
-Answer: ______________________________________________
-______________________________________________
+|  |
+|---|
+|  |
 
-**15.9 How did you hear about us?** ______________________
+**15.9 How did you hear about us?**
+
+|  |
+|---|
+|  |
 
 ---
 
@@ -858,9 +1070,9 @@ claims listed above are accurate and current, and that you have the right to use
 photos, videos, logos, and third-party badges you are providing to us. We publish what
 you give us.
 
-Name: ______________________  Title: ______________________
-
-Date: ______________________
+| Name | Title | Date |
+|---|---|---|
+|  |  |  |
 
 ---
 
