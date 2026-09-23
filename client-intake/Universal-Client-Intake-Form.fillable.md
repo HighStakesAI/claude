@@ -34,7 +34,7 @@ us access safely — you invite our email address as a user on each account, and
 revoke it any time with two clicks. If a platform genuinely has no way to invite a
 second user, tell us in 14.9 and we will send you a one-time encrypted link.
 
-**Questions while filling this out:** hello@histakesai.com · (850) 943-2040
+**Questions while filling this out:** ben@histakesai.com · (850) 943-2040
 
 ---
 
@@ -966,7 +966,7 @@ We do not want your passwords, and you should not give them to any agency. Every
 below lets you invite us as a user with a specific role. That way you keep ownership, you
 can see what we do, and you can remove us instantly if you ever want to.
 
-**Invite this email address: hello@histakesai.com** (unless we told you otherwise).
+**Invite this email address: ben@histakesai.com** (unless we told you otherwise).
 
 Mark each row **Done**, **Need help**, or **N/A**.
 
@@ -1079,7 +1079,7 @@ you give us.
 **Thank you.** We will review this within one business day and come back with your
 kickoff call agenda and anything still missing.
 
-**High Stakes AI** · hello@histakesai.com · (850) 943-2040 · histakesai.com
+**High Stakes AI** · ben@histakesai.com · (850) 943-2040 · histakesai.com
 Confidential — for the use of the named client and High Stakes AI only.
 
 ---
