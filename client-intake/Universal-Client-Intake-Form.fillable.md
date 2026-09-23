@@ -436,6 +436,7 @@ job, what did they pay, and why did they pick you?
 |  |
 |---|
 |  |
+|  |
 
 **6.2 Describe a customer you would rather not repeat, and why.**
 
@@ -468,6 +469,7 @@ the homepage.
 
 |  |
 |---|
+|  |
 |  |
 
 **6.7 Name your top 3 local competitors** — with their websites if you know them.
@@ -769,6 +771,7 @@ correct — we do keyword research, but your instincts about your market are val
 |  |
 |---|
 |  |
+|  |
 
 **11.3 Which city + service combination would make you the most money if you ranked #1?**
 
@@ -1009,6 +1012,7 @@ the above?**
 |  |
 |---|
 |  |
+|  |
 
 **15.2 And 12 months from now?**
 
@@ -1053,6 +1057,7 @@ regret not knowing?**
 
 |  |
 |---|
+|  |
 |  |
 
 **15.9 How did you hear about us?**

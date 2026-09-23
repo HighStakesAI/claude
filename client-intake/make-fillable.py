@@ -18,7 +18,10 @@ OUT = 'Universal-Client-Intake-Form.fillable.md'
 
 # An empty two-cell table. Markdown needs a delimiter row, so the smallest
 # table Docs will build is header + one row — which lands as a roomy answer box.
+# A short box is one empty row; a long-form answer gets two, which the .docx
+# builder reads as "make this cell taller". Markdown renders both as a box.
 BOX = ['|  |', '|---|', '|  |']
+TALL_BOX = ['|  |', '|---|', '|  |', '|  |']
 
 BLANKS = re.compile(r'[ \t]*\$?_{6,}%?[ \t]*$')
 
@@ -127,10 +130,12 @@ def main():
 
         # "Answer: ____" (plus any bare underscore continuation lines) -> one box
         if re.fullmatch(r'Answer: _+', line):
+            tall = False
             while i + 1 < len(lines) and re.fullmatch(r'_+', lines[i + 1]):
+                tall = True
                 i += 1
             out.append('')
-            out.extend(BOX)
+            out.extend(TALL_BOX if tall else BOX)
             boxes += 1
             i += 1
             continue
