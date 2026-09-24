@@ -17,7 +17,7 @@
     q.childNodes.forEach(function (node) {
       var red = node.nodeName === "B";
       (node.textContent || "").split(/\s+/).forEach(function (w) {
-        if (w) html += '<span class="w' + (red ? " red" : "") + '">' + w + "</span> ";
+        if (w) html += '<span class="w' + (red ? " gold" : "") + '">' + w + "</span> ";
       });
     });
     q.innerHTML = html;
