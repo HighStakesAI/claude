@@ -202,40 +202,21 @@ h1 { font-size: clamp(52px, 11.5vw, 124px); }
   .client-row .city { grid-column: 2; text-align: left; }
 }
 
-/* ---------------- case studies: stacking cards ---------------- */
-.stack { display: flex; flex-direction: column; gap: 34px; margin-top: 56px; }
-.work-card {
-  position: sticky; top: 92px;
-  background: var(--paper); color: var(--black);
-  display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  box-shadow: 0 -16px 50px rgba(0, 0, 0, 0.6);
-}
-.shot-frame { position: relative; overflow: hidden; min-height: 340px; border-right: 1px solid var(--line-b); background: #e8e5de; }
-.shot-frame img {
-  position: absolute; top: 0; left: 0; width: 100%; height: auto;
-  will-change: transform;
-  filter: grayscale(1); transition: filter 0.6s ease;
-}
-.work-card:hover .shot-frame img { filter: grayscale(0); }
-.work-copy { padding: clamp(28px, 4vw, 52px); }
-.work-copy .k { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red); font-weight: 700; }
-.work-copy h3 { font-size: clamp(24px, 3.4vw, 38px); font-weight: 800; letter-spacing: -0.02em; margin: 12px 0 6px; }
-.work-copy .svcline { color: var(--grey-dark); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
-.work-quote {
-  font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2.2vw, 22px);
-  line-height: 1.45; margin: 24px 0 10px; text-wrap: balance;
-}
-.work-quote::before { content: "“"; color: var(--red); }
-.work-quote::after { content: "”"; color: var(--red); }
-.work-desc { color: var(--grey-dark); font-size: 15px; line-height: 1.7; margin: 24px 0 10px; max-width: 34em; }
-.work-cite { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey-dark); font-weight: 600; }
-.work-stats { display: flex; gap: 34px; margin-top: 24px; flex-wrap: wrap; }
-.work-stats .n { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
-.work-stats .l { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-dark); margin-top: 2px; font-weight: 600; }
-@media (max-width: 760px) {
-  .work-card { grid-template-columns: 1fr; top: 76px; }
-  .shot-frame { min-height: 0; height: min(60vh, 500px); border-right: 0; border-bottom: 1px solid var(--line-b); }
-}
+/* ---------------- client ticker ---------------- */
+.lm { overflow: hidden; padding: 40px 0 8px; }
+.lm-row { display: flex; width: max-content; animation: lmleft 44s linear infinite; }
+.lm-row.r2 { animation: lmright 50s linear infinite; margin-top: 16px; }
+.lm:hover .lm-row { animation-play-state: paused; }
+.lm-set { display: flex; align-items: center; }
+.chip { display: flex; align-items: center; gap: 12px; margin: 0 10px; background: var(--paper); padding: 14px 22px; height: 76px; }
+.chip img { max-height: 42px; max-width: 130px; object-fit: contain; filter: grayscale(1); transition: filter 0.4s ease; }
+.chip:hover img { filter: none; }
+.chip img.inv { filter: grayscale(1) invert(1); }
+.chip:hover img.inv { filter: invert(1); }
+.chip .cname { font-weight: 700; color: var(--black); font-size: 14px; letter-spacing: -0.01em; white-space: nowrap; line-height: 1.25; }
+.chip .ctrade { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-dark); font-weight: 700; white-space: nowrap; }
+@keyframes lmleft { to { transform: translateX(-50%); } }
+@keyframes lmright { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
 /* ---------------- stats ---------------- */
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
@@ -340,8 +321,7 @@ footer { padding: 44px 0 120px; border-top: 1px solid var(--line-w); }
   html { scroll-behavior: auto; }
   .rv, .rule, .steps::before { opacity: 1 !important; transform: none !important; transition: none !important; }
   .mask > span { transform: none !important; transition: none !important; }
-  #grain, .scroll-cue::before, .marq-track { animation: none !important; }
+  #grain, .scroll-cue::before, .marq-track, .lm-row { animation: none !important; }
   .bigquote .w { color: var(--white); } .bigquote .w.red { color: var(--red); }
-  .shot-frame img { transition: none; filter: grayscale(0); }
   .callbar, .client-row, .wm-bg { transition: none; }
 }
