@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://histakesai.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://histakesai.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://histakesai.com/es/"/>
+    <loc>https://www.histakesai.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.histakesai.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.histakesai.com/es/"/>
   </url>
   <url>
-    <loc>https://histakesai.com/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://histakesai.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://histakesai.com/es/"/>
+    <loc>https://www.histakesai.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.histakesai.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.histakesai.com/es/"/>
   </url>
   <url>
-    <loc>https://histakesai.com/privacy-policy</loc>
+    <loc>https://www.histakesai.com/privacy-policy</loc>
   </url>
   <url>
-    <loc>https://histakesai.com/terms.html</loc>
+    <loc>https://www.histakesai.com/terms</loc>
   </url>
 </urlset>
