@@ -32,6 +32,7 @@ These came out of real mistakes, not hypotheticals:
 
 ## Working preferences
 
+- **Google Business Profile edits:** if a client's profile isn't in Jonathan's Google account, switch the account (avatar, top right of business.google.com) to **Ben Byrer (byrerben@gmail.com)**. Ben manages most or all client profiles. Put that step in every extension prompt that edits a profile.
 - Keep replies short. Lead with what they need to know or do; skip the reasoning unless asked.
 - After shipping something that needs time to take effect, schedule a reminder and say the date.
 - Deliver files via the repo (raw view → copy), not pasted into chat.
