@@ -65,17 +65,16 @@
   });
   document.addEventListener("focusout", function () { if (bar) bar.classList.remove("kb"); });
 
-  // reveals + counters
-  var counted = false;
-  function runCounters() {
-    if (counted) return; counted = true;
-    document.querySelectorAll("[data-count]").forEach(function (el) {
-      var target = +el.dataset.count, t0 = null;
-      if (reduced) { el.textContent = target; return; }
+  // reveals + counters (each counts once, from data-from, when its own block comes into view)
+  function runCounters(scope) {
+    (scope || document).querySelectorAll("[data-count]").forEach(function (el) {
+      if (el.dataset.done) return; el.dataset.done = "1";
+      var target = +el.dataset.count, from = +(el.dataset.from || 0), dec = +(el.dataset.dec || 0), t0 = null;
+      if (reduced) { el.textContent = target.toFixed(dec); return; }
       function tick(t) {
         if (!t0) t0 = t;
-        var p = Math.min((t - t0) / 1100, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        var p = Math.min((t - t0) / 1300, 1);
+        el.textContent = (from + (target - from) * (1 - Math.pow(1 - p, 3))).toFixed(dec);
         if (p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -90,7 +89,7 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           e.target.classList.add("in");
-          if (e.target.querySelector && e.target.querySelector("[data-count]")) runCounters();
+          if (e.target.querySelector && e.target.querySelector("[data-count]")) runCounters(e.target);
           io.unobserve(e.target);
         }
       });
