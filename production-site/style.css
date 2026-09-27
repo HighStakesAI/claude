@@ -158,9 +158,12 @@ header {
   color: var(--white); border: 1px solid var(--gold); padding: 6px 12px;
 }
 h1 { font-size: clamp(52px, 11.5vw, 124px); }
-.mask { display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em; }
-.mask > span { display: block; transform: translateY(115%); transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1); will-change: transform; }
-.loaded .mask > span { transform: none; }
+/* The headline is painted from the first frame (Google times when it appears) and eases up into place. */
+.mask { display: block; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.mask > span { display: block; opacity: 0.12; transform: translateY(0.28em); transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.9s ease; will-change: transform; }
+.loaded .mask > span { transform: none; opacity: 1; }
+header .rv { opacity: 0.12; transform: translateY(12px); }
+.loaded header .rv { opacity: 1; transform: none; }
 .mask:nth-child(2) > span { transition-delay: 0.14s; }
 .mask:nth-child(3) > span { transition-delay: 0.28s; }
 .hero-sub { color: var(--grey); font-size: clamp(16px, 2vw, 19px); max-width: 31em; margin: 34px 0 40px; }
@@ -387,7 +390,7 @@ footer { padding: 44px 0 120px; border-top: 1px solid var(--line-w); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .rv, .rule, .steps::before { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .mask > span { transform: none !important; transition: none !important; }
+  .mask > span { transform: none !important; opacity: 1 !important; transition: none !important; }
   .uline path { stroke-dashoffset: 0 !important; transition: none !important; }
   .hs-typed, .hs-result, .hs-pin { animation: none !important; }
   .pbar i { width: var(--w) !important; transition: none !important; }
