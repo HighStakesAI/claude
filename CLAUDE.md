@@ -82,6 +82,7 @@ These came out of real mistakes, not hypotheticals:
 ## Working preferences
 
 - **After any change request:** log it with `highstakes-automation/reaudit/changes.py` (baseline, expected result, window), and if it needs Jonathan's browser, file it as a `browser-task` issue on highstakes-automation so the PC session does it. End the reply with: whether it was queued, what changed, expected impact, and when to expect it.
+- **Slack:** ask Jonathan before posting anything to Slack, unless he asked for that post or it comes from a routine he set up. Audits post only the one-page summary; the full report and action plan stay in the repo.
 - **Google Business Profile edits:** if a client's profile isn't in Jonathan's Google account, switch the account (avatar, top right of business.google.com) to **Ben Byrer (byrerben@gmail.com)**. Ben manages most or all client profiles. Put that step in every extension prompt that edits a profile.
 - Keep replies short. Lead with what they need to know or do; skip the reasoning unless asked.
 - After shipping something that needs time to take effect, schedule a reminder and say the date.
