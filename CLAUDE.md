@@ -47,14 +47,20 @@ histakesai.com  (A 162.159.140.166, GoHighLevel)
 
 | Client | Hosting | Repo |
 |---|---|---|
-| The Golden Plumber | **GoHighLevel** (only GHL client) | `HighStakesAI/thegoldenplumber-audit` |
-| everyone else | **Cloudflare** | — |
+| The Golden Plumber | **Cloudflare** since 27 Sep 2026 (Worker `thegoldenplumber-site`; domain at Squarespace, nameservers on Cloudflare). GoHighLevel keeps his CRM, form webhook and chat widget. | `HighStakesAI/thegoldenplumber-audit` |
+| Miller Heating & Cooling | **Wix** (not built by us) | — |
+| Valeria (VM Image Designer) | **WordPress on Hostinger** (not built by us) | — |
+| everyone else | **Cloudflare** | `HighStakesAI/hsai-*` |
+
+Every client's details (domain, repo, Slack channel, map grid, tracked searches) live in
+`HighStakesAI/highstakes-automation/clients/<domain>.json`. Approval rules and the PC browser
+loops: `docs/APPROVALS.md` there.
 
 ## Local SEO work
 
 Read **`SEO-PROCESS.md`** before starting SEO work on any client. It covers the audit → fix →
 baseline → deploy → wait → re-audit cycle, how to read Search Console's indexing reports, the
-per-site checklist, and the GoHighLevel-specific mechanics.
+per-site checklist, and the GoHighLevel-specific mechanics (no client is hosted on GoHighLevel any more, but our own site still is).
 
 ## Standing rules
 
