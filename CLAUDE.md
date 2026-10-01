@@ -47,14 +47,20 @@ histakesai.com  (A 162.159.140.166, GoHighLevel)
 
 | Client | Hosting | Repo |
 |---|---|---|
-| The Golden Plumber | **GoHighLevel** (only GHL client) | `HighStakesAI/thegoldenplumber-audit` |
-| everyone else | **Cloudflare** | — |
+| The Golden Plumber | **Cloudflare** since 27 Sep 2026 (Worker `thegoldenplumber-site`; domain at Squarespace, nameservers on Cloudflare). GoHighLevel keeps his CRM, form webhook and chat widget. | `HighStakesAI/thegoldenplumber-audit` |
+| Miller Heating & Cooling | **Wix** (not built by us) | — |
+| Valeria (VM Image Designer) | **WordPress on Hostinger** (not built by us) | — |
+| everyone else | **Cloudflare** | `HighStakesAI/hsai-*` |
+
+Every client's details (domain, repo, Slack channel, map grid, tracked searches) live in
+`HighStakesAI/highstakes-automation/clients/<domain>.json`. Approval rules and the PC browser
+loops: `docs/APPROVALS.md` there.
 
 ## Local SEO work
 
 Read **`SEO-PROCESS.md`** before starting SEO work on any client. It covers the audit → fix →
 baseline → deploy → wait → re-audit cycle, how to read Search Console's indexing reports, the
-per-site checklist, and the GoHighLevel-specific mechanics.
+per-site checklist, and the GoHighLevel-specific mechanics (no client is hosted on GoHighLevel any more, but our own site still is).
 
 ## Standing rules
 
@@ -75,7 +81,13 @@ These came out of real mistakes, not hypotheticals:
 
 ## Working preferences
 
+- **Main goal (Jonathan, 1 Oct 2026):** fix clients' problems, and make them see and feel that we're
+  fixing them. That's how we keep clients. Every report, PDF, workflow and automation leads with the
+  client's pain and the result: what was hurting them, what we fixed, the proof (calls, visits, map
+  spots, reviews, AI mentions), what's next. Never fake progress; if a number didn't move, say so and
+  say what we're doing about it.
 - **After any change request:** log it with `highstakes-automation/reaudit/changes.py` (baseline, expected result, window), and if it needs Jonathan's browser, file it as a `browser-task` issue on highstakes-automation so the PC session does it. End the reply with: whether it was queued, what changed, expected impact, and when to expect it.
+- **Slack:** ask Jonathan before posting anything to Slack, unless he asked for that post or it comes from a routine he set up. Audits post only the one-page summary; the full report and action plan stay in the repo.
 - **Google Business Profile edits:** if a client's profile isn't in Jonathan's Google account, switch the account (avatar, top right of business.google.com) to **Ben Byrer (byrerben@gmail.com)**. Ben manages most or all client profiles. Put that step in every extension prompt that edits a profile.
 - Keep replies short. Lead with what they need to know or do; skip the reasoning unless asked.
 - After shipping something that needs time to take effect, schedule a reminder and say the date.

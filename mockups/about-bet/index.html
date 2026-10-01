@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High Stakes — "The Bet" section mock-up</title>
+<style>
+@font-face { font-family: "Caladea"; font-weight: 700; src: url("../../production-site/fonts/caladea-700.woff2") format("woff2"); }
+@font-face { font-family: "Caladea"; font-style: italic; font-weight: 400; src: url("../../production-site/fonts/caladea-italic.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 300; src: url("../../production-site/fonts/poppins-300.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("../../production-site/fonts/poppins-500.woff2") format("woff2"); }
+:root {
+  --black: #0e0f12; --black-2: #161820; --white: #f0ede6; --grey: #7a8090;
+  --gold: #c9a84c; --gold-light: #dfc06a; --line-w: rgba(240,237,230,.14);
+  --sans: "Poppins", system-ui, sans-serif; --serif: "Caladea", Georgia, serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--black); color: var(--white); font-family: var(--sans); font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+section { padding: 110px 0; position: relative; overflow: hidden; }
+.eyebrow { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 14px; }
+.eyebrow::after { content: ""; height: 1px; flex: 0 0 56px; background: currentColor; opacity: .6; }
+h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em; line-height: 1.06; font-size: clamp(34px, 5.6vw, 60px); margin: 22px 0 22px; text-wrap: balance; }
+.accent { color: var(--gold); }
+
+/* big "911" watermark behind the section, like the HS mark in the hero */
+.wm { position: absolute; right: -2vw; top: 40px; font-family: var(--serif); font-weight: 700; font-size: clamp(180px, 30vw, 420px); line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(201,168,76,.12); pointer-events: none; user-select: none; }
+
+.story { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.photo { position: relative; }
+.photo img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.photo .main { aspect-ratio: 3/2; object-fit: cover; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+.photo figcaption { max-width: 55%; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--grey); margin-top: 14px; font-weight: 500; }
+.photo figcaption b { color: var(--white); font-weight: 500; }
+/* the "car we bet on" card overlapping the main photo */
+.chipcard { position: absolute; right: -34px; bottom: -86px; width: 40%; background: var(--black-2); border: 1px solid rgba(201,168,76,.35); padding: 8px 8px 12px; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,.6); transform: rotate(2.5deg); }
+.chipcard img { aspect-ratio: 4/3; object-fit: cover; object-position: 70% 50%; border-radius: 2px; }
+.chipcard span { display: block; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-top: 9px; font-weight: 500; }
+
+.copy p { color: #c9c6bf; font-size: 17px; max-width: 33em; }
+.copy p + p { margin-top: 16px; }
+.copy .kicker { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--white); line-height: 1.4; margin-top: 26px; padding-left: 18px; border-left: 2px solid var(--gold); }
+
+/* the terms of the bet, like a betting slip */
+.slip { margin-top: 30px; border: 1px dashed rgba(201,168,76,.45); border-radius: 4px; padding: 18px 20px; display: grid; grid-template-columns: auto auto auto; justify-content: space-between; gap: 14px 22px; max-width: 540px; }
+.slip div { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--grey); font-weight: 500; }
+.slip b { display: block; font-family: var(--serif); font-size: 21px; letter-spacing: 0; text-transform: none; color: var(--white); margin-top: 4px; font-weight: 700; }
+.slip b.live { color: var(--gold); }
+.slip b.live::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-right: 8px; vertical-align: 3px; box-shadow: 0 0 0 4px rgba(201,168,76,.18); }
+
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 100px; border-top: 1px solid var(--line-w); }
+.pillar { padding: 34px 30px 0 0; }
+.pillar + .pillar { padding-left: 30px; border-left: 1px solid var(--line-w); }
+.pillar .n { font-family: var(--serif); font-size: 14px; color: var(--gold); letter-spacing: .1em; }
+.pillar h3 { font-family: var(--serif); font-size: 27px; line-height: 1.15; margin: 10px 0 10px; }
+.pillar p { color: var(--grey); font-size: 15px; }
+
+.allin { margin-top: 90px; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 40px 44px; border-radius: 4px; background: linear-gradient(120deg, rgba(201,168,76,.16), rgba(201,168,76,.04) 60%); border: 1px solid rgba(201,168,76,.3); }
+.allin h3 { font-family: var(--serif); font-size: clamp(26px, 3.4vw, 38px); line-height: 1.1; }
+.allin p { color: #c9c6bf; margin-top: 6px; font-size: 15.5px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; padding: 17px 30px; border-radius: 999px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; background: var(--gold); color: var(--black); text-decoration: none; }
+.btn .chip { width: 18px; height: 18px; border-radius: 50%; background: var(--black); box-shadow: inset 0 0 0 3px var(--gold), inset 0 0 0 5px var(--black); border: 2px dashed var(--gold); }
+
+@media (max-width: 860px) {
+  section { padding: 80px 0; }
+  .story { grid-template-columns: 1fr; gap: 56px; }
+  .chipcard { right: 8px; bottom: -70px; width: 46%; }
+  .photo figcaption { max-width: 48%; }
+  .photo { margin-bottom: 70px; }
+  .pillars { grid-template-columns: 1fr; margin-top: 70px; }
+  .pillar, .pillar + .pillar { padding: 26px 0; border-left: 0; }
+  .pillar + .pillar { border-top: 1px solid var(--line-w); }
+  .allin { flex-direction: column; align-items: flex-start; padding: 30px 24px; margin-top: 60px; }
+  .slip { grid-template-columns: auto auto; justify-content: start; }
+  .wm { top: 10px; right: -20px; }
+}
+</style>
+</head>
+<body>
+<section id="about">
+  <div class="wm" aria-hidden="true">911</div>
+  <div class="wrap">
+    <div class="story">
+      <figure class="photo">
+        <img class="main" src="allin.webp" width="1600" height="1063" alt="Ben and Jonathan, the founders of High Stakes, at a card table pushing a stack of chips all in">
+        <div class="chipcard">
+          <img src="showroom.webp" width="1000" height="664" alt="The two founders looking at a Porsche 911 through a showroom window at night">
+          <span>The prize: a Porsche 911</span>
+        </div>
+        <figcaption><b>Ben &amp; Jonathan</b> · Founders, High Stakes</figcaption>
+      </figure>
+
+      <div class="copy">
+        <p class="eyebrow">Why "High Stakes"</p>
+        <h2>It started <span class="accent">with a bet.</span></h2>
+        <p>Two college seniors, one dream car. We made a bet: whoever gets a Porsche 911 first wins.</p>
+        <p>You don't win that bet with a part-time job, so we built a business instead. That's how High Stakes started: helping Pensacola business owners get found, get called and get hired.</p>
+        <p class="kicker">We bet on ourselves. Now we help you bet on you.</p>
+        <div class="slip" aria-label="The terms of the bet">
+          <div>The bet<b>First to a 911</b></div>
+          <div>The players<b>Ben vs. Jonathan</b></div>
+          <div>Status<b class="live">Still on</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><div class="n">01</div><h3>Bet on yourself.</h3><p>Every business owner we work with already took the biggest risk: starting. We treat that like it matters.</p></div>
+      <div class="pillar"><div class="n">02</div><h3>Treat it like an investment.</h3><p>Every dollar you put into marketing should come back with calls. We show you the numbers, before and after.</p></div>
+      <div class="pillar"><div class="n">03</div><h3>Play to win.</h3><p>We don't do "good enough." We aim for the top of Google in your town, and we keep going until you're there.</p></div>
+    </div>
+
+    <div class="allin">
+      <div>
+        <h3>Your business is your biggest bet. <span class="accent">Go all in.</span></h3>
+        <p>15-minute call. We'll show you exactly what we'd fix — free, whether you hire us or not.</p>
+      </div>
+      <a class="btn" href="#contact"><span class="chip" aria-hidden="true"></span>Go all in</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
