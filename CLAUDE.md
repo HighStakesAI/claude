@@ -81,6 +81,11 @@ These came out of real mistakes, not hypotheticals:
 
 ## Working preferences
 
+- **Main goal (Jonathan, 1 Oct 2026):** fix clients' problems, and make them see and feel that we're
+  fixing them. That's how we keep clients. Every report, PDF, workflow and automation leads with the
+  client's pain and the result: what was hurting them, what we fixed, the proof (calls, visits, map
+  spots, reviews, AI mentions), what's next. Never fake progress; if a number didn't move, say so and
+  say what we're doing about it.
 - **After any change request:** log it with `highstakes-automation/reaudit/changes.py` (baseline, expected result, window), and if it needs Jonathan's browser, file it as a `browser-task` issue on highstakes-automation so the PC session does it. End the reply with: whether it was queued, what changed, expected impact, and when to expect it.
 - **Slack:** ask Jonathan before posting anything to Slack, unless he asked for that post or it comes from a routine he set up. Audits post only the one-page summary; the full report and action plan stay in the repo.
 - **Google Business Profile edits:** if a client's profile isn't in Jonathan's Google account, switch the account (avatar, top right of business.google.com) to **Ben Byrer (byrerben@gmail.com)**. Ben manages most or all client profiles. Put that step in every extension prompt that edits a profile.
